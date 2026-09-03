@@ -1,9 +1,101 @@
+---
+"version": "alpha"
+"name": "IBM"
+"description": "Bundled Open Design package for IBM, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0f62fe"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f4f4f4"
+  "surface-warm": "#edf5ff"
+  "ink": "#161616"
+  "body": "#525252"
+  "muted": "#6f6f6f"
+  "meta": "#8d8d8d"
+  "border": "#c6c6c6"
+  "border-soft": "#e0e0e0"
+  "success": "#24a148"
+  "warning": "#f1c21b"
+  "danger": "#da1e28"
+typography:
+  display:
+    "fontFamily": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.17"
+  body:
+    "fontFamily": "\"IBM Plex Sans\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", \"SF Mono\", Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "42px"
+  4xl:
+    "fontSize": "60px"
+rounded:
+  "sm": "0px"
+  "md": "0px"
+  "lg": "0px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "72px"
+  "section-y-phone": "48px"
+  "container-max": "1312px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by IBM
 
 > Category: Media & Consumer
 > Enterprise technology. Carbon design system, structured blue palette.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 IBM's website is the digital embodiment of enterprise authority built on the Carbon Design System — a design language so methodically structured it reads like an engineering specification rendered as a webpage. The page operates on a stark duality: a bright white (`#ffffff`) canvas with near-black (`#161616`) text, punctuated by a single, unwavering accent — IBM Blue 60 (`#0f62fe`). This isn't playful tech-startup minimalism; it's corporate precision distilled into pixels. Every element exists within Carbon's rigid 2x grid, every color maps to a semantic token, every spacing value snaps to the 8px base unit.
 
@@ -21,7 +113,7 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - Bottom-border inputs (not boxed) — the signature Carbon form pattern
 - 0px border-radius on primary buttons — unapologetically rectangular, no softening
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **IBM Blue 60** (`#0f62fe`): The singular interactive color. Primary buttons, links, focus states, active indicators. This is the only chromatic hue in the core UI palette.
@@ -63,7 +155,7 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - **Border Subtle**: Gray 80 (`#393939`). `--cds-border-subtle`.
 - **Interactive**: Blue 40 (`#78a9ff`). Links and interactive elements shift lighter for contrast.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `IBM Plex Sans`, with fallbacks: `Helvetica Neue, Arial, sans-serif`
@@ -97,7 +189,50 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - **Three functional weights**: 300 (display/expressive), 400 (body/reading), 600 (emphasis/UI labels). Weight 700 is intentionally absent from the production type scale.
 - **Productive vs. Expressive**: Productive sets use tighter line-heights (1.29) for dense UI. Expressive sets breathe more (1.40-1.50) for marketing and editorial content.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px (Carbon 2x grid)
+- Component spacing scale: 2px, 4px, 8px, 12px, 16px, 24px, 32px, 40px, 48px
+- Layout spacing scale: 16px, 24px, 32px, 48px, 64px, 80px, 96px, 160px
+- Mini unit: 8px (smallest usable spacing)
+- Padding within components: typically 16px
+- Gap between cards/tiles: 1px (hairline) or 16px (standard)
+
+### Grid & Container
+- 16-column grid (Carbon's 2x grid system)
+- Max content width: 1584px (max breakpoint)
+- Column gutters: 32px (16px on mobile)
+- Margin: 16px (mobile), 32px (tablet+)
+- Content typically spans 8-12 columns for readable line lengths
+- Full-bleed sections alternate with contained content
+
+### Whitespace Philosophy
+- **Functional density**: Carbon favors productive density over expansive whitespace. Sections are tightly packed compared to consumer design systems — this reflects IBM's enterprise DNA.
+- **Background-color zoning**: Instead of massive padding between sections, IBM uses alternating background colors (white → gray 10 → white) to create visual separation with minimal vertical space.
+- **Consistent 48px rhythm**: Major section transitions use 48px vertical spacing. Hero sections may use 80px–96px.
+
+### Border Radius Scale
+- **0px**: Primary buttons, inputs, tiles, cards — the dominant treatment. Carbon is fundamentally rectangular.
+- **2px**: Occasionally on small interactive elements (tags)
+- **24px**: Tags/labels (pill shape — the sole rounded exception)
+- **50%**: Avatar circles, icon containers
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, `#ffffff` background | Default page surface |
+| Layer 01 | No shadow, `#f4f4f4` background | Cards, tiles, alternating sections |
+| Layer 02 | No shadow, `#e0e0e0` background | Elevated panels within Layer 01 |
+| Raised | `0 2px 6px rgba(0,0,0,0.3)` | Dropdowns, tooltips, overflow menus |
+| Overlay | `0 2px 6px rgba(0,0,0,0.3)` + dark scrim | Modal dialogs, side panels |
+| Focus | `2px solid #0f62fe` inset + `1px solid #ffffff` | Keyboard focus ring |
+| Bottom-border | `2px solid #161616` on bottom edge | Active input, active tab indicator |
+
+**Shadow Philosophy**: Carbon is deliberately shadow-averse. IBM achieves depth primarily through background-color layering — stacking surfaces of progressively darker grays rather than adding box-shadows. This creates a flat, print-inspired aesthetic where hierarchy is communicated through color value, not simulated light. Shadows are reserved exclusively for floating elements (dropdowns, tooltips, modals) where the element genuinely overlaps content. This restraint gives the rare shadow meaningful impact — when something floats in Carbon, it matters.
+
+## Components
 
 ### Buttons
 
@@ -203,50 +338,7 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - White text, 14px
 - Close/dismiss icon right-aligned
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px (Carbon 2x grid)
-- Component spacing scale: 2px, 4px, 8px, 12px, 16px, 24px, 32px, 40px, 48px
-- Layout spacing scale: 16px, 24px, 32px, 48px, 64px, 80px, 96px, 160px
-- Mini unit: 8px (smallest usable spacing)
-- Padding within components: typically 16px
-- Gap between cards/tiles: 1px (hairline) or 16px (standard)
-
-### Grid & Container
-- 16-column grid (Carbon's 2x grid system)
-- Max content width: 1584px (max breakpoint)
-- Column gutters: 32px (16px on mobile)
-- Margin: 16px (mobile), 32px (tablet+)
-- Content typically spans 8-12 columns for readable line lengths
-- Full-bleed sections alternate with contained content
-
-### Whitespace Philosophy
-- **Functional density**: Carbon favors productive density over expansive whitespace. Sections are tightly packed compared to consumer design systems — this reflects IBM's enterprise DNA.
-- **Background-color zoning**: Instead of massive padding between sections, IBM uses alternating background colors (white → gray 10 → white) to create visual separation with minimal vertical space.
-- **Consistent 48px rhythm**: Major section transitions use 48px vertical spacing. Hero sections may use 80px–96px.
-
-### Border Radius Scale
-- **0px**: Primary buttons, inputs, tiles, cards — the dominant treatment. Carbon is fundamentally rectangular.
-- **2px**: Occasionally on small interactive elements (tags)
-- **24px**: Tags/labels (pill shape — the sole rounded exception)
-- **50%**: Avatar circles, icon containers
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, `#ffffff` background | Default page surface |
-| Layer 01 | No shadow, `#f4f4f4` background | Cards, tiles, alternating sections |
-| Layer 02 | No shadow, `#e0e0e0` background | Elevated panels within Layer 01 |
-| Raised | `0 2px 6px rgba(0,0,0,0.3)` | Dropdowns, tooltips, overflow menus |
-| Overlay | `0 2px 6px rgba(0,0,0,0.3)` + dark scrim | Modal dialogs, side panels |
-| Focus | `2px solid #0f62fe` inset + `1px solid #ffffff` | Keyboard focus ring |
-| Bottom-border | `2px solid #161616` on bottom edge | Active input, active tab indicator |
-
-**Shadow Philosophy**: Carbon is deliberately shadow-averse. IBM achieves depth primarily through background-color layering — stacking surfaces of progressively darker grays rather than adding box-shadows. This creates a flat, print-inspired aesthetic where hierarchy is communicated through color value, not simulated light. Shadows are reserved exclusively for floating elements (dropdowns, tooltips, modals) where the element genuinely overlaps content. This restraint gives the rare shadow meaningful impact — when something floats in Carbon, it matters.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use IBM Plex Sans at weight 300 for display sizes (42px+) — the lightness is intentional
@@ -268,7 +360,7 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - Don't use gradient backgrounds — IBM's surfaces are flat, solid colors
 - Don't deviate from the 8px spacing grid — every value should be divisible by 8 (with 2px and 4px for micro-adjustments)
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -301,7 +393,7 @@ What defines IBM's visual identity beyond monochrome-plus-blue is the reliance o
 - Hero images may shift from side-by-side to stacked below
 - Data visualizations maintain aspect ratio with horizontal scroll on mobile
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: IBM Blue 60 (`#0f62fe`)

@@ -1,9 +1,105 @@
+---
+"version": "alpha"
+"name": "Mintlify"
+"description": "Bundled Open Design package for Mintlify, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#18E299"
+  "primary-hover": "#0fa76e"
+  "on-primary": "#0d0d0d"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#fafafa"
+  "ink": "#0d0d0d"
+  "body": "#333333"
+  "muted": "#666666"
+  "meta": "#888888"
+  "border": "rgba(0, 0, 0, 0.05)"
+  "border-soft": "rgba(0, 0, 0, 0.05)"
+  "success": "#16a34a"
+  "warning": "#c37d0d"
+  "danger": "#d45656"
+typography:
+  display:
+    "fontFamily": "\"Inter\", \"Inter Fallback\", system-ui, -apple-system, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.15"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Inter\", \"Inter Fallback\", system-ui, -apple-system, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "24px"
+components:
+  buttons:
+    "backgroundColor": "{colors.canvas}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.1}"
+  links:
+    "textColor": "{colors.ink}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Mintlify
 
 > Category: Productivity & SaaS
 > Documentation platform. Clean, green-accented, reading-optimized.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Mintlify's website is a study in documentation-as-product design — a white, airy, information-rich surface that treats clarity as its highest aesthetic value. The page opens with a luminous white (`#ffffff`) background, near-black (`#0d0d0d`) text, and a signature green brand accent (`#18E299`) that signals freshness and intelligence without dominating the palette. The overall mood is calm, confident, and engineered for legibility — a design system that whispers "we care about your developer experience" in every pixel.
 
@@ -21,7 +117,7 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 - 8px base spacing system with generous section padding (48px–96px)
 - Clean white canvas — no gray backgrounds, no color sections, depth through borders and whitespace alone
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Near Black** (`#0d0d0d`): Primary text, headings, dark surfaces. Not pure black — the micro-softness improves reading comfort.
@@ -60,7 +156,7 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 - **Button Shadow** (`rgba(0,0,0,0.06) 0px 1px 2px`): Micro-shadow for button depth.
 - **No heavy shadows**: Mintlify relies on borders, not shadows, for depth.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Inter`, with fallback: `Inter Fallback, system-ui, -apple-system, sans-serif`
@@ -94,7 +190,53 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 - **Uppercase as hierarchy signal**: Section labels and technical tags use uppercase + positive tracking (0.6px–0.65px) as a clear visual delimiter between content types.
 - **Three weights**: 400 (body/reading), 500 (UI/navigation/emphasis), 600 (headings/titles). No bold (700) in the system.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 2px, 4px, 5px, 6px, 7px, 8px, 10px, 12px, 16px, 24px, 32px, 48px, 64px
+- Section padding: 48px–96px vertical
+- Card padding: 24px–32px
+- Component gaps: 8px–16px
+
+### Grid & Container
+- Max content width: approximately 1200px
+- Hero: centered single-column with generous top padding (96px+)
+- Feature sections: 2–3 column CSS Grid for cards
+- Full-width sections with contained content
+- Consistent horizontal padding: 24px (mobile) to 32px (desktop)
+
+### Whitespace Philosophy
+- **Documentation-grade breathing room**: Every element has generous surrounding whitespace. Mintlify sells documentation, so the marketing page itself demonstrates reading comfort.
+- **Sections as chapters**: Each feature section is a self-contained unit with 48px–96px vertical padding, creating clear "chapter breaks."
+- **Content density is low**: Unlike developer tools that pack the page, Mintlify uses 1–2 key messages per section with supporting imagery.
+
+### Border Radius Scale
+- Small (4px): Inline code, small tags, tooltips
+- Medium (8px): Nav buttons, transparent buttons, small containers
+- Standard (16px): Cards, content containers, image wrappers
+- Large (24px): Featured cards, hero containers, section panels
+- Full Pill (9999px): Buttons, inputs, badges, pills — the signature shape
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, text blocks |
+| Subtle Border (Level 1) | `1px solid rgba(0,0,0,0.05)` | Standard card borders, dividers |
+| Medium Border (Level 1b) | `1px solid rgba(0,0,0,0.08)` | Interactive elements, input borders |
+| Ambient Shadow (Level 2) | `rgba(0,0,0,0.03) 0px 2px 4px` | Cards with subtle lift |
+| Button Shadow (Level 2b) | `rgba(0,0,0,0.06) 0px 1px 2px` | Button micro-depth |
+| Focus Ring (Accessibility) | `1px solid #18E299` outline | Focused inputs, active interactive elements |
+
+**Shadow Philosophy**: Mintlify barely uses shadows. The depth system is almost entirely border-driven — ultra-subtle 5% opacity borders create separation without visual weight. When shadows appear, they're atmospheric whispers (`0.03 opacity, 2px blur, 4px spread`) that add the barest sense of lift. This restraint keeps the page feeling flat and paper-like — appropriate for a documentation company whose product is about clarity and readability.
+
+### Decorative Depth
+- Hero gradient: atmospheric green-white cloud gradient behind hero content
+- No background color alternation — white on white throughout
+- Depth comes from border opacity variation (5% → 8%) and whitespace
+
+## Components
 
 ### Buttons
 
@@ -209,70 +351,7 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 - Email input with pill styling
 - Brand green accent on CTAs
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 2px, 4px, 5px, 6px, 7px, 8px, 10px, 12px, 16px, 24px, 32px, 48px, 64px
-- Section padding: 48px–96px vertical
-- Card padding: 24px–32px
-- Component gaps: 8px–16px
-
-### Grid & Container
-- Max content width: approximately 1200px
-- Hero: centered single-column with generous top padding (96px+)
-- Feature sections: 2–3 column CSS Grid for cards
-- Full-width sections with contained content
-- Consistent horizontal padding: 24px (mobile) to 32px (desktop)
-
-### Whitespace Philosophy
-- **Documentation-grade breathing room**: Every element has generous surrounding whitespace. Mintlify sells documentation, so the marketing page itself demonstrates reading comfort.
-- **Sections as chapters**: Each feature section is a self-contained unit with 48px–96px vertical padding, creating clear "chapter breaks."
-- **Content density is low**: Unlike developer tools that pack the page, Mintlify uses 1–2 key messages per section with supporting imagery.
-
-### Border Radius Scale
-- Small (4px): Inline code, small tags, tooltips
-- Medium (8px): Nav buttons, transparent buttons, small containers
-- Standard (16px): Cards, content containers, image wrappers
-- Large (24px): Featured cards, hero containers, section panels
-- Full Pill (9999px): Buttons, inputs, badges, pills — the signature shape
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, text blocks |
-| Subtle Border (Level 1) | `1px solid rgba(0,0,0,0.05)` | Standard card borders, dividers |
-| Medium Border (Level 1b) | `1px solid rgba(0,0,0,0.08)` | Interactive elements, input borders |
-| Ambient Shadow (Level 2) | `rgba(0,0,0,0.03) 0px 2px 4px` | Cards with subtle lift |
-| Button Shadow (Level 2b) | `rgba(0,0,0,0.06) 0px 1px 2px` | Button micro-depth |
-| Focus Ring (Accessibility) | `1px solid #18E299` outline | Focused inputs, active interactive elements |
-
-**Shadow Philosophy**: Mintlify barely uses shadows. The depth system is almost entirely border-driven — ultra-subtle 5% opacity borders create separation without visual weight. When shadows appear, they're atmospheric whispers (`0.03 opacity, 2px blur, 4px spread`) that add the barest sense of lift. This restraint keeps the page feeling flat and paper-like — appropriate for a documentation company whose product is about clarity and readability.
-
-### Decorative Depth
-- Hero gradient: atmospheric green-white cloud gradient behind hero content
-- No background color alternation — white on white throughout
-- Depth comes from border opacity variation (5% → 8%) and whitespace
-
-## 7. Dark Mode
-
-### Color Inversions
-- **Background**: `#0d0d0d` (near-black)
-- **Text Primary**: `#ededed` (near-white)
-- **Text Secondary**: `#a0a0a0` (muted gray)
-- **Brand Green**: `#18E299` (unchanged — the green works on both backgrounds)
-- **Border**: `rgba(255,255,255,0.08)` (white at 8% opacity)
-- **Card Background**: `#141414` (slightly lighter than page)
-- **Shadow**: `rgba(0,0,0,0.4) 0px 2px 4px` (stronger shadow for contrast)
-
-### Key Adjustments
-- Buttons invert: white background dark text becomes dark background light text
-- Badge backgrounds shift to deeper tones with lighter text
-- Focus ring remains brand green
-- Hero gradient shifts to dark-tinted green atmospheric wash
-
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -299,7 +378,7 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 - Hero gradient simplifies on mobile
 - Full-width sections maintain edge-to-edge treatment
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: Near Black (`#0d0d0d`)
@@ -327,3 +406,20 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 6. Geist Mono uppercase for technical labels, Inter for everything else
 7. Section padding is generous: 64px–96px on desktop, 48px on mobile
 8. No gray background sections — white throughout, separation through borders and whitespace
+
+## Dark Mode
+
+### Color Inversions
+- **Background**: `#0d0d0d` (near-black)
+- **Text Primary**: `#ededed` (near-white)
+- **Text Secondary**: `#a0a0a0` (muted gray)
+- **Brand Green**: `#18E299` (unchanged — the green works on both backgrounds)
+- **Border**: `rgba(255,255,255,0.08)` (white at 8% opacity)
+- **Card Background**: `#141414` (slightly lighter than page)
+- **Shadow**: `rgba(0,0,0,0.4) 0px 2px 4px` (stronger shadow for contrast)
+
+### Key Adjustments
+- Buttons invert: white background dark text becomes dark background light text
+- Badge backgrounds shift to deeper tones with lighter text
+- Focus ring remains brand green
+- Hero gradient shifts to dark-tinted green atmospheric wash

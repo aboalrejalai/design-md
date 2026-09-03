@@ -1,9 +1,104 @@
+---
+"version": "alpha"
+"name": "Arc Browser"
+"description": "Bundled Open Design package for Arc Browser, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff5f5f"
+  "on-primary": "#ffffff"
+  "canvas": "#fdf3ec"
+  "surface": "#ffffff"
+  "surface-warm": "#fff4ea"
+  "ink": "#1a1a1f"
+  "body": "#54545a"
+  "muted": "#8c8c93"
+  "meta": "#8c8c93"
+  "border": "#ece5db"
+  "border-soft": "#f6f0e8"
+  "success": "#48bb78"
+  "warning": "#f6ad55"
+  "danger": "#f56565"
+typography:
+  display:
+    "fontFamily": "\"Argent CF\", \"Source Serif Pro\", Georgia, serif"
+    "lineHeight": "1.05"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"Berkeley Mono\", ui-monospace, Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "72px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "padding": "{spacing.3}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Arc Browser
 
 > Category: Productivity & SaaS
 > "The browser that browses for you." Translucent surfaces, gradient warmth, sidebar-first layout.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Arc Browser dissolves the boundary between the chrome and the page. Where Chrome and Safari treat the browser frame as a container, Arc treats it as scenery — the toolbar fades into the system wallpaper, the sidebar carries gradient warmth from the user's chosen "theme color", and translucency is everywhere. The visual signature is **frosted glass plus a single saturated gradient** — most often a peach-to-coral or violet-to-fuchsia bloom — that sets the emotional temperature of the entire window.
 
@@ -20,7 +115,7 @@ Shapes are squircle-soft: 12–16px radii on cards, 8px on tabs, 9999px pills fo
 - Color picker is a brand surface — themes are user-driven, not fixed
 - Subtle shadows (`0 8px 32px rgba(0,0,0,0.08)`) over the gradient backdrop
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Theme Gradients (User-selectable; default is "Sunset")
 - **Sunset Start** (`#ff7e5f`): Peach gradient origin.
@@ -56,7 +151,7 @@ Shapes are squircle-soft: 12–16px radii on cards, 8px on tabs, 9999px pills fo
 - **Warning** (`#f6ad55`): Permission prompt.
 - **Error** (`#f56565`): Form validation.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / Marketing**: `Argent CF`, with fallback: `'Source Serif Pro', Georgia, serif`
@@ -81,7 +176,7 @@ Shapes are squircle-soft: 12–16px radii on cards, 8px on tabs, 9999px pills fo
 - **Title size is small**: tabs render at 13px so a long sidebar of 30+ tabs stays scannable.
 - **Tracking tightens with size**: -0.03em at 72px, returning to normal by 15px.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -138,20 +233,20 @@ Shapes are squircle-soft: 12–16px radii on cards, 8px on tabs, 9999px pills fo
 - Radius: 9999px
 - Font: 12px / 600
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64.
 - **Sidebar**: 240px wide; collapsible to 56px.
 - **Window radius**: 12px on the OS window itself (macOS-only flourish).
 - **Padding inside panes**: 24px.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 200ms for hover; 320ms for tab create/close; 480ms for "Little Arc" window expand.
 - **Easing**: `cubic-bezier(0.32, 0.72, 0, 1)` for window expand (Apple's spring-style).
 - **Tab swap**: 1px translate + opacity blend, no scale change.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Keep the sidebar-first layout recognizable; top-nav-only compositions should be avoided unless the artifact is a marketing page.
 - Use frosted surfaces and gradient warmth as atmosphere, not as decorative blobs or unrelated background ornaments.

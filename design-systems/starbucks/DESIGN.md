@@ -1,9 +1,105 @@
+---
+"version": "alpha"
+"name": "Starbucks"
+"description": "Bundled Open Design package for Starbucks, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#00754A"
+  "on-primary": "#ffffff"
+  "canvas": "#f2f0eb"
+  "surface": "#ffffff"
+  "surface-warm": "#edebe9"
+  "ink": "rgba(0, 0, 0, 0.87)"
+  "body": "#33433d"
+  "muted": "rgba(0, 0, 0, 0.58)"
+  "meta": "rgba(0, 0, 0, 0.58)"
+  "border": "#d6dbde"
+  "border-soft": "#e7e7e7"
+  "success": "#16a34a"
+  "warning": "#fbbc05"
+  "danger": "#c82014"
+typography:
+  display:
+    "fontFamily": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.2"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "SoDoSans, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "13px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "45px"
+  4xl:
+    "fontSize": "58px"
+rounded:
+  "sm": "4px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "64px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "40px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "typography": "{typography.xs}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Starbucks
 
 > Category: E-Commerce & Retail
 > Global coffee retail brand. Four-tier green system, warm cream canvas, full-pill buttons.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Starbucks' design system is a **warm, confident retail flagship** wearing the green of their storefront apron across every surface. The canvas alternates between a neutral-warm cream (`#f2f0eb`) and a ceramic off-white (`#edebe9`) — colors that reference actual store materials: the paper napkins, the café walls, the wood finishes — while the signature **Starbucks Green** (`#006241`) anchors the brand moment on hero bands, CTAs, and the Rewards experience. The greens come in four calibrated shades (Starbucks, Accent, House, Uplift) each mapped to a specific surface role, and gold (`#cba258`) appears only around Rewards-status ceremony — not as a general accent.
 
@@ -25,7 +121,7 @@ The surfaces breathe through rounded geometry. Every button is a 50px full-pill.
 
 **Color-block page rhythm:** Cream hero → White content sections → Dark-green (`#1E3932`) feature band with white text → Cream utility zone → Dark-green (`#1E3932`) footer with gold / white text — an espresso-dark bookend around the bright body.
 
-## 2. Color Palette & Roles
+## Colors
 
 **Source pages analyzed:** homepage, rewards, gift cards, product detail (Pink Energy Drink), product nutrition (Cold Brew).
 
@@ -76,7 +172,7 @@ Two parallel translucent scales for overlay and secondary-text use:
 
 No structural gradient tokens observed. Surface hierarchy is solid-color-block throughout — the system relies on its five-tier cream/green surface palette rather than gradients.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -130,7 +226,72 @@ If substituting, verify the tight `-0.01em` / `-0.16px` tracking still reads wel
 
 Lander Tall (the Rewards serif) is custom — open-source substitutes: **Iowan Old Style** (already in fallback), **Lora**, or **Source Serif Pro**. Kalam (Careers script) is available on Google Fonts directly.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Rem-based semantic scale (anchored `1rem = 10px`):
+
+| Token | Rem | Pixels | Typical Use |
+|-------|-----|--------|-------------|
+| `--space-1` | `0.4rem` | 4px | Tightest inline padding |
+| `--space-2` | `0.8rem` | 8px | Small gap, button vertical padding |
+| `--space-3` | `1.6rem` | 16px | Default — card padding, outer gutter xs |
+| `--space-4` | `2.4rem` | 24px | Section inner spacing, outer gutter md |
+| `--space-5` | `3.2rem` | 32px | Major between-section spacing |
+| `--space-6` | `4rem` | 40px | Large gaps, outer gutter lg, header crate |
+| `--space-7` | `4.8rem` | 48px | Section-to-section spacing |
+| `--space-8` | `5.6rem` | 56px | Very large breathing — Frap height |
+| `--space-9` | `6.4rem` | 64px | Widest section padding |
+
+**Gutter tokens:**
+- `--outerGutter: 1.6rem` (16px, default / mobile)
+- `--outerGutterMedium: 2.4rem` (24px, tablet)
+- `--outerGutterLarge: 4.0rem` (40px, desktop)
+
+**Universal rhythm constant:** `1.6rem` (16px) appears across every page as the default outer gutter, card padding baseline, and text size 3 body — the system's most frequent spacing unit.
+
+### Grid & Container
+
+- Column width scale: `--columnWidthSmall: 343px` / `Medium: 500px` / `Large: 720px` / `XLarge: 1440px`
+- Gift-card grid uses a 3-5-up responsive grid of `~343px` tiles
+- Rewards status section: 3-up dark-green panels at `lg+` breakpoints
+- Hero: asymmetric split 40% (image) / 60% (content) via `--headerCrateProportion` / `--contentCrateProportion`
+
+### Whitespace Philosophy
+
+Whitespace carries the feeling of "plenty of space in the café." Section padding leans generous (40–64px). Content blocks are separated by whitespace rather than dividers. The cream canvas (`#f2f0eb`) is itself a visual breath between white cards and green feature bands.
+
+### Border Radius Scale
+
+| Value | Use |
+|-------|-----|
+| `12px` | Cards, modals, menu-item tiles (`--cardBorderRadius`) |
+| `12px 12px 0 0` | Full-width feedback tab (top-rounded only) |
+| `50px` | All buttons — full-pill radius (`--buttonBorderRadius`) |
+| `50%` | Circular icons, Frap floating button, avatar thumbnails |
+| Specialty | `3.3333%/5.298%` elliptical for Starbucks-Visa-Card mockups (`--svcRoundedCorners`) |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Card | `0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24)` | Default content cards — a whisper-soft dual-shadow |
+| Global Nav | `0 1px 3px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.06), 0 0 2px rgba(0,0,0,0.07)` | Triple-layer soft lift on the fixed top bar |
+| Frap Base | `0 0 6px rgba(0,0,0,0.24)` | Base halo around the floating circular CTA |
+| Frap Ambient | `0 8px 12px rgba(0,0,0,0.14)` | Stacked directional ambient — floats the Frap forward |
+| Gift Card | Light drop shadow around illustrated photograph | Physical-card feel for gift tiles |
+| Starbucks Card (SVC) | `drop-shadow(0 4px 1px rgba(0,0,0,0.11)) drop-shadow(0 0 2px rgba(0,0,0,0.24))` | Stacked SVG drop shadows for Starbucks Card visuals |
+
+**Shadow philosophy:** Whisper-soft, layered over solid — the system never reaches for a single heavy drop shadow. Instead, it stacks 2–3 low-alpha shadows with different offsets to simulate real-world ambient + direct lighting. The Frap button is the most elevated element on any page.
+
+### Decorative Depth
+
+- **No gradient system** — surfaces are solid color-block
+- **Color-block banding** carries perceived depth (dark-green bands read as "recessed feature zones" between cream/white body sections)
+- **SVG filter shadows** on Starbucks-Card visuals add a slight 3D physicality without a box-shadow
+
+## Components
 
 ### Buttons
 
@@ -395,72 +556,7 @@ A repeating component cluster used on menu product pages (e.g., `/menu/product/4
 - Left chevron `<` in the same green
 - Alternative to full breadcrumb on deep sub-pages
 
-## 5. Layout Principles
-
-### Spacing System
-
-Rem-based semantic scale (anchored `1rem = 10px`):
-
-| Token | Rem | Pixels | Typical Use |
-|-------|-----|--------|-------------|
-| `--space-1` | `0.4rem` | 4px | Tightest inline padding |
-| `--space-2` | `0.8rem` | 8px | Small gap, button vertical padding |
-| `--space-3` | `1.6rem` | 16px | Default — card padding, outer gutter xs |
-| `--space-4` | `2.4rem` | 24px | Section inner spacing, outer gutter md |
-| `--space-5` | `3.2rem` | 32px | Major between-section spacing |
-| `--space-6` | `4rem` | 40px | Large gaps, outer gutter lg, header crate |
-| `--space-7` | `4.8rem` | 48px | Section-to-section spacing |
-| `--space-8` | `5.6rem` | 56px | Very large breathing — Frap height |
-| `--space-9` | `6.4rem` | 64px | Widest section padding |
-
-**Gutter tokens:**
-- `--outerGutter: 1.6rem` (16px, default / mobile)
-- `--outerGutterMedium: 2.4rem` (24px, tablet)
-- `--outerGutterLarge: 4.0rem` (40px, desktop)
-
-**Universal rhythm constant:** `1.6rem` (16px) appears across every page as the default outer gutter, card padding baseline, and text size 3 body — the system's most frequent spacing unit.
-
-### Grid & Container
-
-- Column width scale: `--columnWidthSmall: 343px` / `Medium: 500px` / `Large: 720px` / `XLarge: 1440px`
-- Gift-card grid uses a 3-5-up responsive grid of `~343px` tiles
-- Rewards status section: 3-up dark-green panels at `lg+` breakpoints
-- Hero: asymmetric split 40% (image) / 60% (content) via `--headerCrateProportion` / `--contentCrateProportion`
-
-### Whitespace Philosophy
-
-Whitespace carries the feeling of "plenty of space in the café." Section padding leans generous (40–64px). Content blocks are separated by whitespace rather than dividers. The cream canvas (`#f2f0eb`) is itself a visual breath between white cards and green feature bands.
-
-### Border Radius Scale
-
-| Value | Use |
-|-------|-----|
-| `12px` | Cards, modals, menu-item tiles (`--cardBorderRadius`) |
-| `12px 12px 0 0` | Full-width feedback tab (top-rounded only) |
-| `50px` | All buttons — full-pill radius (`--buttonBorderRadius`) |
-| `50%` | Circular icons, Frap floating button, avatar thumbnails |
-| Specialty | `3.3333%/5.298%` elliptical for Starbucks-Visa-Card mockups (`--svcRoundedCorners`) |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Card | `0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24)` | Default content cards — a whisper-soft dual-shadow |
-| Global Nav | `0 1px 3px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.06), 0 0 2px rgba(0,0,0,0.07)` | Triple-layer soft lift on the fixed top bar |
-| Frap Base | `0 0 6px rgba(0,0,0,0.24)` | Base halo around the floating circular CTA |
-| Frap Ambient | `0 8px 12px rgba(0,0,0,0.14)` | Stacked directional ambient — floats the Frap forward |
-| Gift Card | Light drop shadow around illustrated photograph | Physical-card feel for gift tiles |
-| Starbucks Card (SVC) | `drop-shadow(0 4px 1px rgba(0,0,0,0.11)) drop-shadow(0 0 2px rgba(0,0,0,0.24))` | Stacked SVG drop shadows for Starbucks Card visuals |
-
-**Shadow philosophy:** Whisper-soft, layered over solid — the system never reaches for a single heavy drop shadow. Instead, it stacks 2–3 low-alpha shadows with different offsets to simulate real-world ambient + direct lighting. The Frap button is the most elevated element on any page.
-
-### Decorative Depth
-
-- **No gradient system** — surfaces are solid color-block
-- **Color-block banding** carries perceived depth (dark-green bands read as "recessed feature zones" between cream/white body sections)
-- **SVG filter shadows** on Starbucks-Card visuals add a slight 3D physicality without a box-shadow
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Neutral Warm (`#f2f0eb`) or Ceramic (`#edebe9`) as page canvas instead of pure white — the warm cream is the signature
@@ -486,7 +582,7 @@ Whitespace carries the feeling of "plenty of space in the café." Section paddin
 - Don't stack single heavy shadows; always layer 2–3 low-alpha ones
 - Don't introduce serifs or scripts into the main shopping flow — they belong to Rewards and Careers contexts respectively
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -523,7 +619,7 @@ Inferred from component width tokens and progressive nav heights:
 - `opacity 0.3s ease-in` fade-in transition on image load (prevents jarring pop-in)
 - Rewards app-in-hand photography scales proportionally; never stretches
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

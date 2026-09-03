@@ -1,9 +1,113 @@
+---
+"version": "alpha"
+"name": "Supabase"
+"description": "Bundled Open Design package for Supabase, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#3ecf8e"
+  "primary-hover": "#00c573"
+  "on-primary": "#0f0f0f"
+  "canvas": "#171717"
+  "surface": "#1c1c1c"
+  "surface-warm": "#1c1c1c"
+  "ink": "#fafafa"
+  "body": "#b4b4b4"
+  "muted": "#898989"
+  "meta": "#4d4d4d"
+  "border": "#2e2e2e"
+  "border-soft": "#242424"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Circular\", \"custom-font\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.00"
+  body:
+    "fontFamily": "\"Circular\", \"custom-font\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Source Code Pro\", \"Office Code Pro\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "72px"
+rounded:
+  "sm": "6px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "128px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.4}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Supabase
 
 > Category: Backend & Data
 > Open-source Firebase alternative. Dark emerald theme, code-first.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Supabase's website is a dark-mode-native developer platform that channels the aesthetic of a premium code editor — deep black backgrounds (`#0f0f0f`, `#171717`) with emerald green accents (`#3ecf8e`, `#00c573`) that reference the brand's open-source, PostgreSQL-green identity. The design system feels like it was born in a terminal window and evolved into a sophisticated marketing surface without losing its developer soul.
 
@@ -25,7 +129,7 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 - Minimal shadows — depth through border contrast and transparency
 - Radix color primitives (crimson, purple, violet, indigo, yellow, tomato, orange, slate)
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand
 - **Supabase Green** (`#3ecf8e`): Primary brand color, logo, accent borders
@@ -64,7 +168,7 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 ### Shadows
 - Supabase uses **almost no shadows** in its dark theme. Depth is created through border contrast and surface color differences rather than box-shadows. Focus states use `rgba(0, 0, 0, 0.1) 0px 4px 12px` — minimal, functional.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Primary**: `Circular`, with fallbacks: `custom-font, Helvetica Neue, Helvetica, Arial`
@@ -92,7 +196,52 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 - **Monospace as ritual**: Source Code Pro in uppercase with 1.2px letter-spacing is the "developer console" voice — used sparingly for technical labels that connect to the product experience.
 - **Geometric personality**: Circular's rounded terminals create warmth in what could otherwise be a cold, technical interface. The font is the humanizing element.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 4px, 6px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 90px, 96px, 128px
+- Notable large jumps: 48px → 90px → 96px → 128px for major section spacing
+
+### Grid & Container
+- Centered content with generous max-width
+- Full-width dark sections with constrained inner content
+- Feature grids: icon-based grids with consistent card sizes
+- Logo grids for "Trusted by" sections
+- Footer: multi-column on dark background
+
+### Breakpoints
+| Name | Width | Key Changes |
+|------|-------|-------------|
+| Mobile | <600px | Single column, stacked layout |
+| Desktop | >600px | Multi-column grids, expanded layout |
+
+*Note: Supabase uses a notably minimal breakpoint system — primarily a single 600px breakpoint, suggesting a mobile-first approach with progressive enhancement.*
+
+### Whitespace Philosophy
+- **Dramatic section spacing**: 90px–128px between major sections creates a cinematic pacing — each section is its own scene in the dark void.
+- **Dense content blocks**: Within sections, spacing is tight (16px–24px), creating concentrated information clusters.
+- **Border-defined space**: Instead of whitespace + shadows for separation, Supabase uses thin borders on dark backgrounds — separation through line, not gap.
+
+### Border Radius Scale
+- Standard (6px): Ghost buttons, small elements
+- Comfortable (8px): Cards, containers
+- Medium (11px–12px): Mid-size panels
+- Large (16px): Feature cards, major containers
+- Pill (9999px): Primary buttons, tab indicators
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, border `#2e2e2e` | Default state, most surfaces |
+| Subtle Border (Level 1) | Border `#363636` or `#393939` | Interactive elements, hover |
+| Focus (Level 2) | `rgba(0, 0, 0, 0.1) 0px 4px 12px` | Focus states only |
+| Green Accent (Level 3) | Border `rgba(62, 207, 142, 0.3)` | Brand-highlighted elements |
+
+**Shadow Philosophy**: Supabase deliberately avoids shadows. In a dark-mode-native design, shadows are nearly invisible and serve no purpose. Instead, depth is communicated through a sophisticated border hierarchy — from `#242424` (barely visible) through `#2e2e2e` (standard) to `#393939` (prominent). The green accent border (`rgba(62, 207, 142, 0.3)`) at 30% opacity is the "elevated" state — the brand color itself becomes the depth signal.
+
+## Components
 
 ### Buttons
 
@@ -149,52 +298,7 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 - Green "Start your project" CTA pill button
 - Sticky header behavior
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 4px, 6px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 90px, 96px, 128px
-- Notable large jumps: 48px → 90px → 96px → 128px for major section spacing
-
-### Grid & Container
-- Centered content with generous max-width
-- Full-width dark sections with constrained inner content
-- Feature grids: icon-based grids with consistent card sizes
-- Logo grids for "Trusted by" sections
-- Footer: multi-column on dark background
-
-### Breakpoints
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| Mobile | <600px | Single column, stacked layout |
-| Desktop | >600px | Multi-column grids, expanded layout |
-
-*Note: Supabase uses a notably minimal breakpoint system — primarily a single 600px breakpoint, suggesting a mobile-first approach with progressive enhancement.*
-
-### Whitespace Philosophy
-- **Dramatic section spacing**: 90px–128px between major sections creates a cinematic pacing — each section is its own scene in the dark void.
-- **Dense content blocks**: Within sections, spacing is tight (16px–24px), creating concentrated information clusters.
-- **Border-defined space**: Instead of whitespace + shadows for separation, Supabase uses thin borders on dark backgrounds — separation through line, not gap.
-
-### Border Radius Scale
-- Standard (6px): Ghost buttons, small elements
-- Comfortable (8px): Cards, containers
-- Medium (11px–12px): Mid-size panels
-- Large (16px): Feature cards, major containers
-- Pill (9999px): Primary buttons, tab indicators
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, border `#2e2e2e` | Default state, most surfaces |
-| Subtle Border (Level 1) | Border `#363636` or `#393939` | Interactive elements, hover |
-| Focus (Level 2) | `rgba(0, 0, 0, 0.1) 0px 4px 12px` | Focus states only |
-| Green Accent (Level 3) | Border `rgba(62, 207, 142, 0.3)` | Brand-highlighted elements |
-
-**Shadow Philosophy**: Supabase deliberately avoids shadows. In a dark-mode-native design, shadows are nearly invisible and serve no purpose. Instead, depth is communicated through a sophisticated border hierarchy — from `#242424` (barely visible) through `#2e2e2e` (standard) to `#393939` (prominent). The green accent border (`rgba(62, 207, 142, 0.3)`) at 30% opacity is the "elevated" state — the brand color itself becomes the depth signal.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use near-black backgrounds (`#0f0f0f`, `#171717`) — depth comes from the gray border hierarchy
@@ -216,7 +320,7 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 - Don't lighten the background above `#171717` for primary surfaces — the darkness is structural
 - Don't forget the translucent borders — `rgba` border colors are the layering mechanism
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -232,7 +336,7 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 - Section spacing: 90–128px → 48–64px
 - Buttons: inline → full-width stacked
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: `#0f0f0f` (button), `#171717` (page)

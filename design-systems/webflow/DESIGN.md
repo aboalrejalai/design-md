@@ -1,9 +1,103 @@
+---
+"version": "alpha"
+"name": "Webflow"
+"description": "Bundled Open Design package for Webflow, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#146ef5"
+  "primary-hover": "#0055d4"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#ffffff"
+  "ink": "#080808"
+  "body": "#363636"
+  "muted": "#5a5a5a"
+  "meta": "#ababab"
+  "border": "#d8d8d8"
+  "border-soft": "#ebebeb"
+  "success": "#00d722"
+  "warning": "#ffae13"
+  "danger": "#ee1d36"
+typography:
+  display:
+    "fontFamily": "\"WF Visual Sans Variable\", \"Inter\", Arial, system-ui, sans-serif"
+    "lineHeight": "1.04"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"WF Visual Sans Variable\", \"Inter\", Arial, system-ui, sans-serif"
+    "lineHeight": "1.6"
+  mono:
+    "fontFamily": "\"Inconsolata\", ui-monospace, \"SF Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "4px"
+  "md": "4px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Webflow
 
 > Category: Design & Creative
 > Visual web builder. Blue-accented, polished marketing site aesthetic.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Webflow's website is a visually rich, tool-forward platform that communicates "design without code" through clean white surfaces, the signature Webflow Blue (`#146ef5`), and a rich secondary color palette (purple, pink, green, orange, yellow, red). The custom WF Visual Sans Variable font creates a confident, precise typographic system with weight 600 for display and 500 for body.
 
@@ -17,7 +111,7 @@ Webflow's website is a visually rich, tool-forward platform that communicates "d
 - Uppercase labels: 10px–15px, weight 500–600, wide letter-spacing (0.6px–1.5px)
 - translate(6px) hover animation on buttons
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Near Black** (`#080808`): Primary text
@@ -45,7 +139,7 @@ Webflow's website is a visually rich, tool-forward platform that communicates "d
 ### Shadows
 - **5-layer cascade**: `rgba(0,0,0,0) 0px 84px 24px, rgba(0,0,0,0.01) 0px 54px 22px, rgba(0,0,0,0.04) 0px 30px 18px, rgba(0,0,0,0.08) 0px 13px 13px, rgba(0,0,0,0.09) 0px 3px 7px`
 
-## 3. Typography Rules
+## Typography
 
 ### Font: `WF Visual Sans Variable`, fallback: `Arial`
 
@@ -64,7 +158,17 @@ Webflow's website is a visually rich, tool-forward platform that communicates "d
 | Micro Uppercase | 10px | 500–600 | 1.30 | 1px | uppercase |
 | Code: Inconsolata (companion monospace font)
 
-## 4. Component Stylings
+## Layout
+
+- Spacing: fractional scale (1px, 2.4px, 3.2px, 4px, 5.6px, 6px, 7.2px, 8px, 9.6px, 12px, 16px, 24px)
+- Radius: 2px, 4px, 8px, 50% — conservative, sharp
+- Breakpoints: 479px, 768px, 992px
+
+## Elevation & Depth
+
+
+
+## Components
 
 ### Buttons
 - Transparent: text `#080808`, translate(6px) on hover
@@ -74,22 +178,17 @@ Webflow's website is a visually rich, tool-forward platform that communicates "d
 ### Cards: `1px solid #d8d8d8`, 4px–8px radius
 ### Badges: Blue-tinted bg at 10% opacity, 4px radius
 
-## 5. Layout
-- Spacing: fractional scale (1px, 2.4px, 3.2px, 4px, 5.6px, 6px, 7.2px, 8px, 9.6px, 12px, 16px, 24px)
-- Radius: 2px, 4px, 8px, 50% — conservative, sharp
-- Breakpoints: 479px, 768px, 992px
+## Do's and Don'ts
 
-## 6. Depth: 5-layer cascading shadow system
-
-## 7. Do's and Don'ts
 - Do: Use WF Visual Sans Variable at 500–600. Blue (#146ef5) for CTAs. 4px radius. translate(6px) hover.
 - Don't: Round beyond 8px for functional elements. Use secondary colors on primary CTAs.
 
-## 8. Responsive: 479px, 768px, 992px
+## Agent Prompt Guide
 
-## 9. Agent Prompt Guide
 - Text: Near Black (`#080808`)
 - CTA: Webflow Blue (`#146ef5`)
 - Background: White (`#ffffff`)
 - Border: `#d8d8d8`
 - Secondary: Purple `#7a3dff`, Pink `#ed52cb`, Green `#00d722`
+
+## Responsive: 479px, 768px, 992px

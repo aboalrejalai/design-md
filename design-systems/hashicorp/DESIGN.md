@@ -1,9 +1,97 @@
+---
+"version": "alpha"
+"name": "HashiCorp"
+"description": "Bundled Open Design package for HashiCorp, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1060ff"
+  "primary-hover": "#2b89ff"
+  "on-primary": "#ffffff"
+  "canvas": "#15181e"
+  "surface": "#0d0e12"
+  "surface-warm": "#0d0e12"
+  "ink": "#efeff1"
+  "body": "#d5d7db"
+  "muted": "#b2b6bd"
+  "meta": "#656a76"
+  "border": "rgba(178, 182, 189, 0.4)"
+  "border-soft": "rgba(178, 182, 189, 0.15)"
+  "success": "#16a34a"
+  "warning": "#bb5a00"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"HashiCorp Sans\", \"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.17"
+  body:
+    "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.63"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "13px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "42px"
+  3xl:
+    "fontSize": "52px"
+  4xl:
+    "fontSize": "82px"
+rounded:
+  "sm": "5px"
+  "md": "8px"
+  "lg": "8px"
+  "pill": "5px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "56px"
+  "section-y-phone": "40px"
+  "container-max": "1150px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.body}"
+  badges:
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by HashiCorp
 
 > Category: Backend & Data
 > Infrastructure automation. Enterprise-clean, black and white.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 HashiCorp's website is enterprise infrastructure made tangible — a design system that must communicate the complexity of cloud infrastructure management while remaining approachable. The visual language splits between two modes: a clean white light-mode for informational sections and a dramatic dark-mode (`#15181e`, `#0d0e12`) for hero areas and product showcases, creating a day/night duality that mirrors the "build in light, deploy in dark" developer workflow.
 
@@ -24,7 +112,7 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - Tight border radius: 2px–8px, nothing pill-shaped or circular
 - System-ui fallback stack for secondary text
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand Primary
 - **Black** (`#000000`): Primary brand color, text on light surfaces, `--mds-color-hcp-brand`
@@ -63,7 +151,7 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - **Micro Shadow** (`rgba(97, 104, 117, 0.05) 0px 1px 1px, rgba(97, 104, 117, 0.05) 0px 2px 2px`): Default card/button elevation
 - **Focus Outline**: `3px solid var(--mds-color-focus-action-external)` — systematic focus ring
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Primary Brand**: `__hashicorpSans_96f0ca` (HashiCorp Sans), with fallback: `__hashicorpSans_Fallback_96f0ca`
@@ -94,7 +182,53 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - **Relaxed body**: Body text uses 1.50–1.69 line-height (notably generous), creating comfortable reading rhythm beneath the dense headings.
 - **Uppercase labels as wayfinding**: 13px uppercase with 1.3px letter-spacing serves as the systematic category/section marker — always HashiCorp Sans weight 600.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 2px, 3px, 4px, 6px, 7px, 8px, 9px, 11px, 12px, 16px, 20px, 24px, 32px, 40px, 48px
+
+### Grid & Container
+- Max content width: ~1150px (xl breakpoint)
+- Full-width dark hero sections with contained content
+- Card grids: 2–3 column layouts
+- Generous horizontal padding at desktop scale
+
+### Breakpoints
+| Name | Width | Key Changes |
+|------|-------|-------------|
+| Mobile Small | <375px | Tight single column |
+| Mobile | 375–480px | Standard mobile |
+| Small Tablet | 480–600px | Minor adjustments |
+| Tablet | 600–768px | 2-column grids begin |
+| Small Desktop | 768–992px | Full nav visible |
+| Desktop | 992–1120px | Standard layout |
+| Large Desktop | 1120–1440px | Max-width content |
+| Ultra-wide | >1440px | Centered, generous margins |
+
+### Whitespace Philosophy
+- **Enterprise breathing room**: Generous vertical spacing between sections (48px–80px+) communicates stability and seriousness.
+- **Dense headings, spacious body**: Tight line-height headings sit above relaxed body text, creating visual "weight at the top" of each section.
+- **Dark as canvas**: Dark hero sections use extra vertical padding to let 3D illustrations and gradients breathe.
+
+### Border Radius Scale
+- Minimal (2px): Links, small inline elements
+- Subtle (3px): Checkboxes, small inputs
+- Standard (4px): Secondary buttons
+- Comfortable (5px): Primary buttons, badges, inputs
+- Card (8px): Cards, containers, images
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Default surfaces, text blocks |
+| Whisper (Level 1) | `rgba(97, 104, 117, 0.05) 0px 1px 1px, rgba(97, 104, 117, 0.05) 0px 2px 2px` | Cards, buttons, interactive surfaces |
+| Focus (Level 2) | `3px solid var(--mds-color-focus-action-external)` outline | Focus rings — color-matched to context |
+
+**Shadow Philosophy**: HashiCorp uses arguably the subtlest shadow system in modern web design. The dual-layer shadows at 5% opacity are nearly invisible — they exist not to create visual depth but to signal interactivity. If you can see the shadow, it's too strong. This restraint communicates the enterprise value of stability — nothing floats, nothing is uncertain.
+
+## Components
 
 ### Buttons
 
@@ -168,53 +302,7 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - "Get started" and "Contact us" CTAs in header
 - Dark mode variant for hero sections
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 2px, 3px, 4px, 6px, 7px, 8px, 9px, 11px, 12px, 16px, 20px, 24px, 32px, 40px, 48px
-
-### Grid & Container
-- Max content width: ~1150px (xl breakpoint)
-- Full-width dark hero sections with contained content
-- Card grids: 2–3 column layouts
-- Generous horizontal padding at desktop scale
-
-### Breakpoints
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| Mobile Small | <375px | Tight single column |
-| Mobile | 375–480px | Standard mobile |
-| Small Tablet | 480–600px | Minor adjustments |
-| Tablet | 600–768px | 2-column grids begin |
-| Small Desktop | 768–992px | Full nav visible |
-| Desktop | 992–1120px | Standard layout |
-| Large Desktop | 1120–1440px | Max-width content |
-| Ultra-wide | >1440px | Centered, generous margins |
-
-### Whitespace Philosophy
-- **Enterprise breathing room**: Generous vertical spacing between sections (48px–80px+) communicates stability and seriousness.
-- **Dense headings, spacious body**: Tight line-height headings sit above relaxed body text, creating visual "weight at the top" of each section.
-- **Dark as canvas**: Dark hero sections use extra vertical padding to let 3D illustrations and gradients breathe.
-
-### Border Radius Scale
-- Minimal (2px): Links, small inline elements
-- Subtle (3px): Checkboxes, small inputs
-- Standard (4px): Secondary buttons
-- Comfortable (5px): Primary buttons, badges, inputs
-- Card (8px): Cards, containers, images
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Default surfaces, text blocks |
-| Whisper (Level 1) | `rgba(97, 104, 117, 0.05) 0px 1px 1px, rgba(97, 104, 117, 0.05) 0px 2px 2px` | Cards, buttons, interactive surfaces |
-| Focus (Level 2) | `3px solid var(--mds-color-focus-action-external)` outline | Focus rings — color-matched to context |
-
-**Shadow Philosophy**: HashiCorp uses arguably the subtlest shadow system in modern web design. The dual-layer shadows at 5% opacity are nearly invisible — they exist not to create visual depth but to signal interactivity. If you can see the shadow, it's too strong. This restraint communicates the enterprise value of stability — nothing floats, nothing is uncertain.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use HashiCorp Sans for headings and brand text, system-ui for body and UI text
@@ -236,7 +324,7 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - Don't use pure black (`#000000`) for dark backgrounds — use `#15181e` or `#0d0e12`
 - Don't forget the asymmetric button padding — 9px 9px 9px 15px is intentional
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -253,7 +341,7 @@ The component system uses the `mds` (Markdown Design System) prefix, indicating 
 - Dark sections maintain full-width but compress padding
 - Buttons: inline → full-width stacked on mobile
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Light bg: `#ffffff`, `#f1f2f3`

@@ -1,9 +1,105 @@
+---
+"version": "alpha"
+"name": "Intercom"
+"description": "Bundled Open Design package for Intercom, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff5600"
+  "on-primary": "#ffffff"
+  "canvas": "#faf9f6"
+  "surface": "#ffffff"
+  "surface-warm": "#faf9f6"
+  "ink": "#111111"
+  "body": "#111111"
+  "muted": "#7b7b78"
+  "meta": "#9c9fa5"
+  "border": "#dedbd6"
+  "border-soft": "#ebe9e4"
+  "success": "#00da00"
+  "warning": "#eab308"
+  "danger": "#c41c1c"
+typography:
+  display:
+    "fontFamily": "\"Saans\", \"Saans Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Saans\", \"Saans Fallback\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"SaansMono\", \"SaansMono Fallback\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "54px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "4px"
+  "md": "6px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.2}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Intercom
 
 > Category: Productivity & SaaS
 > Customer messaging. Friendly blue palette, conversational UI patterns.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Intercom's website is a warm, confident customer service platform that communicates "AI-first helpdesk" through a clean, editorial design language. The page operates on a warm off-white canvas (`#faf9f6`) with off-black (`#111111`) text, creating an intimate, magazine-like reading experience. The signature Fin Orange (`#ff5600`) — named after Intercom's AI agent — serves as the singular vibrant accent against the warm neutral palette.
 
@@ -21,7 +117,7 @@ What distinguishes Intercom is its remarkably sharp geometry — 4px border-radi
 - Rich multi-color report palette (blue, green, red, pink, lime, orange)
 - oklab color values for sophisticated opacity management
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Off Black** (`#111111`): `--color-off-black`, primary text, button backgrounds
@@ -47,7 +143,7 @@ What distinguishes Intercom is its remarkably sharp geometry — 4px border-radi
 - **Oat Border** (`#dedbd6`): Warm border color
 - **Warm Sand** (`#d3cec6`): Light warm neutral
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Primary**: `Saans`, fallbacks: `Saans Fallback, ui-sans-serif, system-ui`
@@ -73,7 +169,16 @@ What distinguishes Intercom is its remarkably sharp geometry — 4px border-radi
 | Serif Body | Serrif | 16px | 300 | 1.40 | -0.16px |
 | Mono Label | SaansMono | 12px | 400–500 | 1.00–1.30 | 0.6px–1.2px uppercase |
 
-## 4. Component Stylings
+## Layout
+
+### Spacing: 8px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 60px, 64px, 80px, 96px
+### Border Radius: 4px (buttons), 6px (nav items), 8px (cards, containers)
+
+## Elevation & Depth
+
+Minimal shadows. Depth through warm border colors and surface tints.
+
+## Components
 
 ### Buttons
 
@@ -110,15 +215,7 @@ What distinguishes Intercom is its remarkably sharp geometry — 4px border-radi
 - Small 4px–6px radius buttons
 - Orange Fin accent for AI features
 
-## 5. Layout Principles
-
-### Spacing: 8px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 60px, 64px, 80px, 96px
-### Border Radius: 4px (buttons), 6px (nav items), 8px (cards, containers)
-
-## 6. Depth & Elevation
-Minimal shadows. Depth through warm border colors and surface tints.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Saans with 1.00 line-height and negative tracking on all headings
@@ -133,10 +230,11 @@ Minimal shadows. Depth through warm border colors and surface tints.
 - Don't use cool gray borders — always warm oat tones
 - Don't skip the negative tracking on headings
 
-## 8. Responsive Behavior
+## Responsive Behavior
+
 Breakpoints: 425px, 530px, 600px, 640px, 768px, 896px
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Text: Off Black (`#111111`)

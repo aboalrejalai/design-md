@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Lamborghini"
+"description": "Bundled Open Design package for Lamborghini, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#d4af37"
+  "on-primary": "#050505"
+  "canvas": "#050505"
+  "surface": "#141414"
+  "surface-warm": "#211b0b"
+  "ink": "#f8f4e6"
+  "body": "#d8ceb0"
+  "muted": "#9b927d"
+  "meta": "#d4af37"
+  "border": "#3a321d"
+  "border-soft": "#282315"
+  "success": "#39a852"
+  "warning": "#f7c948"
+  "danger": "#e63946"
+typography:
+  display:
+    "fontFamily": "\"Lamborghini\", \"Eurostile\", Arial, sans-serif"
+    "lineHeight": "0.96"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"Inter\", Arial, sans-serif"
+    "lineHeight": "1.48"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "42px"
+  3xl:
+    "fontSize": "64px"
+  4xl:
+    "fontSize": "90px"
+rounded:
+  "sm": "2px"
+  "md": "6px"
+  "lg": "10px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "112px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "56px"
+  "container-max": "1240px"
+  "container-gutter-desktop": "40px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Lamborghini
 
 > Category: Automotive
 > Supercar brand. True black surfaces, gold accents, dramatic uppercase typography.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Lamborghini's website is a cathedral of darkness — a digital stage where jet-black surfaces stretch infinitely and every element emerges from the void like a machine under a spotlight. The page is almost entirely black. Not dark gray, not near-black — true, uncompromising black (`#000000`) that saturates the viewport and refuses to yield. Into this abyss, white type and Lamborghini Gold (`#FFC000`) are deployed with surgical precision, creating a visual language that feels like walking through a nighttime motorsport event where every surface absorbs light except the things that matter.
 
@@ -22,7 +115,7 @@ Typography is the voice of this darkness. LamboType — a custom Neo-Grotesk typ
 - Bootstrap grid system + Element Plus/UI 68 components underneath
 - Transparent ghost buttons with white borders at 50% opacity as the secondary CTA pattern
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Lamborghini Gold** (`#FFC000`): The signature accent color — a warm, saturated amber-gold (rgb 255, 192, 0) used exclusively for primary action buttons ("Discover More", "Tickets", "Start Configuration"). The only chromatic color in the entire interface, it ignites against the black canvas like a headlight cutting through night
@@ -62,7 +155,7 @@ Typography is the voice of this darkness. LamboType — a custom Neo-Grotesk typ
 - Video heroes use natural atmospheric gradients from the content itself
 - Top-of-page gradient: subtle dark-to-darker fade at the edges of full-bleed imagery
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display & UI**: `LamboType`, Roboto, Helvetica Neue, Arial — custom Neo-Grotesk typeface by Character Type for Lamborghini's 2024 brand refresh. Available in widths from Normal to Ultracompressed and weights from Light (300) to Black. Features 12° angled terminals inspired by aerodynamic car geometry, hexagonal construction logic, and support for 200+ languages including Latin, Cyrillic, and Greek
@@ -97,7 +190,53 @@ Typography is the voice of this darkness. LamboType — a custom Neo-Grotesk typ
 - **Positive tracking on micro text**: +0.225px at 10px ensures legibility at the smallest sizes
 - **Single typeface discipline**: LamboType handles everything — the 12° angled terminals and hexagonal geometry provide visual coherence across all sizes
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Full scale**: 2px, 4px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 32px, 40px, 48px, 56px
+- **Button padding**: 16px (ghost), 24px (gold accent)
+- **Section padding**: 48–56px vertical, 40px horizontal
+- **Small spacing**: 2–5px for fine adjustments (badge padding, border spacing)
+
+### Grid & Container
+- **Framework**: Bootstrap grid system (container + row + col)
+- **Max width**: 1440px (largest breakpoint)
+- **Columns**: Standard 12-column Bootstrap grid
+- **Full-bleed**: Hero sections break out of grid to fill viewport edge-to-edge
+- **Content areas**: Centered within 1200px max-width containers
+
+### Whitespace Philosophy
+Lamborghini uses darkness as whitespace. The generous black expanses between content blocks serve the same function as white space in a light design — creating breathing room that elevates each element to the status of exhibit. A model name floating in the middle of a black viewport has the same visual weight as a gallery piece on a white wall. The absence of color IS the design.
+
+### Border Radius Scale
+| Value | Context |
+|-------|---------|
+| 0px | Default for everything — buttons, cards, containers, images |
+| 1px | Subtle span elements |
+| 2px | Badges, close buttons, cookie elements — barely perceptible |
+| 20px | Toggle switches only — the sole rounded element |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Abyss) | `#000000` flat | Page background, deepest layer |
+| Level 1 (Surface) | `#181818` or `#202020` | Cards, content panels, elevated sections |
+| Level 2 (Overlay) | `rgba(0,0,0,0.7)` | Modal backdrops, video dimming |
+| Level 3 (Fog) | `rgba(0,0,0,0.5)` | Lighter overlays, hover states |
+| Level 4 (Mist) | `rgba(0,0,0,0.25)` | Subtle depth hints |
+
+### Shadow Philosophy
+Lamborghini achieves depth through surface color layering rather than shadows. On a black canvas, traditional drop shadows are invisible — instead, the system creates elevation by shifting from absolute black to progressively lighter dark grays: `#000000` → `#181818` → `#202020` → `#494949`. This "darkness gradient" approach means that elevated elements are literally lighter than their surroundings, inverting the traditional shadow model.
+
+### Decorative Depth
+- Full-bleed video provides atmospheric depth through cinematic lighting
+- The hexagonal pause button floats with a thin white outline stroke
+- Progress bars at hero section bottoms create a subtle horizon line
+- No gradients, glows, or blur effects on UI elements — the photography provides all visual richness
+
+## Components
 
 ### Buttons
 All buttons use **zero border-radius** — sharp, angular rectangles that echo the aggressive lines of Lamborghini vehicles.
@@ -158,53 +297,7 @@ All buttons use **zero border-radius** — sharp, angular rectangles that echo t
 - **Progress Bar**: Thin white line at bottom of hero sections indicating video/slide progress
 - **Badge/Tag**: bg `#969696`, text white, padding 8px, fontSize 10px, borderRadius 2px — tiny metallic pills
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Full scale**: 2px, 4px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 32px, 40px, 48px, 56px
-- **Button padding**: 16px (ghost), 24px (gold accent)
-- **Section padding**: 48–56px vertical, 40px horizontal
-- **Small spacing**: 2–5px for fine adjustments (badge padding, border spacing)
-
-### Grid & Container
-- **Framework**: Bootstrap grid system (container + row + col)
-- **Max width**: 1440px (largest breakpoint)
-- **Columns**: Standard 12-column Bootstrap grid
-- **Full-bleed**: Hero sections break out of grid to fill viewport edge-to-edge
-- **Content areas**: Centered within 1200px max-width containers
-
-### Whitespace Philosophy
-Lamborghini uses darkness as whitespace. The generous black expanses between content blocks serve the same function as white space in a light design — creating breathing room that elevates each element to the status of exhibit. A model name floating in the middle of a black viewport has the same visual weight as a gallery piece on a white wall. The absence of color IS the design.
-
-### Border Radius Scale
-| Value | Context |
-|-------|---------|
-| 0px | Default for everything — buttons, cards, containers, images |
-| 1px | Subtle span elements |
-| 2px | Badges, close buttons, cookie elements — barely perceptible |
-| 20px | Toggle switches only — the sole rounded element |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Abyss) | `#000000` flat | Page background, deepest layer |
-| Level 1 (Surface) | `#181818` or `#202020` | Cards, content panels, elevated sections |
-| Level 2 (Overlay) | `rgba(0,0,0,0.7)` | Modal backdrops, video dimming |
-| Level 3 (Fog) | `rgba(0,0,0,0.5)` | Lighter overlays, hover states |
-| Level 4 (Mist) | `rgba(0,0,0,0.25)` | Subtle depth hints |
-
-### Shadow Philosophy
-Lamborghini achieves depth through surface color layering rather than shadows. On a black canvas, traditional drop shadows are invisible — instead, the system creates elevation by shifting from absolute black to progressively lighter dark grays: `#000000` → `#181818` → `#202020` → `#494949`. This "darkness gradient" approach means that elevated elements are literally lighter than their surroundings, inverting the traditional shadow model.
-
-### Decorative Depth
-- Full-bleed video provides atmospheric depth through cinematic lighting
-- The hexagonal pause button floats with a thin white outline stroke
-- Progress bars at hero section bottoms create a subtle horizon line
-- No gradients, glows, or blur effects on UI elements — the photography provides all visual richness
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use absolute black (`#000000`) as the primary background — never dark gray as a substitute
@@ -230,7 +323,7 @@ Lamborghini achieves depth through surface color layering rather than shadows. O
 - Create busy layouts with many small elements — Lamborghini's design is about singular, bold statements
 - Apply shadows to elements — on a black canvas, shadows are meaningless; use surface color shifts instead
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -263,7 +356,7 @@ Lamborghini achieves depth through surface color layering rather than shadows. O
 - Event photography crops to viewport width on narrow screens
 - Background images darken at edges to maintain text contrast on all viewports
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: "Lamborghini Gold (#FFC000)"

@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Mastercard"
+"description": "Bundled Open Design package for Mastercard, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#cf4500"
+  "on-primary": "#ffffff"
+  "canvas": "#f3f0ee"
+  "surface": "#fcfbfa"
+  "surface-warm": "#f7e8de"
+  "ink": "#141413"
+  "body": "#262627"
+  "muted": "#696969"
+  "meta": "#9a3a0a"
+  "border": "#d1cdc7"
+  "border-soft": "#e7e1dc"
+  "success": "#2e7d32"
+  "warning": "#f79e1b"
+  "danger": "#eb001b"
+typography:
+  display:
+    "fontFamily": "\"MarkForMC\", \"Sofia Sans\", Arial, sans-serif"
+    "lineHeight": "1"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"MarkForMC\", \"Sofia Sans\", Arial, sans-serif"
+    "lineHeight": "1.4"
+  mono:
+    "fontFamily": "\"MarkOffcForMC\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "20px"
+  "md": "40px"
+  "lg": "64px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "104px"
+  "section-y-tablet": "72px"
+  "section-y-phone": "52px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "20px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Mastercard
 
 > Category: Fintech & Crypto
 > Global payments network. Warm cream canvas, orbital pill shapes, editorial warmth.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Mastercard's experience reads like a warm, editorial magazine built from soft stone and signal orange. The canvas is a muted putty-cream (`#F3F0EE`) — not white, not gray, but a color that feels like the paper of a premium annual report. On top of that canvas, everything that matters is shaped like a stadium, a pill, or a perfect circle. The dominant visual gesture is the **oversized radius**: heroes carry 40-point corners, cards go fully pill-shaped, service images are cropped into circular orbits, and buttons either complete the pill or fit snugly at 20 points. There are almost no sharp corners anywhere on the page.
 
@@ -21,7 +114,7 @@ Typography is rendered entirely in **MarkForMC**, Mastercard's proprietary geome
 - Eyebrow labels with a tiny accent dot + uppercase bold tracking — used as the section-category signal
 - Dark warm-black footer (`#141413`) with four-column link layout and large conversational headline
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Mastercard Red** (`#EB001B`): The left circle of the Mastercard mark — used only in the brand logo, never as a UI color.
@@ -55,7 +148,7 @@ Mastercard uses no programmatic gradients in the core UI. The visual impression 
 - **Circular image portraits** where a warm-orange photo subject (a card, a sunflower, a beverage) fades to the cream canvas at its edge
 - **Deep card shadows** on elevated content (`rgba(0,0,0,0.08) 0px 24px 48px`) that create a soft halo beneath pill-shaped media
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `MarkForMC` — Mastercard's proprietary geometric sans. Every headline, body paragraph, button, nav link, and footer link on the page.
@@ -90,7 +183,58 @@ MarkForMC is proprietary and licensed. When rebuilding a matching aesthetic with
 - **Neue Haas Grotesk** or **Geist** can approximate the geometric feel for commercial projects.
 - Whichever substitute is used, preserve the **-2% letter-spacing on headlines** and the **450 body weight** (use `font-weight: 450` with variable fonts, or substitute `font-weight: 400` and tighten the letter-spacing by ~-0.5% to compensate).
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px (confirmed by dembrandt extraction and computed styles)
+- **Scale**: 8 / 16 / 24 / 32 / 48 / 64 / 96 / 128 (powers of 8)
+- **Section vertical padding**: ~96–128px between major sections on desktop; ~48–64px on mobile
+- **Card internal padding**: 32–40px on desktop, ~24px on mobile
+- **Nav top margin**: ~24px from viewport top (the pill floats, doesn't touch)
+
+### Grid & Container
+- **Max content width**: ~1200–1280px centered, with ~48–100px horizontal gutter
+- **Column pattern**: 12-column implied, but practical layouts use 2-up asymmetric (large headline left, supporting text right), 1-up full-bleed (hero, video), or staggered single-portrait placement (service cards sit in varying grid positions creating the "constellation" feel)
+- **Footer grid**: 4 equal columns on desktop, collapses to single column accordion on mobile
+
+### Whitespace Philosophy
+Mastercard treats whitespace as structure, not absence. A typical service section has:
+- A ghost headline occupying the top ~40% of the section (mostly empty cream)
+- A single circular portrait positioned ~60% down, asymmetric to left or right
+- ~300–500px of blank canvas between the portrait and the next section
+This deliberate emptiness tells the eye "slow down, read one thing at a time" — the opposite of dense dashboard UIs.
+
+### Border Radius Scale
+
+| Radius | Use |
+|--------|-----|
+| 3–6px | Tiny decorative elements, cookie banner micro-chips |
+| 20px | Primary and secondary body CTAs (the signature button radius) |
+| 24px | Consent/orange pill buttons, modal inner chips |
+| 40px | Hero media frames, large section container corners, H2 pill labels |
+| 50% | Circular portraits, icon-only buttons, satellite CTAs |
+| 99px / 999px / 1000px | Full pill shapes — navigation, carousel cards, footer country selector, primary inline chips |
+
+The scale is unusual: most systems use 4/8/12/16. Mastercard skips those and commits to **either small (≤6), medium-large (20–40), or full-pill (99+)**. The middle ground of 8–12 is absent, which is why the UI feels either "precise and utility" or "soft and editorial" with no in-between.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| 0 | No shadow | The default — 95% of surfaces sit directly on cream canvas |
+| 1 | `rgba(0, 0, 0, 0.04) 0px 4px 24px 0px` | Floating nav pill — barely-there lift |
+| 2 | `rgba(0, 0, 0, 0.08) 0px 24px 48px 0px` | Hero media frames, elevated cards — a soft large-radius halo rather than a hard drop |
+| 3 | `rgba(0, 0, 0, 0.25) 0px 70px 110px 0px` | Rare; dramatic elevation on a feature tile |
+
+### Shadow Philosophy
+Mastercard uses shadows as **atmospheric cushioning**, not directional light. The Level 2 shadow has a 48px spread and only 8% opacity — it barely exists as dark pixels but creates a "the card is breathing above the canvas" feel. There are almost no hard-edged, tight shadows anywhere in the system. Border lines are preferred over shadows for functional delineation (form inputs, footer divider).
+
+### Decorative Depth
+- **Orbital arcs** (Light Signal Orange, ~1px): trace connective paths across sections
+- **Ghost watermark headlines**: cream-on-cream text gives sections an almost-pressed-paper quality
+- **Circle-image fade**: warm-toned photography at the edge of circular portraits dissolves into the canvas, implying soft atmospheric depth
+
+## Components
 
 ### Buttons
 
@@ -230,58 +374,7 @@ A signature motif: thin (~1–1.5px) single-weight curved lines in Light Signal 
 - External link marker: a small upper-right arrow (`↗`) after link text
 - Bottom row (below a 1px white-at-opacity divider): copyright + privacy small-print + country-language pill dropdown + four social icons (LinkedIn, Facebook, X, YouTube)
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px (confirmed by dembrandt extraction and computed styles)
-- **Scale**: 8 / 16 / 24 / 32 / 48 / 64 / 96 / 128 (powers of 8)
-- **Section vertical padding**: ~96–128px between major sections on desktop; ~48–64px on mobile
-- **Card internal padding**: 32–40px on desktop, ~24px on mobile
-- **Nav top margin**: ~24px from viewport top (the pill floats, doesn't touch)
-
-### Grid & Container
-- **Max content width**: ~1200–1280px centered, with ~48–100px horizontal gutter
-- **Column pattern**: 12-column implied, but practical layouts use 2-up asymmetric (large headline left, supporting text right), 1-up full-bleed (hero, video), or staggered single-portrait placement (service cards sit in varying grid positions creating the "constellation" feel)
-- **Footer grid**: 4 equal columns on desktop, collapses to single column accordion on mobile
-
-### Whitespace Philosophy
-Mastercard treats whitespace as structure, not absence. A typical service section has:
-- A ghost headline occupying the top ~40% of the section (mostly empty cream)
-- A single circular portrait positioned ~60% down, asymmetric to left or right
-- ~300–500px of blank canvas between the portrait and the next section
-This deliberate emptiness tells the eye "slow down, read one thing at a time" — the opposite of dense dashboard UIs.
-
-### Border Radius Scale
-
-| Radius | Use |
-|--------|-----|
-| 3–6px | Tiny decorative elements, cookie banner micro-chips |
-| 20px | Primary and secondary body CTAs (the signature button radius) |
-| 24px | Consent/orange pill buttons, modal inner chips |
-| 40px | Hero media frames, large section container corners, H2 pill labels |
-| 50% | Circular portraits, icon-only buttons, satellite CTAs |
-| 99px / 999px / 1000px | Full pill shapes — navigation, carousel cards, footer country selector, primary inline chips |
-
-The scale is unusual: most systems use 4/8/12/16. Mastercard skips those and commits to **either small (≤6), medium-large (20–40), or full-pill (99+)**. The middle ground of 8–12 is absent, which is why the UI feels either "precise and utility" or "soft and editorial" with no in-between.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| 0 | No shadow | The default — 95% of surfaces sit directly on cream canvas |
-| 1 | `rgba(0, 0, 0, 0.04) 0px 4px 24px 0px` | Floating nav pill — barely-there lift |
-| 2 | `rgba(0, 0, 0, 0.08) 0px 24px 48px 0px` | Hero media frames, elevated cards — a soft large-radius halo rather than a hard drop |
-| 3 | `rgba(0, 0, 0, 0.25) 0px 70px 110px 0px` | Rare; dramatic elevation on a feature tile |
-
-### Shadow Philosophy
-Mastercard uses shadows as **atmospheric cushioning**, not directional light. The Level 2 shadow has a 48px spread and only 8% opacity — it barely exists as dark pixels but creates a "the card is breathing above the canvas" feel. There are almost no hard-edged, tight shadows anywhere in the system. Border lines are preferred over shadows for functional delineation (form inputs, footer divider).
-
-### Decorative Depth
-- **Orbital arcs** (Light Signal Orange, ~1px): trace connective paths across sections
-- **Ghost watermark headlines**: cream-on-cream text gives sections an almost-pressed-paper quality
-- **Circle-image fade**: warm-toned photography at the edge of circular portraits dissolves into the canvas, implying soft atmospheric depth
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Canvas Cream (`#F3F0EE`) as the default body background — never pure white
@@ -306,7 +399,7 @@ Mastercard uses shadows as **atmospheric cushioning**, not directional light. Th
 - Don't omit the tiny accent dot before eyebrow labels — it's the identity
 - Don't place circular portraits on a grid — their magic comes from asymmetric placement
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -330,7 +423,7 @@ All interactive elements comfortably exceed 44×44px. The satellite CTA (circle 
 ### Image Behavior
 Circular portraits scale proportionally (maintaining the perfect circle at every size). Hero video frames maintain their 40px radius at every breakpoint, but the frame itself shrinks with the viewport. Lazy loading is standard with a cream-tinted blur-up placeholder, preserving the palette during load.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: "Ink Black (`#141413`) — the warm near-black used for primary pill buttons and footer"

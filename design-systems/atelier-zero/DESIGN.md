@@ -1,3 +1,93 @@
+---
+"version": "alpha"
+"name": "Atelier Zero"
+"description": "Bundled Open Design package for Atelier Zero, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#111111"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f7f7f7"
+  "surface-warm": "#eeeeee"
+  "ink": "#111111"
+  "body": "#3a3a3a"
+  "muted": "#707070"
+  "meta": "#111111"
+  "border": "#d9d9d9"
+  "border-soft": "#eeeeee"
+  "success": "#168a46"
+  "warning": "#b7791f"
+  "danger": "#c53030"
+typography:
+  display:
+    "fontFamily": "\"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.52"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "54px"
+  4xl:
+    "fontSize": "76px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Atelier Zero
 
 > Category: Editorial · Studio
@@ -7,7 +97,7 @@
 > Inspired by the production values of high-end print magazines (Monocle,
 > Apartamento, IDEA) translated into a working website.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 A small, high-craft studio's annual report rendered as a webpage. The
 canvas is warm handmade paper. Every surface earns its lines. Type does
@@ -41,7 +131,7 @@ X", consult this map before changing tokens:
   inside Inter Tight 800), hairline rules threading through method
   steps, the closing mega-word footer.
 
-## 2. Color
+## Colors
 
 All values are tokens. Do not invent new hex.
 
@@ -89,7 +179,7 @@ multiply-blend SVG turbulence at ~5–7% opacity, plus two soft
 radial gradients in `rgba(106, 92, 56, 0.06)` to simulate
 hand-pressed paper warmth.
 
-## 3. Typography
+## Typography
 
 ### Families
 
@@ -130,7 +220,7 @@ sans bold                serif italic         coral dot
 - **Roman numerals:** Playfair Italic 14px, coral, `I.` `II.` `III.` etc.
   at the head of every section rule.
 
-## 4. Spacing & Grid
+## Layout
 
 - **Container:** max-width `1360px`, side padding `64px` desktop,
   `44px` at ≤1280, `32px` at ≤1080, `24px` at ≤880.
@@ -144,7 +234,7 @@ sans bold                serif italic         coral dot
   right edges of the viewport, each containing a single rotated
   text label in 10px Inter Tight 600 letter-spaced 0.42em.
 
-## 5. Layout & Composition
+### Layout & Composition
 
 - **Top metadata strip** is mandatory: a single horizontal bar above
   the nav containing the volume/issue, a "Filed under …" badge, and a
@@ -162,7 +252,7 @@ sans bold                serif italic         coral dot
   hairline running through the step heads at the same Y, with
   `→` separators between titles.
 
-## 6. Components
+## Components
 
 ### Buttons
 
@@ -208,28 +298,7 @@ Every section opens with a `.sec-rule`: top hairline 1px, then a
 flex row containing `[Roman]`, a centered metadata cluster, and
 the page-of-008 counter on the right.
 
-## 7. Motion & Interaction
-
-- **Pulse dot:** 6×6 coral circle at top metadata bar and footer,
-  `pulse 2.4s ease-in-out infinite` between 1.0 and 0.35 opacity.
-- **Card hover:** translateY(-3px), arrow mark fills coral.
-- **Button hover:** translateY(-1px), darker coral fill.
-- **Pill hover:** ink-at-4% wash.
-- **Transitions:** `0.18s ease` everywhere; never longer than `0.25s`.
-- **No parallax, no scroll-jacking, no auto-rotators.** Editorial
-  pages do not animate themselves at the user.
-
-## 8. Voice & Brand
-
-- Headlines mix declarative and italicized emotional words.
-- Body copy is plain-spoken and specific. Quote real numbers
-  (12 / 31 / 72), real coordinates (52.5200° N · 13.4050° E),
-  real commands (`pnpm tools-dev`).
-- Microcopy uses publication metaphors: "Filed under", "Plate Nº",
-  "Vol. 01 / Issue Nº 26", "FIN.", "MMXXVI", "Edited by".
-- Latin numerals — Roman for sections, Arabic for stats.
-
-## 9. Anti-patterns
+## Do's and Don'ts
 
 - ❌ No drop shadows above 30px blur. No gradients on text.
 - ❌ No emoji in product copy. ★ is allowed once in the nav CTA.
@@ -260,7 +329,7 @@ every collage prompt and rejected on visual review:
 - ❌ No DSLR-style shallow depth-of-field bokeh on the collage
   fragments — every plane stays in focus.
 
-## 10. Responsive Behavior
+## Responsive Behavior
 
 - **Desktop ≥ 1280px:** full container, two side rails visible,
   metadata strip shows all three columns.
@@ -273,27 +342,7 @@ every collage prompt and rejected on visual review:
 - **Phone < 560px:** all multi-column grids become 1 col;
   section padding drops to 80px.
 
-## 11. Imagery
-
-This system is collage-first. Every page-level image must be
-generated to match these constraints:
-
-- **Background:** warm ivory paper with subtle grain, faint vertical
-  folds, drafting registration marks.
-- **Subject:** classical plaster head fragments, brutalist concrete
-  blocks, archways, stairs, tree, sky cutouts, one small human figure.
-- **Color overlay:** restrained — cream, stone, charcoal, washed
-  coral, occasional mustard, pale-blue inside small sky cutouts.
-- **Annotations baked in:** thin hairline circles, crosshairs,
-  dotted matrices, numbered tags. Never typography that conflicts
-  with on-page copy.
-
-See `skills/open-design-landing/assets/imagegen-prompts.md` for the
-working prompt pack and per-section variants. All renders should be
-at 16:9 (heroes) or 1:1 (cards / about / cta), saved as PNG, ≥1024px
-on the long edge.
-
-## 12. Agent Prompt Guide
+## Agent Prompt Guide
 
 When generating against this design system:
 
@@ -314,3 +363,44 @@ When generating against this design system:
 - If asked for "more minimal," remove decorative side notes and
   reduce annotations to one per image — never remove the Roman
   rules or the metadata strip.
+
+## Motion & Interaction
+
+- **Pulse dot:** 6×6 coral circle at top metadata bar and footer,
+  `pulse 2.4s ease-in-out infinite` between 1.0 and 0.35 opacity.
+- **Card hover:** translateY(-3px), arrow mark fills coral.
+- **Button hover:** translateY(-1px), darker coral fill.
+- **Pill hover:** ink-at-4% wash.
+- **Transitions:** `0.18s ease` everywhere; never longer than `0.25s`.
+- **No parallax, no scroll-jacking, no auto-rotators.** Editorial
+  pages do not animate themselves at the user.
+
+## Voice & Brand
+
+- Headlines mix declarative and italicized emotional words.
+- Body copy is plain-spoken and specific. Quote real numbers
+  (12 / 31 / 72), real coordinates (52.5200° N · 13.4050° E),
+  real commands (`pnpm tools-dev`).
+- Microcopy uses publication metaphors: "Filed under", "Plate Nº",
+  "Vol. 01 / Issue Nº 26", "FIN.", "MMXXVI", "Edited by".
+- Latin numerals — Roman for sections, Arabic for stats.
+
+## Imagery
+
+This system is collage-first. Every page-level image must be
+generated to match these constraints:
+
+- **Background:** warm ivory paper with subtle grain, faint vertical
+  folds, drafting registration marks.
+- **Subject:** classical plaster head fragments, brutalist concrete
+  blocks, archways, stairs, tree, sky cutouts, one small human figure.
+- **Color overlay:** restrained — cream, stone, charcoal, washed
+  coral, occasional mustard, pale-blue inside small sky cutouts.
+- **Annotations baked in:** thin hairline circles, crosshairs,
+  dotted matrices, numbered tags. Never typography that conflicts
+  with on-page copy.
+
+See `skills/open-design-landing/assets/imagegen-prompts.md` for the
+working prompt pack and per-section variants. All renders should be
+at 16:9 (heroes) or 1:1 (cards / about / cta), saved as PNG, ≥1024px
+on the long edge.

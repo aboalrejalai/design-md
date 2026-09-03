@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "WIRED"
+"description": "Bundled Open Design package for WIRED, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#e10600"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f2f2f2"
+  "surface-warm": "#fff0f0"
+  "ink": "#000000"
+  "body": "#333333"
+  "muted": "#666666"
+  "meta": "#e10600"
+  "border": "#d0d0d0"
+  "border-soft": "#e8e8e8"
+  "success": "#0f8a3b"
+  "warning": "#f5a400"
+  "danger": "#c40000"
+typography:
+  display:
+    "fontFamily": "\"Druk Wide\", \"Arial Black\", Impact, sans-serif"
+    "lineHeight": "0.92"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Exchange\", Georgia, serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "17px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "28px"
+  2xl:
+    "fontSize": "44px"
+  3xl:
+    "fontSize": "68px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "0px"
+  "md": "0px"
+  "lg": "0px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "88px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "44px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "34px"
+  "container-gutter-tablet": "26px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by WIRED
 
 > Category: Media & Consumer
 > Tech magazine. Paper-white broadsheet density, custom serif display, mono kickers, ink-blue links.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 WIRED's homepage feels like a printed broadsheet that someone has plugged into a wall socket. The grid is dense, the rules are thin, the type is loud, and almost every surface is paper-white or pure black with no rounded corners and no decoration that doesn't earn its place. Image rectangles butt directly against headlines, hairline dividers separate stories the way pica rules separate columns in a real magazine, and the only colors that aren't grayscale come from the photography itself. There is no "card with shadow" anywhere — the entire layout is held together by typographic weight and the discipline of rules and whitespace, the same way a Condé Nast print page would be assembled in a paste-up room.
 
@@ -20,7 +113,7 @@ There is exactly one accent color that matters: a saturated link blue (`#057dbc`
 - Single ink-blue accent for links; everything else lives in pure grayscale
 - Dark theme = the *footer*, not the page; the page itself is committed paper-white
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary (Editorial Ink)
 - **WIRED Black** (`#000000`): Pure ink for ribbons, section dividers, button borders, headline rules — the strongest hand on the page.
@@ -49,7 +142,7 @@ There is exactly one accent color that matters: a saturated link blue (`#057dbc`
 ### Gradient System
 None. WIRED uses zero gradients. The closest thing to a gradient on the page is the tonal range inside a photograph — gradients live *in the imagery*, not in the chrome.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **WiredDisplay** (custom serif, fallback `helvetica`) — Display headlines and feature titles.
@@ -92,7 +185,47 @@ None. WIRED uses zero gradients. The closest thing to a gradient on the page is 
 ### Note on Font Substitutes
 The line-height values in the hierarchy table (especially the 0.93 on the 64px hero) assume the **proprietary WiredDisplay and BreveText faces**, which have tight metrics with short ascenders/descenders. If you substitute these with wide-metric open-source fonts like **Playfair Display** or **Libre Caslon**, loosen display line-heights by approximately **+0.10 to +0.12** to prevent ascender/descender collisions on wrapping lines (e.g., 0.93 → 1.05, 1.08 → 1.18). Apercu substitutes (Inter, Work Sans, Manrope) work at the token values without adjustment. BreveText body substitutes (Lora, Source Serif 4) also work without adjustment because body leading is already generous.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px.
+- **Scale**: 1px (hairline), 4px, 8px, 12px, 14.11px, 15px, 16px, 24px, 25.46px, 29.66px, 32px, 40px, 48px, 64px.
+- **Section padding**: typically 32–48px vertical between major editorial blocks.
+- **Card padding**: there are no cards; the gutter between story tiles is 24–32px horizontally and 16–24px vertically.
+- **Inline spacing**: kickers sit ~4–8px above headlines; decks sit ~8–12px below headlines; bylines/timestamps another 8–12px below the deck.
+
+### Grid & Container
+- **Max width**: ~1280–1600px on desktop (the dembrandt sweep detected breakpoints up to 1600px), centered with generous outer margins.
+- **Column patterns**: 12-column grid that resolves into 2/3/4 column story arrangements depending on module — feature blocks often run a "1 large + 2 small" pattern with hairline rules between each.
+- **Column gutters**: ~24–32px, separated by hairline `#000000` or `#4a5568` 1px rules where the editorial logic demands a "page-fold" feel.
+
+### Whitespace Philosophy
+WIRED treats whitespace the way a magazine art director treats margin: it's the silence around the type, not a styling choice. The page never breathes excessively (this is not Stripe or Apple); it breathes *editorially* — enough room to keep adjacent stories from arguing, never enough to suggest there's nothing on the page. If an empty area looks like it could fit another headline, that empty area is doing its job.
+
+### Border Radius Scale
+- `0` — every container, every image, every button, every input. The default.
+- `1920px` — only inside text spans that need to look like a full pill ("BREAKING", "LIVE").
+- `50%` — only on round icon buttons and circular author avatars.
+
+There are exactly three radii on the entire site, and two of them are reserved for non-rectangular shapes. This is the **strictest** corner discipline of any major editorial property.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|---|---|---|
+| 0 | No shadow, no border | Default editorial surface — text on paper |
+| 1 | 1px solid `#e2e8f0` hairline `<hr>` | Quiet section divider, almost invisible |
+| 2 | 1px solid `#000000` hairline rule | Editorial column divider — printerly, structural |
+| 3 | 2px solid `#000000` border | Buttons, inputs, ribbons — interactive emphasis |
+| 4 | Black ribbon bar (`#000000` fill) | Section labels — the most "elevated" surface on the page |
+| 5 | Inverted footer block | Dark `#1a1a1a` zone with white type — the only inversion |
+
+WIRED's depth philosophy is **flat by religion**. There is exactly one shadow token in the entire site (a default `0 0 0 transparent` placeholder) and no `box-shadow` is applied to story tiles, headers, modals, or cards. Depth is communicated by **rule weight** (1px hairline → 2px hard rule → solid black ribbon), not by simulated lighting.
+
+### Decorative Depth
+None. No gradients, no glow, no halos, no scrim overlays beyond the standard photo caption gradient. WIRED earns its visual interest from photography and typographic contrast, not from chrome.
+
+## Components
 
 ### Buttons
 
@@ -162,47 +295,7 @@ The line-height values in the hierarchy table (especially the 0.93 on the 64px h
 - A vertical list of stories prefixed with WiredDisplay numerals (01, 02, 03…) at ~40–48px, sitting tight against the headline they label.
 - Hairline rule between each item, no other decoration.
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px.
-- **Scale**: 1px (hairline), 4px, 8px, 12px, 14.11px, 15px, 16px, 24px, 25.46px, 29.66px, 32px, 40px, 48px, 64px.
-- **Section padding**: typically 32–48px vertical between major editorial blocks.
-- **Card padding**: there are no cards; the gutter between story tiles is 24–32px horizontally and 16–24px vertically.
-- **Inline spacing**: kickers sit ~4–8px above headlines; decks sit ~8–12px below headlines; bylines/timestamps another 8–12px below the deck.
-
-### Grid & Container
-- **Max width**: ~1280–1600px on desktop (the dembrandt sweep detected breakpoints up to 1600px), centered with generous outer margins.
-- **Column patterns**: 12-column grid that resolves into 2/3/4 column story arrangements depending on module — feature blocks often run a "1 large + 2 small" pattern with hairline rules between each.
-- **Column gutters**: ~24–32px, separated by hairline `#000000` or `#4a5568` 1px rules where the editorial logic demands a "page-fold" feel.
-
-### Whitespace Philosophy
-WIRED treats whitespace the way a magazine art director treats margin: it's the silence around the type, not a styling choice. The page never breathes excessively (this is not Stripe or Apple); it breathes *editorially* — enough room to keep adjacent stories from arguing, never enough to suggest there's nothing on the page. If an empty area looks like it could fit another headline, that empty area is doing its job.
-
-### Border Radius Scale
-- `0` — every container, every image, every button, every input. The default.
-- `1920px` — only inside text spans that need to look like a full pill ("BREAKING", "LIVE").
-- `50%` — only on round icon buttons and circular author avatars.
-
-There are exactly three radii on the entire site, and two of them are reserved for non-rectangular shapes. This is the **strictest** corner discipline of any major editorial property.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|---|---|---|
-| 0 | No shadow, no border | Default editorial surface — text on paper |
-| 1 | 1px solid `#e2e8f0` hairline `<hr>` | Quiet section divider, almost invisible |
-| 2 | 1px solid `#000000` hairline rule | Editorial column divider — printerly, structural |
-| 3 | 2px solid `#000000` border | Buttons, inputs, ribbons — interactive emphasis |
-| 4 | Black ribbon bar (`#000000` fill) | Section labels — the most "elevated" surface on the page |
-| 5 | Inverted footer block | Dark `#1a1a1a` zone with white type — the only inversion |
-
-WIRED's depth philosophy is **flat by religion**. There is exactly one shadow token in the entire site (a default `0 0 0 transparent` placeholder) and no `box-shadow` is applied to story tiles, headers, modals, or cards. Depth is communicated by **rule weight** (1px hairline → 2px hard rule → solid black ribbon), not by simulated lighting.
-
-### Decorative Depth
-None. No gradients, no glow, no halos, no scrim overlays beyond the standard photo caption gradient. WIRED earns its visual interest from photography and typographic contrast, not from chrome.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - **Do** use 2px hard black borders on every primary button — no 1px softness, no rounded edges.
@@ -224,7 +317,7 @@ None. No gradients, no glow, no halos, no scrim overlays beyond the standard pho
 - **Don't** rely on hover lift effects. WIRED's hover is a color swap on text, nothing more.
 - **Don't** invent new pill shapes. Round = icons only. Pill = inline text spans only. Everything else is square.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -254,7 +347,7 @@ The dembrandt sweep detected an unusual range of intermediate breakpoints (1280,
 - No art-direction swaps — the same crop scales across breakpoints.
 - `loading="lazy"` on all below-the-fold imagery, `eager` on the hero only.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - **Primary Ink (text + ribbons)**: "WIRED Black (`#000000`)"

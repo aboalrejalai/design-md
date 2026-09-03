@@ -1,9 +1,110 @@
+---
+"version": "alpha"
+"name": "Superhuman"
+"description": "Bundled Open Design package for Superhuman, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#cbb7fb"
+  "on-primary": "#292827"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#e9e5dd"
+  "ink": "#292827"
+  "body": "#292827"
+  "muted": "#6f6c69"
+  "meta": "#6f6c69"
+  "border": "#dcd7d3"
+  "border-soft": "#dcd7d3"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Super Sans VF\", system-ui, -apple-system, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+    "lineHeight": "0.96"
+    "letterSpacing": "-0.0275em"
+  body:
+    "fontFamily": "\"Super Sans VF\", system-ui, -apple-system, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "56px"
+  "section-y-phone": "40px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Superhuman
 
 > Category: Developer Tools
 > Fast email client. Premium dark UI, keyboard-first, purple glow.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Superhuman's website feels like opening a luxury envelope — predominantly white, immaculately clean, with a single dramatic gesture of color that commands attention. The hero section is a cinematic purple gradient, a deep twilight wash of `#1b1938` that evokes the moment just before dawn, overlaid with confident white typography. Below this dramatic entrance, the rest of the site is almost entirely white canvas with dark charcoal text, creating a stark but refined reading experience.
 
@@ -20,7 +121,7 @@ The design philosophy is maximum confidence through minimum decoration. Warm cre
 - Minimal border-radius scale: only 8px and 16px — no micro-rounding, no pill shapes
 - Product screenshots dominate the content — the UI sells itself with minimal surrounding decoration
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Mysteria Purple** (`#1b1938`): Hero gradient background, deep purple that straddles blue-purple — the darkest expression of the brand
@@ -53,7 +154,7 @@ The design philosophy is maximum confidence through minimum decoration. Warm cre
 - **Content Transition**: The gradient dissolves into the white content area, creating a cinematic curtain-lift effect as the user scrolls
 - No other gradients on the marketing site — the hero gradient is a singular dramatic gesture
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display & Body**: `Super Sans VF` — custom variable font with non-standard weight axis. Fallbacks: `system-ui, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue`
@@ -89,7 +190,54 @@ The design philosophy is maximum confidence through minimum decoration. Warm cre
 - **Selective negative tracking**: Letter-spacing is applied surgically — -1.32px on 48px headings, -0.63px on 28px features, but 0px on body text. The larger the text, the tighter the tracking
 - **Variable font efficiency**: A single font file serves all weight variations (460–700), enabling smooth weight transitions and micro-adjustments
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 2px, 4px, 6px, 8px, 12px, 16px, 18px, 20px, 24px, 28px, 32px, 36px, 40px, 48px, 56px
+- **Section padding**: 48px–80px vertical between major sections
+- **Card padding**: 16px–32px internal spacing
+- **Component gaps**: 8px–16px between related elements
+
+### Grid & Container
+- **Max width**: ~1200px content container, centered
+- **Column patterns**: Full-width hero, centered single-column for key messaging, 2-3 column grid for feature cards
+- **Feature grid**: Even column distribution for "Your Superhuman suite" product showcase
+
+### Whitespace Philosophy
+- **Confident emptiness**: Generous whitespace between sections signals premium positioning — every element has room to breathe
+- **Product as content**: Large product screenshots fill space that lesser sites would fill with marketing copy
+- **Progressive density**: The hero is spacious and cinematic, content sections become denser with feature grids, then opens up again for CTAs
+
+### Border Radius Scale
+- **8px**: Buttons, inline elements (`span`, `button`, `div`) — the universal small radius
+- **16px**: Cards, links, larger containers (`a`, card elements) — the universal large radius
+- Only two radii in the entire system — radical simplicity. No micro-rounding (2px), no pill shapes (50px+)
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, white background | Primary page canvas, most content surfaces |
+| Level 1 (Border) | `1px solid #dcd7d3` (Parchment Border) | Card containment, section dividers |
+| Level 2 (Dark Border) | `1px solid #292827` | Header elements, dark section separators |
+| Level 3 (Glow) | Subtle shadow (from 6 shadow definitions detected) | Product screenshot containers, elevated cards |
+| Level 4 (Hero Depth) | `rgba(255, 255, 255, 0.2)` transparent border | Elements on the dark purple gradient hero |
+
+### Shadow Philosophy
+Superhuman's elevation system is remarkably restrained on the marketing site. Depth is primarily communicated through:
+- **Border containment**: Warm-toned borders (`#dcd7d3`) at 1px create gentle separation
+- **Color contrast**: The hero gradient creates massive depth through color shift rather than shadows
+- **Product screenshots**: Screenshots themselves create depth by showing a layered UI within the flat page
+- **Opacity layering**: Semi-transparent whites on the hero gradient create atmospheric depth layers
+
+### Decorative Depth
+- **Hero gradient**: The `#1b1938` → white gradient transition is the primary depth device — a cinematic curtain effect
+- **Lavender accents**: `#cbb7fb` Lavender Glow elements float above the dark gradient, creating a stellar/atmospheric effect
+- **No glassmorphism**: Despite the translucent borders, there are no blur/frosted-glass effects
+- **Photography depth**: The hero silhouette image creates natural atmospheric depth without artificial CSS
+
+## Components
 
 ### Buttons
 - **Warm Cream Primary**: `#e9e5dd` background, Charcoal Ink (`#292827`) text, subtle rounded corners (8px radius), no visible border. The signature CTA — warm, muted, luxurious rather than aggressive
@@ -129,54 +277,7 @@ The design philosophy is maximum confidence through minimum decoration. Warm cre
 - Feature descriptions paired with product screenshots — proof through demonstration rather than quotes
 - Clean grid layout with consistent card sizing
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 2px, 4px, 6px, 8px, 12px, 16px, 18px, 20px, 24px, 28px, 32px, 36px, 40px, 48px, 56px
-- **Section padding**: 48px–80px vertical between major sections
-- **Card padding**: 16px–32px internal spacing
-- **Component gaps**: 8px–16px between related elements
-
-### Grid & Container
-- **Max width**: ~1200px content container, centered
-- **Column patterns**: Full-width hero, centered single-column for key messaging, 2-3 column grid for feature cards
-- **Feature grid**: Even column distribution for "Your Superhuman suite" product showcase
-
-### Whitespace Philosophy
-- **Confident emptiness**: Generous whitespace between sections signals premium positioning — every element has room to breathe
-- **Product as content**: Large product screenshots fill space that lesser sites would fill with marketing copy
-- **Progressive density**: The hero is spacious and cinematic, content sections become denser with feature grids, then opens up again for CTAs
-
-### Border Radius Scale
-- **8px**: Buttons, inline elements (`span`, `button`, `div`) — the universal small radius
-- **16px**: Cards, links, larger containers (`a`, card elements) — the universal large radius
-- Only two radii in the entire system — radical simplicity. No micro-rounding (2px), no pill shapes (50px+)
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, white background | Primary page canvas, most content surfaces |
-| Level 1 (Border) | `1px solid #dcd7d3` (Parchment Border) | Card containment, section dividers |
-| Level 2 (Dark Border) | `1px solid #292827` | Header elements, dark section separators |
-| Level 3 (Glow) | Subtle shadow (from 6 shadow definitions detected) | Product screenshot containers, elevated cards |
-| Level 4 (Hero Depth) | `rgba(255, 255, 255, 0.2)` transparent border | Elements on the dark purple gradient hero |
-
-### Shadow Philosophy
-Superhuman's elevation system is remarkably restrained on the marketing site. Depth is primarily communicated through:
-- **Border containment**: Warm-toned borders (`#dcd7d3`) at 1px create gentle separation
-- **Color contrast**: The hero gradient creates massive depth through color shift rather than shadows
-- **Product screenshots**: Screenshots themselves create depth by showing a layered UI within the flat page
-- **Opacity layering**: Semi-transparent whites on the hero gradient create atmospheric depth layers
-
-### Decorative Depth
-- **Hero gradient**: The `#1b1938` → white gradient transition is the primary depth device — a cinematic curtain effect
-- **Lavender accents**: `#cbb7fb` Lavender Glow elements float above the dark gradient, creating a stellar/atmospheric effect
-- **No glassmorphism**: Despite the translucent borders, there are no blur/frosted-glass effects
-- **Photography depth**: The hero silhouette image creates natural atmospheric depth without artificial CSS
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Super Sans VF at weight 460 as the default — it's slightly heavier than regular, which is the brand's typographic signature
@@ -198,7 +299,7 @@ Superhuman's elevation system is remarkably restrained on the marketing site. De
 - Create pill-shaped buttons — the system uses 8px radius, not rounded pills
 - Use pure black (`#000000`) for text — Charcoal Ink (`#292827`) is warmer and softer
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -227,7 +328,7 @@ Superhuman's elevation system is remarkably restrained on the marketing site. De
 - No art direction changes — same compositions across all breakpoints
 - Lazy loading likely on below-fold product screenshots
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Hero Background: Mysteria Purple (`#1b1938`)

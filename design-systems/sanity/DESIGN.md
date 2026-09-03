@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Sanity"
+"description": "Bundled Open Design package for Sanity, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#f03e2f"
+  "on-primary": "#ffffff"
+  "canvas": "#f8f8f7"
+  "surface": "#ffffff"
+  "surface-warm": "#fff1ef"
+  "ink": "#171717"
+  "body": "#3f3f46"
+  "muted": "#71717a"
+  "meta": "#f03e2f"
+  "border": "#e4e4e7"
+  "border-soft": "#f1f1f2"
+  "success": "#16a34a"
+  "warning": "#f59e0b"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"Roboto Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "46px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "6px"
+  "md": "10px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Sanity
 
 > Category: Backend & Data
 > Headless CMS. Red accent, content-first editorial layout.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Sanity's website is a developer-content platform rendered as a nocturnal command center -- dark, precise, and deeply structured. The entire experience sits on a near-black canvas (`#0b0b0b`) that reads less like a "dark mode toggle" and more like the natural state of a tool built for people who live in terminals. Where most CMS marketing pages reach for friendly pastels and soft illustration, Sanity leans into the gravity of its own product: structured content deserves a structured stage.
 
@@ -21,7 +114,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - Full-bleed dark sections with content contained in measured max-width containers
 - Hover states that shift to electric blue (`#0052ef`) across all interactive elements -- a consistent "activation" signal
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Sanity Black** (`#0b0b0b`): The primary canvas and dominant surface color. Not pure black but close enough to feel absolute. The foundation of the entire visual identity.
@@ -60,7 +153,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - **Light Border** (`#ffffff`): Border on inverted/light elements or buttons needing contrast separation.
 - **Orange Border** (`color(display-p3 1 0.3333 0)`): Special accent border for highlighted/featured elements.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / Headline**: `waldenburgNormal`, fallback: `waldenburgNormal Fallback, ui-sans-serif, system-ui`
@@ -98,7 +191,63 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - **Tight headings, relaxed body**: Headings use 1.00-1.24 line-height (extremely tight), while body text breathes at 1.50. This contrast creates clear visual hierarchy.
 - **Uppercase for technical labels**: IBM Plex Mono captions and small labels frequently use `text-transform: uppercase` with tight line-heights, creating a "system readout" aesthetic for technical metadata.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+Base unit: **8px**
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| space-1 | 1px | Hairline gaps, border-like spacing |
+| space-2 | 2px | Minimal internal padding |
+| space-3 | 4px | Tight component internal spacing |
+| space-4 | 6px | Small element gaps |
+| space-5 | 8px | Base unit -- button padding, input padding, badge padding |
+| space-6 | 12px | Standard component gap, button horizontal padding |
+| space-7 | 16px | Section internal padding, card spacing |
+| space-8 | 24px | Large component padding, card internal spacing |
+| space-9 | 32px | Section padding, container gutters |
+| space-10 | 48px | Large section vertical spacing |
+| space-11 | 64px | Major section breaks |
+| space-12 | 96-120px | Hero vertical padding, maximum section spacing |
+
+### Grid & Container
+- Max content width: ~1440px (inferred from breakpoints)
+- Page gutter: 32px on desktop, 16px on mobile
+- Content sections use full-bleed backgrounds with centered, max-width content
+- Multi-column layouts: 2-3 columns on desktop, single column on mobile
+- Card grids: CSS Grid with consistent gaps (16-24px)
+
+### Whitespace Philosophy
+Sanity uses aggressive vertical spacing between sections (64-120px) to create breathing room on the dark canvas. Within sections, spacing is tighter (16-32px), creating dense information clusters separated by generous voids. This rhythm gives the page a "slides" quality -- each section feels like its own focused frame.
+
+### Border Radius Scale
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| radius-xs | 3px | Inputs, textareas, subtle rounding |
+| radius-sm | 4-5px | Secondary buttons, small cards, tags |
+| radius-md | 6px | Standard cards, containers |
+| radius-lg | 12px | Large cards, feature containers, forms |
+| radius-pill | 99999px | Primary buttons, badges, nav pills |
+
+## Elevation & Depth
+
+### Shadow System
+
+| Level | Value | Usage |
+|-------|-------|-------|
+| Level 0 (Flat) | none | Default state for most elements -- dark surfaces create depth through color alone |
+| Level 1 (Subtle) | 0px 0px 0px 1px `#212121` | Border-like shadow for minimal containment without visible borders |
+| Level 2 (Focus) | 0 0 0 2px `var(--color-blue-500)` | Focus ring for inputs and interactive elements |
+| Level 3 (Overlay) | Backdrop blur + semi-transparent dark | Navigation overlay, modal backgrounds |
+
+### Depth Philosophy
+Sanity's depth system is almost entirely **colorimetric** rather than shadow-based. Elevation is communicated through surface color shifts: `#0b0b0b` (ground) -> `#212121` (elevated) -> `#353535` (prominent) -> `#ffffff` (inverted/highest). This approach is native to dark interfaces where traditional drop shadows would be invisible. The few shadows that exist are ring-based (0px 0px 0px Npx) or blur-based (backdrop-filter) rather than offset shadows, maintaining the flat, precision-engineered aesthetic.
+
+Border-based containment (1px solid `#212121` or `#353535`) serves as the primary spatial separator, with the border darkness calibrated to be visible but not dominant. The system avoids "floating card" aesthetics -- everything feels mounted to the surface rather than hovering above it.
+
+## Components
 
 ### Buttons
 
@@ -210,63 +359,7 @@ What makes Sanity distinctive is the interplay between its monochromatic dark pa
 - Font: 13px
 - Border Radius: 99999px
 
-## 5. Layout Principles
-
-### Spacing System
-Base unit: **8px**
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| space-1 | 1px | Hairline gaps, border-like spacing |
-| space-2 | 2px | Minimal internal padding |
-| space-3 | 4px | Tight component internal spacing |
-| space-4 | 6px | Small element gaps |
-| space-5 | 8px | Base unit -- button padding, input padding, badge padding |
-| space-6 | 12px | Standard component gap, button horizontal padding |
-| space-7 | 16px | Section internal padding, card spacing |
-| space-8 | 24px | Large component padding, card internal spacing |
-| space-9 | 32px | Section padding, container gutters |
-| space-10 | 48px | Large section vertical spacing |
-| space-11 | 64px | Major section breaks |
-| space-12 | 96-120px | Hero vertical padding, maximum section spacing |
-
-### Grid & Container
-- Max content width: ~1440px (inferred from breakpoints)
-- Page gutter: 32px on desktop, 16px on mobile
-- Content sections use full-bleed backgrounds with centered, max-width content
-- Multi-column layouts: 2-3 columns on desktop, single column on mobile
-- Card grids: CSS Grid with consistent gaps (16-24px)
-
-### Whitespace Philosophy
-Sanity uses aggressive vertical spacing between sections (64-120px) to create breathing room on the dark canvas. Within sections, spacing is tighter (16-32px), creating dense information clusters separated by generous voids. This rhythm gives the page a "slides" quality -- each section feels like its own focused frame.
-
-### Border Radius Scale
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| radius-xs | 3px | Inputs, textareas, subtle rounding |
-| radius-sm | 4-5px | Secondary buttons, small cards, tags |
-| radius-md | 6px | Standard cards, containers |
-| radius-lg | 12px | Large cards, feature containers, forms |
-| radius-pill | 99999px | Primary buttons, badges, nav pills |
-
-## 6. Depth & Elevation
-
-### Shadow System
-
-| Level | Value | Usage |
-|-------|-------|-------|
-| Level 0 (Flat) | none | Default state for most elements -- dark surfaces create depth through color alone |
-| Level 1 (Subtle) | 0px 0px 0px 1px `#212121` | Border-like shadow for minimal containment without visible borders |
-| Level 2 (Focus) | 0 0 0 2px `var(--color-blue-500)` | Focus ring for inputs and interactive elements |
-| Level 3 (Overlay) | Backdrop blur + semi-transparent dark | Navigation overlay, modal backgrounds |
-
-### Depth Philosophy
-Sanity's depth system is almost entirely **colorimetric** rather than shadow-based. Elevation is communicated through surface color shifts: `#0b0b0b` (ground) -> `#212121` (elevated) -> `#353535` (prominent) -> `#ffffff` (inverted/highest). This approach is native to dark interfaces where traditional drop shadows would be invisible. The few shadows that exist are ring-based (0px 0px 0px Npx) or blur-based (backdrop-filter) rather than offset shadows, maintaining the flat, precision-engineered aesthetic.
-
-Border-based containment (1px solid `#212121` or `#353535`) serves as the primary spatial separator, with the border darkness calibrated to be visible but not dominant. The system avoids "floating card" aesthetics -- everything feels mounted to the surface rather than hovering above it.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use the achromatic gray scale as the foundation -- maintain pure neutral discipline with no warm/cool tinting
@@ -288,7 +381,7 @@ Border-based containment (1px solid `#212121` or `#353535`) serves as the primar
 - Don't use traditional offset box-shadows -- ring shadows (0 0 0 Npx) or border-based containment only
 - Don't break the tight line-height on headings -- 1.00-1.24 is the range, never go to 1.5+ for display text
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -319,7 +412,7 @@ Border-based containment (1px solid `#212121` or `#353535`) serves as the primar
 - Heading letter-spacing relaxes slightly at mobile sizes (less aggressive negative tracking)
 - Image containers switch from fixed aspect ratios to full-width with auto height
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 ```

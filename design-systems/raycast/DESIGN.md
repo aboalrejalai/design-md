@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Raycast"
+"description": "Bundled Open Design package for Raycast, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#FF6363"
+  "primary-hover": "#ff7777"
+  "primary-active": "#e85757"
+  "on-primary": "#ffffff"
+  "canvas": "#07080a"
+  "surface": "#101111"
+  "surface-warm": "#101111"
+  "ink": "#f9f9f9"
+  "body": "#cecece"
+  "muted": "#9c9c9d"
+  "meta": "#6a6b6c"
+  "border": "rgba(255, 255, 255, 0.06)"
+  "border-soft": "rgba(255, 255, 255, 0.04)"
+  "success": "hsl(151, 59%, 59%)"
+  "warning": "hsl(43, 100%, 60%)"
+  "danger": "hsl(0, 100%, 69%)"
+typography:
+  display:
+    "fontFamily": "\"Inter\", \"Inter Fallback\", \"SF Pro Display\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.1"
+    "letterSpacing": "0px"
+  body:
+    "fontFamily": "\"Inter\", \"Inter Fallback\", \"SF Pro Text\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.6"
+  mono:
+    "fontFamily": "\"GeistMono\", ui-monospace, \"SF Mono\", \"Roboto Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "6px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Raycast
 
 > Category: Developer Tools
 > Productivity launcher. Sleek dark chrome, vibrant gradient accents.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Raycast's marketing site feels like the dark interior of a precision instrument — a Swiss watch case carved from obsidian. The background isn't just dark, it's an almost-black blue-tint (`#07080a`) that creates a sense of being inside a macOS native application rather than a website. Every surface, every border, every shadow is calibrated to evoke the feeling of a high-performance desktop utility: fast, minimal, trustworthy.
 
@@ -20,7 +113,7 @@ Inter is used everywhere — headings, body, buttons, captions — with extensiv
 - Subtle rgba white borders (0.06–0.1 opacity) for containment on dark surfaces
 - Keyboard shortcut styling with gradient key caps and heavy shadows
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Near-Black Blue** (`#07080a`): Primary page background — the foundational void with a subtle blue-cold undertone
@@ -62,7 +155,7 @@ Inter is used everywhere — headings, body, buttons, captions — with extensiv
 - **Keyboard Key Gradient**: Linear gradient from `#121212` (top) to `#0d0d0d` (bottom) — simulates physical key depth
 - **Warm Glow**: `rgba(215, 201, 175, 0.05)` radial spread — subtle warm ambient glow behind featured elements
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Inter` — humanist sans-serif, used everywhere. Fallbacks: `Inter Fallback`, system sans-serif
@@ -97,7 +190,60 @@ Inter is used everywhere — headings, body, buttons, captions — with extensiv
 - **Display restraint**: Hero text at 64px/600 is confident but not oversized — Raycast avoids typographic spectacle in favor of functional elegance
 - **OpenType everywhere**: `ss03` (stylistic set 3) is enabled globally across Inter, giving the typeface a slightly more geometric, tool-like quality
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 1px, 2px, 3px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px
+- **Section padding**: 80px–120px vertical between major sections
+- **Card padding**: 16px–32px internal spacing
+- **Component gaps**: 8px–16px between related elements
+
+### Grid & Container
+- **Max width**: ~1200px container (breakpoint at 1204px), centered
+- **Column patterns**: Single-column hero, 2–3 column feature grids, full-width showcase sections
+- **App showcase**: Product UI presented in centered window frames
+
+### Whitespace Philosophy
+- **Dramatic negative space**: Sections float in vast dark void, creating cinematic pacing between features
+- **Dense product, sparse marketing**: The product UI screenshots are information-dense, but the surrounding marketing copy uses minimal text with generous spacing
+- **Vertical rhythm**: Consistent 24px–32px gaps between elements within sections
+
+### Border Radius Scale
+- **2px–3px**: Micro-elements, code spans, tiny indicators
+- **4px–5px**: Keyboard keys, small interactive elements
+- **6px**: Buttons, badges, tags — the workhorse radius
+- **8px**: Input fields, inline components
+- **9px–11px**: Images, medium containers
+- **12px**: Standard cards, product screenshots
+- **16px**: Large cards, feature sections
+- **20px**: Hero cards, prominent containers
+- **86px+**: Pill buttons, nav CTAs — full pill shape
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Void) | No shadow, `#07080a` surface | Page background |
+| Level 1 (Subtle) | `rgba(0, 0, 0, 0.28) 0px 1.189px 2.377px` | Minimal lift, inline elements |
+| Level 2 (Ring) | `rgb(27, 28, 30) 0px 0px 0px 1px` outer + `rgb(7, 8, 10) 0px 0px 0px 1px inset` inner | Card containment, double-ring technique |
+| Level 3 (Button) | `rgba(255, 255, 255, 0.05) 0px 1px 0px 0px inset` + `rgba(255, 255, 255, 0.25) 0px 0px 0px 1px` + `rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset` | macOS-native button press — white highlight top, dark inset bottom |
+| Level 4 (Key) | 5-layer shadow stack with inset press effects | Keyboard shortcut key caps — physical 3D appearance |
+| Level 5 (Floating) | `rgba(0, 0, 0, 0.5) 0px 0px 0px 2px` + `rgba(255, 255, 255, 0.19) 0px 0px 14px` + insets | Command palette, floating panels — heavy depth with glow |
+
+### Shadow Philosophy
+Raycast's shadow system is the most macOS-native on the web. Multi-layer shadows combine:
+- **Outer rings** for containment (replacing traditional borders)
+- **Inset top highlights** (`rgba(255, 255, 255, 0.05–0.25)`) simulating light source from above
+- **Inset bottom darks** (`rgba(0, 0, 0, 0.2)`) simulating shadow underneath
+- The effect is physical: elements feel like glass or brushed metal, not flat rectangles
+
+### Decorative Depth
+- **Warm glow**: `rgba(215, 201, 175, 0.05) 0px 0px 20px 5px` behind featured elements — a subtle warm aura on the cold dark canvas
+- **Blue info glow**: `rgba(0, 153, 255, 0.15)` for interactive state emphasis
+- **Red danger glow**: `rgba(255, 99, 99, 0.15)` for error/destructive state emphasis
+
+## Components
 
 ### Buttons
 - **Primary Pill**: Transparent background, white text, pill shape (86px radius), multi-layer inset shadow (`rgba(255, 255, 255, 0.1) 0px 1px 0px 0px inset`). Hover: opacity 0.6
@@ -139,60 +285,7 @@ Inter is used everywhere — headings, body, buttons, captions — with extensiv
 - **Neutral badge**: `#1b1c1e` background, white text, 6px radius, 14px font at weight 500, `0px 6px` padding
 - Compact, pill-like treatment for categorization
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 1px, 2px, 3px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px
-- **Section padding**: 80px–120px vertical between major sections
-- **Card padding**: 16px–32px internal spacing
-- **Component gaps**: 8px–16px between related elements
-
-### Grid & Container
-- **Max width**: ~1200px container (breakpoint at 1204px), centered
-- **Column patterns**: Single-column hero, 2–3 column feature grids, full-width showcase sections
-- **App showcase**: Product UI presented in centered window frames
-
-### Whitespace Philosophy
-- **Dramatic negative space**: Sections float in vast dark void, creating cinematic pacing between features
-- **Dense product, sparse marketing**: The product UI screenshots are information-dense, but the surrounding marketing copy uses minimal text with generous spacing
-- **Vertical rhythm**: Consistent 24px–32px gaps between elements within sections
-
-### Border Radius Scale
-- **2px–3px**: Micro-elements, code spans, tiny indicators
-- **4px–5px**: Keyboard keys, small interactive elements
-- **6px**: Buttons, badges, tags — the workhorse radius
-- **8px**: Input fields, inline components
-- **9px–11px**: Images, medium containers
-- **12px**: Standard cards, product screenshots
-- **16px**: Large cards, feature sections
-- **20px**: Hero cards, prominent containers
-- **86px+**: Pill buttons, nav CTAs — full pill shape
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Void) | No shadow, `#07080a` surface | Page background |
-| Level 1 (Subtle) | `rgba(0, 0, 0, 0.28) 0px 1.189px 2.377px` | Minimal lift, inline elements |
-| Level 2 (Ring) | `rgb(27, 28, 30) 0px 0px 0px 1px` outer + `rgb(7, 8, 10) 0px 0px 0px 1px inset` inner | Card containment, double-ring technique |
-| Level 3 (Button) | `rgba(255, 255, 255, 0.05) 0px 1px 0px 0px inset` + `rgba(255, 255, 255, 0.25) 0px 0px 0px 1px` + `rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset` | macOS-native button press — white highlight top, dark inset bottom |
-| Level 4 (Key) | 5-layer shadow stack with inset press effects | Keyboard shortcut key caps — physical 3D appearance |
-| Level 5 (Floating) | `rgba(0, 0, 0, 0.5) 0px 0px 0px 2px` + `rgba(255, 255, 255, 0.19) 0px 0px 14px` + insets | Command palette, floating panels — heavy depth with glow |
-
-### Shadow Philosophy
-Raycast's shadow system is the most macOS-native on the web. Multi-layer shadows combine:
-- **Outer rings** for containment (replacing traditional borders)
-- **Inset top highlights** (`rgba(255, 255, 255, 0.05–0.25)`) simulating light source from above
-- **Inset bottom darks** (`rgba(0, 0, 0, 0.2)`) simulating shadow underneath
-- The effect is physical: elements feel like glass or brushed metal, not flat rectangles
-
-### Decorative Depth
-- **Warm glow**: `rgba(215, 201, 175, 0.05) 0px 0px 20px 5px` behind featured elements — a subtle warm aura on the cold dark canvas
-- **Blue info glow**: `rgba(0, 153, 255, 0.15)` for interactive state emphasis
-- **Red danger glow**: `rgba(255, 99, 99, 0.15)` for error/destructive state emphasis
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use `#07080a` (not pure black) as the background — the blue-cold tint is essential to the Raycast feel
@@ -215,7 +308,7 @@ Raycast's shadow system is the most macOS-native on the web. Multi-layer shadows
 - Apply heavy drop shadows without inset companions — shadows always come in pairs (outer + inset)
 - Use decorative elements, gradients, or colorful backgrounds — the dark void is the stage, content is the performer
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -244,7 +337,7 @@ Raycast's shadow system is the most macOS-native on the web. Multi-layer shadows
 - macOS window chrome rounded corners maintained at all sizes
 - No lazy-loading artifacts — images are critical to the product narrative
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Background: Near-Black Blue (`#07080a`)

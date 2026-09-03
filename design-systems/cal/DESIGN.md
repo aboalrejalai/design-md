@@ -1,9 +1,98 @@
+---
+"version": "alpha"
+"name": "Cal.com"
+"description": "Bundled Open Design package for Cal.com, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0099ff"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#ffffff"
+  "ink": "#242424"
+  "body": "#111111"
+  "muted": "#898989"
+  "meta": "#898989"
+  "border": "rgba(34, 42, 53, 0.08)"
+  "border-soft": "rgba(34, 42, 53, 0.05)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Cal Sans\", \"Inter\", -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.1"
+  body:
+    "fontFamily": "\"Inter\", -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Roboto Mono\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.body}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Cal.com
 
 > Category: Productivity & SaaS
 > Open-source scheduling. Clean neutral UI, developer-oriented simplicity.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Cal.com's website is a masterclass in monochromatic restraint — a grayscale world where boldness comes not from color but from the sheer confidence of black text on white space. Inspired by Uber's minimal aesthetic, the palette is deliberately stripped of hue: near-black headings (`#242424`), mid-gray secondary text (`#898989`), and pure white surfaces. Color is treated as a foreign substance — when it appears (a rare blue link, a green trust badge), it feels like a controlled accent in an otherwise black-and-white photograph.
 
@@ -21,7 +110,7 @@ The elevation system is notably sophisticated for a minimal site — 11 shadow d
 - Product screenshots as primary visual content — the scheduling UI sells itself
 - Built on Framer platform
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Charcoal** (`#242424`): Primary heading and button text — Cal.com's signature near-black, warmer than pure black
@@ -54,7 +143,7 @@ The elevation system is notably sophisticated for a minimal site — 11 shadow d
 - No gradients on the marketing site — the design is fully flat and monochrome
 - Depth is achieved entirely through shadows, not color transitions
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `Cal Sans` — custom geometric sans-serif by Mark Davis. Open-source, available on Google Fonts and GitHub. Extremely tight default letter-spacing designed for large headlines. Has 6 character variants (Cc, j, t, u, 0, 1)
@@ -91,7 +180,64 @@ The elevation system is notably sophisticated for a minimal site — 11 shadow d
 - **Weight 600 dominance**: Nearly all Cal Sans usage is at weight 600 (semi-bold) — the font was designed to perform at this weight
 - **Negative tracking on light text**: Cal Sans UI Light uses -0.2px to -0.28px letter-spacing, subtly tightening the already-compact letterforms
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 1px, 2px, 3px, 4px, 6px, 8px, 12px, 16px, 20px, 24px, 28px, 80px, 96px
+- **Section padding**: 80px–96px vertical between major sections (generous)
+- **Card padding**: 12px–24px internal
+- **Component gaps**: 4px–8px between related elements
+- **Notable jump**: From 28px to 80px — a deliberate gap emphasizing the section-level spacing tier
+
+### Grid & Container
+- **Max width**: ~1200px content container, centered
+- **Column patterns**: Full-width hero, centered text blocks, 2-3 column feature grids
+- **Feature showcase**: Product screenshots flanked by description text
+- **Breakpoints**: 98px, 640px, 768px, 810px, 1024px, 1199px — Framer-generated
+
+### Whitespace Philosophy
+- **Lavish section spacing**: 80px–96px between sections creates a breathable, premium feel
+- **Product-first content**: Screenshots dominate the visual space — minimal surrounding decoration
+- **Centered headlines**: Cal Sans headings centered with generous margins above and below
+
+### Border Radius Scale
+- **2px**: Subtle rounding on inline elements
+- **4px**: Small UI components
+- **6px–7px**: Buttons, small cards, images
+- **8px**: Standard interactive elements — buttons, inputs, images
+- **12px**: Medium containers — links, larger cards, images
+- **16px**: Large section containers
+- **29px**: Special rounded elements
+- **100px**: Large rounding — nearly circular on small elements
+- **1000px**: Very large rounding
+- **9999px**: Full pill shape — badges, links
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow | Page canvas, basic text containers |
+| Level 1 (Inset) | `rgba(0,0,0,0.16) 0px 1px 1.9px 0px inset` | Pressed/recessed elements, input wells |
+| Level 2 (Ring + Soft) | `rgba(19,19,22,0.7) 0px 1px 5px -4px, rgba(34,42,53,0.08) 0px 0px 0px 1px, rgba(34,42,53,0.05) 0px 4px 8px` | Cards, containers — the workhorse shadow |
+| Level 3 (Ring + Soft Alt) | `rgba(36,36,36,0.7) 0px 1px 5px -4px, rgba(36,36,36,0.05) 0px 4px 8px` | Alt card elevation without ring border |
+| Level 4 (Inset Highlight) | `rgba(255,255,255,0.15) 0px 2px 0px inset` or `rgb(255,255,255) 0px 2px 0px inset` | Button inner highlight — 3D pressed effect |
+| Level 5 (Soft Only) | `rgba(34,42,53,0.05) 0px 4px 8px` | Subtle ambient shadow |
+
+### Shadow Philosophy
+Cal.com's shadow system is the most sophisticated element of the design — 11 shadow definitions using a multi-layered compositing technique:
+- **Ring borders**: `0px 0px 0px 1px` shadows act as borders, avoiding CSS `border` entirely. This creates hairline containment without affecting layout
+- **Diffused soft shadows**: `0px 4px 8px` at 5% opacity add gentle ambient depth
+- **Sharp contact shadows**: `0px 1px 5px -4px` at 70% opacity create tight bottom-edge shadows for grounding
+- **Inset highlights**: White inset shadows at the top of buttons create a subtle 3D bevel
+- Shadows are composed in comma-separated stacks — each surface gets 2-3 layered shadow definitions working together
+
+### Decorative Depth
+- No gradients or glow effects
+- All depth comes from the sophisticated shadow compositing system
+- The overall effect is subtle but precise — surfaces feel like physical cards sitting on a table
+
+## Components
 
 ### Buttons
 - **Dark Primary**: `#242424` (or `#1e1f23`) background, white text, 6–8px radius. Hover: opacity reduction to 0.7. The signature CTA — maximally dark on white
@@ -125,64 +271,7 @@ The elevation system is notably sophisticated for a minimal site — 11 shadow d
 - **Aspect ratios**: Wide landscape for product UI screenshots
 - **No decorative imagery**: No illustrations, photos, or abstract graphics — pure product + typography
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 1px, 2px, 3px, 4px, 6px, 8px, 12px, 16px, 20px, 24px, 28px, 80px, 96px
-- **Section padding**: 80px–96px vertical between major sections (generous)
-- **Card padding**: 12px–24px internal
-- **Component gaps**: 4px–8px between related elements
-- **Notable jump**: From 28px to 80px — a deliberate gap emphasizing the section-level spacing tier
-
-### Grid & Container
-- **Max width**: ~1200px content container, centered
-- **Column patterns**: Full-width hero, centered text blocks, 2-3 column feature grids
-- **Feature showcase**: Product screenshots flanked by description text
-- **Breakpoints**: 98px, 640px, 768px, 810px, 1024px, 1199px — Framer-generated
-
-### Whitespace Philosophy
-- **Lavish section spacing**: 80px–96px between sections creates a breathable, premium feel
-- **Product-first content**: Screenshots dominate the visual space — minimal surrounding decoration
-- **Centered headlines**: Cal Sans headings centered with generous margins above and below
-
-### Border Radius Scale
-- **2px**: Subtle rounding on inline elements
-- **4px**: Small UI components
-- **6px–7px**: Buttons, small cards, images
-- **8px**: Standard interactive elements — buttons, inputs, images
-- **12px**: Medium containers — links, larger cards, images
-- **16px**: Large section containers
-- **29px**: Special rounded elements
-- **100px**: Large rounding — nearly circular on small elements
-- **1000px**: Very large rounding
-- **9999px**: Full pill shape — badges, links
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow | Page canvas, basic text containers |
-| Level 1 (Inset) | `rgba(0,0,0,0.16) 0px 1px 1.9px 0px inset` | Pressed/recessed elements, input wells |
-| Level 2 (Ring + Soft) | `rgba(19,19,22,0.7) 0px 1px 5px -4px, rgba(34,42,53,0.08) 0px 0px 0px 1px, rgba(34,42,53,0.05) 0px 4px 8px` | Cards, containers — the workhorse shadow |
-| Level 3 (Ring + Soft Alt) | `rgba(36,36,36,0.7) 0px 1px 5px -4px, rgba(36,36,36,0.05) 0px 4px 8px` | Alt card elevation without ring border |
-| Level 4 (Inset Highlight) | `rgba(255,255,255,0.15) 0px 2px 0px inset` or `rgb(255,255,255) 0px 2px 0px inset` | Button inner highlight — 3D pressed effect |
-| Level 5 (Soft Only) | `rgba(34,42,53,0.05) 0px 4px 8px` | Subtle ambient shadow |
-
-### Shadow Philosophy
-Cal.com's shadow system is the most sophisticated element of the design — 11 shadow definitions using a multi-layered compositing technique:
-- **Ring borders**: `0px 0px 0px 1px` shadows act as borders, avoiding CSS `border` entirely. This creates hairline containment without affecting layout
-- **Diffused soft shadows**: `0px 4px 8px` at 5% opacity add gentle ambient depth
-- **Sharp contact shadows**: `0px 1px 5px -4px` at 70% opacity create tight bottom-edge shadows for grounding
-- **Inset highlights**: White inset shadows at the top of buttons create a subtle 3D bevel
-- Shadows are composed in comma-separated stacks — each surface gets 2-3 layered shadow definitions working together
-
-### Decorative Depth
-- No gradients or glow effects
-- All depth comes from the sophisticated shadow compositing system
-- The overall effect is subtle but precise — surfaces feel like physical cards sitting on a table
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Cal Sans exclusively for headings (24px+) and never for body text — it's a display font with tight default spacing
@@ -204,7 +293,7 @@ Cal.com's shadow system is the most sophisticated element of the design — 11 s
 - Mix Cal Sans weights — the font is designed for weight 600, other weights break the intended character
 - Reduce section spacing below 48px — the generous whitespace is core to the premium monochrome aesthetic
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -235,7 +324,7 @@ Cal.com's shadow system is the most sophisticated element of the design — 11 s
 - No art direction changes — same compositions at all sizes
 - Images use 7px–12px border-radius for consistent rounded corners
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: Charcoal (`#242424`)

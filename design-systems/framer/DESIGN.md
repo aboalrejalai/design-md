@@ -1,9 +1,106 @@
+---
+"version": "alpha"
+"name": "Framer"
+"description": "Bundled Open Design package for Framer, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0099ff"
+  "on-primary": "#ffffff"
+  "canvas": "#000000"
+  "surface": "#090909"
+  "surface-warm": "#090909"
+  "ink": "#ffffff"
+  "body": "#a6a6a6"
+  "muted": "rgba(255, 255, 255, 0.6)"
+  "meta": "rgba(255, 255, 255, 0.4)"
+  "border": "rgba(0, 153, 255, 0.15)"
+  "border-soft": "rgba(255, 255, 255, 0.06)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"GT Walsheim Framer Medium\", \"GT Walsheim Medium\", \"GT Walsheim\", -apple-system, \"Segoe UI\", Inter, sans-serif"
+    "lineHeight": "0.95"
+    "letterSpacing": "-0.05em"
+  body:
+    "fontFamily": "\"Inter Variable\", \"Inter\", -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.3"
+  mono:
+    "fontFamily": "\"Azeret Mono\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "62px"
+  4xl:
+    "fontSize": "110px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "20px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "60px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Framer
 
 > Category: Design & Creative
 > Website builder. Bold black and blue, motion-first, design-forward.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Framer's website is a cinematic, tool-obsessed dark canvas that radiates the confidence of a design tool built by designers who worship craft. The entire experience is drenched in pure black — not a warm charcoal or a cozy dark gray, but an absolute void (`#000000`) that makes every element, every screenshot, every typographic flourish feel like it's floating in deep space. This is a website that treats its own product UI as the hero art, embedding full-fidelity screenshots and interactive demos directly into the narrative flow.
 
@@ -20,7 +117,7 @@ The overall effect is a nightclub for web designers: dark, precise, seductive, a
 - Frosted glass button variants using `rgba(255, 255, 255, 0.1)` on dark surfaces
 - Extensive OpenType feature usage across Inter for refined micro-typography
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure Black** (`#000000`): Primary background, the void canvas that defines Framer's dark-first identity
@@ -50,7 +147,7 @@ The overall effect is a nightclub for web designers: dark, precise, seductive, a
 - No prominent gradient usage — Framer relies on pure flat black surfaces with occasional blue-tinted glows for depth
 - Subtle radial glow effects behind product screenshots using Framer Blue at very low opacity
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `GT Walsheim Framer Medium` / `GT Walsheim Medium` — custom geometric sans-serif, weight 500. Fallbacks: `GT Walsheim Framer Medium Placeholder`, system sans-serif
@@ -88,7 +185,54 @@ The overall effect is a nightclub for web designers: dark, precise, seductive, a
 - **Weight restraint on display**: All GT Walsheim usage is weight 500 (medium) — never bold, never regular. This creates a confident-but-not-aggressive display tone
 - **Ultra-tight line heights**: Display text at 0.85 line-height means letters nearly overlap vertically — intentional density that rewards reading at arm's length
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 15px, 20px, 30px, 35px
+- **Section padding**: Large vertical spacing (80px–120px between sections)
+- **Card padding**: 15px–30px internal padding
+- **Component gaps**: 8px–20px between related elements
+
+### Grid & Container
+- **Max width**: ~1200px container, centered
+- **Column patterns**: Full-width hero, 2-column feature sections, single-column product showcases
+- **Asymmetric layouts**: Feature sections often pair text (40%) with screenshot (60%)
+
+### Whitespace Philosophy
+- **Breathe through darkness**: Generous vertical spacing between sections — the black background means whitespace manifests as void, creating dramatic pauses between content blocks
+- **Dense within, spacious between**: Individual components are tightly composed (tight line-heights, compressed text) but float in generous surrounding space
+- **Product-first density**: Screenshot areas are allowed to be dense and information-rich, contrasting with the sparse marketing text
+
+### Border Radius Scale
+- **1px**: Micro-elements, nearly squared precision edges
+- **5px–7px**: Small UI elements, image thumbnails — subtly softened
+- **8px**: Standard component radius — code blocks, buttons, interactive elements
+- **10px–12px**: Cards, product screenshots — comfortably rounded
+- **15px–20px**: Large containers, feature cards — generously rounded
+- **30px–40px**: Navigation pills, pagination — noticeably rounded
+- **100px**: Full pill shape — primary CTAs, tag elements
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, pure black surface | Page background, empty areas |
+| Level 1 (Ring) | `rgba(0, 153, 255, 0.15) 0px 0px 0px 1px` | Card borders, interactive element outlines — Framer Blue glow ring |
+| Level 2 (Contained) | `rgb(9, 9, 9) 0px 0px 0px 2px` | Near-black ring for subtle containment on dark surfaces |
+| Level 3 (Floating) | `rgba(255, 255, 255, 0.1) 0px 0.5px 0px 0.5px, rgba(0, 0, 0, 0.25) 0px 10px 30px` | Elevated cards, floating elements — subtle white top-edge highlight + deep ambient shadow |
+
+### Shadow Philosophy
+Framer's elevation system is inverted from traditional light-theme designs. Instead of darker shadows on light backgrounds, Framer uses:
+- **Blue-tinted ring shadows** at very low opacity (0.15) for containment — a signature move that subtly brands every bordered element
+- **White edge highlights** (0.5px) on the top edge of elevated elements — simulating light hitting the top surface
+- **Deep ambient shadows** for true floating elements — `rgba(0, 0, 0, 0.25)` at large spread (30px)
+
+### Decorative Depth
+- **Blue glow auras**: Subtle Framer Blue (`#0099ff`) radial gradients behind key interactive areas
+- **No background blur/glassmorphism**: Despite the frosted button effect, there's no heavy glass blur usage — the translucency is achieved through simple rgba opacity
+
+## Components
 
 ### Buttons
 - **Frosted Pill**: `rgba(255, 255, 255, 0.1)` background, black text (`#000000`), pill shape (40px radius). The glass-effect button that lives on dark surfaces — translucent, ambient, subtle
@@ -125,54 +269,7 @@ The overall effect is a nightclub for web designers: dark, precise, seductive, a
 - Customer logos and testimonials in muted gray on dark surfaces
 - Minimal ornamentation — the product screenshots serve as the trust signal
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 15px, 20px, 30px, 35px
-- **Section padding**: Large vertical spacing (80px–120px between sections)
-- **Card padding**: 15px–30px internal padding
-- **Component gaps**: 8px–20px between related elements
-
-### Grid & Container
-- **Max width**: ~1200px container, centered
-- **Column patterns**: Full-width hero, 2-column feature sections, single-column product showcases
-- **Asymmetric layouts**: Feature sections often pair text (40%) with screenshot (60%)
-
-### Whitespace Philosophy
-- **Breathe through darkness**: Generous vertical spacing between sections — the black background means whitespace manifests as void, creating dramatic pauses between content blocks
-- **Dense within, spacious between**: Individual components are tightly composed (tight line-heights, compressed text) but float in generous surrounding space
-- **Product-first density**: Screenshot areas are allowed to be dense and information-rich, contrasting with the sparse marketing text
-
-### Border Radius Scale
-- **1px**: Micro-elements, nearly squared precision edges
-- **5px–7px**: Small UI elements, image thumbnails — subtly softened
-- **8px**: Standard component radius — code blocks, buttons, interactive elements
-- **10px–12px**: Cards, product screenshots — comfortably rounded
-- **15px–20px**: Large containers, feature cards — generously rounded
-- **30px–40px**: Navigation pills, pagination — noticeably rounded
-- **100px**: Full pill shape — primary CTAs, tag elements
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, pure black surface | Page background, empty areas |
-| Level 1 (Ring) | `rgba(0, 153, 255, 0.15) 0px 0px 0px 1px` | Card borders, interactive element outlines — Framer Blue glow ring |
-| Level 2 (Contained) | `rgb(9, 9, 9) 0px 0px 0px 2px` | Near-black ring for subtle containment on dark surfaces |
-| Level 3 (Floating) | `rgba(255, 255, 255, 0.1) 0px 0.5px 0px 0.5px, rgba(0, 0, 0, 0.25) 0px 10px 30px` | Elevated cards, floating elements — subtle white top-edge highlight + deep ambient shadow |
-
-### Shadow Philosophy
-Framer's elevation system is inverted from traditional light-theme designs. Instead of darker shadows on light backgrounds, Framer uses:
-- **Blue-tinted ring shadows** at very low opacity (0.15) for containment — a signature move that subtly brands every bordered element
-- **White edge highlights** (0.5px) on the top edge of elevated elements — simulating light hitting the top surface
-- **Deep ambient shadows** for true floating elements — `rgba(0, 0, 0, 0.25)` at large spread (30px)
-
-### Decorative Depth
-- **Blue glow auras**: Subtle Framer Blue (`#0099ff`) radial gradients behind key interactive areas
-- **No background blur/glassmorphism**: Despite the frosted button effect, there's no heavy glass blur usage — the translucency is achieved through simple rgba opacity
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use pure black (`#000000`) as the primary background — not dark gray, not charcoal
@@ -196,7 +293,7 @@ Framer's elevation system is inverted from traditional light-theme designs. Inst
 - Place light/white backgrounds behind content sections — the void is sacred
 - Use serif or display-weight fonts — the system is geometric sans-serif only
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -223,7 +320,7 @@ Framer's elevation system is inverted from traditional light-theme designs. Inst
 - Dark background ensures screenshots maintain visual impact at any size
 - Screenshots lazy-load as user scrolls into view
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Background: Void Black (`#000000`)

@@ -1,9 +1,106 @@
+---
+"version": "alpha"
+"name": "ElevenLabs"
+"description": "Bundled Open Design package for ElevenLabs, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#000000"
+  "primary-hover": "#1a1a1a"
+  "primary-active": "#333333"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f5f5f5"
+  "surface-warm": "#f5f2ef"
+  "ink": "#000000"
+  "body": "#4e4e4e"
+  "muted": "#777169"
+  "meta": "#777169"
+  "border": "#e5e5e5"
+  "border-soft": "rgba(0, 0, 0, 0.05)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Waldenburg\", \"Waldenburg Fallback\", system-ui, sans-serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Inter\", \"Inter Fallback\", system-ui, -apple-system, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "8px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  links:
+    "textColor": "{colors.muted}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by ElevenLabs
 
 > Category: AI & LLM
 > AI voice platform. Dark cinematic UI, audio-waveform aesthetics.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 ElevenLabs' website is a study in restrained elegance — a near-white canvas (`#ffffff`, `#f5f5f5`) where typography and subtle shadows do all the heavy lifting. The design feels like a premium audio product brochure: clean, spacious, and confident enough to let the content speak (literally, given ElevenLabs makes voice AI). There's an almost Apple-like quality to the whitespace strategy, but warmer — the occasional warm stone tint (`#f5f2ef`, `#777169`) prevents the purity from feeling clinical.
 
@@ -21,7 +118,7 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - Warm shadow tints: `rgba(78, 50, 23, 0.04)` — shadows have color, not just darkness
 - Geist Mono / ui-monospace for code snippets
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure White** (`#ffffff`): Primary background, card surfaces, button backgrounds
@@ -50,7 +147,7 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - **Edge Shadow** (`rgba(0,0,0,0.08) 0px 0px 0px 0.5px`): Subtle edge definition
 - **Inset Ring** (`rgba(0,0,0,0.1) 0px 0px 0px 1px inset`): Strong inset border
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Waldenburg`, fallback: `Waldenburg Fallback`
@@ -84,7 +181,48 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - **WaldenburgFH for emphasis**: A bold (700) uppercase variant of Waldenburg appears only in specific CTA button labels with 0.7px letter-spacing — the one place where the type system gets loud.
 - **Monospace as ambient**: Geist Mono at relaxed line-height (1.85) for code blocks feels unhurried and readable.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 3px, 4px, 8px, 9px, 10px, 11px, 12px, 16px, 18px, 20px, 24px, 28px, 32px, 40px
+
+### Grid & Container
+- Centered content with generous max-width
+- Single-column hero, expanding to feature grids
+- Full-width gradient sections for product showcases
+- White card grids on light gray backgrounds
+
+### Whitespace Philosophy
+- **Apple-like generosity**: Massive vertical spacing between sections creates a premium, unhurried pace. Each section is an exhibit.
+- **Warm emptiness**: The whitespace isn't cold — the warm stone undertones and warm shadows give empty space a tactile, physical quality.
+- **Typography-led rhythm**: The light-weight Waldenburg headings create visual "whispers" that draw the eye through vast white space.
+
+### Border Radius Scale
+- Minimal (2px): Small links, inline elements
+- Subtle (4px): Nav items, tab panels, tags
+- Standard (8px): Small containers
+- Comfortable (10px–12px): Medium cards, dropdowns
+- Card (16px): Standard cards, articles
+- Large (18px–20px): Featured cards, code panels
+- Section (24px): Large panels, section containers
+- Warm Button (30px): Warm stone CTA
+- Pill (9999px): Primary buttons, navigation pills
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page background, text blocks |
+| Inset Edge (Level 0.5) | `rgba(0,0,0,0.075) 0px 0px 0px 0.5px inset, #fff 0px 0px 0px 0px inset` | Internal border definition |
+| Outline Ring (Level 1) | `rgba(0,0,0,0.06) 0px 0px 0px 1px` + `rgba(0,0,0,0.04) 0px 1px 2px` + `rgba(0,0,0,0.04) 0px 2px 4px` | Shadow-as-border for cards |
+| Card (Level 2) | `rgba(0,0,0,0.4) 0px 0px 1px, rgba(0,0,0,0.04) 0px 4px 4px` | Button elevation, prominent cards |
+| Warm Lift (Level 3) | `rgba(78,50,23,0.04) 0px 6px 16px` | Featured CTAs — warm-tinted |
+| Focus (Accessibility) | `var(--tw-ring-offset-shadow)` blue ring | Keyboard focus |
+
+**Shadow Philosophy**: ElevenLabs uses the most refined shadow system of any design system analyzed. Every shadow is at sub-0.1 opacity, many include both outward cast AND inward inset components, and the warm CTA shadows use an actual warm color (`rgba(78,50,23,...)`) rather than neutral black. The inset half-pixel borders (`0px 0px 0px 0.5px inset`) create edges so subtle they're felt rather than seen — surfaces define themselves through the lightest possible touch.
+
+## Components
 
 ### Buttons
 
@@ -153,48 +291,7 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - Asymmetric padding (more right padding)
 - Creates a physical, tactile quality unique to ElevenLabs
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 3px, 4px, 8px, 9px, 10px, 11px, 12px, 16px, 18px, 20px, 24px, 28px, 32px, 40px
-
-### Grid & Container
-- Centered content with generous max-width
-- Single-column hero, expanding to feature grids
-- Full-width gradient sections for product showcases
-- White card grids on light gray backgrounds
-
-### Whitespace Philosophy
-- **Apple-like generosity**: Massive vertical spacing between sections creates a premium, unhurried pace. Each section is an exhibit.
-- **Warm emptiness**: The whitespace isn't cold — the warm stone undertones and warm shadows give empty space a tactile, physical quality.
-- **Typography-led rhythm**: The light-weight Waldenburg headings create visual "whispers" that draw the eye through vast white space.
-
-### Border Radius Scale
-- Minimal (2px): Small links, inline elements
-- Subtle (4px): Nav items, tab panels, tags
-- Standard (8px): Small containers
-- Comfortable (10px–12px): Medium cards, dropdowns
-- Card (16px): Standard cards, articles
-- Large (18px–20px): Featured cards, code panels
-- Section (24px): Large panels, section containers
-- Warm Button (30px): Warm stone CTA
-- Pill (9999px): Primary buttons, navigation pills
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Page background, text blocks |
-| Inset Edge (Level 0.5) | `rgba(0,0,0,0.075) 0px 0px 0px 0.5px inset, #fff 0px 0px 0px 0px inset` | Internal border definition |
-| Outline Ring (Level 1) | `rgba(0,0,0,0.06) 0px 0px 0px 1px` + `rgba(0,0,0,0.04) 0px 1px 2px` + `rgba(0,0,0,0.04) 0px 2px 4px` | Shadow-as-border for cards |
-| Card (Level 2) | `rgba(0,0,0,0.4) 0px 0px 1px, rgba(0,0,0,0.04) 0px 4px 4px` | Button elevation, prominent cards |
-| Warm Lift (Level 3) | `rgba(78,50,23,0.04) 0px 6px 16px` | Featured CTAs — warm-tinted |
-| Focus (Accessibility) | `var(--tw-ring-offset-shadow)` blue ring | Keyboard focus |
-
-**Shadow Philosophy**: ElevenLabs uses the most refined shadow system of any design system analyzed. Every shadow is at sub-0.1 opacity, many include both outward cast AND inward inset components, and the warm CTA shadows use an actual warm color (`rgba(78,50,23,...)`) rather than neutral black. The inset half-pixel borders (`0px 0px 0px 0.5px inset`) create edges so subtle they're felt rather than seen — surfaces define themselves through the lightest possible touch.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Waldenburg weight 300 for all display headings — the lightness IS the brand
@@ -216,7 +313,7 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - Don't introduce brand colors — the palette is intentionally achromatic with warm undertones
 - Don't make buttons opaque and heavy — the warm translucent stone treatment is the signature
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -242,7 +339,7 @@ What makes ElevenLabs distinctive is its multi-layered shadow system. Rather tha
 - Audio waveform previews maintain aspect ratio
 - Rounded corners maintained across breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Pure White (`#ffffff`) or Light Gray (`#f5f5f5`)

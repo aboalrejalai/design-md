@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Miro"
+"description": "Bundled Open Design package for Miro, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ffd02f"
+  "on-primary": "#050038"
+  "canvas": "#fff7c2"
+  "surface": "#ffffff"
+  "surface-warm": "#fff3a3"
+  "ink": "#050038"
+  "body": "#322b6b"
+  "muted": "#605a8a"
+  "meta": "#f7c600"
+  "border": "#ded9ff"
+  "border-soft": "#eeeaff"
+  "success": "#1a7f37"
+  "warning": "#ff9f1c"
+  "danger": "#d92d20"
+typography:
+  display:
+    "fontFamily": "\"Formular\", Inter, Arial, sans-serif"
+    "lineHeight": "1.02"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"Formular\", Inter, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "38px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "76px"
+rounded:
+  "sm": "10px"
+  "md": "18px"
+  "lg": "28px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "104px"
+  "section-y-tablet": "72px"
+  "section-y-phone": "52px"
+  "container-max": "1220px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Miro
 
 > Category: Design & Creative
 > Visual collaboration. Bright yellow accent, infinite canvas aesthetic.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Miro's website is a clean, collaborative-tool-forward platform that communicates "visual thinking" through generous whitespace, pastel accent colors, and a confident geometric font. The design uses a predominantly white canvas with near-black text (`#1c1c1e`) and a distinctive pastel color palette — coral, rose, teal, orange, yellow, moss — each representing different collaboration contexts.
 
@@ -19,7 +112,7 @@ The typography uses Roobert PRO Medium as the primary display font with OpenType
 - Framer-built with smooth motion patterns
 - Ring shadow border: `rgb(224,226,232) 0px 0px 0px 1px`
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Near Black** (`#1c1c1e`): Primary text
@@ -47,7 +140,7 @@ The typography uses Roobert PRO Medium as the primary display font with OpenType
 - **Border** (`#c7cad5`): Button borders
 - **Ring** (`rgb(224,226,232)`): Shadow-as-border
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Roobert PRO Medium`, fallback: Placeholder — `"blwf", "cv03", "cv04", "cv09", "cv11"`
@@ -70,7 +163,17 @@ The typography uses Roobert PRO Medium as the primary display font with OpenType
 | Small | Roobert PRO Medium | 12px | 400 | 1.15 | -0.36px |
 | Micro Uppercase | Roobert PRO | 10.5px | 400 | 0.90 | uppercase |
 
-## 4. Component Stylings
+## Layout
+
+- Spacing: 1–24px base scale
+- Radius: 8px (buttons), 10px–12px (cards), 20px–24px (panels), 40px–50px (large containers)
+- Ring shadow: `rgb(224,226,232) 0px 0px 0px 1px`
+
+## Elevation & Depth
+
+Minimal — ring shadow + pastel surface contrast
+
+## Components
 
 ### Buttons
 - Outlined: transparent bg, `1px solid #c7cad5`, 8px radius, 7px 12px padding
@@ -80,15 +183,8 @@ The typography uses Roobert PRO Medium as the primary display font with OpenType
 ### Cards: 12px–24px radius, pastel backgrounds
 ### Inputs: white bg, `1px solid #e9eaef`, 8px radius, 16px padding
 
-## 5. Layout Principles
-- Spacing: 1–24px base scale
-- Radius: 8px (buttons), 10px–12px (cards), 20px–24px (panels), 40px–50px (large containers)
-- Ring shadow: `rgb(224,226,232) 0px 0px 0px 1px`
+## Do's and Don'ts
 
-## 6. Depth & Elevation
-Minimal — ring shadow + pastel surface contrast
-
-## 7. Do's and Don'ts
 ### Do
 - Use pastel light/dark pairs for feature sections
 - Apply Roobert PRO with OpenType character variants
@@ -97,10 +193,12 @@ Minimal — ring shadow + pastel surface contrast
 - Don't use heavy shadows
 - Don't mix more than 2 pastel accents per section
 
-## 8. Responsive Behavior
+## Responsive Behavior
+
 Breakpoints: 425px, 576px, 768px, 896px, 1024px, 1200px, 1280px, 1366px, 1700px, 1920px
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
+
 ### Quick Color Reference
 - Text: Near Black (`#1c1c1e`)
 - Background: White (`#ffffff`)

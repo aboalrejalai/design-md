@@ -1,9 +1,112 @@
+---
+"version": "alpha"
+"name": "Nike"
+"description": "Bundled Open Design package for Nike, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#111111"
+  "primary-hover": "#707072"
+  "primary-active": "#000000"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f5f5f5"
+  "surface-warm": "#fafafa"
+  "ink": "#111111"
+  "body": "#111111"
+  "muted": "#707072"
+  "meta": "#9e9ea0"
+  "border": "#cacacb"
+  "border-soft": "#e5e5e5"
+  "success": "#007d48"
+  "warning": "#fca600"
+  "danger": "#d30005"
+typography:
+  display:
+    "fontFamily": "\"Nike Futura ND\", \"Helvetica Now Display Medium\", \"Helvetica Now Display\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "0.9"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Helvetica Now Text Medium\", \"Helvetica Now Text\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.75"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "8px"
+  "md": "20px"
+  "lg": "24px"
+  "pill": "30px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "48px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.3}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Nike
 
 > Category: E-Commerce & Retail
 > Athletic retail. Monochrome UI, massive uppercase type, full-bleed photography.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Nike.com is a kinetic retail cathedral — a site that channels the explosive energy of sport into a digital shopping experience. The design operates on a principle of radical simplicity: strip everything back to black, white, and grey so that athletic photography and product color can dominate without competition. The result feels less like a website and more like a sports editorial laid out with the precision of a luxury magazine. Every pixel of real estate is either selling product or driving toward product.
 
@@ -20,7 +123,7 @@ The typography system is the other half of Nike's visual identity. Massive upper
 - Category-driven shopping architecture with large navigational image cards
 - Shadow-free, border-minimal elevation model — surface differentiation through grey shifts only
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 
@@ -77,7 +180,7 @@ Each color ramp runs 50–900 for expressive use in campaigns and product pages:
 
 Nike avoids UI gradients. When gradients appear, they are photographic — applied to product hero backgrounds (e.g., a red shoe on a red-to-deeper-red gradient). The design system itself is flat-color only.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -122,7 +225,68 @@ Nike avoids UI gradients. When gradients appear, they are photographic — appli
 
 Nike's typography is a study in tension. The display layer — Nike Futura ND at 96px with a devastating 0.90 line-height — is engineered to feel like a stadium scoreboard: massive, condensed, uppercase, impossible to ignore. It transforms headlines into battle cries. Below the display layer, Helvetica Now provides a clinical counterpoint: Swiss-precision legibility with generous 1.75 line-height for comfortable product browsing. Weight 500 (Medium) dominates throughout the body text, giving Nike's prose a slight assertiveness without the heaviness of bold — every sentence reads like a confident recommendation, not a shout.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Base unit: 4px (primary grid is 8px multiples)
+
+| Token | Value | Use |
+|-------|-------|-----|
+| space-1 | 4px | Tight icon gaps, inline spacing |
+| space-2 | 8px | Base unit, button icon gaps |
+| space-3 | 12px | Card internal padding, tight margins |
+| space-4 | 16px | Standard padding, nav spacing |
+| space-5 | 20px | Product card gaps |
+| space-6 | 24px | Section internal padding, grid gaps |
+| space-7 | 32px | Section breaks |
+| space-8 | 48px | Major section padding |
+| space-9 | 64px | Hero section padding |
+| space-10 | 80px | Large section spacing |
+
+### Grid & Container
+
+- Max container width: 1920px
+- Standard content width: ~1440px with horizontal padding
+- Product grid: 3-column on desktop, 2-column on tablet, 1-column on mobile
+- Category grid: 3-column with full-bleed images
+- Grid gap: 4-12px between product cards (intentionally tight)
+- Horizontal padding: 48px desktop, 24px tablet, 16px mobile
+
+### Whitespace Philosophy
+
+Nike's whitespace strategy is deliberately aggressive — not in the luxurious, breathing way of a fashion brand, but in a compressed, high-density way that fills every pixel with either content or intentional absence. Product grids use minimal gaps (4-12px) to create a sense of abundance and choice. Section breaks are generous (48-80px) to separate shopping contexts. The overall effect is a store that feels packed with product while remaining navigable — like a well-organized athletic superstore.
+
+### Border Radius Scale
+
+| Value | Context |
+|-------|---------|
+| 0px | Product images, hero photography (sharp edges) |
+| 8px | Form inputs (non-search) |
+| 18px | Small interactive elements |
+| 20px | Containers, cards with UI content |
+| 24px | Search inputs, medium pills |
+| 30px | Buttons, tags, filters (full pill) |
+| 50% | Circular icon buttons, avatar placeholders |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat | No shadow, no border | Default state for everything |
+| Divider | `0px -1px 0px 0px #E5E5E5 inset` | Subtle inset line between sections |
+| Focus | `0 0 0 2px rgba(39, 93, 197, 1)` | Keyboard focus ring |
+| Overlay | Dark scrim over photography | Text-on-image legibility |
+
+Nike's elevation philosophy is radically flat. There are no card shadows, no hover lifts, no floating elements. Depth is communicated exclusively through color — dark sections recede, light sections advance, grey shifts indicate state changes. This flatness reinforces the athletic, no-nonsense brand personality: no visual frills, just direct communication. The only "shadow" in the entire system is a 1px inset divider line and the accessibility-required focus ring.
+
+### Decorative Depth
+
+- **Hero photography overlays**: Dark gradient scrims over full-bleed photography for text readability
+- **Product background gradients**: Colored backgrounds behind hero product shots (e.g., red shoe on red gradient)
+- **Banner bars**: Solid dark (#111111) promotional strips at page top
+
+## Components
 
 ### Buttons
 
@@ -208,68 +372,7 @@ Nike's typography is a study in tension. The display layer — Nike Futura ND at
 - Centered text, 12px/500 Helvetica Now Text Medium
 - Used for shipping promotions, member benefits, sale announcements
 
-## 5. Layout Principles
-
-### Spacing System
-
-Base unit: 4px (primary grid is 8px multiples)
-
-| Token | Value | Use |
-|-------|-------|-----|
-| space-1 | 4px | Tight icon gaps, inline spacing |
-| space-2 | 8px | Base unit, button icon gaps |
-| space-3 | 12px | Card internal padding, tight margins |
-| space-4 | 16px | Standard padding, nav spacing |
-| space-5 | 20px | Product card gaps |
-| space-6 | 24px | Section internal padding, grid gaps |
-| space-7 | 32px | Section breaks |
-| space-8 | 48px | Major section padding |
-| space-9 | 64px | Hero section padding |
-| space-10 | 80px | Large section spacing |
-
-### Grid & Container
-
-- Max container width: 1920px
-- Standard content width: ~1440px with horizontal padding
-- Product grid: 3-column on desktop, 2-column on tablet, 1-column on mobile
-- Category grid: 3-column with full-bleed images
-- Grid gap: 4-12px between product cards (intentionally tight)
-- Horizontal padding: 48px desktop, 24px tablet, 16px mobile
-
-### Whitespace Philosophy
-
-Nike's whitespace strategy is deliberately aggressive — not in the luxurious, breathing way of a fashion brand, but in a compressed, high-density way that fills every pixel with either content or intentional absence. Product grids use minimal gaps (4-12px) to create a sense of abundance and choice. Section breaks are generous (48-80px) to separate shopping contexts. The overall effect is a store that feels packed with product while remaining navigable — like a well-organized athletic superstore.
-
-### Border Radius Scale
-
-| Value | Context |
-|-------|---------|
-| 0px | Product images, hero photography (sharp edges) |
-| 8px | Form inputs (non-search) |
-| 18px | Small interactive elements |
-| 20px | Containers, cards with UI content |
-| 24px | Search inputs, medium pills |
-| 30px | Buttons, tags, filters (full pill) |
-| 50% | Circular icon buttons, avatar placeholders |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat | No shadow, no border | Default state for everything |
-| Divider | `0px -1px 0px 0px #E5E5E5 inset` | Subtle inset line between sections |
-| Focus | `0 0 0 2px rgba(39, 93, 197, 1)` | Keyboard focus ring |
-| Overlay | Dark scrim over photography | Text-on-image legibility |
-
-Nike's elevation philosophy is radically flat. There are no card shadows, no hover lifts, no floating elements. Depth is communicated exclusively through color — dark sections recede, light sections advance, grey shifts indicate state changes. This flatness reinforces the athletic, no-nonsense brand personality: no visual frills, just direct communication. The only "shadow" in the entire system is a 1px inset divider line and the accessibility-required focus ring.
-
-### Decorative Depth
-
-- **Hero photography overlays**: Dark gradient scrims over full-bleed photography for text readability
-- **Product background gradients**: Colored backgrounds behind hero product shots (e.g., red shoe on red gradient)
-- **Banner bars**: Solid dark (#111111) promotional strips at page top
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -296,7 +399,7 @@ Nike's elevation philosophy is radically flat. There are no card shadows, no hov
 - Don't add decorative dividers — the 1px inset is the only divider pattern
 - Don't soften the contrast — Nike's design deliberately pushes black-on-white to maximum
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -333,7 +436,7 @@ Nike's elevation philosophy is radically flat. There are no card shadows, no hov
 - Lazy loading: native loading="lazy", grey-100 placeholder during load
 - Art direction: hero crops change between desktop and mobile compositions
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

@@ -1,9 +1,97 @@
+---
+"version": "alpha"
+"name": "Hugging Face"
+"description": "Bundled Open Design package for Hugging Face, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ffd21e"
+  "primary-hover": "#f59e0b"
+  "on-primary": "#0d1117"
+  "canvas": "#fafafa"
+  "surface": "#ffffff"
+  "surface-warm": "#fff4cc"
+  "ink": "#0d1117"
+  "body": "#374151"
+  "muted": "#6b7280"
+  "meta": "#6b7280"
+  "border": "#e5e7eb"
+  "border-soft": "#f3f4f6"
+  "success": "#16a34a"
+  "warning": "#f59e0b"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    "lineHeight": "1.1"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"Source Sans Pro\", Inter, system-ui, -apple-system, sans-serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "6px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Hugging Face
 
 > Category: AI & LLM
 > ML community hub. Sunny yellow accent, monospace identity, cheerful and dense.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Hugging Face is the rare ML brand that refuses to look serious. The hub leans into a sunshine-yellow accent (`#ffd21e`), a cartoon hugging-face emoji as the logo, and a confident **IBM Plex Mono** voice that reads more like a community zine than a research lab. The page background is a clean off-white (`#fafafa`) with text in a deep slate (`#0d1117`), and the yellow appears in pull quotes, tags, "new" badges, and the model-card header strip — never as an entire surface, always as punctuation.
 
@@ -20,7 +108,7 @@ Shapes are crisp, not soft: 4–6px radii, 1px solid borders that announce thems
 - Dense tables, minimal padding — a community hub for power users
 - Color-coded model categories (NLP blue, vision green, audio purple)
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **HF Yellow** (`#ffd21e`): Brand primary, badges, "new" pill, model-card header bar.
@@ -57,7 +145,7 @@ Shapes are crisp, not soft: 4–6px radii, 1px solid borders that announce thems
 - **Border Strong** (`#d1d5db`): Emphasized border on hover.
 - **Border Subtle** (`#f3f4f6`): Inner divider.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / UI / Headings / Tags**: `IBM Plex Mono`, with fallback: `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`
@@ -83,7 +171,7 @@ Shapes are crisp, not soft: 4–6px radii, 1px solid borders that announce thems
 - **Weight under 600**: 600 is the cap; 700 is too loud against yellow. Hierarchy is size and color.
 - **Tags read as code**: model tags use mono so they look like the strings developers will paste into Python.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -135,20 +223,20 @@ Shapes are crisp, not soft: 4–6px radii, 1px solid borders that announce thems
 - Row: border-bottom 1px `#f3f4f6`, hover `#f3f4f6`.
 - Padding: 8px 16px per cell — dense by design.
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64.
 - **Container**: max 1280px, 24px gutter.
 - **Sidebar (model browser)**: 280px wide.
 - **Section rhythm**: 64–96px vertical between major sections.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 120ms for hover; 200ms for menu open.
 - **Easing**: `ease-out`.
 - **Tag pop**: a 1.05× scale on hover at 120ms — the only exception to flat-on-hover.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Preserve the yellow accent, mono metadata, and dense model-card layout together; yellow alone does not create a Hugging Face-like surface.
 - Use tags, tables, and repository-style metadata for model browsing or evaluation contexts rather than decorative marketing cards.

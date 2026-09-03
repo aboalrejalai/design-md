@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Composio"
+"description": "Bundled Open Design package for Composio, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#6d5dfc"
+  "on-primary": "#ffffff"
+  "canvas": "#090b14"
+  "surface": "#121626"
+  "surface-warm": "#1b2140"
+  "ink": "#f8fafc"
+  "body": "#cbd5e1"
+  "muted": "#94a3b8"
+  "meta": "#8b5cf6"
+  "border": "#27324a"
+  "border-soft": "#1d2638"
+  "success": "#22c55e"
+  "warning": "#fbbf24"
+  "danger": "#fb7185"
+typography:
+  display:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"JetBrains Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "17px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "10px"
+  "md": "14px"
+  "lg": "22px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Composio
 
 > Category: Backend & Data
 > Tool integration platform. Modern dark with colorful integration icons.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Composio's interface is a nocturnal command center — a dense, developer-focused darkness punctuated by electric cyan and deep cobalt signals. The entire experience is built on an almost-pure-black canvas (`#0f0f0f`) where content floats within barely-visible containment borders, creating the feeling of a high-tech control panel rather than a traditional marketing page. It's a site that whispers authority to developers who live in dark terminals.
 
@@ -20,7 +113,7 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - Monochrome hierarchy with color used only at the highest-signal moments
 - Developer-terminal aesthetic that bridges marketing and documentation
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Composio Cobalt** (`#0007cd`): The core brand color — a deep, saturated blue used sparingly for high-priority interactive elements and brand moments. It anchors the identity with quiet intensity.
@@ -55,7 +148,7 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - **Blue-to-Black Fade**: Linear gradients from Composio Cobalt (`#0007cd`) fading into Void Black (`#0f0f0f`), used in hero backgrounds and section transitions.
 - **White Fog**: Bottom-of-page gradient transitioning from dark to a diffused white/gray, creating an atmospheric "horizon line" effect near the footer.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `abcDiatype`, with fallbacks: `abcDiatype Fallback, ui-sans-serif, system-ui, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji`
@@ -93,7 +186,50 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - **Negative letter-spacing on code**: JetBrains Mono uses negative letter-spacing (-0.28px to -0.98px) for dense, compact code blocks that feel like a real IDE.
 - **Uppercase is earned**: The `uppercase` + `letter-spacing` treatment is reserved exclusively for tiny overline labels and technical tags — never for headings.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 12px, 14px, 16px, 18px, 20px, 24px, 30px, 32px, 40px
+- Component padding: typically 10px (buttons) to 24px (CTA buttons horizontal)
+- Section padding: generous vertical spacing (estimated 80-120px between major sections)
+- Card internal padding: approximately 24-32px
+
+### Grid & Container
+- Max container width: approximately 1200px, centered
+- Content sections use single-column or 2-3 column grids for feature cards
+- Hero: centered single-column with maximum impact
+- Feature sections: asymmetric layouts mixing text blocks with product screenshots
+
+### Whitespace Philosophy
+- **Breathing room between sections**: Large vertical gaps create distinct "chapters" in the page scroll.
+- **Dense within components**: Cards and text blocks are internally compact (tight line-heights, minimal internal padding), creating focused information nodes.
+- **Contrast-driven separation**: Rather than relying solely on whitespace, Composio uses border opacity differences and subtle background shifts to delineate content zones.
+
+### Border Radius Scale
+- Nearly squared (2px): Inline code spans, small tags, pre blocks — the sharpest treatment, conveying technical precision
+- Subtly rounded (4px): Content cards, images, standard containers — the workhorse radius
+- Pill-shaped (37px): Select buttons and badges — creates a softer, more approachable feel for key CTAs
+- Full round (9999px+): Circular elements, avatar-like containers, decorative dots
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, inline text |
+| Contained (Level 1) | Border Mist 04-08, no shadow | Background groupings, subtle sections |
+| Card (Level 2) | Border Mist 10-12, no shadow | Standard content cards, code blocks |
+| Brutalist (Level 3) | Hard offset shadow (`4px 4px`, 15% black) | Select interactive cards, distinctive feature highlights |
+| Floating (Level 4) | Soft diffuse shadow (`0px 8px 32px`, 50% black) | Modals, overlays, deeply elevated content |
+
+**Shadow Philosophy**: Composio uses shadows sparingly and with deliberate contrast. The hard-offset brutalist shadow is the signature — it breaks the sleek darkness with a raw, almost retro-computing feel. The soft diffuse shadow is reserved for truly floating elements. Most depth is communicated through border opacity gradations rather than shadows.
+
+### Decorative Depth
+- **Cyan Glow Halos**: Radial gradient halos using Electric Cyan at low opacity behind feature cards and images. Creates a "screen glow" effect as if the UI elements are emitting light.
+- **Blue-Black Gradient Washes**: Linear gradients from Composio Cobalt to Void Black used as section backgrounds, adding subtle color temperature shifts.
+- **White Fog Horizon**: A gradient from dark to diffused white/gray at the bottom of the page, creating an atmospheric "dawn" effect before the footer.
+
+## Components
 
 ### Buttons
 
@@ -184,50 +320,7 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - Used as a section divider/brand statement
 - Stark white on black
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 12px, 14px, 16px, 18px, 20px, 24px, 30px, 32px, 40px
-- Component padding: typically 10px (buttons) to 24px (CTA buttons horizontal)
-- Section padding: generous vertical spacing (estimated 80-120px between major sections)
-- Card internal padding: approximately 24-32px
-
-### Grid & Container
-- Max container width: approximately 1200px, centered
-- Content sections use single-column or 2-3 column grids for feature cards
-- Hero: centered single-column with maximum impact
-- Feature sections: asymmetric layouts mixing text blocks with product screenshots
-
-### Whitespace Philosophy
-- **Breathing room between sections**: Large vertical gaps create distinct "chapters" in the page scroll.
-- **Dense within components**: Cards and text blocks are internally compact (tight line-heights, minimal internal padding), creating focused information nodes.
-- **Contrast-driven separation**: Rather than relying solely on whitespace, Composio uses border opacity differences and subtle background shifts to delineate content zones.
-
-### Border Radius Scale
-- Nearly squared (2px): Inline code spans, small tags, pre blocks — the sharpest treatment, conveying technical precision
-- Subtly rounded (4px): Content cards, images, standard containers — the workhorse radius
-- Pill-shaped (37px): Select buttons and badges — creates a softer, more approachable feel for key CTAs
-- Full round (9999px+): Circular elements, avatar-like containers, decorative dots
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, inline text |
-| Contained (Level 1) | Border Mist 04-08, no shadow | Background groupings, subtle sections |
-| Card (Level 2) | Border Mist 10-12, no shadow | Standard content cards, code blocks |
-| Brutalist (Level 3) | Hard offset shadow (`4px 4px`, 15% black) | Select interactive cards, distinctive feature highlights |
-| Floating (Level 4) | Soft diffuse shadow (`0px 8px 32px`, 50% black) | Modals, overlays, deeply elevated content |
-
-**Shadow Philosophy**: Composio uses shadows sparingly and with deliberate contrast. The hard-offset brutalist shadow is the signature — it breaks the sleek darkness with a raw, almost retro-computing feel. The soft diffuse shadow is reserved for truly floating elements. Most depth is communicated through border opacity gradations rather than shadows.
-
-### Decorative Depth
-- **Cyan Glow Halos**: Radial gradient halos using Electric Cyan at low opacity behind feature cards and images. Creates a "screen glow" effect as if the UI elements are emitting light.
-- **Blue-Black Gradient Washes**: Linear gradients from Composio Cobalt to Void Black used as section backgrounds, adding subtle color temperature shifts.
-- **White Fog Horizon**: A gradient from dark to diffused white/gray at the bottom of the page, creating an atmospheric "dawn" effect before the footer.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Void Black (`#0f0f0f`) as the primary page background — never pure white for main surfaces
@@ -252,7 +345,7 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - Don't use decorative serif or handwritten fonts — the entire identity is geometric sans + monospace
 - Don't skip the monospace font for technical content — JetBrains Mono is not decorative, it's a credibility signal
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -281,7 +374,7 @@ What makes Composio distinctive is its tension between extreme minimalism and st
 - Gradient glow effects scale with container size
 - No visible art direction changes between breakpoints — same crops, proportional scaling
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: "Pure White (#ffffff)"

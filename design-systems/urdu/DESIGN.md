@@ -1,3 +1,93 @@
+---
+"version": "alpha"
+"name": "Urdu Modern (Indus Script System)"
+"description": "Bundled Open Design package for Urdu Modern (Indus Script System), derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1f8f46"
+  "on-primary": "#ffffff"
+  "canvas": "#f3faf4"
+  "surface": "#ffffff"
+  "surface-warm": "#e5f5e7"
+  "ink": "#15261a"
+  "body": "#38513e"
+  "muted": "#6b7d70"
+  "meta": "#1f8f46"
+  "border": "#d4e3d7"
+  "border-soft": "#edf3ee"
+  "success": "#16a34a"
+  "warning": "#d97706"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "Georgia, \"Times New Roman\", serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.52"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "54px"
+  4xl:
+    "fontSize": "76px"
+rounded:
+  "sm": "10px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Urdu Modern (Indus Script System)
 
 > Category: Editorial / Personal / Publication
@@ -5,7 +95,7 @@ Urdu-first digital experiences with native RTL support,Nastaliq typography, and 
 
 ---
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 **"Digital Heritage"** — A clean, spacious, and respectful aesthetic that bridges traditional Urdu calligraphy and contemporary minimal design.
 
@@ -19,7 +109,7 @@ The system avoids visual clutter. Every component prioritizes **whitespace**, **
 
 ---
 
-## 2. Color Palette (Cultural Modernism)
+## Colors
 
 All colors are tested for WCAG AA contrast compliance (minimum 4.5:1 for body text, 3:1 for large text).
 
@@ -78,7 +168,7 @@ All colors are tested for WCAG AA contrast compliance (minimum 4.5:1 for body te
 
 ---
 
-## 3. Typography (The Heart of the System)
+## Typography
 
 Urdu typography is the foundational layer. The system enforces **Bilingual Harmony** — Urdu takes priority; Latin text plays a supporting role.
 
@@ -177,7 +267,7 @@ Only use:
 
 ---
 
-## 4. Spacing & Layout Grid
+## Layout
 
 **Base Unit:** 4px
 
@@ -266,7 +356,7 @@ For complex layouts, use a 12-column grid:
 
 ---
 
-## 5. Component Styles
+## Components
 
 ### Buttons
 
@@ -503,7 +593,77 @@ a:focus {
 
 ---
 
-## 6. Motion & Animation
+## Do's and Don'ts
+
+### ❌ Layout & Direction
+
+- **Hard-coded margin-left/right:** Breaks RTL layouts. Always use logical properties like `margin-inline-start` or `padding-inline-end`.
+- **Fixed Widths on Text Containers:** Urdu script has a large vertical footprint; fixed heights will cause "nuqta" (dot) clipping.
+
+### ✅ Bidirectional (Bidi) Success Patterns
+- **Isolate LTR content:** When mixing Urdu with English product names, URLs, or numbers, always use the `<bdi>` tag or `dir="ltr"` to prevent punctuation (like brackets or periods) from flipping to the wrong side.
+
+```html
+<p dir="rtl">
+  Check our website <bdi dir="ltr">example.com</bdi> for more details.
+</p>
+```
+
+### ❌ Typography
+
+- **Generic Arabic fonts (Almarai, Droid Arabic):** Do not use Almarai or Noto Naskh Arabic. These do not support the cascading nature of Nastaliq and break spacing.
+
+- **Italic Urdu text:** Nastaliq doesn't have true italic. Font rendering breaks. Use bold or color for emphasis instead.
+
+- **Line-height < 1.8:** Narrow line heights will clip the dots (nuqtas). Maintain a minimum of 1.8 for all Urdu body text.
+
+### ❌ Visual Design
+
+- **Soft shadows on Urdu text:** Shadows make nuqtas invisible. Use only on containers.
+  ```css
+  /* ❌ BAD */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  
+  /* ✅ GOOD: Shadows only on containers */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  ```
+
+- **Emoji as primary icons:** Emoji is LTR by default; ambiguous in RTL. Use SVG icons instead.
+- **Truncate text with ellipsis in RTL:** `text-overflow: ellipsis` reads backwards. Use expand-button or full text instead.
+  ```html
+  <!-- ❌ BAD: Ellipsis reads wrong in RTL -->
+  <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+    یہ بہت لمبا متن ہے...
+  </p>
+  
+  <!-- ✅ GOOD: Full text or expand-button -->
+  <details>
+    <summary lang="ur">مزید دیکھیں</summary>
+    <p lang="ur">یہ بہت لمبا متن ہے جو مکمل طور پر دیکھنے کے لیے کلک کریں۔</p>
+  </details>
+  ```
+
+- **Aggressive purple gradients:** Doesn't match the Indus palette. Use Deep Teal or Terracotta.
+- **Low-contrast backgrounds:** Nastaliq nuqtas need high contrast (7:1+).
+
+### ❌ Component Structure
+
+- **Icon Source Order:** In RTL buttons, the icon should be placed to the right of the text in the source code to maintain a natural visual flow.
+- **Directional Icons:** Always manually flip directional icons (like arrows) using transform: scaleX(-1) to align with RTL flow.
+
+  ```html
+  <!-- Icon on right in source; flex auto-reverses -->
+  <button style="display: flex; gap: 8px;">
+    <icon name="arrow-left" style="transform: scaleX(-1);"></icon>
+    <span lang="ur">بھیجیں</span>
+</button>
+  ```
+
+- **Form inputs without explicit labels:** Placeholders disappear; accessibility fails.
+
+---
+
+## Motion & Animation
 
 All animations respect RTL directionality and maintain readability.
 
@@ -559,7 +719,7 @@ All animations respect RTL directionality and maintain readability.
 
 ---
 
-## 7. Accessibility (A11y)
+## Accessibility (A11y)
 
 This system is built to be accessible. All color contrasts are verified against WCAG standards.
 
@@ -631,7 +791,7 @@ Properly declaring the document language is critical for Urdu screen reading and
 
 ---
 
-## 8. Brand Voice & Tone
+## Brand Voice & Tone
 
 Urdu is a **formal, respectful language**. Microcopy should reflect this.
 
@@ -682,76 +842,6 @@ Always use Pakistani Rupee (₨), not generic rupee (₹):
 | "Loading..." | "لوڈ ہو رہا ہے..." | Wait state |
 | "Error occurred" | "معافی چاہتے ہیں، کوئی مسئلہ واقع ہوا۔" | Error state |
 | "No results" | "کوئی نتیجہ نہیں ملا" | Empty state |
-
----
-
-## 9. Anti-Patterns (Do NOT)
-
-### ❌ Layout & Direction
-
-- **Hard-coded margin-left/right:** Breaks RTL layouts. Always use logical properties like `margin-inline-start` or `padding-inline-end`.
-- **Fixed Widths on Text Containers:** Urdu script has a large vertical footprint; fixed heights will cause "nuqta" (dot) clipping.
-
-### ✅ Bidirectional (Bidi) Success Patterns
-- **Isolate LTR content:** When mixing Urdu with English product names, URLs, or numbers, always use the `<bdi>` tag or `dir="ltr"` to prevent punctuation (like brackets or periods) from flipping to the wrong side.
-
-```html
-<p dir="rtl">
-  Check our website <bdi dir="ltr">example.com</bdi> for more details.
-</p>
-```
-
-### ❌ Typography
-
-- **Generic Arabic fonts (Almarai, Droid Arabic):** Do not use Almarai or Noto Naskh Arabic. These do not support the cascading nature of Nastaliq and break spacing.
-
-- **Italic Urdu text:** Nastaliq doesn't have true italic. Font rendering breaks. Use bold or color for emphasis instead.
-
-- **Line-height < 1.8:** Narrow line heights will clip the dots (nuqtas). Maintain a minimum of 1.8 for all Urdu body text.
-
-### ❌ Visual Design
-
-- **Soft shadows on Urdu text:** Shadows make nuqtas invisible. Use only on containers.
-  ```css
-  /* ❌ BAD */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  
-  /* ✅ GOOD: Shadows only on containers */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  ```
-
-- **Emoji as primary icons:** Emoji is LTR by default; ambiguous in RTL. Use SVG icons instead.
-- **Truncate text with ellipsis in RTL:** `text-overflow: ellipsis` reads backwards. Use expand-button or full text instead.
-  ```html
-  <!-- ❌ BAD: Ellipsis reads wrong in RTL -->
-  <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-    یہ بہت لمبا متن ہے...
-  </p>
-  
-  <!-- ✅ GOOD: Full text or expand-button -->
-  <details>
-    <summary lang="ur">مزید دیکھیں</summary>
-    <p lang="ur">یہ بہت لمبا متن ہے جو مکمل طور پر دیکھنے کے لیے کلک کریں۔</p>
-  </details>
-  ```
-
-- **Aggressive purple gradients:** Doesn't match the Indus palette. Use Deep Teal or Terracotta.
-- **Low-contrast backgrounds:** Nastaliq nuqtas need high contrast (7:1+).
-
-### ❌ Component Structure
-
-- **Icon Source Order:** In RTL buttons, the icon should be placed to the right of the text in the source code to maintain a natural visual flow.
-- **Directional Icons:** Always manually flip directional icons (like arrows) using transform: scaleX(-1) to align with RTL flow.
-
-  ```html
-  <!-- Icon on right in source; flex auto-reverses -->
-  <button style="display: flex; gap: 8px;">
-    <icon name="arrow-left" style="transform: scaleX(-1);"></icon>
-    <span lang="ur">بھیجیں</span>
-</button>
-  ```
-
-- **Form inputs without explicit labels:** Placeholders disappear; accessibility fails.
 
 ---
 

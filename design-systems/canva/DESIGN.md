@@ -1,9 +1,104 @@
+---
+"version": "alpha"
+"name": "Canva"
+"description": "Bundled Open Design package for Canva, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#7d2ae8"
+  "primary-hover": "#6815d4"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f4f5f7"
+  "surface-warm": "#f4f5f7"
+  "ink": "#0e1318"
+  "body": "#3c4043"
+  "muted": "#5f6368"
+  "meta": "#9aa0a6"
+  "border": "#e1e3e6"
+  "border-soft": "#e1e3e6"
+  "success": "#00b894"
+  "warning": "#ffb020"
+  "danger": "#ff5757"
+typography:
+  display:
+    "fontFamily": "\"Canva Sans\", \"YS Text\", system-ui, -apple-system, sans-serif"
+    "lineHeight": "1.15"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Canva Sans\", \"YS Text\", system-ui, -apple-system, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"JetBrains Mono\", ui-monospace, Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "18px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1320px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Canva
 
 > Category: Design & Creative
 > Visual creation platform. Vivid purple-blue gradient, generous spacing, friendly geometry.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Canva is the friendly face of design tools — the brand makes a point of looking inviting where Adobe looks intimidating. The page is built on a clean white canvas (`#ffffff`) with a signature **purple-to-blue gradient** (`#7d2ae8` → `#00c4cc`) used in the brand mark, hero buttons, and Pro/Magic moments. Surfaces are generously padded, edges are gently rounded (8–16px), and shadows are soft and cool-toned.
 
@@ -20,7 +115,7 @@ The shape system is ultra-soft: 12px on most cards, 16–20px on larger panels, 
 - Vibrant secondary palette (coral, mint, tangerine) for category tags
 - Pro/Magic moments lit by a static gradient — no animation
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand Gradient
 - **Canva Purple** (`#7d2ae8`): Brand primary; gradient origin.
@@ -56,7 +151,7 @@ The shape system is ultra-soft: 12px on most cards, 16–20px on larger panels, 
 - **Border Default** (`#e1e3e6`): Standard hairline.
 - **Border Strong** (`#c7cdd3`): Emphasized border, hover state.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / UI / Body**: `Canva Sans`, with fallback: `'YS Text', system-ui, -apple-system, sans-serif`
@@ -82,7 +177,7 @@ The shape system is ultra-soft: 12px on most cards, 16–20px on larger panels, 
 - **Tight line-height for cards**: card titles use 1.15–1.2 so a 3-line title still fits a 4:3 thumbnail.
 - **No display serif**: Canva is sans-only across all surfaces; serifs appear only as user-selectable template fonts inside the editor.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -143,20 +238,20 @@ The shape system is ultra-soft: 12px on most cards, 16–20px on larger panels, 
 - Radius: 9999px
 - Font: 10px / 700 / uppercase
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64, 96.
 - **Container**: max 1320px, 32px gutter.
 - **Sidebar (editor)**: 320px wide; collapses to 56px icons.
 - **Card grid gap**: 16px on mobile, 24px on desktop.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 180ms for hover; 280ms for menu open; 420ms for editor sidebar collapse.
 - **Easing**: `cubic-bezier(0.4, 0, 0.2, 1)` (Material-style).
 - **Card lift**: translateY(-2px) + shadow grow on hover, single transition.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Keep the white canvas dominant; the purple-to-cyan gradient should signal brand, Pro, Magic, or one primary CTA moment.
 - Use filled rounded icons and soft 12-20px geometry rather than sharp enterprise controls.

@@ -1,9 +1,94 @@
+---
+"version": "alpha"
+"name": "SpaceX"
+"description": "Bundled Open Design package for SpaceX, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#f0f0fa"
+  "primary-hover": "#ffffff"
+  "primary-active": "#d8d8e6"
+  "on-primary": "#000000"
+  "canvas": "#000000"
+  "surface": "#000000"
+  "surface-warm": "#000000"
+  "ink": "#f0f0fa"
+  "body": "#f0f0fa"
+  "muted": "rgba(240, 240, 250, 0.7)"
+  "meta": "rgba(240, 240, 250, 0.7)"
+  "border": "rgba(240, 240, 250, 0.35)"
+  "border-soft": "rgba(240, 240, 250, 0.1)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"D-DIN-Bold\", \"D-DIN\", \"DIN Alternate\", \"Helvetica Neue\", Arial, Verdana, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "0.02em"
+  body:
+    "fontFamily": "\"D-DIN\", \"DIN Alternate\", \"Helvetica Neue\", Arial, Verdana, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "10px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "4px"
+  "lg": "4px"
+  "pill": "32px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "56px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "20px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.xs}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by SpaceX
 
 > Category: Media & Consumer
 > Space technology. Stark black and white, full-bleed imagery, futuristic.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 SpaceX's website is a full-screen cinematic experience that treats aerospace engineering like a film — every section is a scene, every photograph is a frame, and the interface disappears entirely behind the imagery. The design is pure black (`#000000`) with photography of rockets, space, and planets occupying 100% of the viewport. Text overlays sit directly on these photographs with no background panels, cards, or containers — just type on image, bold and unapologetic.
 
@@ -21,7 +106,7 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 - Full-viewport sections — each section is a cinematic "scene"
 - No decorative elements — every pixel serves the photography
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Space Black** (`#000000`): Page background, the void of space — at 50% opacity for overlay gradient
@@ -35,7 +120,7 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 ### Gradient
 - **Dark Overlay** (`rgba(0, 0, 0, 0.5)`): Gradient overlay on photographs to ensure text legibility
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `D-DIN-Bold` — bold industrial geometric
@@ -59,7 +144,39 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 - **Two weights, strict hierarchy**: D-DIN-Bold (700) for headlines and nav emphasis, D-DIN (400) for body. No medium or semibold weights exist in the system.
 - **Tight line-heights**: 0.94–1.00 across most text — compressed, efficient, mission-critical communication.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 3px, 5px, 12px, 15px, 18px, 20px, 24px, 30px
+- Minimal scale — spacing is not the organizing principle; photography is
+
+### Grid & Container
+- No traditional grid — each section is a full-viewport cinematic frame
+- Text is positioned absolutely or with generous padding over imagery
+- Left-aligned text blocks on photography backgrounds
+- No max-width container — content bleeds to viewport edges
+
+### Whitespace Philosophy
+- **Photography IS the whitespace**: Empty space in the design is never empty — it's filled with the dark expanse of space, the curve of a planet, or the flame of a rocket engine. Traditional whitespace concepts don't apply.
+- **Vertical pacing through viewport**: Each section is exactly one viewport tall, creating a rhythmic scroll where each "page" reveals a new scene.
+
+### Border Radius Scale
+- Sharp (4px): Small dividers, utility elements
+- Button (32px): Ghost buttons — the only rounded element
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Photography (Level 0) | Full-viewport imagery | Background layer — always present |
+| Overlay (Level 1) | `rgba(0, 0, 0, 0.5)` gradient | Text legibility layer over photography |
+| Text (Level 2) | Spectral white text, no shadow | Content layer — text floats directly on image |
+| Ghost (Level 3) | `rgba(240, 240, 250, 0.1)` surface | Barely-visible interactive layer |
+
+**Shadow Philosophy**: SpaceX uses ZERO shadows. In a design built entirely on photography, shadows are meaningless — every surface is already a photograph with natural lighting. Depth comes from the photographic content itself: the receding curvature of Earth, the diminishing trail of a rocket, the atmospheric haze around Mars.
+
+## Components
 
 ### Buttons
 
@@ -92,39 +209,7 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 - Each section = one full-screen photograph with text overlay
 - No border radius, no frames — edge-to-edge imagery
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 3px, 5px, 12px, 15px, 18px, 20px, 24px, 30px
-- Minimal scale — spacing is not the organizing principle; photography is
-
-### Grid & Container
-- No traditional grid — each section is a full-viewport cinematic frame
-- Text is positioned absolutely or with generous padding over imagery
-- Left-aligned text blocks on photography backgrounds
-- No max-width container — content bleeds to viewport edges
-
-### Whitespace Philosophy
-- **Photography IS the whitespace**: Empty space in the design is never empty — it's filled with the dark expanse of space, the curve of a planet, or the flame of a rocket engine. Traditional whitespace concepts don't apply.
-- **Vertical pacing through viewport**: Each section is exactly one viewport tall, creating a rhythmic scroll where each "page" reveals a new scene.
-
-### Border Radius Scale
-- Sharp (4px): Small dividers, utility elements
-- Button (32px): Ghost buttons — the only rounded element
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Photography (Level 0) | Full-viewport imagery | Background layer — always present |
-| Overlay (Level 1) | `rgba(0, 0, 0, 0.5)` gradient | Text legibility layer over photography |
-| Text (Level 2) | Spectral white text, no shadow | Content layer — text floats directly on image |
-| Ghost (Level 3) | `rgba(240, 240, 250, 0.1)` surface | Barely-visible interactive layer |
-
-**Shadow Philosophy**: SpaceX uses ZERO shadows. In a design built entirely on photography, shadows are meaningless — every surface is already a photograph with natural lighting. Depth comes from the photographic content itself: the receding curvature of Earth, the diminishing trail of a rocket, the atmospheric haze around Mars.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use full-viewport photography as the primary design element — every section is a scene
@@ -144,7 +229,7 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 - Don't reduce photography to thumbnails — every image is full-viewport
 - Don't add decorative elements (icons, badges, dividers) — the design is photography + type + one button
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -173,7 +258,7 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 - Dark overlay gradients adapt to content position
 - No art direction changes — same photographs, responsive positioning
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Space Black (`#000000`)

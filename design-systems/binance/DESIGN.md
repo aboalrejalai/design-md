@@ -1,9 +1,109 @@
+---
+"version": "alpha"
+"name": "Binance.US"
+"description": "Bundled Open Design package for Binance.US, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#f0b90b"
+  "primary-hover": "#1eaedb"
+  "primary-active": "#d0980b"
+  "on-primary": "#1e2026"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#f5f5f5"
+  "ink": "#1e2026"
+  "body": "#32313a"
+  "muted": "#848e9c"
+  "meta": "#777e90"
+  "border": "#e6e8ea"
+  "border-soft": "#f0f1f2"
+  "success": "#0ecb81"
+  "warning": "#eab308"
+  "danger": "#f6465d"
+typography:
+  display:
+    "fontFamily": "BinancePlex, Arial, sans-serif"
+    "lineHeight": "1.0"
+  body:
+    "fontFamily": "BinancePlex, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "34px"
+  4xl:
+    "fontSize": "60px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.pill}"
+  inputs:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  keyboard:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Binance.US
 
 > Category: Fintech & Crypto
 > Crypto exchange. Bold yellow accent on monochrome, trading-floor urgency.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Binance.US radiates the polished urgency of a digital trading floor — a space where money moves and decisions happen in seconds. The design is a two-tone composition that alternates between stark white trading surfaces and deep near-black panels (`#222126`), creating a visual rhythm that mirrors the bull-and-bear duality of crypto markets. Binance Yellow (`#F0B90B`) cuts through this monochrome foundation like a gold ingot on a steel desk — unmistakable, confident, and engineered to guide every eye toward the next action.
 
@@ -20,7 +120,7 @@ What makes Binance.US distinctive is the tension between warmth and precision. T
 - Crypto price tickers with real-time data prominently displayed
 - Shadow-light elevation with subtle 5% opacity card shadows
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 
@@ -63,7 +163,7 @@ What makes Binance.US distinctive is the tension between warmth and precision. T
 - **Dark Fade**: Linear gradient from `#222126` to transparent — used for dark section transitions
 - **Hero Shimmer**: Subtle animated gold gradient on hero section accents
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -100,7 +200,70 @@ What makes Binance.US distinctive is the tension between warmth and precision. T
 
 BinancePlex is engineered for data-dense interfaces where numbers and text must coexist at multiple scales. The typeface has tabular numerals by default — critical for price columns and portfolio values that need perfect vertical alignment. Weights lean toward the heavier end (500-700), giving the interface a sense of authority and confidence that's essential for a financial platform. The tight line-heights (1.00-1.25) on headings create a stacked, compressed feel that mirrors the density of trading dashboards, while body text opens up to 1.50 for comfortable reading of educational and marketing content.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Base unit: 8px
+
+| Token | Value | Use |
+|-------|-------|-----|
+| space-1 | 4px | Tight inline gaps, icon padding |
+| space-2 | 8px | Base unit, button icon gaps, tight margins |
+| space-3 | 12px | Card internal padding, input padding |
+| space-4 | 16px | Standard padding, section margins |
+| space-5 | 20px | Card gaps, medium padding |
+| space-6 | 24px | Section internal padding |
+| space-7 | 32px | Section breaks, large padding |
+| space-8 | 48px | Major section padding |
+| space-9 | 64px | Hero section padding |
+| space-10 | 80px | Large section spacing |
+
+### Grid & Container
+
+- Max container width: 1200px (centered)
+- Hero area: single column with side-by-side text + image above 1024px
+- Feature grid: 3-column on desktop, single column on mobile
+- Product showcase: 2-column (text + device mockup)
+- Horizontal padding: 32px desktop, 16px mobile
+- Grid gap: 24px between feature cards
+
+### Whitespace Philosophy
+
+Binance.US uses whitespace as a trust signal. Generous padding around the hero section and between content blocks creates a sense of spaciousness that counters the information density typically associated with crypto exchanges. The light sections breathe — wide margins around headlines and ample spacing between cards — while dark sections compress, packing features into tighter grids to convey capability and depth. The overall rhythm alternates between "inviting entry" (light, spacious) and "deep functionality" (dark, dense).
+
+### Border Radius Scale
+
+| Value | Context |
+|-------|---------|
+| 1px | Subtle edge softening, fine UI elements |
+| 2px | Close buttons, micro-interactive elements |
+| 6px | Primary buttons (non-pill), small cards |
+| 8px | Form inputs, data cards, image containers |
+| 10px | Navigation pills, tag containers |
+| 12px | Content cards, feature containers |
+| 24px | Video containers, hero imagery, large cards |
+| 50px | Pill buttons (CTA), search inputs, full-round elements |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat | No shadow, solid background | Default for inline elements |
+| Subtle | `rgba(32, 32, 37, 0.05) 0px 3px 5px` | Content cards, resting state |
+| Medium | `rgba(8, 8, 8, 0.05) 0px 3px 5px 5px` | Hovered cards, elevated containers |
+| Pill Shadow | `rgb(153,153,153) 0px 2px 10px -3px` | Pill CTA buttons, floating actions |
+| Heavy | `rgba(0,0,0) 0px 32px 37px` | Modal overlays, dropdown menus |
+
+Binance.US uses a whisper-light shadow system. Card shadows are barely perceptible at 5% opacity — they exist not for dramatic depth but as subtle ground cues that keep cards from feeling pasted onto the surface. The pill button shadow is the exception: slightly more visible to give CTAs a "floating" quality that invites clicks. The philosophy is pragmatic — in a financial context, heavy shadows feel frivolous, while no shadows at all feel flat and untrustworthy. The 5% sweet spot communicates professionalism.
+
+### Decorative Depth
+
+- **Golden gradient backgrounds**: Behind device mockup sections, radial golden glow centered on the product
+- **Dark-to-light section transitions**: Hard cut (no gradient blend) between white and `#222126` sections
+- **Price ticker strip**: Flat, borderless, reads as a data bar rather than a decorative element
+
+## Components
 
 ### Buttons
 
@@ -184,70 +347,7 @@ BinancePlex is engineered for data-dense interfaces where numbers and text must 
 - Security badges and regulatory compliance mentions
 - QR code for direct app download in footer
 
-## 5. Layout Principles
-
-### Spacing System
-
-Base unit: 8px
-
-| Token | Value | Use |
-|-------|-------|-----|
-| space-1 | 4px | Tight inline gaps, icon padding |
-| space-2 | 8px | Base unit, button icon gaps, tight margins |
-| space-3 | 12px | Card internal padding, input padding |
-| space-4 | 16px | Standard padding, section margins |
-| space-5 | 20px | Card gaps, medium padding |
-| space-6 | 24px | Section internal padding |
-| space-7 | 32px | Section breaks, large padding |
-| space-8 | 48px | Major section padding |
-| space-9 | 64px | Hero section padding |
-| space-10 | 80px | Large section spacing |
-
-### Grid & Container
-
-- Max container width: 1200px (centered)
-- Hero area: single column with side-by-side text + image above 1024px
-- Feature grid: 3-column on desktop, single column on mobile
-- Product showcase: 2-column (text + device mockup)
-- Horizontal padding: 32px desktop, 16px mobile
-- Grid gap: 24px between feature cards
-
-### Whitespace Philosophy
-
-Binance.US uses whitespace as a trust signal. Generous padding around the hero section and between content blocks creates a sense of spaciousness that counters the information density typically associated with crypto exchanges. The light sections breathe — wide margins around headlines and ample spacing between cards — while dark sections compress, packing features into tighter grids to convey capability and depth. The overall rhythm alternates between "inviting entry" (light, spacious) and "deep functionality" (dark, dense).
-
-### Border Radius Scale
-
-| Value | Context |
-|-------|---------|
-| 1px | Subtle edge softening, fine UI elements |
-| 2px | Close buttons, micro-interactive elements |
-| 6px | Primary buttons (non-pill), small cards |
-| 8px | Form inputs, data cards, image containers |
-| 10px | Navigation pills, tag containers |
-| 12px | Content cards, feature containers |
-| 24px | Video containers, hero imagery, large cards |
-| 50px | Pill buttons (CTA), search inputs, full-round elements |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat | No shadow, solid background | Default for inline elements |
-| Subtle | `rgba(32, 32, 37, 0.05) 0px 3px 5px` | Content cards, resting state |
-| Medium | `rgba(8, 8, 8, 0.05) 0px 3px 5px 5px` | Hovered cards, elevated containers |
-| Pill Shadow | `rgb(153,153,153) 0px 2px 10px -3px` | Pill CTA buttons, floating actions |
-| Heavy | `rgba(0,0,0) 0px 32px 37px` | Modal overlays, dropdown menus |
-
-Binance.US uses a whisper-light shadow system. Card shadows are barely perceptible at 5% opacity — they exist not for dramatic depth but as subtle ground cues that keep cards from feeling pasted onto the surface. The pill button shadow is the exception: slightly more visible to give CTAs a "floating" quality that invites clicks. The philosophy is pragmatic — in a financial context, heavy shadows feel frivolous, while no shadows at all feel flat and untrustworthy. The 5% sweet spot communicates professionalism.
-
-### Decorative Depth
-
-- **Golden gradient backgrounds**: Behind device mockup sections, radial golden glow centered on the product
-- **Dark-to-light section transitions**: Hard cut (no gradient blend) between white and `#222126` sections
-- **Price ticker strip**: Flat, borderless, reads as a data bar rather than a decorative element
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -273,7 +373,7 @@ Binance.US uses a whisper-light shadow system. Card shadows are barely perceptib
 - Don't add animation beyond subtle transitions (200ms ease) — financial platforms need stability
 - Don't use colored backgrounds for semantic states in cards — keep cards white or dark, use text color for semantic meaning
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -313,7 +413,7 @@ Binance.US uses a whisper-light shadow system. Card shadows are barely perceptib
 - App screenshots: responsive width with fixed aspect ratio
 - QR code: fixed 120px square, hidden on mobile (replaced with direct app store links)
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

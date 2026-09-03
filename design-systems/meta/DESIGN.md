@@ -1,9 +1,111 @@
+---
+"version": "alpha"
+"name": "Meta (Store)"
+"description": "Bundled Open Design package for Meta (Store), derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0064e0"
+  "primary-hover": "#0143b5"
+  "primary-active": "#004bb9"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f7f8fa"
+  "surface-warm": "#f2f0e6"
+  "ink": "#1c2b33"
+  "body": "#5d6c7b"
+  "muted": "#65676b"
+  "meta": "#8595a4"
+  "border": "#ced0d4"
+  "border-soft": "#dee3e9"
+  "success": "#31a24c"
+  "warning": "#f7b928"
+  "danger": "#e41e3f"
+typography:
+  display:
+    "fontFamily": "\"Optimistic VF\", \"Optimistic\", Inter, Montserrat, Helvetica, Arial, \"Noto Sans\", sans-serif"
+    "lineHeight": "1.16"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"Optimistic VF\", \"Optimistic\", Inter, Montserrat, Helvetica, Arial, \"Noto Sans\", sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "28px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "20px"
+  "lg": "24px"
+  "pill": "100px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "40px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Meta (Store)
 
 > Category: E-Commerce & Retail
 > Tech retail store. Photography-first, binary light/dark surfaces, Meta Blue CTAs.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 The Meta Store is a product-forward retail experience built to sell hardware — Quest VR headsets, Ray-Ban Meta smart glasses, and accessories. The design walks a tightrope between consumer electronics showroom and lifestyle editorial, deploying cinematic product photography against expansive white canvas to create a gallery-like sense of aspiration. Every design decision serves the merchandise: generous negative space frames hero product shots like museum pieces, while alternating light and dark surface sections create a visual rhythm that mimics the experience of walking through a physical retail space.
 
@@ -20,7 +122,7 @@ The store's visual hierarchy is ruthlessly simple. Photography does the heavy li
 - 8px spacing grid with disciplined vertical rhythm
 - Alternating light/dark sections create a "walkthrough" retail cadence
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 
@@ -96,7 +198,7 @@ The store's visual hierarchy is ruthlessly simple. Photography does the heavy li
 - **Blue Infinity Gradient**: The Meta symbol uses a blue-to-teal gradient on brand materials, though the store uses flat blue
 - **Shadow Alpha Scale**: 0.05, 0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.60, 0.80 — both black and white alpha ramps for layered transparency
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -129,7 +231,69 @@ The store's visual hierarchy is ruthlessly simple. Photography does the heavy li
 
 Optimistic VF is the cornerstone of Meta's typographic identity — a humanist sans-serif with geometric underpinnings that strikes a balance between Silicon Valley precision and consumer warmth. The "ss01" and "ss02" stylistic sets introduce alternate glyphs that give headlines a distinctive Meta character. Weight 500 (Medium) dominates headlines, creating a presence that commands without shouting, while the unexpected use of weight 300 (Light) at 28px adds an airy, editorial quality to subheadings. Negative letter-spacing at smaller sizes (-0.14px to -0.16px) tightens the optical rhythm for UI elements, keeping the reading experience crisp and efficient.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Base unit: 8px
+
+| Token | Value | Use |
+|-------|-------|-----|
+| space-1 | 1px | Hairline borders |
+| space-2 | 4px | Tight internal padding |
+| space-3 | 8px | Base unit, icon gaps |
+| space-4 | 10px | Card horizontal padding |
+| space-5 | 12px | Button icon spacing, tight margins |
+| space-6 | 14px | Caption line height spacing |
+| space-7 | 16px | Standard paragraph spacing, nav padding |
+| space-8 | 18px | Body text vertical rhythm |
+| space-9 | 24px | Card section spacing, grid gaps |
+| space-10 | 32px | Section content padding |
+| space-11 | 40px | Major content block spacing |
+| space-12 | 48px | Section vertical padding (compact) |
+| space-13 | 64px | Section vertical padding (standard) |
+| space-14 | 80px | Hero section padding, large section gaps |
+
+### Grid & Container
+
+- Max container width: ~1440px, centered with auto margins
+- Product grid: 3-column on desktop, 2-column on tablet, 1-column on mobile
+- Feature grid: 2-column split (image + content), stacks on mobile
+- Grid gap: 24px between cards, 16px on mobile
+- Page horizontal padding: 24-40px depending on breakpoint
+
+### Whitespace Philosophy
+
+Whitespace is the store's primary luxury signifier. Sections breathe with 64-80px vertical padding, creating a sense of unhurried browsing. Product images float in generous negative space rather than being crammed edge-to-edge. This restrained spacing communicates premium positioning — the visual equivalent of wide aisles in a high-end retail store.
+
+### Border Radius Scale
+
+| Value | Context |
+|-------|---------|
+| 8px | Inputs, small UI elements, glimmer placeholders |
+| 20px | Cards (--card-corner-radius) |
+| 24px | Feature cards, product highlight areas, ghost buttons |
+| 100px | Pill buttons, tags, badges (fully rounded) |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat | No shadow, background differentiation only | Default cards, sections |
+| Level 1 | `0 2px 4px 0 rgba(0,0,0,0.1)` | Subtle lift for interactive cards |
+| Level 2 | `0 12px 28px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.1)` | Elevated cards, dropdowns |
+| Overlay | `rgba(0,0,0,0.6)` full-screen | Modal/lightbox backdrop |
+| Inset | `rgba(255,255,255,0.5)` inset | Inner glow on glass-effect surfaces |
+
+The Meta Store favors a primarily flat elevation model. Most surface differentiation comes from background color shifts (white → soft gray → dark) rather than shadows. When shadows appear, they are soft, diffused, and use the dual-shadow pattern (a large blurred shadow for ambient light + a small sharp shadow for direct light). This creates a physically plausible depth feel without heavy visual weight.
+
+### Decorative Depth
+
+- **Frosted glass nav**: `rgba(241, 244, 247, 0.8)` background with backdrop-filter blur, creating a translucent navigation bar
+- **Dark section gradient**: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6))` overlay on product photography for text legibility
+- **Glimmer loading states**: Pulsating opacity animation (0.25 → 1.0) on `#979A9F` base color with 8px radius, 1000ms steps timing — used for skeleton screens during product image loading
+
+## Components
 
 ### Buttons
 
@@ -212,69 +376,7 @@ Optimistic VF is the cornerstone of Meta's typographic identity — a humanist s
 - **Ray-Ban sections**: Warm lifestyle photography, red accents (`#D6311F`), linen tones (`#F2F0E6`)
 - **Portal sections**: Teal-blue palette (`#C8E4E8`, `#ADD4E0`), navy accents (`#1B365D`)
 
-## 5. Layout Principles
-
-### Spacing System
-
-Base unit: 8px
-
-| Token | Value | Use |
-|-------|-------|-----|
-| space-1 | 1px | Hairline borders |
-| space-2 | 4px | Tight internal padding |
-| space-3 | 8px | Base unit, icon gaps |
-| space-4 | 10px | Card horizontal padding |
-| space-5 | 12px | Button icon spacing, tight margins |
-| space-6 | 14px | Caption line height spacing |
-| space-7 | 16px | Standard paragraph spacing, nav padding |
-| space-8 | 18px | Body text vertical rhythm |
-| space-9 | 24px | Card section spacing, grid gaps |
-| space-10 | 32px | Section content padding |
-| space-11 | 40px | Major content block spacing |
-| space-12 | 48px | Section vertical padding (compact) |
-| space-13 | 64px | Section vertical padding (standard) |
-| space-14 | 80px | Hero section padding, large section gaps |
-
-### Grid & Container
-
-- Max container width: ~1440px, centered with auto margins
-- Product grid: 3-column on desktop, 2-column on tablet, 1-column on mobile
-- Feature grid: 2-column split (image + content), stacks on mobile
-- Grid gap: 24px between cards, 16px on mobile
-- Page horizontal padding: 24-40px depending on breakpoint
-
-### Whitespace Philosophy
-
-Whitespace is the store's primary luxury signifier. Sections breathe with 64-80px vertical padding, creating a sense of unhurried browsing. Product images float in generous negative space rather than being crammed edge-to-edge. This restrained spacing communicates premium positioning — the visual equivalent of wide aisles in a high-end retail store.
-
-### Border Radius Scale
-
-| Value | Context |
-|-------|---------|
-| 8px | Inputs, small UI elements, glimmer placeholders |
-| 20px | Cards (--card-corner-radius) |
-| 24px | Feature cards, product highlight areas, ghost buttons |
-| 100px | Pill buttons, tags, badges (fully rounded) |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat | No shadow, background differentiation only | Default cards, sections |
-| Level 1 | `0 2px 4px 0 rgba(0,0,0,0.1)` | Subtle lift for interactive cards |
-| Level 2 | `0 12px 28px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.1)` | Elevated cards, dropdowns |
-| Overlay | `rgba(0,0,0,0.6)` full-screen | Modal/lightbox backdrop |
-| Inset | `rgba(255,255,255,0.5)` inset | Inner glow on glass-effect surfaces |
-
-The Meta Store favors a primarily flat elevation model. Most surface differentiation comes from background color shifts (white → soft gray → dark) rather than shadows. When shadows appear, they are soft, diffused, and use the dual-shadow pattern (a large blurred shadow for ambient light + a small sharp shadow for direct light). This creates a physically plausible depth feel without heavy visual weight.
-
-### Decorative Depth
-
-- **Frosted glass nav**: `rgba(241, 244, 247, 0.8)` background with backdrop-filter blur, creating a translucent navigation bar
-- **Dark section gradient**: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6))` overlay on product photography for text legibility
-- **Glimmer loading states**: Pulsating opacity animation (0.25 → 1.0) on `#979A9F` base color with 8px radius, 1000ms steps timing — used for skeleton screens during product image loading
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -302,7 +404,7 @@ The Meta Store favors a primarily flat elevation model. Most surface differentia
 - Don't add drop shadows to cards in dark sections — rely on border and color separation
 - Don't use long paragraphs — limit to 2-3 lines of body copy per block
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -338,7 +440,7 @@ The Meta Store favors a primarily flat elevation model. Most surface differentia
 - Art direction: hero crop changes between desktop (wide cinematic) and mobile (tighter product focus)
 - Lazy loading with glimmer skeleton (pulsating gray placeholder) during load
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

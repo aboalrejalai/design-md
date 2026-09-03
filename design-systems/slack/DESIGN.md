@@ -1,9 +1,93 @@
+---
+"version": "alpha"
+"name": "Slack"
+"description": "Bundled Open Design package for Slack, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#4a154b"
+  "primary-hover": "#611f69"
+  "primary-active": "#350d36"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f8f8f8"
+  "surface-warm": "#f8f8f8"
+  "ink": "#1d1c1d"
+  "body": "#1d1c1d"
+  "muted": "#616061"
+  "meta": "#616061"
+  "border": "#dddddd"
+  "border-soft": "#f1f1f1"
+  "success": "#2eb67d"
+  "warning": "#ecb22e"
+  "danger": "#e01e5a"
+typography:
+  display:
+    "fontFamily": "\"Larsseit\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.10"
+    "letterSpacing": "-0.021em"
+  body:
+    "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Monaco\", \"Menlo\", \"Courier New\", Courier, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.base}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Slack
 
 > Category: Productivity & SaaS
 > Workplace communication platform. Aubergine-primary, multi-accent logo palette, light surfaces with dark sidebar, warm and approachable.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Slack's identity is built around the idea that work should feel human and even a little fun. The canonical surface is **light** — white content areas with a deep aubergine (`#4A154B`) sidebar — the inverse of dark-first tools. This contrast is intentional: the sidebar is a calm, always-present navigation anchor, while the content area is bright and open.
 
@@ -20,7 +104,7 @@ The logo palette — blue, green, yellow, red — appears primarily in the hasht
 
 ---
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand Primary
 | Token | Hex | Role |
@@ -75,7 +159,7 @@ The logo palette — blue, green, yellow, red — appears primarily in the hasht
 
 ---
 
-## 3. Typography Rules
+## Typography
 
 ### Typefaces
 | Role | Official | Web Fallback |
@@ -111,7 +195,67 @@ The logo palette — blue, green, yellow, red — appears primarily in the hasht
 
 ---
 
-## 4. Component Stylings
+## Layout
+
+### Three-Column Layout
+```
+┌──────────────┬──────────────────────────────┬─────────────┐
+│   Sidebar    │        Message Area          │   Thread    │
+│   (240px)    │          (flex: 1)           │  (400px)    │
+│  #4A154B     │          #FFFFFF             │  optional   │
+└──────────────┴──────────────────────────────┴─────────────┘
+```
+
+### Spacing System (4px base)
+| Token | Value | Usage |
+|---|---|---|
+| `--space-1` | 4px | Tight gaps |
+| `--space-2` | 8px | Component padding |
+| `--space-3` | 12px | Input padding |
+| `--space-4` | 16px | Standard padding |
+| `--space-6` | 24px | Card padding |
+| `--space-8` | 32px | Section gaps |
+
+### Sidebar Structure
+```
+[Workspace Name ▼]
+────────────────────
+Threads
+All DMs
+Drafts & Sent
+────────────────────
+▼ Channels
+  # general
+  # random
+  # design  ● (unread)
+────────────────────
+▼ Direct Messages
+  John Doe
+  Jane Smith
+```
+
+### Message Composer
+- Pinned to bottom of message area
+- `border: 1px solid #DDDDDD`, `border-radius: 8px`, `margin: 0 16px 16px`
+- Toolbar: emoji, attach, format, send button
+
+---
+
+## Elevation & Depth
+
+Slack uses light shadows on a light surface:
+
+| Level | Usage | Shadow |
+|---|---|---|
+| Flat | Message rows, sidebar items | none |
+| Low | Cards, inputs | `0 1px 3px rgba(0,0,0,0.08)` |
+| Medium | Dropdowns, popovers | `0 4px 12px rgba(0,0,0,0.12)` |
+| High | Modals, dialogs | `0 8px 24px rgba(0,0,0,0.15)` |
+| Overlay | Modal backdrops | `rgba(0,0,0,0.5)` |
+
+---
+
+## Components
 
 ### Buttons
 
@@ -236,67 +380,7 @@ The logo palette — blue, green, yellow, red — appears primarily in the hasht
 
 ---
 
-## 5. Layout Principles
-
-### Three-Column Layout
-```
-┌──────────────┬──────────────────────────────┬─────────────┐
-│   Sidebar    │        Message Area          │   Thread    │
-│   (240px)    │          (flex: 1)           │  (400px)    │
-│  #4A154B     │          #FFFFFF             │  optional   │
-└──────────────┴──────────────────────────────┴─────────────┘
-```
-
-### Spacing System (4px base)
-| Token | Value | Usage |
-|---|---|---|
-| `--space-1` | 4px | Tight gaps |
-| `--space-2` | 8px | Component padding |
-| `--space-3` | 12px | Input padding |
-| `--space-4` | 16px | Standard padding |
-| `--space-6` | 24px | Card padding |
-| `--space-8` | 32px | Section gaps |
-
-### Sidebar Structure
-```
-[Workspace Name ▼]
-────────────────────
-Threads
-All DMs
-Drafts & Sent
-────────────────────
-▼ Channels
-  # general
-  # random
-  # design  ● (unread)
-────────────────────
-▼ Direct Messages
-  John Doe
-  Jane Smith
-```
-
-### Message Composer
-- Pinned to bottom of message area
-- `border: 1px solid #DDDDDD`, `border-radius: 8px`, `margin: 0 16px 16px`
-- Toolbar: emoji, attach, format, send button
-
----
-
-## 6. Depth & Elevation
-
-Slack uses light shadows on a light surface:
-
-| Level | Usage | Shadow |
-|---|---|---|
-| Flat | Message rows, sidebar items | none |
-| Low | Cards, inputs | `0 1px 3px rgba(0,0,0,0.08)` |
-| Medium | Dropdowns, popovers | `0 4px 12px rgba(0,0,0,0.12)` |
-| High | Modals, dialogs | `0 8px 24px rgba(0,0,0,0.15)` |
-| Overlay | Modal backdrops | `rgba(0,0,0,0.5)` |
-
----
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### ✅ Do
 - Use aubergine `#4A154B` for the sidebar — it is Slack's most iconic UI element
@@ -321,7 +405,7 @@ Slack uses light shadows on a light surface:
 
 ---
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Breakpoint | Width | Layout |
@@ -340,7 +424,7 @@ Slack uses light shadows on a light surface:
 
 ---
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 When generating Slack-styled designs, follow this approach:
 

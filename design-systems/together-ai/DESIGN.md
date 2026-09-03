@@ -1,9 +1,101 @@
+---
+"version": "alpha"
+"name": "Together AI"
+"description": "Bundled Open Design package for Together AI, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#010120"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#ffffff"
+  "ink": "#000000"
+  "body": "rgba(0, 0, 0, 0.6)"
+  "muted": "#666666"
+  "meta": "#666666"
+  "border": "#ebebeb"
+  "border-soft": "#ebebeb"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"The Future\", Arial, ui-sans-serif, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"The Future\", Arial, ui-sans-serif, sans-serif"
+    "lineHeight": "1.3"
+  mono:
+    "fontFamily": "\"PP Neue Montreal Mono\", Georgia, ui-monospace, monospace"
+  xs:
+    "fontSize": "10px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.muted}"
+    "typography": "{typography.mono}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "backgroundColor": "{colors.primary}"
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Together AI
 
 > Category: AI & LLM
 > Open-source AI infrastructure. Technical, blueprint-style design.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Together AI's interface is a pastel-gradient dreamscape built for enterprise AI infrastructure — a design that somehow makes GPU clusters and model inference feel light, airy, and optimistic. The hero section blooms with soft pink-blue-lavender gradients and abstract, painterly illustrations that evoke clouds and flight, establishing a visual metaphor for the "AI-Native Cloud" proposition. Against this softness, the typography cuts through with precision: "The Future" display font at 64px with aggressive negative tracking (-1.92px) creates dense, authoritative headline blocks.
 
@@ -22,7 +114,7 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - Enterprise stats prominently displayed (2x, 60%, 90%)
 - Dark-blue-tinted shadows (rgba(1, 1, 32, 0.1))
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Brand Magenta** (`#ef2cc1`): The primary brand accent — a vivid pink-magenta used in gradient illustrations and the highest-signal brand moments. Never used as UI chrome.
@@ -49,7 +141,7 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - **Pastel Cloud Gradient**: Soft pink → lavender → soft blue gradients in hero illustrations. These appear in abstract, painterly forms — clouds, feathers, flowing shapes — that create visual warmth without literal meaning.
 - **Hero Gradient**: The hero background uses soft pastel tints layered over white, creating a dawn-like atmospheric effect.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `The Future`, with fallback: `Arial`
@@ -76,7 +168,45 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - **Weight 500 as emphasis**: The system uses 400 (regular) and 500 (medium) — no bold. Medium weight marks headings and emphasis.
 - **Tight line-heights throughout**: Even body text uses 1.25–1.30 line-height — tighter than typical, creating a dense, information-rich feel.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 44px, 48px, 80px, 100px, 120px
+- Button/badge padding: 2px 8px (compact)
+- Card internal padding: approximately 24–32px
+- Section vertical spacing: generous (80–120px)
+
+### Grid & Container
+- Max container width: approximately 1200px, centered
+- Hero: centered with pastel gradient background
+- Feature sections: multi-column card grids
+- Stats: horizontal row of metric cards
+- Research: dark full-width section
+
+### Whitespace Philosophy
+- **Optimistic breathing room**: Generous spacing between sections creates an open, inviting feel that makes enterprise AI infrastructure feel accessible.
+- **Dual atmosphere**: Light sections breathe with whitespace; dark sections are denser with content.
+- **Stats as visual anchors**: Large numbers with small captions create natural focal points.
+
+### Border Radius Scale
+- Sharp (4px): Buttons, badges, tags, small interactive elements — the primary radius
+- Comfortable (8px): Larger containers, feature cards
+
+*This is a deliberately restrained radius system — no pills, no generous rounding. The sharp geometry contrasts with the soft pastel gradients.*
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, text blocks |
+| Contained (Level 1) | `1px solid rgba(0,0,0,0.08)` (light) or `rgba(255,255,255,0.12)` (dark) | Cards, badges, containers |
+| Elevated (Level 2) | `rgba(1, 1, 32, 0.1) 0px 4px 10px` | Feature cards, hover states |
+| Dark Zone (Level 3) | Dark Blue (#010120) full-width background | Research, footer, technical sections |
+
+**Shadow Philosophy**: Together AI uses a single, distinctive shadow — tinted with Dark Blue (`rgba(1, 1, 32, 0.1)`) rather than generic black. This gives elevated elements a subtle blue-ish cast that ties them to the brand's midnight-blue dark mode. The shadow is soft (10px blur, 4px offset) and always downward — creating gentle paper-hover elevation.
+
+## Components
 
 ### Buttons
 
@@ -151,45 +281,7 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - "together" wordmark rendered at massive scale in the dark footer
 - Creates a brand-statement closing moment
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 44px, 48px, 80px, 100px, 120px
-- Button/badge padding: 2px 8px (compact)
-- Card internal padding: approximately 24–32px
-- Section vertical spacing: generous (80–120px)
-
-### Grid & Container
-- Max container width: approximately 1200px, centered
-- Hero: centered with pastel gradient background
-- Feature sections: multi-column card grids
-- Stats: horizontal row of metric cards
-- Research: dark full-width section
-
-### Whitespace Philosophy
-- **Optimistic breathing room**: Generous spacing between sections creates an open, inviting feel that makes enterprise AI infrastructure feel accessible.
-- **Dual atmosphere**: Light sections breathe with whitespace; dark sections are denser with content.
-- **Stats as visual anchors**: Large numbers with small captions create natural focal points.
-
-### Border Radius Scale
-- Sharp (4px): Buttons, badges, tags, small interactive elements — the primary radius
-- Comfortable (8px): Larger containers, feature cards
-
-*This is a deliberately restrained radius system — no pills, no generous rounding. The sharp geometry contrasts with the soft pastel gradients.*
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, text blocks |
-| Contained (Level 1) | `1px solid rgba(0,0,0,0.08)` (light) or `rgba(255,255,255,0.12)` (dark) | Cards, badges, containers |
-| Elevated (Level 2) | `rgba(1, 1, 32, 0.1) 0px 4px 10px` | Feature cards, hover states |
-| Dark Zone (Level 3) | Dark Blue (#010120) full-width background | Research, footer, technical sections |
-
-**Shadow Philosophy**: Together AI uses a single, distinctive shadow — tinted with Dark Blue (`rgba(1, 1, 32, 0.1)`) rather than generic black. This gives elevated elements a subtle blue-ish cast that ties them to the brand's midnight-blue dark mode. The shadow is soft (10px blur, 4px offset) and always downward — creating gentle paper-hover elevation.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use pastel gradients (pink/blue/lavender) for hero illustrations and decorative backgrounds
@@ -211,7 +303,7 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - Don't reduce section spacing below 48px — the open feeling is core
 - Don't mix in additional typefaces — "The Future" + PP Neue Montreal Mono is the pair
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -238,7 +330,7 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 - Product screenshots maintain aspect ratio
 - Team photos scale within containers
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text (light): "Pure Black (#000000)"

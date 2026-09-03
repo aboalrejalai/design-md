@@ -1,9 +1,111 @@
+---
+"version": "alpha"
+"name": "Coinbase"
+"description": "Bundled Open Design package for Coinbase, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0052ff"
+  "primary-hover": "#578bfa"
+  "primary-active": "#0667d0"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#eef0f3"
+  "surface-warm": "#eef0f3"
+  "ink": "#0a0b0d"
+  "body": "#0a0b0d"
+  "muted": "#5b616e"
+  "meta": "#5b616e"
+  "border": "rgba(91, 97, 110, 0.2)"
+  "border-soft": "rgba(91, 97, 110, 0.2)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"CoinbaseDisplay\", \"Coinbase Display\", \"Inter\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"CoinbaseText\", \"CoinbaseSans\", \"Coinbase Sans\", \"Inter\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "32px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "52px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "8px"
+  "md": "16px"
+  "lg": "32px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "padding": "{spacing.2}"
+  keyboard:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.body}"
+  layout:
+    "textColor": "{colors.ink}"
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Coinbase
 
 > Category: Fintech & Crypto
 > Crypto exchange. Clean blue identity, trust-focused, institutional feel.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Coinbase's website is a clean, trustworthy crypto platform that communicates financial reliability through a blue-and-white binary palette. The design uses Coinbase Blue (`#0052ff`) — a deep, saturated blue — as the singular brand accent against white and near-black surfaces. The proprietary font family includes CoinbaseDisplay for hero headlines, CoinbaseSans for UI text, CoinbaseText for body reading, and CoinbaseIcons for iconography — a comprehensive four-font system.
 
@@ -18,7 +120,7 @@ The button system uses a distinctive 56px radius for pill-shaped CTAs with hover
 - Cool gray secondary surface (`#eef0f3`) with blue tint
 - `text-transform: lowercase` on some button labels — unusual
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Coinbase Blue** (`#0052ff`): Primary brand, links, CTA borders
@@ -35,7 +137,7 @@ The button system uses a distinctive 56px radius for pill-shaped CTAs with hover
 - **Dark Card** (`#282b31`): Dark button/card backgrounds
 - **Light Surface** (`rgba(247,247,247,0.88)`): Subtle surface
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `CoinbaseDisplay` — hero headlines
@@ -61,7 +163,25 @@ The button system uses a distinctive 56px radius for pill-shaped CTAs with hover
 | Caption | CoinbaseSans | 14px | 600–700 | 1.50 | Metadata |
 | Small | CoinbaseSans | 13px | 600 | 1.23 | Tags |
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base: 8px
+- Scale: 1px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 25px, 32px, 48px
+
+### Border Radius Scale
+- Small (4px–8px): Article links, small cards
+- Standard (12px–16px): Cards, menus
+- Large (24px–32px): Feature containers
+- XL (40px): Large buttons/containers
+- Pill (56px): Primary CTAs
+- Full (100000px): Maximum pill
+
+## Elevation & Depth
+
+Minimal shadow system — depth from color contrast between dark/light sections.
+
+## Components
 
 ### Buttons
 
@@ -83,25 +203,7 @@ The button system uses a distinctive 56px radius for pill-shaped CTAs with hover
 - Radius: 8px–40px range
 - Borders: `1px solid rgba(91,97,110,0.2)`
 
-## 5. Layout Principles
-
-### Spacing System
-- Base: 8px
-- Scale: 1px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 25px, 32px, 48px
-
-### Border Radius Scale
-- Small (4px–8px): Article links, small cards
-- Standard (12px–16px): Cards, menus
-- Large (24px–32px): Feature containers
-- XL (40px): Large buttons/containers
-- Pill (56px): Primary CTAs
-- Full (100000px): Maximum pill
-
-## 6. Depth & Elevation
-
-Minimal shadow system — depth from color contrast between dark/light sections.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Coinbase Blue (#0052ff) for primary interactive elements
@@ -113,11 +215,11 @@ Minimal shadow system — depth from color contrast between dark/light sections.
 - Don't use the blue decoratively — it's functional only
 - Don't use sharp corners on CTAs — 56px minimum
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 Breakpoints: 400px, 576px, 640px, 768px, 896px, 1280px, 1440px, 1600px
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand: Coinbase Blue (`#0052ff`)

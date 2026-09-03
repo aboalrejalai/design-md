@@ -1,9 +1,108 @@
+---
+"version": "alpha"
+"name": "Mistral AI"
+"description": "Bundled Open Design package for Mistral AI, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#fa520f"
+  "primary-hover": "#fb6424"
+  "on-primary": "#ffffff"
+  "canvas": "#fffaeb"
+  "surface": "#fff0c2"
+  "surface-warm": "#fff0c2"
+  "ink": "#1f1f1f"
+  "body": "#1f1f1f"
+  "muted": "#3d3d3d"
+  "meta": "#3d3d3d"
+  "border": "#f0e8c8"
+  "border-soft": "#f0e8c8"
+  "success": "#17a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "Arial, ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "Arial, ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "24px"
+  xl:
+    "fontSize": "32px"
+  2xl:
+    "fontSize": "48px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "82px"
+rounded:
+  "sm": "2px"
+  "md": "2px"
+  "lg": "4px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.muted}"
+    "typography": "{typography.sm}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Mistral AI
 
 > Category: AI & LLM
 > Open-weight LLM provider. French-engineered minimalism, purple-toned.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Mistral AI's interface is a sun-drenched landscape rendered in code — a warm, bold, unapologetically European design that trades the typical blue-screen AI aesthetic for golden amber, burnt orange, and the feeling of late-afternoon light in southern France. Every surface glows with warmth: backgrounds fade from pale cream to deep amber, shadows carry golden undertones (`rgba(127, 99, 21, ...)`), and the brand's signature orange (`#fa520f`) burns through the page like a signal fire.
 
@@ -21,7 +120,7 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - Near-zero border-radius — sharp, architectural geometry
 - French-European confidence: bold, warm, declarative
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Mistral Orange** (`#fa520f`): The core brand color — a vivid, saturated orange-red that anchors the entire identity. Used for primary emphasis, the brand block, and the highest-signal moments.
@@ -57,7 +156,7 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - **Golden Landscape Wash**: Photography and backgrounds use warm amber overlays creating a consistent golden temperature across the page.
 - **Warm Shadow Cascade**: Multi-layered golden shadows that build depth with amber-tinted transparency rather than gray.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: Likely a custom font (Font Source detected) with `Arial` as fallback, and extended stack: `ui-sans-serif, system-ui, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji`
@@ -83,7 +182,39 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - **Uppercase as emphasis**: Strategic `text-transform: uppercase` on button labels and section markers creates a formal, European signage quality.
 - **No weight variation**: Unlike most systems that use 300–700 weight range, Mistral uses 400 everywhere. Hierarchy comes from size and color, never weight.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 2px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 98px, 100px
+- Button padding: 12px or 8px 0px (compact)
+- Section vertical spacing: very generous (80px–100px)
+
+### Grid & Container
+- Max container width: approximately 1280px, centered
+- Hero: full-width with massive typography overlaying warm backgrounds
+- Feature sections: wide-format layouts with dramatic imagery
+- Card grids: 2–3 column layouts
+
+### Whitespace Philosophy
+- **Bold declarations**: Huge headlines surrounded by generous whitespace create billboard-like impact — each statement gets its own breathing space.
+- **Warm void**: Empty space itself feels warm because the backgrounds are tinted ivory/cream rather than pure white.
+- **Photography as space-filler**: Large landscape images serve double duty as content and decorative whitespace.
+
+### Border Radius Scale
+- Near-zero: The dominant radius — sharp, architectural corners on most elements
+- This extreme sharpness contrasts with the warmth of the colors, creating a tension between soft color and hard geometry.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page backgrounds, text blocks |
+| Golden Float (Level 1) | Multi-layer warm shadow (5 layers, 12%→0% opacity, amber-tinted) | Feature cards, product showcases, elevated content |
+
+**Shadow Philosophy**: Mistral uses a single but extraordinarily complex shadow — **five cascading layers** of amber-tinted shadow (`rgba(127, 99, 21, ...)`) that build from a close 16px offset to a distant 400px offset. The result is a rich, warm, "golden hour" lighting effect that makes elevated elements look like they're bathed in afternoon sunlight. This is the most distinctive shadow system in any major AI brand.
+
+## Components
 
 ### Buttons
 
@@ -155,39 +286,7 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - Footer transitions from warm amber to dark through a dramatic gradient
 - Creates a "sunset" effect as the page ends
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 2px, 4px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 98px, 100px
-- Button padding: 12px or 8px 0px (compact)
-- Section vertical spacing: very generous (80px–100px)
-
-### Grid & Container
-- Max container width: approximately 1280px, centered
-- Hero: full-width with massive typography overlaying warm backgrounds
-- Feature sections: wide-format layouts with dramatic imagery
-- Card grids: 2–3 column layouts
-
-### Whitespace Philosophy
-- **Bold declarations**: Huge headlines surrounded by generous whitespace create billboard-like impact — each statement gets its own breathing space.
-- **Warm void**: Empty space itself feels warm because the backgrounds are tinted ivory/cream rather than pure white.
-- **Photography as space-filler**: Large landscape images serve double duty as content and decorative whitespace.
-
-### Border Radius Scale
-- Near-zero: The dominant radius — sharp, architectural corners on most elements
-- This extreme sharpness contrasts with the warmth of the colors, creating a tension between soft color and hard geometry.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Page backgrounds, text blocks |
-| Golden Float (Level 1) | Multi-layer warm shadow (5 layers, 12%→0% opacity, amber-tinted) | Feature cards, product showcases, elevated content |
-
-**Shadow Philosophy**: Mistral uses a single but extraordinarily complex shadow — **five cascading layers** of amber-tinted shadow (`rgba(127, 99, 21, ...)`) that build from a close 16px offset to a distant 400px offset. The result is a rich, warm, "golden hour" lighting effect that makes elevated elements look like they're bathed in afternoon sunlight. This is the most distinctive shadow system in any major AI brand.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use the warm color spectrum exclusively: ivory, cream, amber, gold, orange
@@ -211,7 +310,7 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - Don't add gradients outside the warm spectrum — no blue-to-purple, no cool transitions
 - Don't use generic gray for text — even neutrals should be warm-tinted
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -239,7 +338,7 @@ What makes Mistral distinctive is the complete commitment to a warm color temper
 - Block gradient elements resize fluidly
 - No art direction changes — same warm composition at all sizes
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand Orange: "Mistral Orange (#fa520f)"

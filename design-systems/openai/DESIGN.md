@@ -1,9 +1,108 @@
+---
+"version": "alpha"
+"name": "OpenAI"
+"description": "Bundled Open Design package for OpenAI, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#10a37f"
+  "primary-hover": "#0a7a5e"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f5f5f5"
+  "surface-warm": "#fafafa"
+  "ink": "#0d0d0d"
+  "body": "#1a1a1a"
+  "muted": "#6e6e6e"
+  "meta": "#9b9b9b"
+  "border": "#e5e5e5"
+  "border-soft": "#ededed"
+  "success": "#10a37f"
+  "warning": "#f5a623"
+  "danger": "#ef4146"
+typography:
+  display:
+    "fontFamily": "\"Signifier\", \"Source Serif Pro\", Georgia, ui-serif, serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Söhne\", \"Inter\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    "lineHeight": "1.65"
+  mono:
+    "fontFamily": "\"Söhne Mono\", ui-monospace, \"JetBrains Mono\", Menlo, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "12px"
+  "md": "16px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "48px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "24px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.6}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by OpenAI
 
 > Category: AI & LLM
 > Calm, near-monochrome system anchored in deep teal-black with generous white space and editorial typography.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 OpenAI's product surface reads like a research lab dressed for the public — clinical, restrained, deliberately quiet. The page background is a true white (`#ffffff`) layered against a near-black ink (`#0d0d0d`) with a subtle teal undertone, so even the text feels slightly cooled rather than aggressively dark. The result is a chromatic neutrality that puts model output, code, and prose front and center, not the chrome around them.
 
@@ -20,7 +119,7 @@ The shape system is uniformly soft: 8px–12px radii, 9999px pills for tags and 
 - Single-color illustrations in deep teal — no gradients in marks
 - Generous line-height (1.55–1.65) and tracking near zero
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure White** (`#ffffff`): Primary background, card surface, button background.
@@ -50,7 +149,7 @@ The shape system is uniformly soft: 8px–12px radii, 9999px pills for tags and 
 - **Warning** (`#f5a623`): Soft amber for advisory states.
 - **Info** (`#2563eb`): Informational link tone (used sparingly; teal still wins).
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / Editorial**: `Signifier`, with fallback: `'Source Serif Pro', Georgia, serif`
@@ -77,7 +176,7 @@ The shape system is uniformly soft: 8px–12px radii, 9999px pills for tags and 
 - **Serif for soul, sans for system**: Signifier appears only in editorial display moments. The product UI is sans-only.
 - **Negative tracking on display**: -0.02em on display sizes; tracking returns to zero by 16px.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -126,20 +225,20 @@ The shape system is uniformly soft: 8px–12px radii, 9999px pills for tags and 
 - Radius: 9999px
 - Font: 12px / 500
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128.
 - **Container**: max-width 1200px, 24px gutter on mobile, 48px on desktop.
 - **Section rhythm**: 96–128px vertical between major sections; 64px on mobile.
 - **Grid**: 12-column desktop, 4-column mobile, 24px gap.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 150–220ms for hover; 280–360ms for layout transitions.
 - **Easing**: `cubic-bezier(0.16, 1, 0.3, 1)` (smooth out) for entrances.
 - **Restraint**: no parallax, no scroll-jacking. Subtle fade and translate only.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Preserve the neutral editorial restraint, soft radius, and sparse accent usage together; green accents alone do not create an OpenAI-like surface.
 - Use Signifier-style display moments only for editorial or announcement hierarchy, keeping product controls in the sans system.

@@ -1,9 +1,105 @@
+---
+"version": "alpha"
+"name": "Resend"
+"description": "Bundled Open Design package for Resend, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff801f"
+  "on-primary": "#000000"
+  "canvas": "#000000"
+  "surface": "#000000"
+  "surface-warm": "#000000"
+  "ink": "#f0f0f0"
+  "body": "#a1a4a5"
+  "muted": "#5c5c5c"
+  "meta": "#464a4d"
+  "border": "rgba(214, 235, 253, 0.19)"
+  "border-soft": "rgba(217, 237, 254, 0.145)"
+  "success": "#11ff99"
+  "warning": "#ffc53d"
+  "danger": "#ff2047"
+typography:
+  display:
+    "fontFamily": "\"ABC Favorit\", \"Inter\", -apple-system, system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.05em"
+  body:
+    "fontFamily": "\"Inter\", -apple-system, system-ui, \"Segoe UI\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Commit Mono\", \"JetBrains Mono\", ui-monospace, \"SF Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.3}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+  links:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.6}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Resend
 
 > Category: Productivity & SaaS
 > Email API. Minimal dark theme, monospace accents.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Resend's website is a dark, cinematic canvas that treats email infrastructure like a luxury product. The entire page is draped in pure black (`#000000`) with text that glows in near-white (`#f0f0f0`), creating a theater-like experience where content performs on a void stage. This isn't the typical developer-tool darkness — it's the controlled darkness of a photography gallery, where every element is lit with intention and nothing competes for attention.
 
@@ -21,7 +117,7 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - Commit Mono for code — monospace as a design element, not an afterthought
 - Whisper-level shadows using blue-tinted ring: `rgba(176, 199, 217, 0.145) 0px 0px 0px 1px`
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Void Black** (`#000000`): Page background, the defining canvas color (95% opacity via `--color-black-12`)
@@ -70,7 +166,7 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - **Focus Ring** (`rgb(0, 0, 0) 0px 0px 0px 8px`): Heavy black focus ring
 - **Subtle Shadow** (`rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px`): Minimal card elevation
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display Serif**: `domaine` (Domaine Display by Klim Type Foundry) — hero headlines
@@ -112,7 +208,51 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - **OpenType as identity**: The `"ss01"`, `"ss03"`, `"ss04"`, `"ss11"` stylistic sets are enabled on all ABC Favorit and Domaine text, activating alternate glyphs that give Resend's typography its unique character.
 - **Commit Mono as design element**: The monospace font isn't hidden in code blocks — it's used prominently for code examples and technical content, treated as a first-class visual element.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 5px, 6px, 7px, 8px, 10px, 12px, 16px, 20px, 24px, 30px, 32px, 40px
+
+### Grid & Container
+- Centered content with generous max-width
+- Full-width black sections with contained inner content
+- Single-column hero, expanding to feature grids below
+- Code preview panels as full-width or contained showcases
+
+### Whitespace Philosophy
+- **Cinematic black space**: The black background IS the whitespace. Generous vertical spacing (80px–120px+) between sections creates a scroll-through-darkness experience where each section emerges like a scene.
+- **Tight content, vast surrounds**: Text blocks and cards are compact internally, but float in vast dark space — creating isolated "islands" of content.
+- **Typography-led rhythm**: The massive display fonts (96px) create their own vertical rhythm — each headline is a visual event that anchors the surrounding space.
+
+### Border Radius Scale
+- Sharp (4px): Buttons (ghost), inputs, small interactive elements
+- Subtle (6px): Menu panels, navigation items
+- Standard (8px): Tabs, content blocks
+- Comfortable (10px): Accent elements
+- Card (12px): Clipboard buttons, medium containers
+- Large (16px): Feature cards, images, main buttons
+- Section (24px): Large panels, section containers
+- Pill (9999px): Primary CTAs, tags, badges
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, transparent background | Default — most elements on dark void |
+| Ring (Level 1) | `rgba(176, 199, 217, 0.145) 0px 0px 0px 1px` | Shadow-as-border for cards, containers |
+| Frost Border (Level 1b) | `1px solid rgba(214, 235, 253, 0.19)` | Explicit borders — buttons, dividers, tabs |
+| Subtle (Level 2) | `rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px` | Light card elevation |
+| Focus (Level 3) | `rgb(0, 0, 0) 0px 0px 0px 8px` | Heavy black focus ring — accessibility |
+
+**Shadow Philosophy**: Resend barely uses shadows at all. On a pure black background, traditional shadows are invisible — you can't cast a shadow into the void. Instead, Resend creates depth through its signature frost borders (`rgba(214, 235, 253, 0.19)`) — thin, icy blue-tinted lines that catch light against the darkness. This creates a "glass panel floating in space" aesthetic where borders are the primary depth mechanism.
+
+### Decorative Depth
+- Subtle warm gradient glows behind hero content (orange/amber tints)
+- Product screenshots create visual depth through their own internal UI
+- No gradient backgrounds — depth comes from border luminance and content contrast
+
+## Components
 
 ### Buttons
 
@@ -183,51 +323,7 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - Each product feature has its own accent color from the CSS variable scale
 - Badges use the accent color at low opacity (12–42%) for background, full opacity for text
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 5px, 6px, 7px, 8px, 10px, 12px, 16px, 20px, 24px, 30px, 32px, 40px
-
-### Grid & Container
-- Centered content with generous max-width
-- Full-width black sections with contained inner content
-- Single-column hero, expanding to feature grids below
-- Code preview panels as full-width or contained showcases
-
-### Whitespace Philosophy
-- **Cinematic black space**: The black background IS the whitespace. Generous vertical spacing (80px–120px+) between sections creates a scroll-through-darkness experience where each section emerges like a scene.
-- **Tight content, vast surrounds**: Text blocks and cards are compact internally, but float in vast dark space — creating isolated "islands" of content.
-- **Typography-led rhythm**: The massive display fonts (96px) create their own vertical rhythm — each headline is a visual event that anchors the surrounding space.
-
-### Border Radius Scale
-- Sharp (4px): Buttons (ghost), inputs, small interactive elements
-- Subtle (6px): Menu panels, navigation items
-- Standard (8px): Tabs, content blocks
-- Comfortable (10px): Accent elements
-- Card (12px): Clipboard buttons, medium containers
-- Large (16px): Feature cards, images, main buttons
-- Section (24px): Large panels, section containers
-- Pill (9999px): Primary CTAs, tags, badges
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, transparent background | Default — most elements on dark void |
-| Ring (Level 1) | `rgba(176, 199, 217, 0.145) 0px 0px 0px 1px` | Shadow-as-border for cards, containers |
-| Frost Border (Level 1b) | `1px solid rgba(214, 235, 253, 0.19)` | Explicit borders — buttons, dividers, tabs |
-| Subtle (Level 2) | `rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px` | Light card elevation |
-| Focus (Level 3) | `rgb(0, 0, 0) 0px 0px 0px 8px` | Heavy black focus ring — accessibility |
-
-**Shadow Philosophy**: Resend barely uses shadows at all. On a pure black background, traditional shadows are invisible — you can't cast a shadow into the void. Instead, Resend creates depth through its signature frost borders (`rgba(214, 235, 253, 0.19)`) — thin, icy blue-tinted lines that catch light against the darkness. This creates a "glass panel floating in space" aesthetic where borders are the primary depth mechanism.
-
-### Decorative Depth
-- Subtle warm gradient glows behind hero content (orange/amber tints)
-- Product screenshots create visual depth through their own internal UI
-- No gradient backgrounds — depth comes from border luminance and content contrast
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use pure black (`#000000`) as the page background — the void is the canvas
@@ -249,7 +345,7 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - Don't use negative letter-spacing on nav links — ABC Favorit nav uses positive +0.35px
 - Don't make buttons opaque on dark — transparency with frost border is the pattern
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -277,7 +373,7 @@ What makes Resend distinctive is its icy, blue-tinted border system. Instead of 
 - Dark screenshots blend seamlessly with dark background at all sizes
 - Rounded corners (12px–16px) maintained across breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Void Black (`#000000`)

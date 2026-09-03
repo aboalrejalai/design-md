@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "Renault"
+"description": "Bundled Open Design package for Renault, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ffcc33"
+  "on-primary": "#111111"
+  "canvas": "#f7f4ef"
+  "surface": "#ffffff"
+  "surface-warm": "#fff4bf"
+  "ink": "#111111"
+  "body": "#3f3f3f"
+  "muted": "#6f6b63"
+  "meta": "#ffcc33"
+  "border": "#dfd8ca"
+  "border-soft": "#ece6db"
+  "success": "#198754"
+  "warning": "#f59e0b"
+  "danger": "#d92d20"
+typography:
+  display:
+    "fontFamily": "\"Renault Group\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.02"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Renault Group\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "38px"
+  3xl:
+    "fontSize": "58px"
+  4xl:
+    "fontSize": "82px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "14px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "104px"
+  "section-y-tablet": "76px"
+  "section-y-phone": "52px"
+  "container-max": "1220px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Renault
 
 > Category: Automotive
 > French automotive. Vibrant aurora gradients, NouvelR typography, bold energy.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Renault's website is a vibrant digital showroom that balances French automotive elegance with bold, forward-leaning energy — a departure from the monochromatic austerity of German or Italian luxury brands. The page opens with a full-screen hero that washes the viewport in a sweeping aurora gradient — ribbons of magenta, violet, and teal bleeding across the frame behind a dramatically lit vehicle. This chromatic expressiveness is the site's signature: while the interface structure is disciplined (NouvelR typography, black-and-white CTA framework, zero-radius buttons), the content is alive with color — gradient washes on hero slides, saturated vehicle photography, and splashes of Renault Yellow (`#EFDF00`) on accent CTAs. The effect is a showroom that feels energized rather than hushed.
 
@@ -22,7 +112,7 @@ Typography is unified under NouvelR — a proprietary geometric sans-serif desig
 - PrimeReact (21 components) + Element Plus (19 components) powering interactive elements
 - Link hover state in Renault Blue (`#1883FD`) — the sole chromatic interaction color
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Renault Yellow** (`#EFDF00`): The brand's signature Pantone — a vivid, saturated yellow used for super-primary CTAs and the highest-priority action buttons. Appears as `--CtaLink-background-color` on `.is-cta-super-primary` class. Carries the energy of the diamond logo
@@ -57,7 +147,7 @@ Typography is unified under NouvelR — a proprietary geometric sans-serif desig
 - **PromoCard Overlay**: `linear-gradient(rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 40%)` — applied to card tops to ensure heading text legibility over photography
 - No flat CSS gradients on surfaces — depth comes from photographic treatment and the black/white alternation
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **NouvelR**: The sole typeface. A proprietary geometric sans-serif designed by Black[Foundry] for Renault's 2021+ rebrand. Features a distinctive "radical r" with a 28-degree terminal cut matching the diamond logo angle. Available in 6 weights (Light to Extrabold), supports 6 writing systems. Fallback: `sans-serif`. Declared as `"NouvelR, sans-serif"` in CSS
@@ -92,7 +182,57 @@ Typography is unified under NouvelR — a proprietary geometric sans-serif desig
 - **28-degree radical r**: The typeface's signature detail — the lowercase "r" terminal is cut at precisely 28 degrees to mirror the angles of the Renault diamond logo, embedding brand identity into every word
 - **Capitalize transform on captions**: Some caption text uses `text-transform: capitalize` for editorial labeling, while micro text uses `lowercase` — a deliberate inversion for hierarchy signaling
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px (detected system base)
+- **Scale**: 1px, 4px, 5px, 6px, 6.25px, 8px, 10px, 12px, 13px, 15px, 16px, 20px, 24px, 32px, 40px
+- **Button padding**: 10px 15px — consistent across all button variants
+- **Section padding**: Generous vertical spacing (40–80px) between major content blocks
+- **Card gaps**: 16–24px between grid items
+- **Minimum interactive size**: 46px (minWidth and minHeight on all buttons)
+
+### Grid & Container
+- **Max width**: 1440px (largest defined breakpoint)
+- **Hero**: Full-bleed, edge-to-edge, viewport-height
+- **PromoCard grid**: 2-up and 3-up layouts with mixed card sizes
+- **Vehicle range**: Horizontal scrollable card row or grid
+- **Footer**: Multi-column layout on white background
+
+### Whitespace Philosophy
+Renault uses whitespace moderately — more generously than Ferrari but less extremely than Tesla. The card-based layout means content is organized into defined containers rather than floating in void. The visual breathing room comes primarily from the large card formats and the full-bleed hero carousel, which gives each vehicle its own cinematic moment. Between sections, spacing is consistent (32–40px) creating a rhythmic scroll experience. The alternation between light and dark sections also creates perceived whitespace — the mode switch itself acts as a visual separator.
+
+### Border Radius Scale
+| Value | Context |
+|-------|---------|
+| 0px | All buttons, PromoCards, most containers — the zero-radius default |
+| 2px | Small UI elements (region controls) |
+| 3px | Content panels (div, tabpanel) |
+| 4px | Labels and tag elements |
+| 46px | Pill-shaped elements (search input, filter chips) |
+| 50px | Full pill for search/input fields |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow | Default for PromoCards, buttons, most containers |
+| Level 1 (Soft) | `rgba(0,0,0,0.2) 0px 4px 8px` | Card hover states, subtle lift effect |
+| Level 2 (Medium) | `rgba(0,0,0,0.2) 0px 0px 18px` | Floating UI elements, dropdown menus |
+| Level 3 (Layered) | `rgba(0,0,0,0) 0px 2px 4px, rgba(50,50,93,0.1) 0px 7px 14px` | Compound shadow for elevated cards and modals |
+| Level 4 (Deep) | `rgba(0,0,0,0.15) 0px 40px 80px` | Large floating panels, configurator overlays |
+| Level 5 (Directional) | `rgba(0,0,0,0.2) 5px 5px 8px` | Offset directional shadow for specific components |
+| Level 6 (Ambient) | `rgb(199,197,199) 0px 0px 12px 2px` | Ambient glow effect for highlighted elements |
+
+### Shadow Philosophy
+Renault uses a richer shadow system than Ferrari or Tesla — seven distinct shadow tokens reflecting a more layered, dimensional interface. The shadows progress from subtle 4px hover lifts to dramatic 80px deep panels. The compound shadow (Level 3) with its dual-layer approach (a tight dark shadow plus a wider purple-tinted one from `rgba(50,50,93,0.1)`) is particularly refined — it creates a photorealistic floating effect. The ambient glow (Level 6) in warm gray adds a unique touch that connects to Renault's warmer color personality.
+
+### Decorative Depth
+- **Hero aurora gradients**: The primary decorative depth element — vivid color gradients create atmospheric depth behind vehicle imagery
+- **PromoCard overlays**: `linear-gradient(rgba(0,0,0,0.6) → transparent)` creates depth within cards through transparency
+- **No blur effects** on UI elements — depth is communicated through shadow and color contrast
+
+## Components
 
 ### Buttons
 Renault's buttons are sharp-edged rectangles with zero border-radius — the industrial precision of a pressed metal body panel.
@@ -174,57 +314,7 @@ Renault's buttons are sharp-edged rectangles with zero border-radius — the ind
 - Dot indicators for slide position
 - Navigation arrows at edges
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px (detected system base)
-- **Scale**: 1px, 4px, 5px, 6px, 6.25px, 8px, 10px, 12px, 13px, 15px, 16px, 20px, 24px, 32px, 40px
-- **Button padding**: 10px 15px — consistent across all button variants
-- **Section padding**: Generous vertical spacing (40–80px) between major content blocks
-- **Card gaps**: 16–24px between grid items
-- **Minimum interactive size**: 46px (minWidth and minHeight on all buttons)
-
-### Grid & Container
-- **Max width**: 1440px (largest defined breakpoint)
-- **Hero**: Full-bleed, edge-to-edge, viewport-height
-- **PromoCard grid**: 2-up and 3-up layouts with mixed card sizes
-- **Vehicle range**: Horizontal scrollable card row or grid
-- **Footer**: Multi-column layout on white background
-
-### Whitespace Philosophy
-Renault uses whitespace moderately — more generously than Ferrari but less extremely than Tesla. The card-based layout means content is organized into defined containers rather than floating in void. The visual breathing room comes primarily from the large card formats and the full-bleed hero carousel, which gives each vehicle its own cinematic moment. Between sections, spacing is consistent (32–40px) creating a rhythmic scroll experience. The alternation between light and dark sections also creates perceived whitespace — the mode switch itself acts as a visual separator.
-
-### Border Radius Scale
-| Value | Context |
-|-------|---------|
-| 0px | All buttons, PromoCards, most containers — the zero-radius default |
-| 2px | Small UI elements (region controls) |
-| 3px | Content panels (div, tabpanel) |
-| 4px | Labels and tag elements |
-| 46px | Pill-shaped elements (search input, filter chips) |
-| 50px | Full pill for search/input fields |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow | Default for PromoCards, buttons, most containers |
-| Level 1 (Soft) | `rgba(0,0,0,0.2) 0px 4px 8px` | Card hover states, subtle lift effect |
-| Level 2 (Medium) | `rgba(0,0,0,0.2) 0px 0px 18px` | Floating UI elements, dropdown menus |
-| Level 3 (Layered) | `rgba(0,0,0,0) 0px 2px 4px, rgba(50,50,93,0.1) 0px 7px 14px` | Compound shadow for elevated cards and modals |
-| Level 4 (Deep) | `rgba(0,0,0,0.15) 0px 40px 80px` | Large floating panels, configurator overlays |
-| Level 5 (Directional) | `rgba(0,0,0,0.2) 5px 5px 8px` | Offset directional shadow for specific components |
-| Level 6 (Ambient) | `rgb(199,197,199) 0px 0px 12px 2px` | Ambient glow effect for highlighted elements |
-
-### Shadow Philosophy
-Renault uses a richer shadow system than Ferrari or Tesla — seven distinct shadow tokens reflecting a more layered, dimensional interface. The shadows progress from subtle 4px hover lifts to dramatic 80px deep panels. The compound shadow (Level 3) with its dual-layer approach (a tight dark shadow plus a wider purple-tinted one from `rgba(50,50,93,0.1)`) is particularly refined — it creates a photorealistic floating effect. The ambient glow (Level 6) in warm gray adds a unique touch that connects to Renault's warmer color personality.
-
-### Decorative Depth
-- **Hero aurora gradients**: The primary decorative depth element — vivid color gradients create atmospheric depth behind vehicle imagery
-- **PromoCard overlays**: `linear-gradient(rgba(0,0,0,0.6) → transparent)` creates depth within cards through transparency
-- **No blur effects** on UI elements — depth is communicated through shadow and color contrast
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Renault Yellow (`#EFDF00`) exclusively for super-primary CTAs — it carries the full weight of the diamond logo's identity
@@ -250,7 +340,7 @@ Renault uses a richer shadow system than Ferrari or Tesla — seven distinct sha
 - Create rounded-pill buttons — pill shapes are reserved for inputs, never for action elements
 - Use flat CSS gradients on UI surfaces — the only gradients should be the photographic hero auroras and the text-legibility overlays
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -283,7 +373,7 @@ Renault uses a richer shadow system than Ferrari or Tesla — seven distinct sha
 - Vehicle images: transparent-background renders scale proportionally within grid cells
 - Art direction: mobile may crop to tighter vehicle views, reducing environmental context
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA (Super): "Renault Yellow (#EFDF00)"

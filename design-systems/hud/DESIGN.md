@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "HUD Design System"
+"description": "Bundled Open Design package for HUD Design System, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#60a5fa"
+  "on-primary": "#06101d"
+  "canvas": "#090b12"
+  "surface": "#121722"
+  "surface-warm": "#1b2233"
+  "ink": "#f8fafc"
+  "body": "#cbd5e1"
+  "muted": "#94a3b8"
+  "meta": "#60a5fa"
+  "border": "#2a3447"
+  "border-soft": "#1d2636"
+  "success": "#22c55e"
+  "warning": "#fbbf24"
+  "danger": "#fb7185"
+typography:
+  display:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, monospace"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, monospace"
+    "lineHeight": "1.45"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "10px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "60px"
+  "section-y-phone": "42px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # HUD Design System
 
 > Category: Themed & Unique
 > Fighter jet / helicopter head-up display. Phosphor green on near-black, all-caps data overlays, angular geometry. Zero ambiguity at speed and altitude.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 A **combat pilot's glass cockpit** — everything readable in a split second, in any light condition, under any G-load. The HUD projects critical flight data directly into the pilot's line of sight so they never have to look down. Translucency and glow replace depth and shadow. Every element is functional or it doesn't exist.
 
@@ -32,7 +122,7 @@ HUD is purpose-built for:
 
 F-16 Fighting Falcon HUD, Apache AH-64 attack helicopter integrated display, F-35 helmet-mounted display system, Garmin G1000 flight deck. All share: phosphor green primary, decluttered minimalism, and information hierarchy driven by operational urgency.
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Surface Palette
 
@@ -71,7 +161,7 @@ Dark mode is the native and only mode. A HUD is projected in low-light or high-g
 }
 ```
 
-## 3. Typography Rules
+## Typography
 
 | Role | Size | Weight | Line Height | Font |
 |------|------|--------|-------------|------|
@@ -92,7 +182,20 @@ Micro: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace
 ```
 
-## 4. Component Stylings
+## Layout
+
+HUDs are overlay systems — they display over a visual field. The layout is absolute-positioned overlays on a transparent or dark background. Information density is high; whitespace is used to separate data clusters, not for aesthetics.
+
+Key structural patterns:
+- Grid lines reference the center of the display (crosshair)
+- Data readouts cluster by update frequency (altitude updates slower than airspeed)
+- Warning states override all other information layers
+
+## Elevation & Depth
+
+HUD overlays use opacity and glow rather than elevation shadows. Panels are distinguished by border color and subtle surface shifts, not drop shadows. The HUD exists in a single visual plane.
+
+## Components
 
 ### Data Readout
 
@@ -136,20 +239,7 @@ Dot or bar that reflects system state. Colors map to operational states.
 
 Reference marks for spatial orientation. Thin lines in `--data-tertiary`.
 
-## 5. Layout Principles
-
-HUDs are overlay systems — they display over a visual field. The layout is absolute-positioned overlays on a transparent or dark background. Information density is high; whitespace is used to separate data clusters, not for aesthetics.
-
-Key structural patterns:
-- Grid lines reference the center of the display (crosshair)
-- Data readouts cluster by update frequency (altitude updates slower than airspeed)
-- Warning states override all other information layers
-
-## 6. Depth & Elevation
-
-HUD overlays use opacity and glow rather than elevation shadows. Panels are distinguished by border color and subtle surface shifts, not drop shadows. The HUD exists in a single visual plane.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 - Do not use tertiary `#5A9A5A` for body or readout text — only grid lines and reference marks
 - Do not animate elements that do not signal operational state
@@ -158,11 +248,11 @@ HUD overlays use opacity and glow rather than elevation shadows. Panels are dist
 - Do not use gradients — flat color fills only
 - Do not convey information by color alone — reinforce with position and label
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 HUD overlays are viewport-relative. On smaller viewports, data clusters compress proportionally. Critical readouts (speed, altitude, heading) remain visible at all sizes; secondary indicators hide or minimize. The layout uses a 12-column grid with absolute-positioned data panels anchored to screen edges.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 When generating a HUD-style interface, prompt the model to:
 - Use JetBrains Mono for all data readouts; Inter (uppercase) for labels only

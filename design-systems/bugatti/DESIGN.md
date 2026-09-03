@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Bugatti"
+"description": "Bundled Open Design package for Bugatti, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1b4d8f"
+  "on-primary": "#ffffff"
+  "canvas": "#07111f"
+  "surface": "#101d2f"
+  "surface-warm": "#16283f"
+  "ink": "#f7fbff"
+  "body": "#d6e0ee"
+  "muted": "#8fa1b7"
+  "meta": "#b7c7d9"
+  "border": "#2c405c"
+  "border-soft": "#1c2d44"
+  "success": "#2fbf71"
+  "warning": "#d9b45f"
+  "danger": "#c1121f"
+typography:
+  display:
+    "fontFamily": "\"Bugatti Display\", \"Didot\", Georgia, serif"
+    "lineHeight": "1"
+    "letterSpacing": "-0.015em"
+  body:
+    "fontFamily": "\"Avenir Next\", Inter, Arial, sans-serif"
+    "lineHeight": "1.58"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "42px"
+  3xl:
+    "fontSize": "64px"
+  4xl:
+    "fontSize": "88px"
+rounded:
+  "sm": "8px"
+  "md": "14px"
+  "lg": "22px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "84px"
+  "section-y-phone": "60px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "42px"
+  "container-gutter-tablet": "30px"
+  "container-gutter-phone": "20px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Bugatti
 
 > Category: Automotive
 > Hypercar brand. Cinema-black canvas, monochrome austerity, monumental display type.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Bugatti.com does not behave like a website — it behaves like a feature-length car film that a visitor happens to be standing inside. The canvas is pure `#000000`, the only color that appears at rest is white, and the entire page is carried by full-bleed hero video and photography with a single typographic moment laid over the top. There are no cards, no grids, no promotional modules, no newsletter signups, no three-column editorial layouts. It is one continuous cinema-black channel, interrupted only by the cars themselves and a few pill-shaped calls to action that quietly say things like "EXPLORE OUR OPPORTUNITIES" in ALL CAPS monospace.
 
@@ -20,7 +113,7 @@ The other signature is **monochromatic austerity**. The entire homepage uses exa
 - Video- and photography-first page — the chrome is almost silent so the product can speak
 - Mono UPPERCASE labels with 1.2–1.4px letter-spacing on every CTA, navigation link, and caption
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Velvet Black** (`#000000`): The entire canvas. Not near-black, not warm black — the pure HTML `#000`. Bugatti treats this as a display-stand surface, the way a jewelry brand treats a black velvet cloth.
@@ -42,7 +135,7 @@ The other signature is **monochromatic austerity**. The entire homepage uses exa
 ### Gradient System
 None. There are zero decorative gradients on Bugatti.com. The only "gradient" on the page is whatever natural light gradient exists inside the hero video of the car itself. The brand refuses to apply any chrome gradient that could compete with the atmospheric lighting of the product photography.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Bugatti Display** — fallback: `ui-sans-serif`, `system-ui`. A proprietary custom display typeface used only at very large sizes for hero and mid-display headlines. Designed to be read at architectural scale — at 288px, its geometry doubles as a visual element, not just text. The face carries a faint hint of early-20th-century Grand Prix typography (the period when Ettore Bugatti was racing) without ever becoming nostalgic.
@@ -85,7 +178,45 @@ None. There are zero decorative gradients on Bugatti.com. The only "gradient" on
 ### Note on Font Substitutes
 The 1.00 line-height and 288px display scale both assume the **proprietary Bugatti Display face**, which is drawn with compact vertical metrics purpose-built for architectural scale. If you substitute with open-source extended geometric displays like **Unbounded**, **Big Shoulders Display**, or **Archivo Black**, make two adjustments: (1) **loosen line-height to ~1.05–1.10** to prevent ascender collisions, and (2) **cap the maximum display size at ~104–128px** on most viewports — these substitutes have wider horizontal metrics than Bugatti Display, so a 288px monumental headline will wrap across 4+ lines and overwhelm the layout. Reserve the 200px+ scale only for single-word monumental moments (e.g., "BUGATTI" alone). Bugatti Monospace substitutes (Space Mono, JetBrains Mono) and Bugatti Text Regular substitutes (Inter, DM Sans) work at the token values without adjustment.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px.
+- **Scale** (from tokens): 4, 6, 12, 36, 48, 64px. Six values. **Six.** This is one of the smallest spacing scales of any major brand site — Bugatti uses a handful of discrete gaps and refuses to invent in-between values.
+- **Section padding**: typically 48–64px vertical. Hero panels are full-viewport-height, which bypasses the scale entirely.
+- **Button padding**: 6px 12px (compact) or 12px 24px (primary). Nothing else.
+- **Inline spacing**: 4–12px between stacked labels; the big jump to 36/48/64 happens between content blocks.
+
+### Grid & Container
+- **Max width**: 1720px (dembrandt detected breakpoints up to 1720). The site scales to ultra-wide for luxury showroom displays and wide cinema monitors.
+- **Column patterns**: there is essentially no multi-column grid on the homepage — it is a stack of single full-width blocks. When deeper pages need columns (configurator, atelier, technical specs), they use a 12-column Tailwind-based grid.
+- **Outer padding**: minimal. Most sections bleed to the viewport edge, with padding only applied to the overlaid text and CTA block (typically 48–64px from the bottom-center).
+
+### Whitespace Philosophy
+Bugatti's whitespace philosophy is **cinematic negative space** — the page is 90% empty even when content is present, because the content is usually a video or photograph of a single car. The rhythm is: full-bleed media → monumental headline → single pill CTA → scroll → next full-bleed media. There is no "information density" anywhere. The page breathes the way a museum breathes, with each exhibit getting its own silent room.
+
+### Border Radius Scale
+- **0** — default for all media and the hero canvas
+- **6px** — secondary rounded buttons, bordered frames, small utility containers
+- **9999px** — primary pill buttons
+
+Three values. No `12px`, no `24px`, no `20px`. Bugatti's radius system is the most restrained of any site in this catalog — the brand has made an active decision that "slightly rounded rectangle" is a vulgar shape, and committed to either true rectangle or true pill.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|---|---|---|
+| 0 | No shadow, no border | Default text and media on `#000000` |
+| 1 | `1px solid #999999` | Secondary containers, cookie-style dialogs |
+| 2 | `1px solid #ffffff` | Primary button outline, active state indicators |
+| 3 | Bottom-to-top `rgba(0, 0, 0, 0.4) → transparent` vignette | Text-legibility gradient when type sits over video |
+
+**That is the entire depth system.** There are 1 shadows in the extracted token set (zero meaningful `box-shadow` values — just a placeholder). Bugatti does not use drop shadows. It does not use elevation rings. It does not use glowing focus states. Depth is implied by the 1px hairline of a border or the presence of a vignette gradient — nothing more.
+
+### Decorative Depth
+None. Zero gradients (except the subtle text-legibility vignette), zero blurs, zero glows, zero atmospheric effects. The decorative depth of Bugatti's site comes entirely from the lighting baked into the product photography. The chrome does not compete.
+
+## Components
 
 ### Buttons
 
@@ -148,45 +279,7 @@ The 1.00 line-height and 288px display scale both assume the **proprietary Bugat
 ### Atmospheric Overlay
 - When type sits over photography or video that might threaten legibility, Bugatti uses a subtle `rgba(0, 0, 0, 0.4)` linear gradient from bottom (40% black) to top (transparent) — the only "shadow-like" effect in the system. It's a vignette, not a drop shadow.
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px.
-- **Scale** (from tokens): 4, 6, 12, 36, 48, 64px. Six values. **Six.** This is one of the smallest spacing scales of any major brand site — Bugatti uses a handful of discrete gaps and refuses to invent in-between values.
-- **Section padding**: typically 48–64px vertical. Hero panels are full-viewport-height, which bypasses the scale entirely.
-- **Button padding**: 6px 12px (compact) or 12px 24px (primary). Nothing else.
-- **Inline spacing**: 4–12px between stacked labels; the big jump to 36/48/64 happens between content blocks.
-
-### Grid & Container
-- **Max width**: 1720px (dembrandt detected breakpoints up to 1720). The site scales to ultra-wide for luxury showroom displays and wide cinema monitors.
-- **Column patterns**: there is essentially no multi-column grid on the homepage — it is a stack of single full-width blocks. When deeper pages need columns (configurator, atelier, technical specs), they use a 12-column Tailwind-based grid.
-- **Outer padding**: minimal. Most sections bleed to the viewport edge, with padding only applied to the overlaid text and CTA block (typically 48–64px from the bottom-center).
-
-### Whitespace Philosophy
-Bugatti's whitespace philosophy is **cinematic negative space** — the page is 90% empty even when content is present, because the content is usually a video or photograph of a single car. The rhythm is: full-bleed media → monumental headline → single pill CTA → scroll → next full-bleed media. There is no "information density" anywhere. The page breathes the way a museum breathes, with each exhibit getting its own silent room.
-
-### Border Radius Scale
-- **0** — default for all media and the hero canvas
-- **6px** — secondary rounded buttons, bordered frames, small utility containers
-- **9999px** — primary pill buttons
-
-Three values. No `12px`, no `24px`, no `20px`. Bugatti's radius system is the most restrained of any site in this catalog — the brand has made an active decision that "slightly rounded rectangle" is a vulgar shape, and committed to either true rectangle or true pill.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|---|---|---|
-| 0 | No shadow, no border | Default text and media on `#000000` |
-| 1 | `1px solid #999999` | Secondary containers, cookie-style dialogs |
-| 2 | `1px solid #ffffff` | Primary button outline, active state indicators |
-| 3 | Bottom-to-top `rgba(0, 0, 0, 0.4) → transparent` vignette | Text-legibility gradient when type sits over video |
-
-**That is the entire depth system.** There are 1 shadows in the extracted token set (zero meaningful `box-shadow` values — just a placeholder). Bugatti does not use drop shadows. It does not use elevation rings. It does not use glowing focus states. Depth is implied by the 1px hairline of a border or the presence of a vignette gradient — nothing more.
-
-### Decorative Depth
-None. Zero gradients (except the subtle text-legibility vignette), zero blurs, zero glows, zero atmospheric effects. The decorative depth of Bugatti's site comes entirely from the lighting baked into the product photography. The chrome does not compete.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - **Do** keep the entire canvas `#000000`. No off-black, no near-black, no warm black. Bugatti is pure black.
@@ -209,7 +302,7 @@ None. Zero gradients (except the subtle text-legibility vignette), zero blurs, z
 - **Don't** add gradients, glows, blurs, or glassmorphism anywhere. The chrome is silent.
 - **Don't** put text over photography without a `rgba(0, 0, 0, 0.4)` bottom-up vignette if legibility is at risk.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -242,7 +335,7 @@ The dembrandt sweep detected 6 breakpoints (1720 → 1536 → 1280 → 1024 → 
 - Below-the-fold media uses `loading="lazy"` with `srcset` art direction.
 - Bugatti serves high-density imagery through `imgix` — you'll see `bugatti.imgix.net` URLs with transformation parameters.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - **Primary Canvas**: "Velvet Black (`#000000`)"

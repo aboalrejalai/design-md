@@ -1,9 +1,109 @@
+---
+"version": "alpha"
+"name": "Xiaohongshu"
+"description": "Bundled Open Design package for Xiaohongshu, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff2442"
+  "primary-hover": "#ff2e4d"
+  "primary-active": "#e6203a"
+  "on-primary": "#ffffff"
+  "canvas": "#f5f5f5"
+  "surface": "#ffffff"
+  "surface-warm": "#fafafa"
+  "ink": "rgba(0, 0, 0, 0.8)"
+  "body": "rgba(0, 0, 0, 0.62)"
+  "muted": "rgba(0, 0, 0, 0.45)"
+  "meta": "rgba(0, 0, 0, 0.27)"
+  "border": "rgba(0, 0, 0, 0.08)"
+  "border-soft": "rgba(0, 0, 0, 0.05)"
+  "success": "#02b940"
+  "warning": "#ff7d03"
+  "danger": "#ff2442"
+typography:
+  display:
+    "fontFamily": "\"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", -apple-system, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.25"
+  body:
+    "fontFamily": "\"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", -apple-system, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "28px"
+  4xl:
+    "fontSize": "32px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "64px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  links:
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.pill}"
+    "padding": "{spacing.3}"
+  icons:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Xiaohongshu
 
 > Category: Media & Consumer
 > Lifestyle UGC social platform. Singular brand red, generous radius, content-first.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Xiaohongshu (小红书 / RED) is the visual opposite of a SaaS console. Open the app and you do not see "Xiaohongshu" — you see other people's breakfasts, hotel sofas, the lipstick they bought on the third try. That is by design. The entire UI tries to act as a transparent picture frame: white surfaces, low-noise components, no shadow stacks competing for attention. Everything yields to the user-uploaded image.
 
@@ -25,7 +125,7 @@ The result reads like a slightly worn lifestyle magazine with a few handwritten 
 - Bottom sheet for secondary actions on mobile, never modal
 - Voice: second person, lifestyle, never SaaS-enterprise
 
-## 2. Color Palette & Roles
+## Colors
 
 All values below are sampled from production CSS at `https://www.xiaohongshu.com/explore` (inline `<style>` blocks for `:root, .force-light` and `:root[dark], .force-dark`).
 
@@ -74,7 +174,7 @@ Dark mode follows `prefers-color-scheme: dark` with a manual override; both the 
 - **Brand Primary** (`#FF2E4D`) — slight pink shift vs. light mode (`#FF2442` → `#FF2E4D`) to lower visual sting in low light.
 - **Separator** (`rgba(255,255,255,0.07)`).
 
-## 3. Typography Rules
+## Typography
 
 All values sampled from production CSS at `https://www.xiaohongshu.com/`.
 
@@ -128,7 +228,73 @@ Used for like counts, follower counts, stat displays. Solves PingFang's non-tabu
 - **Soft black, not pure black.** Title text is `rgba(0,0,0,0.80)`. Pure `#000` is never used for body or title text.
 - **Dedicated digit face.** Counts, stats, and follow-numbers always use `RED Number` for tabular alignment.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System (8pt grid)
+
+Base unit 8px. Common stops: `4 / 8 / 12 / 16 / 20 / 24 / 32`. Section gaps jump to `48 / 64`.
+
+### Responsive Waterfall (PC discover)
+
+Five-column masonry at the standard desktop width, stepping down on narrower viewports.
+
+| Viewport | Columns | Column gap |
+|---|---|---|
+| ≥ 960px | 5 | 10px |
+| 690–960px | 4 | 10px |
+| 500–690px | 3 | 10px |
+| < 500px | 2 | 10px |
+
+Implementation is JavaScript-positioned (`translate3d` + ResizeObserver), not CSS Grid, because card heights are unknown until images load. This also predates widespread CSS Masonry support (still behind flags in most browsers as of 2026); the JS approach buys cross-browser consistency at the cost of layout-shift risk on slow image loads. The masonry deliberately does not align rows — variable image height *is* the realism.
+
+### Mobile Two-Column
+
+- Two columns, each ~48.2% of viewport width
+- Row gap ~7px
+- Outer side margin `12rpx` per side (≈ 6px @ 375px)
+
+### Note Detail (PC)
+
+- Two-pane: left ~500px image carousel / right ~500px metadata + comments, total ~1100px
+- Image aspect chosen at upload time — vertical 3:4 / square 1:1 / horizontal 4:3
+- The carousel is the dominant visual; comments scroll independently on the right
+
+### Profile
+
+- 16:9 banner image at top
+- Circular avatar (80–96px) overlaps banner / content edge
+- Three-stat horizontal row (following / followers / likes-and-collects)
+- Tab strip below: Notes / Saved / Liked (笔记 / 收藏 / 赞过)
+
+### Creator / Ad Console (B2B)
+
+Standard left-nav console: 200–240px sidebar + ~1000–1100px content area. Top of content is a row of stat cards (impressions, likes, follower delta), below is a list or chart region. **No left-border accent on cards.** Surfaces are white, separation is by spacing.
+
+### Whitespace
+
+- The discover grid is dense — *content* density is the value proposition.
+- Section padding sits *between* feeds, not within them.
+- Cards do not have internal vertical padding above the image — image is flush to the top of the card.
+
+## Elevation & Depth
+
+Three levels, used sparingly.
+
+| Level | Treatment | Use |
+|---|---|---|
+| Flat (0) | No shadow | Default — feed cards, tags, buttons (both modes) |
+| Subtle (1) | `0 4px 12px rgba(0,0,0,0.08)` | PC card hover (light mode only) |
+| Modal (2) | `0 8px 32px rgba(0,0,0,0.12)` | Centered modal on PC (light mode only) |
+| Dark mode | Drop shadows or replace with a `1px` hairline (`rgba(255,255,255,0.07)`) | `rgba(0,0,0,*)` shadows are invisible on the `#19191E` canvas; the scrim alone provides modal separation, and the PC card-hover `translateY(-2px)` is dropped entirely (motion + shadow both read as no-ops against the dark surface) |
+
+**Shadow is the exception, not the rule.** Depth comes from:
+1. Background color contrast (`#F5F5F5` canvas under `#FFFFFF` cards)
+2. Generous radius (cards visually float because corners are rounded)
+3. Whitespace between elements
+
+No neumorphism. No glassmorphism. No coloured shadows. Bottom sheet has no shadow at all — the scrim provides the separation. In dark mode, drop the PC card-hover effect (`translateY(-2px)` + alpha-on-black shadow) entirely; both motion and shadow read as no-ops against the dark canvas.
+
+## Components
 
 ### Buttons
 
@@ -222,73 +388,7 @@ Feed-card variant: `6px 14px` padding, 12px text. Profile-page variant: `8px 20p
 - Centered, white background, 12px radius
 - Light shadow (`0 8px 32px rgba(0,0,0,0.12)`) — the only place shadow is conspicuous
 
-## 5. Layout Principles
-
-### Spacing System (8pt grid)
-
-Base unit 8px. Common stops: `4 / 8 / 12 / 16 / 20 / 24 / 32`. Section gaps jump to `48 / 64`.
-
-### Responsive Waterfall (PC discover)
-
-Five-column masonry at the standard desktop width, stepping down on narrower viewports.
-
-| Viewport | Columns | Column gap |
-|---|---|---|
-| ≥ 960px | 5 | 10px |
-| 690–960px | 4 | 10px |
-| 500–690px | 3 | 10px |
-| < 500px | 2 | 10px |
-
-Implementation is JavaScript-positioned (`translate3d` + ResizeObserver), not CSS Grid, because card heights are unknown until images load. This also predates widespread CSS Masonry support (still behind flags in most browsers as of 2026); the JS approach buys cross-browser consistency at the cost of layout-shift risk on slow image loads. The masonry deliberately does not align rows — variable image height *is* the realism.
-
-### Mobile Two-Column
-
-- Two columns, each ~48.2% of viewport width
-- Row gap ~7px
-- Outer side margin `12rpx` per side (≈ 6px @ 375px)
-
-### Note Detail (PC)
-
-- Two-pane: left ~500px image carousel / right ~500px metadata + comments, total ~1100px
-- Image aspect chosen at upload time — vertical 3:4 / square 1:1 / horizontal 4:3
-- The carousel is the dominant visual; comments scroll independently on the right
-
-### Profile
-
-- 16:9 banner image at top
-- Circular avatar (80–96px) overlaps banner / content edge
-- Three-stat horizontal row (following / followers / likes-and-collects)
-- Tab strip below: Notes / Saved / Liked (笔记 / 收藏 / 赞过)
-
-### Creator / Ad Console (B2B)
-
-Standard left-nav console: 200–240px sidebar + ~1000–1100px content area. Top of content is a row of stat cards (impressions, likes, follower delta), below is a list or chart region. **No left-border accent on cards.** Surfaces are white, separation is by spacing.
-
-### Whitespace
-
-- The discover grid is dense — *content* density is the value proposition.
-- Section padding sits *between* feeds, not within them.
-- Cards do not have internal vertical padding above the image — image is flush to the top of the card.
-
-## 6. Depth & Elevation
-
-Three levels, used sparingly.
-
-| Level | Treatment | Use |
-|---|---|---|
-| Flat (0) | No shadow | Default — feed cards, tags, buttons (both modes) |
-| Subtle (1) | `0 4px 12px rgba(0,0,0,0.08)` | PC card hover (light mode only) |
-| Modal (2) | `0 8px 32px rgba(0,0,0,0.12)` | Centered modal on PC (light mode only) |
-| Dark mode | Drop shadows or replace with a `1px` hairline (`rgba(255,255,255,0.07)`) | `rgba(0,0,0,*)` shadows are invisible on the `#19191E` canvas; the scrim alone provides modal separation, and the PC card-hover `translateY(-2px)` is dropped entirely (motion + shadow both read as no-ops against the dark surface) |
-
-**Shadow is the exception, not the rule.** Depth comes from:
-1. Background color contrast (`#F5F5F5` canvas under `#FFFFFF` cards)
-2. Generous radius (cards visually float because corners are rounded)
-3. Whitespace between elements
-
-No neumorphism. No glassmorphism. No coloured shadows. Bottom sheet has no shadow at all — the scrim provides the separation. In dark mode, drop the PC card-hover effect (`translateY(-2px)` + alpha-on-black shadow) entirely; both motion and shadow read as no-ops against the dark canvas.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - ✅ Treat brand red as singular. One CTA accent per screen, no second saturated color competing.
@@ -321,7 +421,7 @@ No neumorphism. No glassmorphism. No coloured shadows. Bottom sheet has no shado
 - ❌ Don't use orange / yellow as a Toast emphasis color. Emphasis in this system is brand red, period.
 - ❌ Don't hard-pin every card to the same height. Variable card height across columns is the realism — don't "fix" it.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -348,7 +448,7 @@ No neumorphism. No glassmorphism. No coloured shadows. Bottom sheet has no shado
 
 - Body sizes do not shrink below 14px. Small captions stay at 12px to preserve density without becoming illegible on Chinese characters.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Brand Red Disambiguation
 

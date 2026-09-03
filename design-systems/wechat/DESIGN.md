@@ -1,15 +1,104 @@
+---
+"version": "alpha"
+"name": "WeChat Design System"
+"description": "Bundled Open Design package for WeChat Design System, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#07c160"
+  "primary-hover": "#10b160"
+  "primary-active": "#059050"
+  "on-primary": "#ffffff"
+  "canvas": "#ededed"
+  "surface": "#f7f7f7"
+  "surface-warm": "#f7f7f7"
+  "ink": "#1a1a1a"
+  "body": "#1a1a1a"
+  "muted": "#888888"
+  "meta": "#888888"
+  "border": "#e0e0e0"
+  "border-soft": "#e0e0e0"
+  "success": "#07c160"
+  "warning": "#fab702"
+  "danger": "#fa5151"
+typography:
+  display:
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.3"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.6"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "18px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "32px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "72px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.md}"
+  badges:
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.2}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # WeChat Design System
 
 > Category: Social & Messaging
 > Brand visual language for WeChat Mini Programs, official accounts, and open ecosystem extensions.
 
-## Brand Identity
-
-WeChat's identity is built on simplicity, cleanness, and trust — reflecting its role as a super-app that connects people, services, and businesses.
-
----
-
-## Color Palette
+## Colors
 
 ### Brand Colors
 
@@ -68,7 +157,7 @@ font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
 
 ---
 
-## Spacing System
+## Layout
 
 4px base unit.
 
@@ -237,6 +326,12 @@ font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
   text-align: center;
 }
 ```
+
+---
+
+## Brand Identity
+
+WeChat's identity is built on simplicity, cleanness, and trust — reflecting its role as a super-app that connects people, services, and businesses.
 
 ---
 

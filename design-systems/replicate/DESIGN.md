@@ -1,9 +1,107 @@
+---
+"version": "alpha"
+"name": "Replicate"
+"description": "Bundled Open Design package for Replicate, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ea2804"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f8f8f8"
+  "surface-warm": "#f8f8f8"
+  "ink": "#202020"
+  "body": "#4e4e4e"
+  "muted": "#646464"
+  "meta": "#8d8d8d"
+  "border": "#202020"
+  "border-soft": "#e5e5e5"
+  "success": "#2b9a66"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"rb-freigeist-neue\", ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"basier-square\", ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"jetbrains-mono\", \"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "30px"
+  2xl:
+    "fontSize": "48px"
+  3xl:
+    "fontSize": "72px"
+  4xl:
+    "fontSize": "128px"
+rounded:
+  "sm": "9999px"
+  "md": "9999px"
+  "lg": "9999px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.meta}"
+    "typography": "{typography.body}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.3}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Replicate
 
 > Category: AI & LLM
 > Run ML models via API. Clean white canvas, code-forward.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Replicate's interface is a developer playground crackling with creative energy — a bold, high-contrast design that feels more like a music festival poster than a typical API platform. The hero section explodes with a vibrant orange-red-magenta gradient that immediately signals "this is where AI models come alive," while the body of the page grounds itself in a clean white canvas where code snippets and model galleries take center stage.
 
@@ -21,7 +119,7 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - Bold/heavy font weights (600-700) creating maximum typographic impact
 - Playful closing manifesto: "Imagine what you can build."
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Replicate Dark** (`#202020`): The primary text color and dark surface — a near-black that's the anchor of all text and borders. Slightly warmer than pure #000.
@@ -48,7 +146,7 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - **Hero Blaze**: A dramatic multi-stop gradient flowing through orange (`#ea2804`) → red → magenta → hot pink. This gradient occupies the full hero section and is the most visually dominant element on the page.
 - **Dark Sections**: Deep dark (#202020) sections with white/near-white text provide contrast against the white body.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `rb-freigeist-neue`, with fallbacks: `ui-sans-serif, system-ui`
@@ -79,7 +177,42 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - **Lowercase tags**: 12px basier-square uses `text-transform: lowercase` — an unusual choice that creates a casual, developer-friendly vibe.
 - **Weight 600 as emphasis**: When basier-square needs emphasis, it uses 600 (semibold) — never bold (700), which is reserved for rb-freigeist-neue display text.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 12px, 16px, 24px, 32px, 48px, 64px, 96px, 160px, 192px
+- Button padding: varies widely (0px 4px to 6px 56px)
+- Section vertical spacing: very generous (96–192px)
+
+### Grid & Container
+- Fluid width with responsive constraints
+- Hero: full-width gradient with centered content
+- Model gallery: multi-column responsive grid
+- Feature sections: mixed layouts
+- Code examples: contained dark blocks
+
+### Whitespace Philosophy
+- **Bold and generous**: Massive spacing between sections (up to 192px) creates distinct zones.
+- **Dense within galleries**: Model images are tightly packed in the grid for browsable density.
+- **The gradient IS the whitespace**: The hero gradient section occupies significant vertical space as a colored void.
+
+### Border Radius Scale
+- **Pill (9999px)**: The ONLY radius in the system. Everything interactive, every image, every badge, every label, every container uses 9999px. This is the most extreme pill-radius commitment in any major tech brand.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | White body, text blocks |
+| Bordered (Level 1) | `1px solid #202020` | Cards, buttons, containers |
+| Accent Border (Level 2) | `1px solid #ea2804` | Featured/highlighted items |
+| Gradient Hero (Level 3) | Full-width blaze gradient | Hero section, maximum visual impact |
+| Dark Section (Level 4) | Dark bg (#202020) with light text | Manifesto, footer, feature sections |
+
+**Shadow Philosophy**: Replicate relies on **borders and background color** for depth rather than shadows. The `1px solid #202020` border is the primary containment mechanism. The dramatic gradient hero and dark/light section alternation provide all the depth the design needs.
+
+## Components
 
 ### Buttons
 
@@ -158,42 +291,7 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - Images embedded between words
 - The emotional climax of the page
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 12px, 16px, 24px, 32px, 48px, 64px, 96px, 160px, 192px
-- Button padding: varies widely (0px 4px to 6px 56px)
-- Section vertical spacing: very generous (96–192px)
-
-### Grid & Container
-- Fluid width with responsive constraints
-- Hero: full-width gradient with centered content
-- Model gallery: multi-column responsive grid
-- Feature sections: mixed layouts
-- Code examples: contained dark blocks
-
-### Whitespace Philosophy
-- **Bold and generous**: Massive spacing between sections (up to 192px) creates distinct zones.
-- **Dense within galleries**: Model images are tightly packed in the grid for browsable density.
-- **The gradient IS the whitespace**: The hero gradient section occupies significant vertical space as a colored void.
-
-### Border Radius Scale
-- **Pill (9999px)**: The ONLY radius in the system. Everything interactive, every image, every badge, every label, every container uses 9999px. This is the most extreme pill-radius commitment in any major tech brand.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | White body, text blocks |
-| Bordered (Level 1) | `1px solid #202020` | Cards, buttons, containers |
-| Accent Border (Level 2) | `1px solid #ea2804` | Featured/highlighted items |
-| Gradient Hero (Level 3) | Full-width blaze gradient | Hero section, maximum visual impact |
-| Dark Section (Level 4) | Dark bg (#202020) with light text | Manifesto, footer, feature sections |
-
-**Shadow Philosophy**: Replicate relies on **borders and background color** for depth rather than shadows. The `1px solid #202020` border is the primary containment mechanism. The dramatic gradient hero and dark/light section alternation provide all the depth the design needs.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use pill-shaped (9999px) radius on EVERYTHING — buttons, images, badges, containers
@@ -217,7 +315,7 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - Don't skip the code examples — they're primary content, not decoration
 - Don't make the hero gradient subtle — it should be BOLD and vibrant
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 *No explicit breakpoints detected — likely using fluid/container-query responsive system.*
@@ -238,7 +336,7 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 - Gallery reflows to fewer columns on narrow screens
 - Hero gradient maintained at all sizes
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: "Replicate Dark (#202020)"

@@ -1,9 +1,112 @@
+---
+"version": "alpha"
+"name": "Pinterest"
+"description": "Bundled Open Design package for Pinterest, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#e60023"
+  "on-primary": "#000000"
+  "canvas": "#ffffff"
+  "surface": "#f6f6f3"
+  "surface-warm": "#e5e5e0"
+  "ink": "#211922"
+  "body": "#000000"
+  "muted": "#62625b"
+  "meta": "#91918c"
+  "border": "#c8c8c1"
+  "border-soft": "#e0e0d9"
+  "success": "#103c25"
+  "warning": "#c47700"
+  "danger": "#9e0a0a"
+typography:
+  display:
+    "fontFamily": "\"Pin Sans\", -apple-system, system-ui, \"Segoe UI\", Roboto, \"Oxygen-Sans\", \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", Helvetica, \"ヒラギノ角ゴ Pro W3\", メイリオ, Meiryo, \"ＭＳ Ｐゴシック\", Arial, sans-serif"
+    "lineHeight": "1.15"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Pin Sans\", -apple-system, system-ui, \"Segoe UI\", Roboto, \"Oxygen-Sans\", \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", Helvetica, \"ヒラギノ角ゴ Pro W3\", メイリオ, Meiryo, \"ＭＳ Ｐゴシック\", Arial, sans-serif"
+    "lineHeight": "1.4"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "44px"
+  4xl:
+    "fontSize": "70px"
+rounded:
+  "sm": "12px"
+  "md": "16px"
+  "lg": "28px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  badges:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Pinterest
 
 > Category: Media & Consumer
 > Visual discovery. Red accent, masonry grid, image-first.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Pinterest's website is a warm, inspiration-driven canvas that treats visual discovery like a lifestyle magazine. The design operates on a soft, slightly warm white background with Pinterest Red (`#e60023`) as the singular, bold brand accent. Unlike the cool blues of most tech platforms, Pinterest's neutral scale has a distinctly warm undertone — grays lean toward olive/sand (`#91918c`, `#62625b`, `#e5e5e0`) rather than cool steel, creating a cozy, craft-like atmosphere that invites browsing.
 
@@ -21,7 +124,7 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 - Photography-first content — pins/images are the primary visual element
 - Dark near-purple text (`#211922`) — warm, with a hint of plum
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Pinterest Red** (`#e60023`): Primary CTA, brand accent — bold, confident red
@@ -55,7 +158,7 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 ### Semantic
 - **Error Red** (`#9e0a0a`): Checkbox/form error states
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Pin Sans`, fallbacks: `-apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, ヒラギノ角ゴ Pro W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, Arial`
@@ -77,7 +180,43 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 - **Negative tracking on headings**: -1.2px on 28px headings creates cozy, intimate section titles.
 - **Single font family**: Pin Sans handles everything — no secondary display or monospace font detected.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 6px, 7px, 8px, 10px, 11px, 12px, 16px, 18px, 20px, 22px, 24px, 32px, 80px, 100px
+- Large jumps: 32px → 80px → 100px for section spacing
+
+### Grid & Container
+- Masonry grid for pin content (signature layout)
+- Centered content sections with generous max-width
+- Full-width dark footer
+- Search bar as primary navigation element
+
+### Whitespace Philosophy
+- **Inspiration density**: The masonry grid packs pins tightly — the content density IS the value proposition. Whitespace exists between sections, not within the grid.
+- **Breathing above, density below**: Hero/feature sections get generous padding; the pin grid is compact and immersive.
+
+### Border Radius Scale
+- Standard (12px): Small cards, links
+- Button (16px): Buttons, inputs, medium cards
+- Comfortable (20px): Feature cards
+- Large (28px): Large containers
+- Section (32px): Tab elements, large panels
+- Hero (40px): Hero containers, large feature blocks
+- Circle (50%): Action buttons, tab indicators
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Default — pins rely on content, not shadow |
+| Subtle (Level 1) | Minimal shadow (from tokens) | Elevated overlays, dropdowns |
+| Focus (Accessibility) | `--sema-color-border-focus-outer-default` ring | Focus states |
+
+**Shadow Philosophy**: Pinterest uses minimal shadows. The masonry grid relies on content (photography) to create visual interest rather than elevation effects. Depth comes from the warmth of surface colors and the generous rounding of containers.
+
+## Components
 
 ### Buttons
 
@@ -130,43 +269,7 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 - Photography as primary content — every pin is an image
 - Thick white borders (8px) on featured image containers
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 7px, 8px, 10px, 11px, 12px, 16px, 18px, 20px, 22px, 24px, 32px, 80px, 100px
-- Large jumps: 32px → 80px → 100px for section spacing
-
-### Grid & Container
-- Masonry grid for pin content (signature layout)
-- Centered content sections with generous max-width
-- Full-width dark footer
-- Search bar as primary navigation element
-
-### Whitespace Philosophy
-- **Inspiration density**: The masonry grid packs pins tightly — the content density IS the value proposition. Whitespace exists between sections, not within the grid.
-- **Breathing above, density below**: Hero/feature sections get generous padding; the pin grid is compact and immersive.
-
-### Border Radius Scale
-- Standard (12px): Small cards, links
-- Button (16px): Buttons, inputs, medium cards
-- Comfortable (20px): Feature cards
-- Large (28px): Large containers
-- Section (32px): Tab elements, large panels
-- Hero (40px): Hero containers, large feature blocks
-- Circle (50%): Action buttons, tab indicators
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Default — pins rely on content, not shadow |
-| Subtle (Level 1) | Minimal shadow (from tokens) | Elevated overlays, dropdowns |
-| Focus (Accessibility) | `--sema-color-border-focus-outer-default` ring | Focus states |
-
-**Shadow Philosophy**: Pinterest uses minimal shadows. The masonry grid relies on content (photography) to create visual interest rather than elevation effects. Depth comes from the warmth of surface colors and the generous rounding of containers.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use warm neutrals (`#e5e5e0`, `#e0e0d9`, `#91918c`) — the warm olive/sand tone is the identity
@@ -186,7 +289,7 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 - Don't introduce additional brand colors — red + warm neutrals is the complete palette
 - Don't use thin font weights — Pin Sans at 400 minimum
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -206,7 +309,7 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 - Hero: 70px → scales down proportionally
 - Footer: dark multi-column → stacked
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand: Pinterest Red (`#e60023`)

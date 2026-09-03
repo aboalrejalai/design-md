@@ -1,13 +1,107 @@
+---
+"version": "alpha"
+"name": "Neutral Modern"
+"description": "Bundled Open Design package for Neutral Modern, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#2f6feb"
+  "on-primary": "#ffffff"
+  "canvas": "#fafafa"
+  "surface": "#ffffff"
+  "surface-warm": "#ffffff"
+  "ink": "#111111"
+  "body": "#111111"
+  "muted": "#6b6b6b"
+  "meta": "#6b6b6b"
+  "border": "#e5e5e5"
+  "border-soft": "#e5e5e5"
+  "success": "#17a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Inter\", -apple-system, system-ui, sans-serif"
+    "lineHeight": "1.2"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"Inter\", -apple-system, system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"JetBrains Mono\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Neutral Modern
 
 > Category: Starter
 > A clean, product-oriented default. Use when the brief doesn't call for a
 > specific mood — good for B2B tools, dashboards, and utility pages.
 
-## Visual Theme & Atmosphere
+## Overview
+
 Calm, functional, quietly confident. No ornament. Content-first, chrome-second.
 
-## Color Palette & Roles
+## Colors
+
 - **Background:** `#FAFAFA`
 - **Foreground:** `#111111`
 - **Accent:** `#2F6FEB` (cobalt) — primary CTAs, links, one hero element per screen
@@ -17,7 +111,8 @@ Calm, functional, quietly confident. No ornament. Content-first, chrome-second.
 - **Success:** `#17A34A`, **Warn:** `#EAB308`, **Danger:** `#DC2626`
 Never pure black; never pure white for backgrounds.
 
-## Typography Rules
+## Typography
+
 - **Display / headings:** `'Inter', -apple-system, system-ui, sans-serif`, weight 600
 - **Body:** `'Inter', -apple-system, system-ui, sans-serif`, weight 400
 - **Mono:** `ui-monospace, 'JetBrains Mono', monospace`
@@ -25,25 +120,29 @@ Never pure black; never pure white for backgrounds.
 - Line-height: 1.5 for body, 1.2 for headings
 - Letter-spacing: -0.01em on display sizes ≥32px
 
-## Component Stylings
-- **Buttons:** 8px radius, 10px padding-block, 16px padding-inline. Primary = cobalt fill, white label. Secondary = 1px border, transparent fill.
-- **Cards:** white, 1px border, 12px radius, 20px internal padding, no shadow by default.
-- **Inputs:** 1px border, 8px radius, 10px vertical padding, cobalt border on focus.
-- **Links:** cobalt, no underline, underline on hover.
+## Layout
 
-## Layout Principles
 - 12-column grid, 1200px max-width, 24px gutters.
 - Hero: 40–60vh. Content top-biased, never centered vertically.
 - Sections: 80px top+bottom spacing desktop, 48px tablet, 32px phone.
 - Use whitespace as the main separator. Dividers only between unrelated top-level sections.
 
-## Depth & Elevation
+## Elevation & Depth
+
 Two levels only:
 - **Flat (0):** default.
 - **Raised (1):** dropdowns, modals, floating buttons. 2px y-offset, 8px blur, foreground at 8% opacity.
 No neumorphism, no glassmorphism.
 
+## Components
+
+- **Buttons:** 8px radius, 10px padding-block, 16px padding-inline. Primary = cobalt fill, white label. Secondary = 1px border, transparent fill.
+- **Cards:** white, 1px border, 12px radius, 20px internal padding, no shadow by default.
+- **Inputs:** 1px border, 8px radius, 10px vertical padding, cobalt border on focus.
+- **Links:** cobalt, no underline, underline on hover.
+
 ## Do's and Don'ts
+
 - ✅ Let whitespace do the work.
 - ✅ One accent element per screen.
 - ✅ Sentence-case headings by default; title case only for brand names.
@@ -52,11 +151,13 @@ No neumorphism, no glassmorphism.
 - ❌ No more than three type sizes on one screen.
 
 ## Responsive Behavior
+
 - **Desktop ≥ 1024px:** 12-col grid.
 - **Tablet 640–1023px:** 8-col grid, 16px gutters.
 - **Phone < 640px:** 4-col grid, 12px gutters; hero drops to 40vh.
 
 ## Agent Prompt Guide
+
 - When in doubt, subtract. Fewer boxes, less chrome, more space.
 - Use the accent color sparingly — at most one hero accent and one CTA accent per screen.
 - Do not invent hex values outside this palette. If the request needs one, surface a warning comment in the artifact and use the closest existing token.

@@ -1,9 +1,100 @@
+---
+"version": "alpha"
+"name": "Shopify"
+"description": "Bundled Open Design package for Shopify, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#36f4a4"
+  "primary-hover": "#2de097"
+  "on-primary": "#000000"
+  "canvas": "#000000"
+  "surface": "#02090a"
+  "surface-warm": "#061a1c"
+  "ink": "#ffffff"
+  "body": "#ffffff"
+  "muted": "#a1a1aa"
+  "meta": "#71717a"
+  "border": "#1e2c31"
+  "border-soft": "#3f3f46"
+  "success": "#36f4a4"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"NeueHaasGrotesk\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.00"
+    "letterSpacing": "0em"
+  body:
+    "fontFamily": "\"Inter Variable\", \"Inter\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.56"
+  mono:
+    "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "18px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "32px"
+  2xl:
+    "fontSize": "48px"
+  3xl:
+    "fontSize": "70px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "9999px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "24px"
+  "6": "28px"
+  "8": "36px"
+  "12": "64px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "64px"
+  "container-gutter-tablet": "32px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.6}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Shopify
 
 > Category: E-Commerce & Retail
 > E-commerce platform. Dark-first cinematic, neon green accent, ultra-light type.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Shopify.com is a dark-first digital theatre — a website that stages its commerce platform like a cinematic premiere. The entire experience unfolds against an abyss of near-black surfaces that carry the faintest whisper of deep forest green (`#02090A`, `#061A1C`, `#102620`), creating a nocturnal atmosphere that feels less like a SaaS marketing page and more like an exclusive product reveal at a tech keynote. This darkness isn't cold or corporate — it's the warm, enveloping dark of a luxury experience, like sitting in the front row of a darkened auditorium.
 
@@ -20,7 +111,7 @@ Color is used with extreme restraint. The primary accent is Shopify Neon Green (
 - Product screenshots embedded in dark UI contexts, matching the surrounding darkness
 - Zinc-based neutral scale for text hierarchy — balanced between warm and cool
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 
@@ -63,7 +154,7 @@ Color is used with extreme restraint. The primary accent is Shopify Neon Green (
 - **Green Atmospheric**: Subtle green-tinted ambient gradients behind hero sections, creating depth without solid colors
 - **Spotlight**: Focused bright area fading to black — creates keynote-style presentation lighting
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -116,7 +207,69 @@ Color is used with extreme restraint. The primary accent is Shopify Neon Green (
 
 Shopify's typography is a masterclass in variable font precision. The display layer lives almost exclusively at weights 330-400 — featherweight text that appears to hover above the dark background like projected light. This is the opposite of the bold, heavy approach most SaaS sites take: where others shout, Shopify whispers at scale. The 96px headlines at weight 330 create a paradox of enormous size and delicate stroke that feels both monumental and fragile. The `ss03` OpenType feature activates a stylistic set that gives specific characters (likely 'a', 'g', and certain numerals) a more refined appearance, distinguishing Shopify's typography from standard Helvetica Neue usage. Inter Variable handles the body layer with surgical precision, using weights like 420 and 550 that exist between the traditional stops — every piece of text has exactly the visual weight it needs.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Base unit: 8px
+
+| Token | Value | Use |
+|-------|-------|-----|
+| space-1 | 4px | Tight inline gaps |
+| space-2 | 8px | Base unit, icon gaps |
+| space-3 | 12px | Card padding, tight margins |
+| space-4 | 16px | Standard element padding |
+| space-5 | 24px | Card gaps, section padding |
+| space-6 | 28px | Medium section spacing |
+| space-7 | 32px | Section breaks |
+| space-8 | 36px | Large padding |
+| space-9 | 40px | Major section padding |
+| space-10 | 64px | Hero section padding, large gaps |
+
+### Grid & Container
+
+- Max container width: ~1280px (centered)
+- Hero: full-width, edge-to-edge dark background with centered text
+- Feature sections: 2-column layouts with text and product screenshots
+- Stats sections: horizontal layout with large numbers
+- Horizontal padding: 64px desktop, 32px tablet, 16px mobile
+- Grid gap: 24-32px between major content blocks
+
+### Whitespace Philosophy
+
+Shopify's whitespace strategy is theatrical. Sections are separated by vast expanses of dark space — 80px to 120px of pure black breathing room — that create the pacing of a presentation, not a webpage. Each content block is its own "slide" in a keynote-style scroll. Within sections, spacing is tighter and more deliberate, creating focal density against the expansive void. The contrast between macro-level emptiness and micro-level precision is what gives the site its cinematic cadence.
+
+### Border Radius Scale
+
+| Value | Context |
+|-------|---------|
+| 4px | Tags, badges, micro-elements |
+| 8px | Standard cards, inputs, video containers |
+| 12px | Featured cards, image containers, buttons (non-pill) |
+| 20px | Top-rounded cards (20px 20px 0 0), modal headers |
+| 340px | Large rounded decorative elements |
+| 9999px | Pill buttons, pill badges, nav elements |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Base | No shadow, dark surface | Default page background |
+| Subtle | `rgba(0,0,0,0.1) 0px 0px 0px 1px` + inset white glow | Resting cards |
+| Medium | Multi-layer: 1px ring + 2px + 4px + 8px shadow stack | Elevated cards, featured sections |
+| High | `rgba(0,0,0,0.25) 0px 25px 50px -12px` | Modals, dropdowns, overlays |
+| Focus | `0px 0px 0px 2px #36F4A4` | Keyboard focus ring (Neon Green) |
+
+Shopify's shadow system is unusually sophisticated. Rather than single-value shadows, cards use a stacked, multi-layer approach: a 1px ring for boundary definition, 2px/4px/8px progressive blurs for natural light falloff, and a delicate inset white glow (`rgba(255,255,255,0.03)`) that simulates a top-lit glass surface. On dark backgrounds, shadows darken from already-dark surfaces, so the shadows function more as "ambient occlusion" than traditional elevation — the card appears to sink slightly into the surface rather than float above it.
+
+### Decorative Depth
+
+- **Dark teal gradients**: Ambient radial washes behind hero sections and product showcases
+- **Spotlight effects**: Bright centered areas fading to black, creating keynote-style theatrical lighting
+- **Edge glow**: Subtle light colored edges on dark cards via inset box-shadow
+- **Green atmospheric halos**: Faint green tints in background gradients, echoing the brand accent
+
+## Components
 
 ### Buttons
 
@@ -196,69 +349,7 @@ Shopify's typography is a masterclass in variable font precision. The display la
 - Partner/developer ecosystem callout sections
 - Dark-themed testimonials integrated into the page flow
 
-## 5. Layout Principles
-
-### Spacing System
-
-Base unit: 8px
-
-| Token | Value | Use |
-|-------|-------|-----|
-| space-1 | 4px | Tight inline gaps |
-| space-2 | 8px | Base unit, icon gaps |
-| space-3 | 12px | Card padding, tight margins |
-| space-4 | 16px | Standard element padding |
-| space-5 | 24px | Card gaps, section padding |
-| space-6 | 28px | Medium section spacing |
-| space-7 | 32px | Section breaks |
-| space-8 | 36px | Large padding |
-| space-9 | 40px | Major section padding |
-| space-10 | 64px | Hero section padding, large gaps |
-
-### Grid & Container
-
-- Max container width: ~1280px (centered)
-- Hero: full-width, edge-to-edge dark background with centered text
-- Feature sections: 2-column layouts with text and product screenshots
-- Stats sections: horizontal layout with large numbers
-- Horizontal padding: 64px desktop, 32px tablet, 16px mobile
-- Grid gap: 24-32px between major content blocks
-
-### Whitespace Philosophy
-
-Shopify's whitespace strategy is theatrical. Sections are separated by vast expanses of dark space — 80px to 120px of pure black breathing room — that create the pacing of a presentation, not a webpage. Each content block is its own "slide" in a keynote-style scroll. Within sections, spacing is tighter and more deliberate, creating focal density against the expansive void. The contrast between macro-level emptiness and micro-level precision is what gives the site its cinematic cadence.
-
-### Border Radius Scale
-
-| Value | Context |
-|-------|---------|
-| 4px | Tags, badges, micro-elements |
-| 8px | Standard cards, inputs, video containers |
-| 12px | Featured cards, image containers, buttons (non-pill) |
-| 20px | Top-rounded cards (20px 20px 0 0), modal headers |
-| 340px | Large rounded decorative elements |
-| 9999px | Pill buttons, pill badges, nav elements |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Base | No shadow, dark surface | Default page background |
-| Subtle | `rgba(0,0,0,0.1) 0px 0px 0px 1px` + inset white glow | Resting cards |
-| Medium | Multi-layer: 1px ring + 2px + 4px + 8px shadow stack | Elevated cards, featured sections |
-| High | `rgba(0,0,0,0.25) 0px 25px 50px -12px` | Modals, dropdowns, overlays |
-| Focus | `0px 0px 0px 2px #36F4A4` | Keyboard focus ring (Neon Green) |
-
-Shopify's shadow system is unusually sophisticated. Rather than single-value shadows, cards use a stacked, multi-layer approach: a 1px ring for boundary definition, 2px/4px/8px progressive blurs for natural light falloff, and a delicate inset white glow (`rgba(255,255,255,0.03)`) that simulates a top-lit glass surface. On dark backgrounds, shadows darken from already-dark surfaces, so the shadows function more as "ambient occlusion" than traditional elevation — the card appears to sink slightly into the surface rather than float above it.
-
-### Decorative Depth
-
-- **Dark teal gradients**: Ambient radial washes behind hero sections and product showcases
-- **Spotlight effects**: Bright centered areas fading to black, creating keynote-style theatrical lighting
-- **Edge glow**: Subtle light colored edges on dark cards via inset box-shadow
-- **Green atmospheric halos**: Faint green tints in background gradients, echoing the brand accent
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -284,7 +375,7 @@ Shopify's shadow system is unusually sophisticated. Rather than single-value sha
 - Don't mix NeueHaasGrotesk and Inter at the same size/role — their weight scales differ
 - Don't use letter-spacing below 0 for headings — Shopify headings track neutral or positive
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -318,7 +409,7 @@ Shopify's shadow system is unusually sophisticated. Rather than single-value sha
 - Admin UI previews: scale proportionally, may crop on mobile
 - All images use CDN (`cdn.shopify.com`) with responsive srcset
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

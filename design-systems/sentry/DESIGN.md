@@ -1,9 +1,110 @@
+---
+"version": "alpha"
+"name": "Sentry"
+"description": "Bundled Open Design package for Sentry, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#6a5fc1"
+  "on-primary": "#ffffff"
+  "canvas": "#1f1633"
+  "surface": "#150f23"
+  "surface-warm": "#150f23"
+  "ink": "#ffffff"
+  "body": "#e5e7eb"
+  "muted": "#9d96b3"
+  "meta": "#9d96b3"
+  "border": "#362d59"
+  "border-soft": "#362d59"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Dammit Sans\", \"Rubik\", -apple-system, system-ui, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.2"
+  body:
+    "fontFamily": "\"Rubik\", -apple-system, system-ui, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "Monaco, Menlo, \"Ubuntu Mono\", ui-monospace, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "30px"
+  3xl:
+    "fontSize": "60px"
+  4xl:
+    "fontSize": "88px"
+rounded:
+  "sm": "6px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1152px"
+  "container-gutter-desktop": "64px"
+  "container-gutter-tablet": "32px"
+  "container-gutter-phone": "24px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.3}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.body}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Sentry
 
 > Category: Backend & Data
 > Error monitoring. Dark dashboard, data-dense, pink-purple accent.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Sentry's website is a dark-mode-first developer tool interface that speaks the language of code editors and terminal windows. The entire aesthetic is rooted in deep purple-black backgrounds (`#1f1633`, `#150f23`) that evoke the late-night debugging sessions Sentry was built for. Against this inky canvas, a carefully curated set of purples, pinks, and a distinctive lime-green accent (`#c2ef4e`) create a visual system that feels simultaneously technical and vibrant.
 
@@ -22,7 +123,7 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - Inset shadows on buttons creating tactile depth
 - Frosted glass effects with `blur(18px) saturate(180%)`
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Deep Purple** (`#1f1633`): Primary background, the defining color of the brand
@@ -54,7 +155,7 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - **Card Shadow** (`rgba(0, 0, 0, 0.1) 0px 10px 15px -3px`): Standard card elevation
 - **Inset Button** (`rgba(0, 0, 0, 0.1) 0px 1px 3px 0px inset`): Tactile pressed effect
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Dammit Sans` — brand personality font for hero headings
@@ -87,7 +188,54 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - **Weight stratification**: Rubik uses 400 (body), 500 (emphasis/nav), 600 (titles/strong), 700 (buttons/CTAs) — a clean four-tier weight system.
 - **Tight headings, relaxed body**: All headings use 1.10–1.25 line-height; body uses 1.50; small captions expand to 2.00 for readability at tiny sizes.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 5px, 6px, 8px, 12px, 16px, 24px, 32px, 40px, 44px, 45px, 47px
+
+### Grid & Container
+- Max content width: 1152px (XL breakpoint)
+- Responsive padding: 2rem (mobile) → 4rem (tablet+)
+- Content centered within container
+- Full-width dark sections with contained inner content
+
+### Breakpoints
+| Name | Width | Key Changes |
+|------|-------|-------------|
+| Mobile | < 576px | Single column, stacked layout |
+| Small Tablet | 576–640px | Minor width adjustments |
+| Tablet | 640–768px | 2-column begins |
+| Small Desktop | 768–992px | Full nav visible |
+| Desktop | 992–1152px | Standard layout |
+| Large Desktop | 1152–1440px | Max-width content |
+
+### Whitespace Philosophy
+- **Dark breathing room**: Generous vertical spacing between sections (64px–80px+) lets the dark background serve as a visual rest.
+- **Content islands**: Feature sections are self-contained blocks floating in the dark purple sea, each with its own internal spacing rhythm.
+- **Asymmetric padding**: Buttons use asymmetric padding patterns (12px 16px, 8px 12px) that feel organic rather than rigid.
+
+### Border Radius Scale
+- Minimal (6px): Form inputs, small interactive elements
+- Standard (8px): Buttons, cards, containers
+- Comfortable (10px–12px): Larger containers, glass panels
+- Rounded (13px): Primary muted buttons
+- Pill (18px): Image containers, badges
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Sunken (Level -1) | Inset shadow `rgba(0, 0, 0, 0.1) 0px 1px 3px inset` | Primary buttons (tactile pressed feel) |
+| Flat (Level 0) | No shadow | Default surfaces, dark backgrounds |
+| Surface (Level 1) | `rgba(0, 0, 0, 0.08) 0px 2px 8px` | Glass buttons, subtle cards |
+| Elevated (Level 2) | `rgba(0, 0, 0, 0.1) 0px 10px 15px -3px` | Cards, floating panels |
+| Prominent (Level 3) | `rgba(0, 0, 0, 0.18) 0px 0.5rem 1.5rem` | Hover states, modals |
+| Ambient (Level 4) | `rgba(22, 15, 36, 0.9) 0px 4px 4px 9px` | Deep purple ambient glow around hero |
+
+**Shadow Philosophy**: Sentry uses a unique combination of inset shadows (buttons feel pressed INTO the surface) and ambient glows (content radiates from the dark background). The deep purple ambient shadow (`rgba(22, 15, 36, 0.9)`) is the signature — it creates a bioluminescent quality where content seems to emit its own purple-tinted light.
+
+## Components
 
 ### Buttons
 
@@ -153,54 +301,7 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - Uppercase labels with 0.2px letter-spacing for categories
 - Mobile: hamburger menu, full-width expanded
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 5px, 6px, 8px, 12px, 16px, 24px, 32px, 40px, 44px, 45px, 47px
-
-### Grid & Container
-- Max content width: 1152px (XL breakpoint)
-- Responsive padding: 2rem (mobile) → 4rem (tablet+)
-- Content centered within container
-- Full-width dark sections with contained inner content
-
-### Breakpoints
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| Mobile | < 576px | Single column, stacked layout |
-| Small Tablet | 576–640px | Minor width adjustments |
-| Tablet | 640–768px | 2-column begins |
-| Small Desktop | 768–992px | Full nav visible |
-| Desktop | 992–1152px | Standard layout |
-| Large Desktop | 1152–1440px | Max-width content |
-
-### Whitespace Philosophy
-- **Dark breathing room**: Generous vertical spacing between sections (64px–80px+) lets the dark background serve as a visual rest.
-- **Content islands**: Feature sections are self-contained blocks floating in the dark purple sea, each with its own internal spacing rhythm.
-- **Asymmetric padding**: Buttons use asymmetric padding patterns (12px 16px, 8px 12px) that feel organic rather than rigid.
-
-### Border Radius Scale
-- Minimal (6px): Form inputs, small interactive elements
-- Standard (8px): Buttons, cards, containers
-- Comfortable (10px–12px): Larger containers, glass panels
-- Rounded (13px): Primary muted buttons
-- Pill (18px): Image containers, badges
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Sunken (Level -1) | Inset shadow `rgba(0, 0, 0, 0.1) 0px 1px 3px inset` | Primary buttons (tactile pressed feel) |
-| Flat (Level 0) | No shadow | Default surfaces, dark backgrounds |
-| Surface (Level 1) | `rgba(0, 0, 0, 0.08) 0px 2px 8px` | Glass buttons, subtle cards |
-| Elevated (Level 2) | `rgba(0, 0, 0, 0.1) 0px 10px 15px -3px` | Cards, floating panels |
-| Prominent (Level 3) | `rgba(0, 0, 0, 0.18) 0px 0.5rem 1.5rem` | Hover states, modals |
-| Ambient (Level 4) | `rgba(22, 15, 36, 0.9) 0px 4px 4px 9px` | Deep purple ambient glow around hero |
-
-**Shadow Philosophy**: Sentry uses a unique combination of inset shadows (buttons feel pressed INTO the surface) and ambient glows (content radiates from the dark background). The deep purple ambient shadow (`rgba(22, 15, 36, 0.9)`) is the signature — it creates a bioluminescent quality where content seems to emit its own purple-tinted light.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use deep purple backgrounds (`#1f1633`, `#150f23`) — never pure black (`#000000`)
@@ -222,7 +323,7 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - Don't use flat (non-inset) shadows on primary buttons — the tactile quality is signature
 - Don't forget letter-spacing on uppercase text — 0.2px minimum
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -240,7 +341,7 @@ What makes Sentry distinctive is its embrace of the "dark IDE" aesthetic without
 - Buttons: inline → full-width stacked on mobile
 - Container padding: 4rem → 2rem
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: `#1f1633` (primary), `#150f23` (deeper)

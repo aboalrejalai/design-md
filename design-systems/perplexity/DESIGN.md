@@ -1,15 +1,110 @@
+---
+"version": "alpha"
+"name": "Perplexity AI"
+"description": "Bundled Open Design package for Perplexity AI, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#a855f7"
+  "primary-hover": "#c084fc"
+  "primary-active": "#9333ea"
+  "on-primary": "#ffffff"
+  "canvas": "#0f0f10"
+  "surface": "#19191a"
+  "surface-warm": "#19191a"
+  "ink": "#f0f0f0"
+  "body": "#f0f0f0"
+  "muted": "#9b9b9b"
+  "meta": "#5c5c5e"
+  "border": "#2e2e30"
+  "border-soft": "#232325"
+  "success": "#22c55e"
+  "warning": "#f59e0b"
+  "danger": "#ef4444"
+typography:
+  display:
+    "fontFamily": "\"Inter\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.2"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"Inter\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.65"
+  mono:
+    "fontFamily": "\"JetBrains Mono\", ui-monospace, \"Cascadia Code\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "18px"
+  2xl:
+    "fontSize": "22px"
+  3xl:
+    "fontSize": "28px"
+  4xl:
+    "fontSize": "32px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "64px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1100px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.5}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Perplexity AI
 
 > Category: AI & LLM
 > Conversational AI search engine. Deep-dark canvas, sharp typography, single violet accent, dense information hierarchy.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Perplexity reads like a research terminal: unhurried, precise, and confident. The dark surface is not decorative — it reduces visual noise so citations, sources, and answers can breathe. There is no gradient hero, no animated blob, no hero illustration. The chrome disappears and the content leads. Light mode exists but the dark variant is the brand-defining surface.
 
 Core atmosphere words: **grounded, sharp, credible, quiet**. Every layout decision serves legibility over aesthetics.
 
-## 2. Color
+## Colors
 
 All values are sampled from Perplexity's production interface and marketing site (May 2025).
 
@@ -49,7 +144,7 @@ All values are sampled from Perplexity's production interface and marketing site
 - Never use white text on the accent color in body copy; reserve that combination for buttons and badges only.
 - Backgrounds stack in exactly three levels: base → surface → elevated. Do not invent a fourth.
 
-## 3. Typography
+## Typography
 
 Perplexity uses a system-default sans-serif stack for UI elements and a clean geometric monospace for code blocks. No custom display face is licensed for third-party use.
 
@@ -79,7 +174,7 @@ Perplexity uses a system-default sans-serif stack for UI elements and a clean ge
 - Inter is loaded from Google Fonts or self-hosted; do not use Helvetica or Arial as a substitute — the weight rendering differs.
 - Bold (700) is used for answer headings only, never for emphasis within body paragraphs; use color change or size for inline emphasis.
 
-## 4. Spacing & Grid
+## Layout
 
 Perplexity uses an **8px base unit** throughout.
 
@@ -111,7 +206,7 @@ Perplexity uses an **8px base unit** throughout.
 | `--radius-xl` | 16px | Bottom sheet, floating panel |
 | `--radius-full` | 9999px | Pill button, avatar |
 
-## 5. Layout & Composition
+### Layout & Composition
 
 ### The answer-first pattern
 
@@ -139,7 +234,7 @@ Sources appear as compact horizontal chips (favicon + domain + excerpt) stacked 
 
 16×16 and 20×20 only. Stroke-based, 1.5px stroke weight, square caps, miter joins. Never fill-based icons in the UI chrome. Heroicons (MIT) is the closest open-source match.
 
-## 6. Components
+## Components
 
 ### Primary button
 
@@ -228,7 +323,21 @@ animation: skeleton-shimmer 1.4s ease infinite;
 border-radius: var(--radius-sm);
 ```
 
-## 7. Motion & Interaction
+## Do's and Don'ts
+
+These patterns are inconsistent with the Perplexity visual language and should be avoided in any artifact using this design system.
+
+- **Gradient backgrounds.** `--bg-base` is a flat near-black. No hero gradients, no mesh gradients, no color blobs.
+- **Drop shadows.** Elevation is expressed through background color steps (`base → surface → elevated`), never box-shadow.
+- **Colorful icons.** All UI icons are monochrome at `--text-secondary`. No multi-color icon sets.
+- **Rounded pill cards.** Cards use `--radius-lg` (12px), not full-pill radii. Pill shapes are reserved for tags and avatars only.
+- **Decorative illustration.** No isometric 3D, no blob characters, no abstract art in the UI chrome. If an image is shown, it is a source thumbnail or user-uploaded content.
+- **Accent overuse.** Purple (`--accent`) appears once per view: the primary button or the active focus state. Using it for headings, dividers, or backgrounds breaks the hierarchy.
+- **Modal overload.** Perplexity resolves choices inline (inline pickers, inline follow-ups) rather than spawning a blocking modal dialog.
+- **Capitalized section labels.** Section labels are sentence case, not ALL CAPS or Title Case.
+- **Inter at display size as a display face.** Inter at 2rem+ looks thin. Use weight 600, not 700, for display headings, and never stretch or condense it.
+
+## Motion & Interaction
 
 Perplexity's interactions are nearly imperceptible — the brand is anti-animation. Every transition exists to prevent jarring state jumps, not to delight.
 
@@ -246,7 +355,7 @@ Rules:
 - No entrance animations for content — the answer appears immediately, not with a fade-in sequence.
 - The streaming answer text appears character-by-character via the model stream, not via CSS animation.
 
-## 8. Voice & Brand
+## Voice & Brand
 
 ### Tone
 
@@ -270,17 +379,3 @@ Rules:
 - Not playful (no winking emoji, no casual slang in UI copy)
 - Not enterprise-formal (no "leverage", no "synergy")
 - Not a news outlet (no editorial headlines, no opinionated framing)
-
-## 9. Anti-patterns
-
-These patterns are inconsistent with the Perplexity visual language and should be avoided in any artifact using this design system.
-
-- **Gradient backgrounds.** `--bg-base` is a flat near-black. No hero gradients, no mesh gradients, no color blobs.
-- **Drop shadows.** Elevation is expressed through background color steps (`base → surface → elevated`), never box-shadow.
-- **Colorful icons.** All UI icons are monochrome at `--text-secondary`. No multi-color icon sets.
-- **Rounded pill cards.** Cards use `--radius-lg` (12px), not full-pill radii. Pill shapes are reserved for tags and avatars only.
-- **Decorative illustration.** No isometric 3D, no blob characters, no abstract art in the UI chrome. If an image is shown, it is a source thumbnail or user-uploaded content.
-- **Accent overuse.** Purple (`--accent`) appears once per view: the primary button or the active focus state. Using it for headings, dividers, or backgrounds breaks the hierarchy.
-- **Modal overload.** Perplexity resolves choices inline (inline pickers, inline follow-ups) rather than spawning a blocking modal dialog.
-- **Capitalized section labels.** Section labels are sentence case, not ALL CAPS or Title Case.
-- **Inter at display size as a display face.** Inter at 2rem+ looks thin. Use weight 600, not 700, for display headings, and never stretch or condense it.

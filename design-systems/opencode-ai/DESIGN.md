@@ -1,9 +1,107 @@
+---
+"version": "alpha"
+"name": "OpenCode"
+"description": "Bundled Open Design package for OpenCode, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#007aff"
+  "primary-hover": "#0056b3"
+  "primary-active": "#004085"
+  "on-primary": "#ffffff"
+  "canvas": "#201d1d"
+  "surface": "#302c2c"
+  "surface-warm": "#302c2c"
+  "ink": "#fdfcfc"
+  "body": "#c8c6c4"
+  "muted": "#9a9898"
+  "meta": "#6e6e73"
+  "border": "#464343"
+  "border-soft": "#302c2c"
+  "success": "#30d158"
+  "warning": "#ff9f0a"
+  "danger": "#ff3b30"
+typography:
+  display:
+    "fontFamily": "\"Berkeley Mono\", \"IBM Plex Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace"
+    "lineHeight": "1.0"
+    "letterSpacing": "0em"
+  body:
+    "fontFamily": "\"Berkeley Mono\", \"IBM Plex Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Berkeley Mono\", \"IBM Plex Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "38px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "6px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "880px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "20px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.muted}"
+    "typography": "{typography.mono}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.2}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by OpenCode
 
 > Category: AI & LLM
 > AI coding platform. Developer-centric dark theme.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 OpenCode's website embodies a terminal-native, monospace-first aesthetic that reflects its identity as an open source AI coding agent. The entire visual system is built on a stark dark-on-light contrast using a near-black background (`#201d1d`) with warm off-white text (`#fdfcfc`). This isn't a generic dark theme -- it's a warm, slightly reddish-brown dark that feels like a sophisticated terminal emulator rather than a cold IDE. The warm undertone in both the darks and lights (notice the subtle red channel in `#201d1d` -- rgb(32, 29, 29)) creates a cohesive, lived-in quality.
 
@@ -23,7 +121,7 @@ The color system is deliberately minimal. The primary palette consists of just t
 - Single button variant: dark background, light text, tight vertical padding (4px 20px)
 - Underlined links as default link style, reinforcing the text-centric identity
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **OpenCode Dark** (`#201d1d`): Primary background, button fills, link text. A warm near-black with subtle reddish-brown warmth -- rgb(32, 29, 29).
@@ -58,7 +156,7 @@ The color system is deliberately minimal. The primary palette consists of just t
 - **Border Tab** (`#9a9898`): Tab underline border, 2px solid bottom.
 - **Border Outline** (`#646262`): 1px solid outline border for containers.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Universal**: `Berkeley Mono`, with fallbacks: `IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace`
@@ -80,7 +178,51 @@ The color system is deliberately minimal. The primary palette consists of just t
 - **Generous line-height**: 1.50 as the standard line-height gives text room to breathe within the monospace grid. The relaxed 2.00 line-height on captions creates clear visual separation.
 - **Tight for interaction**: Interactive elements (tabs, compact labels) use 1.00 line-height for dense, clickable targets.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Fine scale: 1px, 2px, 4px (sub-8px for borders and micro-adjustments)
+- Standard scale: 8px, 12px, 16px, 20px, 24px
+- Extended scale: 32px, 40px, 48px, 64px, 80px, 96px
+- The system follows a clean 4/8px grid with consistent doubling
+
+### Grid & Container
+- Max content width: approximately 800-900px (narrow, reading-optimized)
+- Single-column layout as the primary pattern
+- Centered content with generous horizontal margins
+- Hero section: full-width dark terminal element
+- Feature sections: single-column text blocks
+- Footer: multi-column link grid
+
+### Whitespace Philosophy
+- **Monospace rhythm**: The fixed-width nature of Berkeley Mono creates a natural vertical grid. Line-heights of 1.50 and 2.00 maintain consistent rhythm.
+- **Narrow and focused**: Content is constrained to a narrow column, creating generous side margins that focus attention on the text.
+- **Sections through spacing**: No decorative dividers. Sections are separated by generous vertical spacing (48-96px) rather than borders or background changes.
+
+### Border Radius Scale
+- Micro (4px): Default for all elements -- buttons, containers, badges
+- Input (6px): Form inputs get slightly more roundness
+- The entire system uses just two radius values, reinforcing the utilitarian aesthetic
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Default state for most elements |
+| Border Subtle (Level 1) | `1px solid rgba(15, 0, 0, 0.12)` | Section dividers, input borders, horizontal rules |
+| Border Tab (Level 2) | `2px solid #9a9898` bottom only | Active tab indicator |
+| Border Outline (Level 3) | `1px solid #646262` | Container outlines, elevated elements |
+
+**Shadow Philosophy**: OpenCode's depth system is intentionally flat. There are no box-shadows in the extracted tokens -- zero shadow values were detected. Depth is communicated exclusively through border treatments and background color shifts. This flatness is consistent with the terminal aesthetic: terminals don't have shadows, and neither does OpenCode. The three border levels (transparent warm, tab indicator, solid outline) create sufficient visual hierarchy without any elevation illusion.
+
+### Decorative Depth
+- Background color shifts between `#201d1d` and `#302c2c` create subtle surface differentiation
+- Transparent borders at 12% opacity provide barely-visible structure
+- The warm reddish tint in border colors (`rgba(15, 0, 0, 0.12)`) ties borders to the overall warm dark palette
+- No gradients, no blurs, no ambient effects -- pure flat terminal aesthetic
+
+## Components
 
 ### Buttons
 
@@ -161,70 +303,7 @@ The color system is deliberately minimal. The primary palette consists of just t
 - 6px radius -- the roundest element in the system
 - Newsletter/waitlist pattern
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Fine scale: 1px, 2px, 4px (sub-8px for borders and micro-adjustments)
-- Standard scale: 8px, 12px, 16px, 20px, 24px
-- Extended scale: 32px, 40px, 48px, 64px, 80px, 96px
-- The system follows a clean 4/8px grid with consistent doubling
-
-### Grid & Container
-- Max content width: approximately 800-900px (narrow, reading-optimized)
-- Single-column layout as the primary pattern
-- Centered content with generous horizontal margins
-- Hero section: full-width dark terminal element
-- Feature sections: single-column text blocks
-- Footer: multi-column link grid
-
-### Whitespace Philosophy
-- **Monospace rhythm**: The fixed-width nature of Berkeley Mono creates a natural vertical grid. Line-heights of 1.50 and 2.00 maintain consistent rhythm.
-- **Narrow and focused**: Content is constrained to a narrow column, creating generous side margins that focus attention on the text.
-- **Sections through spacing**: No decorative dividers. Sections are separated by generous vertical spacing (48-96px) rather than borders or background changes.
-
-### Border Radius Scale
-- Micro (4px): Default for all elements -- buttons, containers, badges
-- Input (6px): Form inputs get slightly more roundness
-- The entire system uses just two radius values, reinforcing the utilitarian aesthetic
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Default state for most elements |
-| Border Subtle (Level 1) | `1px solid rgba(15, 0, 0, 0.12)` | Section dividers, input borders, horizontal rules |
-| Border Tab (Level 2) | `2px solid #9a9898` bottom only | Active tab indicator |
-| Border Outline (Level 3) | `1px solid #646262` | Container outlines, elevated elements |
-
-**Shadow Philosophy**: OpenCode's depth system is intentionally flat. There are no box-shadows in the extracted tokens -- zero shadow values were detected. Depth is communicated exclusively through border treatments and background color shifts. This flatness is consistent with the terminal aesthetic: terminals don't have shadows, and neither does OpenCode. The three border levels (transparent warm, tab indicator, solid outline) create sufficient visual hierarchy without any elevation illusion.
-
-### Decorative Depth
-- Background color shifts between `#201d1d` and `#302c2c` create subtle surface differentiation
-- Transparent borders at 12% opacity provide barely-visible structure
-- The warm reddish tint in border colors (`rgba(15, 0, 0, 0.12)`) ties borders to the overall warm dark palette
-- No gradients, no blurs, no ambient effects -- pure flat terminal aesthetic
-
-## 7. Interaction & Motion
-
-### Hover States
-- Links: color shift from default to accent blue (`#007aff`) or underline style change
-- Buttons: subtle background lightening or border emphasis
-- Accent blue provides a three-stage hover sequence: `#007aff` → `#0056b3` → `#004085` (default → hover → active)
-- Danger red: `#ff3b30` → `#d70015` → `#a50011`
-- Warning orange: `#ff9f0a` → `#cc7f08` → `#995f06`
-
-### Focus States
-- Border-based focus: increased border opacity or solid border color
-- No shadow-based focus rings -- consistent with the flat, no-shadow aesthetic
-- Keyboard focus likely uses outline or border color shift to accent blue
-
-### Transitions
-- Minimal transitions expected -- terminal-inspired interfaces favor instant state changes
-- Color transitions: 100-150ms for subtle state feedback
-- No scale, rotate, or complex transform animations
-
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -251,7 +330,7 @@ The color system is deliberately minimal. The primary palette consists of just t
 - Full-width elements scale proportionally
 - Monospace type maintains readability at all sizes due to fixed-width nature
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Page background: `#201d1d` (warm near-black)
@@ -282,3 +361,22 @@ The color system is deliberately minimal. The primary palette consists of just t
 6. Three-stage interaction: default → hover (darkened) → active (deeply darkened) for all semantic colors.
 7. Borders use `rgba(15, 0, 0, 0.12)` -- a warm transparent dark, not neutral gray. This ties borders to the warm palette.
 8. Spacing follows an 8px grid: 8, 16, 24, 32, 40, 48, 64, 80, 96px. Use 4px for fine adjustments only.
+
+## Interaction & Motion
+
+### Hover States
+- Links: color shift from default to accent blue (`#007aff`) or underline style change
+- Buttons: subtle background lightening or border emphasis
+- Accent blue provides a three-stage hover sequence: `#007aff` → `#0056b3` → `#004085` (default → hover → active)
+- Danger red: `#ff3b30` → `#d70015` → `#a50011`
+- Warning orange: `#ff9f0a` → `#cc7f08` → `#995f06`
+
+### Focus States
+- Border-based focus: increased border opacity or solid border color
+- No shadow-based focus rings -- consistent with the flat, no-shadow aesthetic
+- Keyboard focus likely uses outline or border color shift to accent blue
+
+### Transitions
+- Minimal transitions expected -- terminal-inspired interfaces favor instant state changes
+- Color transitions: 100-150ms for subtle state feedback
+- No scale, rotate, or complex transform animations

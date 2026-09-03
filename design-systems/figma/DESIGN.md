@@ -1,9 +1,96 @@
+---
+"version": "alpha"
+"name": "Figma"
+"description": "Bundled Open Design package for Figma, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#000000"
+  "primary-hover": "rgba(0, 0, 0, 0.85)"
+  "primary-active": "rgba(0, 0, 0, 0.08)"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#ffffff"
+  "ink": "#000000"
+  "body": "#000000"
+  "muted": "rgba(0, 0, 0, 0.55)"
+  "meta": "rgba(0, 0, 0, 0.40)"
+  "border": "rgba(0, 0, 0, 0.12)"
+  "border-soft": "rgba(0, 0, 0, 0.06)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"figmaSans\", \"figmaSans Fallback\", \"SF Pro Display\", system-ui, Helvetica, sans-serif"
+    "lineHeight": "1.00"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"figmaSans\", \"figmaSans Fallback\", \"SF Pro Display\", system-ui, Helvetica, sans-serif"
+    "lineHeight": "1.40"
+  mono:
+    "fontFamily": "\"figmaMono\", \"figmaMono Fallback\", \"SF Mono\", Menlo, ui-monospace, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "16px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "26px"
+  3xl:
+    "fontSize": "64px"
+  4xl:
+    "fontSize": "86px"
+rounded:
+  "sm": "50px"
+  "md": "8px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1920px"
+  "container-gutter-desktop": "40px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+  inputs:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.mono}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.6}"
+  typography:
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Figma
 
 > Category: Design & Creative
 > Collaborative design tool. Vibrant multi-color, playful yet professional.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Figma's interface is the design tool that designed itself — a masterclass in typographic sophistication where a custom variable font (figmaSans) modulates between razor-thin (weight 320) and bold (weight 700) with stops at unusual intermediates (330, 340, 450, 480, 540) that most type systems never explore. This granular weight control gives every text element a precisely calibrated visual weight, creating hierarchy through micro-differences rather than the blunt instrument of "regular vs bold."
 
@@ -21,7 +108,7 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - OpenType `"kern"` feature enabled globally
 - Negative letter-spacing throughout — even body text at -0.14px to -0.26px
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure Black** (`#000000`): All text, all solid buttons, all borders. The sole "color" of the interface.
@@ -38,7 +125,7 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - **Hero Gradient**: A vibrant multi-stop gradient using electric green, bright yellow, deep purple, and hot pink. This gradient is the visual signature of the hero section — it represents the creative possibilities of the tool.
 - **Product Section Gradients**: Individual product areas (Design, Dev Mode, Prototyping) may use distinct color themes in their showcases.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `figmaSans`, with fallbacks: `figmaSans Fallback, SF Pro Display, system-ui, helvetica`
@@ -66,7 +153,41 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - **Negative tracking by default**: Even body text uses -0.1px to -0.26px letter-spacing, creating universally tight text. Display text compresses further to -0.96px and -1.72px.
 - **Mono for structure**: figmaMono in uppercase with positive letter-spacing (0.54px–0.6px) creates technical signpost labels.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 4.5px, 8px, 10px, 12px, 16px, 18px, 24px, 32px, 40px, 46px, 48px, 50px
+
+### Grid & Container
+- Max container width: up to 1920px
+- Hero: full-width gradient with centered content
+- Product sections: alternating showcases
+- Footer: dark full-width section
+- Responsive from 559px to 1920px
+
+### Whitespace Philosophy
+- **Gallery-like pacing**: Generous spacing lets each product section breathe as its own exhibit.
+- **Color sections as visual breathing**: The gradient hero and product showcases provide chromatic relief between the monochrome interface sections.
+
+### Border Radius Scale
+- Minimal (2px): Small link elements
+- Subtle (6px): Small containers, dividers
+- Comfortable (8px): Cards, images, dialogs
+- Pill (50px): Tab buttons, CTAs
+- Circle (50%): Icon buttons, circular elements
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page background, most text |
+| Surface (Level 1) | White card on gradient/dark section | Cards, product showcases |
+| Elevated (Level 2) | Subtle shadow | Floating cards, hover states |
+
+**Shadow Philosophy**: Figma uses shadows sparingly. The primary depth mechanisms are **background contrast** (white content on colorful/dark sections) and the inherent dimensionality of the product screenshots themselves.
+
+## Components
 
 ### Buttons
 
@@ -131,41 +252,7 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - References the selection handles in the Figma editor
 - A meta-design choice connecting website and product
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 4.5px, 8px, 10px, 12px, 16px, 18px, 24px, 32px, 40px, 46px, 48px, 50px
-
-### Grid & Container
-- Max container width: up to 1920px
-- Hero: full-width gradient with centered content
-- Product sections: alternating showcases
-- Footer: dark full-width section
-- Responsive from 559px to 1920px
-
-### Whitespace Philosophy
-- **Gallery-like pacing**: Generous spacing lets each product section breathe as its own exhibit.
-- **Color sections as visual breathing**: The gradient hero and product showcases provide chromatic relief between the monochrome interface sections.
-
-### Border Radius Scale
-- Minimal (2px): Small link elements
-- Subtle (6px): Small containers, dividers
-- Comfortable (8px): Cards, images, dialogs
-- Pill (50px): Tab buttons, CTAs
-- Circle (50%): Icon buttons, circular elements
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Page background, most text |
-| Surface (Level 1) | White card on gradient/dark section | Cards, product showcases |
-| Elevated (Level 2) | Subtle shadow | Floating cards, hover states |
-
-**Shadow Philosophy**: Figma uses shadows sparingly. The primary depth mechanisms are **background contrast** (white content on colorful/dark sections) and the inherent dimensionality of the product screenshots themselves.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use figmaSans with precise variable weights (320–540) — the granular weight control IS the design
@@ -184,7 +271,7 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - Don't increase body font weight above 450 — the light-weight aesthetic is core
 - Don't use positive letter-spacing on body text — it's always negative
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -202,7 +289,7 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 - Feature sections: stacked single column
 - Footer: multi-column → stacked
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Everything: "Pure Black (#000000)" and "Pure White (#ffffff)"

@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Ferrari"
+"description": "Bundled Open Design package for Ferrari, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#dc0000"
+  "on-primary": "#ffffff"
+  "canvas": "#0b0b0b"
+  "surface": "#171717"
+  "surface-warm": "#23130f"
+  "ink": "#fffaf0"
+  "body": "#e8dcc8"
+  "muted": "#a89f91"
+  "meta": "#ffd200"
+  "border": "#342a24"
+  "border-soft": "#241f1b"
+  "success": "#0f9d58"
+  "warning": "#ffd200"
+  "danger": "#ff3b30"
+typography:
+  display:
+    "fontFamily": "\"Ferrari Sans\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "0.98"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Ferrari Sans\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "40px"
+  3xl:
+    "fontSize": "62px"
+  4xl:
+    "fontSize": "88px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "14px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "112px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "56px"
+  "container-max": "1240px"
+  "container-gutter-desktop": "40px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Ferrari
 
 > Category: Automotive
 > Luxury automotive. Chiaroscuro editorial, Ferrari Red accents, cinematic black.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Ferrari's website is a digital editorial — a curated magazine where the Prancing Horse brand is presented with the gravitas of an art institution and the precision of Italian coachwork. The page opens onto an expanse of absolute black, broken only by the iconic Prancing Horse emblem floating alone in its own atmosphere. Below, the content unfolds in dramatic alternations between inky-dark cinematic sections and crisp white editorial panels. This chiaroscuro rhythm — darkness yielding to light, machinery yielding to human story — feels more like paging through a Ferrari yearbook than scrolling a commercial website. Every section is a curated vignette: a concept car dissolving from shadow, two F1 drivers posed with sculptural stillness, a lineup of production models arranged in a jewel-toned parade.
 
@@ -22,7 +115,7 @@ Typography relies on FerrariSans — a proprietary sans-serif family with medium
 - Dual-framework architecture (PrimeReact + Element Plus) powering 32+ interactive components
 - Carousel-driven hero with editorial slides and arrow/dot navigation
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Ferrari Red** (`#DA291C`): The iconic Rosso Corsa — primary accent and CTA color. Used for the Subscribe button, key action triggers, and brand moments where maximum visual authority is needed. The single most important color in the system (--f-color-accent-100)
@@ -58,7 +151,7 @@ Typography relies on FerrariSans — a proprietary sans-serif family with medium
 - The overlay darker color (`hsla(0, 0%, 7%, 0.8)`) creates depth through transparency layering over imagery
 - Occasional photographic gradients (light falloff in studio shots) provide atmospheric depth within image content
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **FerrariSans**: Primary typeface for headings, navigation, buttons, and editorial content. A proprietary sans-serif with medium weight as the default (500), compact x-height, and precise letter-spacing control. Fallbacks: Arial, Helvetica, sans-serif
@@ -90,7 +183,55 @@ Typography relies on FerrariSans — a proprietary sans-serif family with medium
 - **Compact line-heights**: Headlines use tight line-heights (1.00–1.30) creating dense, impactful text blocks, while body text opens to 1.50 for comfortable reading — the contrast between compressed headers and relaxed body text creates visual tension
 - **Weight range 400–700**: Four weights active in the system (400, 500, 600, 700) — significantly more range than Tesla but still controlled. 500 is the default "voice," 700 is for emphasis, 400 for body, 600 for navigation
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px (detected system base)
+- **Scale**: 1px, 2px, 4px, 5px, 6px, 9px, 10px, 11.2px, 12px, 13px, 15px, 16px, 19px, 20px, 25px
+- **Button padding**: 12px vertical, 10px horizontal — compact and precise
+- **Section padding**: Generous vertical spacing (40–80px estimated) between major content blocks
+- **Card gaps**: 16–20px between grid items
+- **Footer padding**: 25px horizontal sections within the dark footer block
+
+### Grid & Container
+- **Max width**: 1920px (largest breakpoint) with content constraining at narrower widths
+- **Hero**: Full-bleed on black, content centered
+- **Editorial sections**: 2-column layouts with image + text, alternating sides
+- **Vehicle lineup**: Horizontal scroll/carousel, 5–6 models visible at desktop width
+- **Footer**: 4-column grid for link categories
+
+### Whitespace Philosophy
+Ferrari treats white space as a gallery wall. Each section — whether a concept car render on black void or a pair of F1 drivers on neutral gray — is given its own "room" of breathing space. The alternating black/white sections create a pacing rhythm: dark = immersive moment, white = editorial content, dark = immersive moment. This cadence makes scrolling feel like turning pages in a luxury publication. White space between editorial cards is moderate (not Tesla-extreme) because Ferrari is telling stories, not exhibiting single objects.
+
+### Border Radius Scale
+| Value | Context |
+|-------|---------|
+| 1px | Subtle softening on small inline elements (spans) |
+| 2px | Default for buttons, inputs, and interactive elements — barely perceptible, razor-precision |
+| 8px | Modal dialogs and overlay containers — the "softest" structural radius |
+| 50% | Circular elements: carousel dots, avatar thumbnails, slider handles |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, no border | Default state for all content sections and cards |
+| Level 1 (Subtle) | `rgb(153, 153, 153) 1px 1px 1px 0px` | Rare — cookie consent dialogs and dropdown menus |
+| Level 2 (Overlay) | `hsla(0, 0%, 7%, 0.8)` backdrop | Modal overlays and image caption backgrounds |
+| Level 3 (Border) | `1px solid #CCCCCC` | Input fields, form containers — depth through delineation not shadow |
+
+### Shadow Philosophy
+Ferrari's approach to elevation is nearly as flat as Tesla's, but with a different rationale. Where Tesla avoids shadows for minimalism, Ferrari avoids them because the editorial photography provides all the visual depth needed. The single shadow token (`rgb(153, 153, 153) 1px 1px 1px 0px`) is extremely subtle — a 1-pixel whisper used only in utilitarian contexts like consent dialogs. The site communicates hierarchy through three strategies:
+1. **Surface color contrast**: Black sections vs. white sections create unmistakable layering
+2. **Overlay transparency**: The `--f-color-overlay-darker` at 80% opacity creates depth without shadow
+3. **Photographic depth**: Studio-lit car imagery with reflections, ground shadows, and atmospheric haze provides all the visual dimensionality
+
+### Decorative Depth
+- No UI gradients, no glows, no blur effects on interface elements
+- The Prancing Horse logo on black creates a "floating in void" effect through pure contrast — no glow or shadow needed
+- Dark-to-light section transitions are hard cuts, not gradient blends — reinforcing the editorial page-turn metaphor
+
+## Components
 
 ### Buttons
 Ferrari's buttons are minimal white rectangles with near-zero radius — the CTA philosophy is "architecture, not decoration."
@@ -179,55 +320,7 @@ Ferrari's buttons are minimal white rectangles with near-zero radius — the CTA
 - Auto-advancing with manual override
 - Content: mixed editorial — event recaps, model launches, racing highlights
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px (detected system base)
-- **Scale**: 1px, 2px, 4px, 5px, 6px, 9px, 10px, 11.2px, 12px, 13px, 15px, 16px, 19px, 20px, 25px
-- **Button padding**: 12px vertical, 10px horizontal — compact and precise
-- **Section padding**: Generous vertical spacing (40–80px estimated) between major content blocks
-- **Card gaps**: 16–20px between grid items
-- **Footer padding**: 25px horizontal sections within the dark footer block
-
-### Grid & Container
-- **Max width**: 1920px (largest breakpoint) with content constraining at narrower widths
-- **Hero**: Full-bleed on black, content centered
-- **Editorial sections**: 2-column layouts with image + text, alternating sides
-- **Vehicle lineup**: Horizontal scroll/carousel, 5–6 models visible at desktop width
-- **Footer**: 4-column grid for link categories
-
-### Whitespace Philosophy
-Ferrari treats white space as a gallery wall. Each section — whether a concept car render on black void or a pair of F1 drivers on neutral gray — is given its own "room" of breathing space. The alternating black/white sections create a pacing rhythm: dark = immersive moment, white = editorial content, dark = immersive moment. This cadence makes scrolling feel like turning pages in a luxury publication. White space between editorial cards is moderate (not Tesla-extreme) because Ferrari is telling stories, not exhibiting single objects.
-
-### Border Radius Scale
-| Value | Context |
-|-------|---------|
-| 1px | Subtle softening on small inline elements (spans) |
-| 2px | Default for buttons, inputs, and interactive elements — barely perceptible, razor-precision |
-| 8px | Modal dialogs and overlay containers — the "softest" structural radius |
-| 50% | Circular elements: carousel dots, avatar thumbnails, slider handles |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, no border | Default state for all content sections and cards |
-| Level 1 (Subtle) | `rgb(153, 153, 153) 1px 1px 1px 0px` | Rare — cookie consent dialogs and dropdown menus |
-| Level 2 (Overlay) | `hsla(0, 0%, 7%, 0.8)` backdrop | Modal overlays and image caption backgrounds |
-| Level 3 (Border) | `1px solid #CCCCCC` | Input fields, form containers — depth through delineation not shadow |
-
-### Shadow Philosophy
-Ferrari's approach to elevation is nearly as flat as Tesla's, but with a different rationale. Where Tesla avoids shadows for minimalism, Ferrari avoids them because the editorial photography provides all the visual depth needed. The single shadow token (`rgb(153, 153, 153) 1px 1px 1px 0px`) is extremely subtle — a 1-pixel whisper used only in utilitarian contexts like consent dialogs. The site communicates hierarchy through three strategies:
-1. **Surface color contrast**: Black sections vs. white sections create unmistakable layering
-2. **Overlay transparency**: The `--f-color-overlay-darker` at 80% opacity creates depth without shadow
-3. **Photographic depth**: Studio-lit car imagery with reflections, ground shadows, and atmospheric haze provides all the visual dimensionality
-
-### Decorative Depth
-- No UI gradients, no glows, no blur effects on interface elements
-- The Prancing Horse logo on black creates a "floating in void" effect through pure contrast — no glow or shadow needed
-- Dark-to-light section transitions are hard cuts, not gradient blends — reinforcing the editorial page-turn metaphor
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Ferrari Red (`#DA291C`) sparingly — only for primary CTAs and brand-critical moments. Its power comes from restraint
@@ -253,7 +346,7 @@ Ferrari's approach to elevation is nearly as flat as Tesla's, but with a differe
 - Create busy layouts with multiple competing focal points — each section should have one clear story
 - Override the semantic color system (warning, success, info) with brand colors — `#F13A2C` warning is deliberately different from `#DA291C` brand red
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -286,7 +379,7 @@ Ferrari's approach to elevation is nearly as flat as Tesla's, but with a differe
 - Art direction: mobile crops may tighten on vehicle subjects, reducing environmental context
 - Lazy loading: PrimeReact handles progressive image loading for below-fold content
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: "Ferrari Red (#DA291C)"

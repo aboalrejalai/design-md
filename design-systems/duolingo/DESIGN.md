@@ -1,9 +1,109 @@
+---
+"version": "alpha"
+"name": "Duolingo"
+"description": "Bundled Open Design package for Duolingo, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#58cc02"
+  "primary-hover": "#89e219"
+  "primary-active": "#58a700"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f7f7f7"
+  "surface-warm": "#f7f7f7"
+  "ink": "#3c3c3c"
+  "body": "#3c3c3c"
+  "muted": "#777777"
+  "meta": "#afafaf"
+  "border": "#e5e5e5"
+  "border-soft": "#e5e5e5"
+  "success": "#58cc02"
+  "warning": "#ffc800"
+  "danger": "#ff4b4b"
+typography:
+  display:
+    "fontFamily": "\"Feather Bold\", \"DIN Round Pro\", \"Helvetica Neue\", sans-serif"
+    "lineHeight": "1.15"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"Mona Sans\", \"Helvetica Neue\", system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"JetBrains Mono\", ui-monospace, Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "12px"
+  "md": "16px"
+  "lg": "20px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "56px"
+  "section-y-phone": "40px"
+  "container-max": "1080px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "20px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  badges:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Duolingo
 
 > Category: Productivity & SaaS
 > Language-learning platform. Bright owl green, chunky shadows, gamified joy.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Duolingo is gamification rendered as visual language. The interface is unapologetically bright, with **owl green** (`#58cc02`) as the brand primary and a chunky 4px bottom-shadow on every interactive element that reads like a 3D button waiting to be pressed. The page is white (`#ffffff`) with thick 2–3px borders in a deep gray (`#e5e5e5`) and the entire system reads like an iOS app from 2015 reborn with better hierarchy.
 
@@ -20,7 +120,7 @@ Shape language is friendly: 16–20px radii on cards, 12px on buttons, 9999px on
 - Mascot-as-character: Duo the owl appears in onboarding, errors, streaks
 - Streak orange (`#ff9600`) and gem pink (`#ce82ff`) as secondary brand colors
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Owl Green** (`#58cc02`): Brand primary, primary CTA, correct answer.
@@ -51,7 +151,7 @@ Shape language is friendly: 16–20px radii on cards, 12px on buttons, 9999px on
 - **Swan** (`#e5e5e5`): Standard 2px border.
 - **Hare** (`#afafaf`): Emphasized border on hover.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / UI / Headings**: `Feather Bold`, with fallback: `'DIN Round Pro', 'Helvetica Neue', sans-serif`
@@ -77,7 +177,7 @@ Shape language is friendly: 16–20px radii on cards, 12px on buttons, 9999px on
 - **Big type**: heading sizes are 25–40% larger than typical product brands — confidence as identity.
 - **Rounded letterforms**: every glyph has soft terminals; sharp serifs would break the friendliness contract.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -141,19 +241,19 @@ Shape language is friendly: 16–20px radii on cards, 12px on buttons, 9999px on
 - Height: 16px
 - Animated fill: 320ms ease-out on increment.
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 24, 32, 48, 64.
 - **Container**: max 1080px, 24px gutter.
 - **Lesson tree column**: 320px wide; centered on desktop.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 180ms for button press; 320ms for skill-node unlock; 1.6s for active-node pulse.
 - **Easing**: `cubic-bezier(0.34, 1.56, 0.64, 1)` (back-out, slight overshoot) for unlocks.
 - **Mascot**: Duo blinks every 4–6s, jumps on streak milestones (480ms ease-out spring).
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Keep the high-saturation owl green, chunky bottom shadows, and rounded lesson geometry together; flat green buttons alone do not read as Duolingo.
 - Reserve oversized bold type for lesson, streak, and progress moments where the product needs encouragement or feedback.

@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "Mission Control Design System"
+"description": "Bundled Open Design package for Mission Control Design System, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#60a5fa"
+  "on-primary": "#06101d"
+  "canvas": "#090b12"
+  "surface": "#121722"
+  "surface-warm": "#1b2233"
+  "ink": "#f8fafc"
+  "body": "#cbd5e1"
+  "muted": "#94a3b8"
+  "meta": "#60a5fa"
+  "border": "#2a3447"
+  "border-soft": "#1d2636"
+  "success": "#26de81"
+  "warning": "#fbbf24"
+  "danger": "#ff4757"
+typography:
+  display:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.45"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "10px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "60px"
+  "section-y-phone": "42px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Mission Control Design System
 
 > Category: Developer Tools
 > Space/aerospace mission monitoring. Dark command center, amber telemetry, monospace precision. Functional clarity above all else.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 A **deep space command center** — dark, information-dense, unambiguous. Every pixel earns its place. The aesthetic draws from NASA mission control rooms, SpaceX launch consoles, and ISRO's mission operations complex. Amber data on navy is the core contrast pair; everything else is subdued.
 
@@ -34,7 +124,7 @@ Mission Control is purpose-built for:
 
 NASA Mission Control (Houston), ISRO ISTRAC, SpaceX Falcon/Dragon consoles, ESA ESOC — all share amber-on-navy telemetry, monospace data fields, and hierarchical alert systems. The shared constraints (low light, fatigue, split-second decisions) drive convergent design.
 
-## 2. Color
+## Colors
 
 ### Surface Palette
 
@@ -92,7 +182,7 @@ Dark mode is the native mode. No light mode variant by design — mission contro
 
 Consumable bindings in `tokens.css` mirror the telemetry palette as `--success` (`#26DE81`) and `--danger` (`#FF4757`).
 
-## 3. Typography
+## Typography
 
 ### Font Stack
 
@@ -123,7 +213,7 @@ Body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, 
 Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace
 ```
 
-## 4. Spacing
+## Layout
 
 4px baseline grid for dense telemetry layouts. 8px for outer padding, 16px+ for section gaps.
 
@@ -133,7 +223,7 @@ Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
 --space-16: 64px; --space-20: 80px;
 ```
 
-## 5. Layout & Composition
+### Layout & Composition
 
 ### Grid System
 
@@ -179,7 +269,7 @@ Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
 }
 ```
 
-## 6. Components
+## Components
 
 ### Status Badge
 
@@ -420,7 +510,16 @@ Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas
 .telemetry-chart-bar.warning { background: var(--data-alert-warning); }
 ```
 
-## 7. Motion & Interaction
+## Do's and Don'ts
+
+- Do not use decorative colors in data displays — every hue must convey operational meaning
+- Do not use rounded corners > 4px — mission control is functional, not friendly
+- Do not use proportional fonts for telemetry values — use monospace exclusively for data
+- Do not animate non-alert elements — motion is reserved for signals that matter
+- Do not use light mode — low-light environments are the only context
+- Do not use low-contrast text on dark backgrounds — tertiary `#4A6080` is only for non-critical metadata (timestamps, grid labels)
+
+## Motion & Interaction
 
 | Interaction | Duration | Easing | Effect |
 |-------------|----------|--------|--------|
@@ -450,7 +549,7 @@ Static environments are common in mission control. Replace all animations with i
 }
 ```
 
-## 8. Voice & Brand
+## Voice & Brand
 
 ### Iconography
 
@@ -465,12 +564,3 @@ Minimal, functional iconography — Lucide icons (stroke weight 1.5px, 16px defa
 ### Visual Signals
 
 Color is the primary signal carrier. Every color choice must communicate operational state — never decorative.
-
-## 9. Anti-patterns
-
-- Do not use decorative colors in data displays — every hue must convey operational meaning
-- Do not use rounded corners > 4px — mission control is functional, not friendly
-- Do not use proportional fonts for telemetry values — use monospace exclusively for data
-- Do not animate non-alert elements — motion is reserved for signals that matter
-- Do not use light mode — low-light environments are the only context
-- Do not use low-contrast text on dark backgrounds — tertiary `#4A6080` is only for non-critical metadata (timestamps, grid labels)

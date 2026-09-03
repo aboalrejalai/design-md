@@ -1,9 +1,98 @@
+---
+"version": "alpha"
+"name": "Dithered"
+"description": "Bundled Open Design package for Dithered, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#d24b1f"
+  "on-primary": "#ffffff"
+  "canvas": "#fff4cf"
+  "surface": "#fffaf0"
+  "surface-warm": "#ffdca8"
+  "ink": "#2a1810"
+  "body": "#593625"
+  "muted": "#8a6652"
+  "meta": "#d24b1f"
+  "border": "#d9aa7a"
+  "border-soft": "#efd0ab"
+  "success": "#3d8f4f"
+  "warning": "#f2a93b"
+  "danger": "#b83a2f"
+typography:
+  display:
+    "fontFamily": "\"Courier New\", ui-monospace, monospace"
+    "lineHeight": "1.06"
+  body:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.45"
+  mono:
+    "fontFamily": "\"Courier New\", ui-monospace, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "60px"
+  "section-y-phone": "42px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Dithered
 
 > Category: Retro & Nostalgic
 > Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.
 
@@ -11,7 +100,7 @@ Dot-pattern rendering technique that simulates shades with a limited palette for
 - **Color stance:** primary, neutral, success, warning, danger
 - **Design intent:** Keep outputs recognizable to this style family while preserving usability and readability.
 
-## 2. Color
+## Colors
 
 - **Primary:** `#3B82F6` — Token from style foundations.
 - **Secondary:** `#8B5CF6` — Token from style foundations.
@@ -26,46 +115,46 @@ Dot-pattern rendering technique that simulates shades with a limited palette for
 - Use Surface (#FFFFFF) for large backgrounds and cards.
 - Keep body copy on Text (#111827) for legibility.
 
-## 3. Typography
+## Typography
 
 - **Scale:** 14/16/18/24/32/40
 - **Families:** primary=Open Sans, display=Space Grotesk, mono=IBM Plex Mono
 - **Weights:** 100, 200, 300, 400, 500, 600, 700, 800, 900
 - Headings should carry the style personality; body text should optimize scanability and contrast.
 
-## 4. Spacing & Grid
+## Layout
 
 - **Spacing scale:** 4/8/12/16/24/32
 - Keep vertical rhythm consistent across sections and components.
 - Align columns and modules to a predictable grid; avoid ad-hoc offsets.
 
-## 5. Layout & Composition
+### Layout & Composition
 
 - Prefer clear content blocks with consistent internal padding.
 - Keep hierarchy obvious: headline → support text → primary action.
 - Use whitespace to separate concerns before adding borders or shadows.
 
-## 6. Components
+## Components
 
 - Buttons: primary action uses `#3B82F6`; secondary actions stay neutral.
 - Inputs: strong focus-visible states, clear labels, and predictable error messaging.
 - Cards/sections: use consistent radii, spacing, and elevation strategy across the page.
 
-## 7. Motion & Interaction
-
-- Use subtle transitions that emphasize Primary (#3B82F6) as the interaction signal.
-- Default to short, purposeful transitions (150–250ms) with stable easing.
-- Ensure hover, focus-visible, active, disabled, and loading states are explicit.
-
-## 8. Voice & Brand
-
-- Tone should reflect the visual style: concise, confident, and product-specific.
-- Keep microcopy action-oriented and avoid generic filler language.
-- Preserve the style identity in headlines while keeping UI labels literal and clear.
-
-## 9. Anti-patterns
+## Do's and Don'ts
 
 - Do not introduce off-palette colors when an existing token can solve the problem.
 - Do not flatten hierarchy by using the same type size/weight for all text.
 - Do not add decorative effects that reduce readability or accessibility.
 - Do not mix unrelated visual metaphors in the same interface.
+
+## Motion & Interaction
+
+- Use subtle transitions that emphasize Primary (#3B82F6) as the interaction signal.
+- Default to short, purposeful transitions (150–250ms) with stable easing.
+- Ensure hover, focus-visible, active, disabled, and loading states are explicit.
+
+## Voice & Brand
+
+- Tone should reflect the visual style: concise, confident, and product-specific.
+- Keep microcopy action-oriented and avoid generic filler language.
+- Preserve the style identity in headlines while keeping UI labels literal and clear.

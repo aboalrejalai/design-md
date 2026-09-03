@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Zapier"
+"description": "Bundled Open Design package for Zapier, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff4f00"
+  "on-primary": "#ffffff"
+  "canvas": "#fff7ed"
+  "surface": "#ffffff"
+  "surface-warm": "#ffedd5"
+  "ink": "#2d2a26"
+  "body": "#574f45"
+  "muted": "#7c6f64"
+  "meta": "#ff4f00"
+  "border": "#eadfd3"
+  "border-soft": "#f4eadf"
+  "success": "#15803d"
+  "warning": "#d97706"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Degular\", Inter, system-ui, sans-serif"
+    "lineHeight": "1.02"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Roboto Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "52px"
+  4xl:
+    "fontSize": "72px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "20px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1160px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Zapier
 
 > Category: Productivity & SaaS
 > Automation platform. Warm orange, friendly illustration-driven.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Zapier's website radiates warm, approachable professionalism. It rejects the cold monochrome minimalism of developer tools in favor of a cream-tinted canvas (`#fffefb`) that feels like unbleached paper -- the digital equivalent of a well-organized notebook. The near-black (`#201515`) text has a faint reddish-brown warmth, creating an atmosphere more human than mechanical. This is automation designed to feel effortless, not technical.
 
@@ -22,7 +115,7 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - 8px base spacing system with generous padding on CTAs (20px 24px)
 - Border-forward design: `1px solid` borders in warm grays define structure over shadows
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Zapier Black** (`#201515`): Primary text, headings, dark button backgrounds. A warm near-black with reddish undertones -- never cold.
@@ -54,7 +147,7 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - **Inset Underline** (`rgb(255, 79, 0) 0px -4px 0px 0px inset`): Active tab indicator -- orange underline using inset box-shadow.
 - **Hover Underline** (`rgb(197, 192, 177) 0px -4px 0px 0px inset`): Inactive tab hover -- sand-colored underline.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Degular Display` -- wide geometric display face for hero headlines
@@ -95,7 +188,54 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - **Uppercase for labels**: Section labels (like "01 / Colors") and small categorization use `text-transform: uppercase` with 0.5px letter-spacing.
 - **Negative tracking for elegance**: GT Alpina uses -1.6px to -1.92px letter-spacing for its thin-weight editorial headlines.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 56px, 64px, 72px
+- CTA buttons use generous padding: 20px 24px for large, 8px 16px for standard
+- Section padding: 64px-80px vertical
+
+### Grid & Container
+- Max content width: approximately 1200px
+- Hero: centered single-column with large top padding
+- Feature sections: 2-3 column grids for integration cards
+- Full-width sand-bordered dividers between sections
+- Footer: multi-column dark background (`#201515`)
+
+### Whitespace Philosophy
+- **Warm breathing room**: Generous vertical spacing between sections (64px-80px), but content areas are relatively dense -- Zapier packs information efficiently within its cream canvas.
+- **Architectural compression**: Degular Display headlines at 0.90 line-height compress vertically, contrasting with the open spacing around them.
+- **Section rhythm**: Cream background throughout, with sections separated by sand-colored borders rather than background color changes.
+
+### Border Radius Scale
+- Tight (3px): Small inline spans
+- Standard (4px): Buttons (orange CTA), tags, small elements
+- Content (5px): Cards, links, general containers
+- Comfortable (8px): Featured cards, large buttons, tabs
+- Social (14px): Social icon buttons, pill-like elements
+- Pill (20px): Play buttons, large pill buttons, floating actions
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page background, text blocks |
+| Bordered (Level 1) | `1px solid #c5c0b1` | Standard cards, containers, inputs |
+| Strong Border (Level 1b) | `1px solid #36342e` | Dark dividers, emphasized sections |
+| Active Tab (Level 2) | `rgb(255, 79, 0) 0px -4px 0px 0px inset` | Active tab underline (orange) |
+| Hover Tab (Level 2b) | `rgb(197, 192, 177) 0px -4px 0px 0px inset` | Hover tab underline (sand) |
+| Focus (Accessibility) | `1px solid #ff4f00` outline | Focus ring on interactive elements |
+
+**Shadow Philosophy**: Zapier deliberately avoids traditional shadow-based elevation. Structure is defined almost entirely through borders -- warm sand (`#c5c0b1`) borders for standard containment, dark charcoal (`#36342e`) borders for emphasis. The only shadow-like technique is the inset box-shadow used for tab underlines, where a `0px -4px 0px 0px inset` shadow creates a bottom-bar indicator. This border-first approach keeps the design grounded and tangible rather than floating.
+
+### Decorative Depth
+- Orange inset underline on active tabs creates visual "weight" at the bottom of elements
+- Sand hover underlines provide preview states without layout shifts
+- No background gradients in main content -- the cream canvas is consistent
+- Footer uses full dark background (`#201515`) for contrast reversal
+
+## Components
 
 ### Buttons
 
@@ -195,54 +335,7 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - Sand border: `1px solid #c5c0b1`
 - Used for social media follow links in footer
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 56px, 64px, 72px
-- CTA buttons use generous padding: 20px 24px for large, 8px 16px for standard
-- Section padding: 64px-80px vertical
-
-### Grid & Container
-- Max content width: approximately 1200px
-- Hero: centered single-column with large top padding
-- Feature sections: 2-3 column grids for integration cards
-- Full-width sand-bordered dividers between sections
-- Footer: multi-column dark background (`#201515`)
-
-### Whitespace Philosophy
-- **Warm breathing room**: Generous vertical spacing between sections (64px-80px), but content areas are relatively dense -- Zapier packs information efficiently within its cream canvas.
-- **Architectural compression**: Degular Display headlines at 0.90 line-height compress vertically, contrasting with the open spacing around them.
-- **Section rhythm**: Cream background throughout, with sections separated by sand-colored borders rather than background color changes.
-
-### Border Radius Scale
-- Tight (3px): Small inline spans
-- Standard (4px): Buttons (orange CTA), tags, small elements
-- Content (5px): Cards, links, general containers
-- Comfortable (8px): Featured cards, large buttons, tabs
-- Social (14px): Social icon buttons, pill-like elements
-- Pill (20px): Play buttons, large pill buttons, floating actions
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Page background, text blocks |
-| Bordered (Level 1) | `1px solid #c5c0b1` | Standard cards, containers, inputs |
-| Strong Border (Level 1b) | `1px solid #36342e` | Dark dividers, emphasized sections |
-| Active Tab (Level 2) | `rgb(255, 79, 0) 0px -4px 0px 0px inset` | Active tab underline (orange) |
-| Hover Tab (Level 2b) | `rgb(197, 192, 177) 0px -4px 0px 0px inset` | Hover tab underline (sand) |
-| Focus (Accessibility) | `1px solid #ff4f00` outline | Focus ring on interactive elements |
-
-**Shadow Philosophy**: Zapier deliberately avoids traditional shadow-based elevation. Structure is defined almost entirely through borders -- warm sand (`#c5c0b1`) borders for standard containment, dark charcoal (`#36342e`) borders for emphasis. The only shadow-like technique is the inset box-shadow used for tab underlines, where a `0px -4px 0px 0px inset` shadow creates a bottom-bar indicator. This border-first approach keeps the design grounded and tangible rather than floating.
-
-### Decorative Depth
-- Orange inset underline on active tabs creates visual "weight" at the bottom of elements
-- Sand hover underlines provide preview states without layout shifts
-- No background gradients in main content -- the cream canvas is consistent
-- Footer uses full dark background (`#201515`) for contrast reversal
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Degular Display exclusively for hero-scale headlines (40px+) with 0.90 line-height for compressed impact
@@ -266,7 +359,7 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - Don't apply positive letter-spacing to GT Alpina -- it uses aggressive negative tracking (-1.6px to -1.92px)
 - Don't use rounded pill shapes (9999px) for primary buttons -- pills are for tags and social icons
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -302,7 +395,7 @@ The brand's signature orange (`#ff4f00`) is unmistakable -- a vivid, saturated r
 - Hero illustrations scale proportionally
 - Full-width sections maintain edge-to-edge treatment
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: Zapier Orange (`#ff4f00`)

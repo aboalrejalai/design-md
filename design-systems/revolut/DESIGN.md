@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Revolut"
+"description": "Bundled Open Design package for Revolut, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0666eb"
+  "on-primary": "#ffffff"
+  "canvas": "#f7f8fb"
+  "surface": "#ffffff"
+  "surface-warm": "#eef4ff"
+  "ink": "#111827"
+  "body": "#334155"
+  "muted": "#64748b"
+  "meta": "#0666eb"
+  "border": "#dbe3ef"
+  "border-soft": "#edf2f7"
+  "success": "#16a34a"
+  "warning": "#f59e0b"
+  "danger": "#ef4444"
+typography:
+  display:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.02"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "54px"
+  4xl:
+    "fontSize": "76px"
+rounded:
+  "sm": "12px"
+  "md": "20px"
+  "lg": "30px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "104px"
+  "section-y-tablet": "72px"
+  "section-y-phone": "52px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Revolut
 
 > Category: Fintech & Crypto
 > Digital banking. Sleek dark interface, gradient cards, fintech precision.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Revolut's website is fintech confidence distilled into pixels — a design system that communicates "your money is in capable hands" through massive typography, generous whitespace, and a disciplined neutral palette. The visual language is built on Aeonik Pro, a geometric grotesque that creates billboard-scale headlines at 136px with weight 500 and aggressive negative tracking (-2.72px). This isn't subtle branding; it's fintech at stadium scale.
 
@@ -20,7 +113,7 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 - Zero shadows detected — depth through color contrast only
 - Tight display line-heights (1.00) with relaxed body (1.50–1.56)
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Revolut Dark** (`#191c1f`): Primary dark surface, button background, near-black text
@@ -49,7 +142,7 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 - **Cool Gray** (`#8d969e`): Muted text, tertiary
 - **Gray Tone** (`#c9c9cd`): `--rui-color-grey-tone-20`, borders/dividers
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Aeonik Pro` — geometric grotesque, no detected fallbacks
@@ -77,7 +170,28 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 - **Billboard tracking**: -2.72px at 136px is extremely compressed — text designed to be read at a glance, like airport signage.
 - **Positive tracking on body**: Inter uses +0.16px to +0.24px, creating airy, well-spaced reading text that contrasts with the compressed headings.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 6px, 8px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 80px, 88px, 120px
+- Large section spacing: 80px–120px
+
+### Border Radius Scale
+- Standard (12px): Navigation, small buttons
+- Card (20px): Feature cards
+- Pill (9999px): All buttons
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Everything — Revolut uses zero shadows |
+| Focus | `0 0 0 0.125rem` ring | Accessibility focus |
+
+**Shadow Philosophy**: Revolut uses ZERO shadows. Depth comes entirely from the dark/light section contrast and the generous whitespace between elements.
+
+## Components
 
 ### Buttons
 
@@ -120,28 +234,7 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 - Clean header, hamburger toggle at 12px radius
 - Pill CTAs right-aligned
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 8px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 80px, 88px, 120px
-- Large section spacing: 80px–120px
-
-### Border Radius Scale
-- Standard (12px): Navigation, small buttons
-- Card (20px): Feature cards
-- Pill (9999px): All buttons
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Everything — Revolut uses zero shadows |
-| Focus | `0 0 0 0.125rem` ring | Accessibility focus |
-
-**Shadow Philosophy**: Revolut uses ZERO shadows. Depth comes entirely from the dark/light section contrast and the generous whitespace between elements.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Aeonik Pro weight 500 for all display headings
@@ -156,7 +249,7 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 - Don't use small buttons — the generous padding is intentional
 - Don't apply semantic colors to marketing surfaces — they're for the product
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -167,7 +260,7 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 | Desktop | 1024–1280px | Standard desktop |
 | Large | 1280–1920px | Full layout |
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Dark: Revolut Dark (`#191c1f`)

@@ -1,9 +1,114 @@
+---
+"version": "alpha"
+"name": "MiniMax"
+"description": "Bundled Open Design package for MiniMax, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1456f0"
+  "primary-hover": "#2563eb"
+  "primary-active": "#1d4ed8"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#fafafa"
+  "surface-warm": "#f0f0f0"
+  "ink": "#222222"
+  "body": "#18181b"
+  "muted": "#45515e"
+  "meta": "#8e8e93"
+  "border": "#e5e7eb"
+  "border-soft": "#f2f3f5"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Outfit\", \"Helvetica Neue\", Helvetica, Arial, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", sans-serif"
+    "lineHeight": "1.1"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "\"DM Sans\", \"Helvetica Neue\", Helvetica, Arial, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Noto Sans SC\", sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "8px"
+  "md": "13px"
+  "lg": "20px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.body}"
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by MiniMax
 
 > Category: AI & LLM
 > AI model provider. Bold dark interface with neon accents.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 MiniMax's website is a clean, product-showcase platform for a Chinese AI technology company that bridges consumer-friendly appeal with technical credibility. The design language is predominantly white-space-driven with a light, airy feel — pure white backgrounds (`#ffffff`) dominate, letting colorful product cards and AI model illustrations serve as the visual anchors. The overall aesthetic sits at the intersection of Apple's product marketing clarity and a playful, rounded design language that makes AI technology feel approachable.
 
@@ -22,7 +127,7 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - Purple-tinted shadows (`rgba(44, 30, 116, 0.16)`) creating subtle brand-colored depth
 - Dark footer section (`#181e25`) with product/company links
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand Primary
 - **Brand Blue** (`#1456f0`): `--brand-6`, primary brand identity color
@@ -62,7 +167,7 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - **Brand Purple Offset** (`rgba(44, 30, 116, 0.11) 6.5px 2px 17.5px`): Directional brand glow
 - **Card Elevation** (`rgba(36, 36, 36, 0.08) 0px 12px 16px -4px`): Lifted card shadow
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Primary UI**: `DM Sans`, with fallbacks: `Helvetica Neue, Helvetica, Arial`
@@ -95,7 +200,52 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - **Weight 500 as default emphasis**: Most headings use 500 (medium) rather than bold, creating a modern, approachable tone. 600 for section titles, 700 reserved for strong emphasis.
 - **Compact hierarchy**: The size scale jumps from 80px display straight to 28–32px section, then 16–20px body — a deliberate compression that keeps the visual hierarchy feeling efficient.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 11px, 14px, 16px, 24px, 32px, 40px, 50px, 64px, 80px
+
+### Grid & Container
+- Max content width centered on page
+- Product card grids: horizontal scroll or 3–4 column layout
+- Full-width white sections with contained content
+- Dark footer at full-width
+
+### Breakpoints
+| Name | Width | Key Changes |
+|------|-------|-------------|
+| Mobile | <768px | Single column, stacked cards |
+| Tablet | 768–1024px | 2-column grids |
+| Desktop | >1024px | Full layout, horizontal card scrolls |
+
+### Whitespace Philosophy
+- **Gallery spacing**: Products are presented like gallery items with generous white space between cards, letting each AI model breathe as its own showcase.
+- **Section rhythm**: Large vertical gaps (64px–80px) between major sections create distinct "chapters" of content.
+- **Card breathing**: Product cards use internal padding of 16px–24px with ample whitespace around text.
+
+### Border Radius Scale
+- Minimal (4px): Small tags, micro badges
+- Standard (8px): Buttons, small cards
+- Comfortable (11px–13px): Medium cards, panels
+- Generous (16px–20px): Large product cards
+- Large (22px–24px): Hero product cards, major containers
+- Pill (30px–32px): Badge pills, rounded panels
+- Full (9999px): Buttons, nav tabs
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | White background, text blocks |
+| Subtle (Level 1) | `rgba(0, 0, 0, 0.08) 0px 4px 6px` | Standard cards, containers |
+| Ambient (Level 2) | `rgba(0, 0, 0, 0.08) 0px 0px 22.576px` | Soft glow around elements |
+| Brand Glow (Level 3) | `rgba(44, 30, 116, 0.16) 0px 0px 15px` | Featured product cards |
+| Elevated (Level 4) | `rgba(36, 36, 36, 0.08) 0px 12px 16px -4px` | Lifted cards, hover states |
+
+**Shadow Philosophy**: MiniMax uses a distinctive purple-tinted shadow (`rgba(44, 30, 116, ...)`) for featured elements, creating a subtle brand-color glow that connects the shadow system to the blue brand identity. Standard shadows use neutral black but at low opacity (0.08), keeping everything feeling light and airy. The directional shadow variant (6.5px offset) adds dimensional interest to hero product cards.
+
+## Components
 
 ### Buttons
 
@@ -153,52 +303,7 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - "Login" text link, minimal right-side actions
 - Sticky header behavior
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 6px, 8px, 10px, 11px, 14px, 16px, 24px, 32px, 40px, 50px, 64px, 80px
-
-### Grid & Container
-- Max content width centered on page
-- Product card grids: horizontal scroll or 3–4 column layout
-- Full-width white sections with contained content
-- Dark footer at full-width
-
-### Breakpoints
-| Name | Width | Key Changes |
-|------|-------|-------------|
-| Mobile | <768px | Single column, stacked cards |
-| Tablet | 768–1024px | 2-column grids |
-| Desktop | >1024px | Full layout, horizontal card scrolls |
-
-### Whitespace Philosophy
-- **Gallery spacing**: Products are presented like gallery items with generous white space between cards, letting each AI model breathe as its own showcase.
-- **Section rhythm**: Large vertical gaps (64px–80px) between major sections create distinct "chapters" of content.
-- **Card breathing**: Product cards use internal padding of 16px–24px with ample whitespace around text.
-
-### Border Radius Scale
-- Minimal (4px): Small tags, micro badges
-- Standard (8px): Buttons, small cards
-- Comfortable (11px–13px): Medium cards, panels
-- Generous (16px–20px): Large product cards
-- Large (22px–24px): Hero product cards, major containers
-- Pill (30px–32px): Badge pills, rounded panels
-- Full (9999px): Buttons, nav tabs
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | White background, text blocks |
-| Subtle (Level 1) | `rgba(0, 0, 0, 0.08) 0px 4px 6px` | Standard cards, containers |
-| Ambient (Level 2) | `rgba(0, 0, 0, 0.08) 0px 0px 22.576px` | Soft glow around elements |
-| Brand Glow (Level 3) | `rgba(44, 30, 116, 0.16) 0px 0px 15px` | Featured product cards |
-| Elevated (Level 4) | `rgba(36, 36, 36, 0.08) 0px 12px 16px -4px` | Lifted cards, hover states |
-
-**Shadow Philosophy**: MiniMax uses a distinctive purple-tinted shadow (`rgba(44, 30, 116, ...)`) for featured elements, creating a subtle brand-color glow that connects the shadow system to the blue brand identity. Standard shadows use neutral black but at low opacity (0.08), keeping everything feeling light and airy. The directional shadow variant (6.5px offset) adds dimensional interest to hero product cards.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use white as the dominant background — let product cards provide the color
@@ -219,7 +324,7 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - Don't darken shadows beyond 0.16 opacity — the light, airy feel requires restraint
 - Don't use Roboto for headings — it's the data/technical context font only
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -235,7 +340,7 @@ What makes MiniMax distinctive is its pill-button geometry (9999px radius) for n
 - Footer: multi-column → stacked sections
 - Spacing: 64–80px gaps → 32–40px on mobile
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: `#ffffff` (primary), `#181e25` (dark/footer)

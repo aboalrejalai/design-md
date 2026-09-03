@@ -1,9 +1,107 @@
+---
+"version": "alpha"
+"name": "PlayStation"
+"description": "Bundled Open Design package for PlayStation, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0070cc"
+  "primary-hover": "#1eaedb"
+  "primary-active": "#0068bd"
+  "on-primary": "#ffffff"
+  "canvas": "#000000"
+  "surface": "#ffffff"
+  "surface-warm": "#f5f7fa"
+  "ink": "#ffffff"
+  "body": "#ffffff"
+  "muted": "#cccccc"
+  "meta": "#cccccc"
+  "border": "#cccccc"
+  "border-soft": "#f3f3f3"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#c81b3a"
+typography:
+  display:
+    "fontFamily": "\"SST\", \"Playstation SST\", Arial, Helvetica, sans-serif"
+    "lineHeight": "1.25"
+    "letterSpacing": "-0.1px"
+  body:
+    "fontFamily": "\"SST\", \"Playstation SST\", Arial, Helvetica, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "18px"
+  lg:
+    "fontSize": "22px"
+  xl:
+    "fontSize": "28px"
+  2xl:
+    "fontSize": "35px"
+  3xl:
+    "fontSize": "44px"
+  4xl:
+    "fontSize": "54px"
+rounded:
+  "sm": "6px"
+  "md": "12px"
+  "lg": "24px"
+  "pill": "999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1600px"
+  "container-gutter-desktop": "64px"
+  "container-gutter-tablet": "32px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.4}"
+  badges:
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  keyboard:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.base}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by PlayStation
 
 > Category: Media & Consumer
 > Gaming console retail. Three-surface channel layout, quiet-authority display type, cyan hover-scale.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 PlayStation.com carries itself like the marketing wing of a premium consumer-electronics brand that happens to sell entertainment. The page is organized as a **vertical channel of alternating surfaces**: a near-black masthead and hero, a sequence of paper-white editorial panels in the middle, and a deep cobalt-blue footer that anchors the entire experience. Between those surface modes the site leans hard on photography and 3D product renders — the PS5 console, game cover art, DualSense controllers — letting the hardware do the emotional work while the chrome stays restrained.
 
@@ -20,7 +118,7 @@ The one place restraint breaks is **interaction**. Every primary button has the 
 - Commerce-orange `#d53b00` used exclusively for PlayStation Store / buy-state CTAs
 - Wide breakpoint coverage up to 2120px — the site scales all the way to 4K-TV browsing contexts
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary (Brand Anchor)
 - **PlayStation Blue** (`#0070cc`): The brand's anchor color. Used on the primary footer, inline links, primary button fills on dark surfaces, and every "official" marker. Treat this as immovable — it is the color the brand is most associated with in consumer memory.
@@ -64,7 +162,7 @@ PlayStation uses **two section gradients** and nothing else:
 
 Both gradients are used **only as section backgrounds**, never inside components. There are no gradient buttons, no gradient text, no glowing halos. The brand is blue — not blue-to-purple, not blue-to-cyan.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **SST** / **Playstation SST** (Sony, proprietary) — fallback: `Arial`, `Helvetica`. Sony's custom global typeface, designed by Toshi Omagari and Akira Kobayashi. Covers weights 300 / 500 / 600 / 700 across the homepage. The weight **300 at 22–54px** is PlayStation's typographic signature.
@@ -106,7 +204,62 @@ Both gradients are used **only as section backgrounds**, never inside components
 - **No all-caps.** Unlike The Verge or Wired, PlayStation rarely uses UPPERCASE labels. Kickers and tags stay in title case or sentence case — another "quiet authority" move.
 - **No serif anywhere.** The entire system is sans. There is no print-voice counterpoint.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px.
+- **Scale**: 1, 2, 3, 4.5, 5, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21px.
+- **Section padding**: 48–96px vertical between major panels. Hero-to-content transitions use the larger end.
+- **Card padding**: 20–32px interior. Feature hero cards can expand to 48px.
+- **Inline spacing**: 8–12px between headline and deck, 12–16px between deck and CTA.
+- **Micro-scale**: The 1/2/3/4.5/5/9/10/12 values are used for pill padding, caption spacing, and border offsets — not for editorial rhythm.
+
+### Grid & Container
+- **Max width**: ~1920px (dembrandt detected breakpoints up to 2120px). Container caps typically around `1280–1920px` depending on panel.
+- **Column patterns**: 12-column responsive grid that resolves into 3/4/6-column game tile rows depending on hierarchy. Hero zones often span 12 columns; featured tiles sit in 6+3+3 or 4+4+4 configurations.
+- **Outer padding**: 16px mobile → 48px tablet → 64–96px desktop.
+- **Gutters**: 16–24px between columns, tighter (8–12px) inside tile clusters.
+
+### Whitespace Philosophy
+PlayStation treats whitespace like a luxury brand treats store lighting — as a premium signal. There is noticeably more vertical breathing room between modules than on any other major retail site, and the white editorial panels often hold only one headline + one image + one CTA at hero-scale padding. The effect is a "gallery pace" where each product gets its own room rather than competing in a grid of thumbnails.
+
+### Border Radius Scale
+- **2px** — cookie banner buttons and small admin UI
+- **3px** — form inputs, tab panels (tighter than everything else — a deliberate "functional UI" cue)
+- **6px** — compact buttons and inline images
+- **12px** — standard game cover images and content images
+- **13px** — certain figure wrappers (a 1px offset from 12px for nesting)
+- **19px** — feature cards
+- **20px** — inline tag spans
+- **24px** — hero cards, primary feature frames
+- **36px** — full-pill nav and secondary button variants
+- **48px** — large feature buttons
+- **999px / 100%** — full pill primary buttons and circular icon buttons
+
+Eleven discrete radius values — one of the richest radius systems of any site in this catalog. The range exists because PlayStation deliberately uses different radii for different *hierarchies*: 3px for utility, 12px for media, 24px for features, 999px for CTAs.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|---|---|---|
+| 0 | No shadow | Default content on `#ffffff` |
+| 1 | `rgba(0, 0, 0, 0.06) 0 5px 9px 0` | Feather-light editorial panel lift |
+| 2 | `rgba(0, 0, 0, 0.08) 0 5px 9px 0` | Standard grid tile elevation |
+| 3 | `rgba(0, 0, 0, 0.16) 0 5px 9px 0` | Emphasized card (hover or active) |
+| 4 | `rgba(0, 0, 0, 0.8) 0 5px 9px 0` | Hero overlay shadow — dramatic drop used over photography |
+| 5 | `0 0 0 2px #0070cc` (focus ring) | Primary button focus state |
+| 6 | `0 0 0 2px #000000` (hover ring) | Secondary button hover ring |
+| 7 | Section gradient `#121314 → #000000` | Atmospheric depth on dark hero panels |
+
+PlayStation's depth philosophy is **layered but restrained**. The shadow scale runs from 0.06 to 0.16 for normal states, then jumps to 0.8 for hero drops — there is no 0.2, 0.3, 0.4 middle ground. The effect is that most of the page sits almost flat, but when a hero card needs to float over photography, it genuinely *floats*. Elevation is either whispered or shouted, never muttered.
+
+### Decorative Depth
+- **Section gradients** (dark and light, both described above) — used only as section backgrounds
+- **Focus/hover rings** at 2px, always blue or cyan depending on state
+- **No glows, blurs, or atmospheric effects** beyond the two section gradients
+- **No gradient buttons or text** — the visual system is solid color blocks everywhere except section transitions
+
+## Components
 
 ### Buttons
 
@@ -221,62 +374,7 @@ Both gradients are used **only as section backgrounds**, never inside components
 - Radius: `9999px` — full pill
 - A neutral pill tag that sits next to game covers to label platform ("PS5", "PS4", "PSVR2"). White-on-dark contrast.
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px.
-- **Scale**: 1, 2, 3, 4.5, 5, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21px.
-- **Section padding**: 48–96px vertical between major panels. Hero-to-content transitions use the larger end.
-- **Card padding**: 20–32px interior. Feature hero cards can expand to 48px.
-- **Inline spacing**: 8–12px between headline and deck, 12–16px between deck and CTA.
-- **Micro-scale**: The 1/2/3/4.5/5/9/10/12 values are used for pill padding, caption spacing, and border offsets — not for editorial rhythm.
-
-### Grid & Container
-- **Max width**: ~1920px (dembrandt detected breakpoints up to 2120px). Container caps typically around `1280–1920px` depending on panel.
-- **Column patterns**: 12-column responsive grid that resolves into 3/4/6-column game tile rows depending on hierarchy. Hero zones often span 12 columns; featured tiles sit in 6+3+3 or 4+4+4 configurations.
-- **Outer padding**: 16px mobile → 48px tablet → 64–96px desktop.
-- **Gutters**: 16–24px between columns, tighter (8–12px) inside tile clusters.
-
-### Whitespace Philosophy
-PlayStation treats whitespace like a luxury brand treats store lighting — as a premium signal. There is noticeably more vertical breathing room between modules than on any other major retail site, and the white editorial panels often hold only one headline + one image + one CTA at hero-scale padding. The effect is a "gallery pace" where each product gets its own room rather than competing in a grid of thumbnails.
-
-### Border Radius Scale
-- **2px** — cookie banner buttons and small admin UI
-- **3px** — form inputs, tab panels (tighter than everything else — a deliberate "functional UI" cue)
-- **6px** — compact buttons and inline images
-- **12px** — standard game cover images and content images
-- **13px** — certain figure wrappers (a 1px offset from 12px for nesting)
-- **19px** — feature cards
-- **20px** — inline tag spans
-- **24px** — hero cards, primary feature frames
-- **36px** — full-pill nav and secondary button variants
-- **48px** — large feature buttons
-- **999px / 100%** — full pill primary buttons and circular icon buttons
-
-Eleven discrete radius values — one of the richest radius systems of any site in this catalog. The range exists because PlayStation deliberately uses different radii for different *hierarchies*: 3px for utility, 12px for media, 24px for features, 999px for CTAs.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|---|---|---|
-| 0 | No shadow | Default content on `#ffffff` |
-| 1 | `rgba(0, 0, 0, 0.06) 0 5px 9px 0` | Feather-light editorial panel lift |
-| 2 | `rgba(0, 0, 0, 0.08) 0 5px 9px 0` | Standard grid tile elevation |
-| 3 | `rgba(0, 0, 0, 0.16) 0 5px 9px 0` | Emphasized card (hover or active) |
-| 4 | `rgba(0, 0, 0, 0.8) 0 5px 9px 0` | Hero overlay shadow — dramatic drop used over photography |
-| 5 | `0 0 0 2px #0070cc` (focus ring) | Primary button focus state |
-| 6 | `0 0 0 2px #000000` (hover ring) | Secondary button hover ring |
-| 7 | Section gradient `#121314 → #000000` | Atmospheric depth on dark hero panels |
-
-PlayStation's depth philosophy is **layered but restrained**. The shadow scale runs from 0.06 to 0.16 for normal states, then jumps to 0.8 for hero drops — there is no 0.2, 0.3, 0.4 middle ground. The effect is that most of the page sits almost flat, but when a hero card needs to float over photography, it genuinely *floats*. Elevation is either whispered or shouted, never muttered.
-
-### Decorative Depth
-- **Section gradients** (dark and light, both described above) — used only as section backgrounds
-- **Focus/hover rings** at 2px, always blue or cyan depending on state
-- **No glows, blurs, or atmospheric effects** beyond the two section gradients
-- **No gradient buttons or text** — the visual system is solid color blocks everywhere except section transitions
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - **Do** use PlayStation Blue (`#0070cc`) as the primary CTA fill and the footer anchor. It is the brand's anchor color.
@@ -300,7 +398,7 @@ PlayStation's depth philosophy is **layered but restrained**. The shadow scale r
 - **Don't** let cyan `#1eaedb` appear as a text or background color at rest. It only exists in motion.
 - **Don't** design panels that fight for attention. PlayStation's whitespace rhythm gives each module its own "gallery room".
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -335,7 +433,7 @@ The dembrandt sweep detected 30 breakpoints between 320px and 2120px — an unus
 - 4K-ready: the site serves high-density imagery at 1920px+ to avoid upscaling on TV browsing.
 - `loading="lazy"` on everything below the fold; hero is `eager` with a preload hint.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - **Primary CTA**: "PlayStation Blue (`#0070cc`)"

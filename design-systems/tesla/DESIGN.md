@@ -1,9 +1,104 @@
+---
+"version": "alpha"
+"name": "Tesla"
+"description": "Bundled Open Design package for Tesla, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#3e6ae1"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f4f4f4"
+  "surface-warm": "#f4f4f4"
+  "ink": "#171a20"
+  "body": "#393c41"
+  "muted": "#5c5e62"
+  "meta": "#8e8e8e"
+  "border": "#d0d1d2"
+  "border-soft": "#eeeeee"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Universal Sans Display\", -apple-system, Arial, sans-serif"
+    "lineHeight": "1.20"
+  body:
+    "fontFamily": "\"Universal Sans Text\", -apple-system, Arial, sans-serif"
+    "lineHeight": "1.43"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "17px"
+  2xl:
+    "fontSize": "22px"
+  3xl:
+    "fontSize": "28px"
+  4xl:
+    "fontSize": "40px"
+rounded:
+  "sm": "4px"
+  "md": "12px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "72px"
+  "section-y-phone": "48px"
+  "container-max": "1383px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.base}"
+  links:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+  keyboard:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "backgroundColor": "{colors.surface}"
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Tesla
 
 > Category: Automotive
 > Electric automotive. Radical subtraction, full-viewport photography, near-zero UI.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Tesla's website is an exercise in radical subtraction — a digital showroom where the product is everything and the interface is almost nothing. The page opens with a full-viewport hero that fills the entire screen with cinematic car photography: three vehicles arranged on polished concrete against a hazy cityscape sky, with a single model name floating above in translucent white type. There are no decorative borders, no gradients, no patterns, no shadows. The UI exists only to provide just enough navigational structure to get out of the way. Every pixel that isn't product imagery is white space, and that restraint is the design system's most powerful statement.
 
@@ -22,7 +117,7 @@ Typography recently transitioned from Gotham to Universal Sans — a custom fami
 - Carousel-driven hero with dot indicators and edge arrow navigation for multiple vehicle showcases
 - "Ask a Question" persistent chatbot bar anchored to the viewport bottom
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Electric Blue** (`#3E6AE1`): Primary CTA button background — a confident, mid-saturation blue (rgb 62, 106, 225) that stands alone as the only chromatic color in the entire interface. Used exclusively for "Order Now" and other primary action buttons
@@ -55,7 +150,7 @@ Typography recently transitioned from Gotham to Universal Sans — a custom fami
 - Depth is achieved entirely through photography, whitespace, and the binary contrast between full-bleed imagery and clean white surfaces
 - The navigation achieves layering through opacity (frosted glass effect) rather than gradient or shadow
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `Universal Sans Display`, -apple-system, Arial, sans-serif — used for hero titles and large model names. A geometric sans-serif with precisely engineered proportions, recently replacing Gotham to unify Tesla's digital ecosystem (website, mobile app, vehicle interface)
@@ -83,7 +178,53 @@ Typography recently transitioned from Gotham to Universal Sans — a custom fami
 - **Display vs Text split**: The two-variant system (Display for hero, Text for UI) creates subtle optical correction without visible stylistic difference — they appear as the same typeface at different sizes
 - **No text transforms**: No uppercase text appears in the main navigation or CTAs — the lowercase approach reinforces Tesla's understated confidence
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Common values**: 8px (0.5rem), 16px (1rem), 21.44px (1.34rem)
+- **Button padding**: 4px (minimal outer) with content centering via flexbox, 4px 16px for nav items
+- **Section padding**: Full-viewport sections with content centered vertically
+- **Card gap**: approximately 16px between category cards
+
+### Grid & Container
+- **Max width**: approximately 1383px (full viewport width used for most content)
+- **Hero**: Full-bleed, edge-to-edge, 100vh sections
+- **Navigation panel**: 3-column grid for vehicle cards with right-aligned text sidebar (~70/30 split)
+- **Category cards**: 2-up horizontal layout (large left card + smaller right card)
+
+### Whitespace Philosophy
+Tesla uses whitespace as a luxury signal. The generous vertical spacing between sections (each section is a full viewport height) means you can only see one "message" at a time — one car, one model name, one CTA pair. This creates a gallery-like browsing experience where each scroll is a deliberate transition, not a continuous feed. White space is not empty — it's the frame that elevates each vehicle to the status of art piece.
+
+### Border Radius Scale
+| Value | Context |
+|-------|---------|
+| 0px | Most elements — sharp edges are the default |
+| 4px | Buttons (primary, secondary, nav items) — barely perceptible rounding |
+| ~12px | Category cards — noticeable but restrained rounding on larger surfaces |
+| 50% | Carousel dot indicators — perfect circles |
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, no border | Default state for all elements — cards, panels, buttons at rest |
+| Level 1 (Frost) | `rgba(255,255,255,0.75)` backdrop | Navigation bar on scroll — frosted glass transparency |
+| Level 2 (Overlay) | `rgba(128,128,128,0.65)` | Modal overlays and region/cookie popups |
+| Level 3 (Subtle) | `rgba(0,0,0,0.05)` | Minimal shadow hints on rare hover states |
+
+### Shadow Philosophy
+Tesla's approach to elevation is essentially "none." The site avoids box-shadows entirely in its primary interface. Depth is communicated through three alternative strategies:
+1. **Z-index layering**: The sticky navigation sits above hero content through positioning, not shadow
+2. **Opacity-based transparency**: The frosted glass nav and overlay modals use background-color opacity rather than shadow to indicate layering
+3. **Photography-as-depth**: The full-bleed images create their own visual depth through perspective, lighting, and composition — making UI shadows redundant
+
+### Decorative Depth
+- No gradients, glows, or atmospheric effects on UI elements
+- The hero imagery itself provides all visual richness — sunset skies, reflected light on car surfaces, ground shadows from studio lighting
+- The carousel arrow buttons use a semi-transparent white background to float above the hero imagery without disrupting it
+
+## Components
 
 ### Buttons
 All buttons use barely-rounded rectangles (4px border-radius) — creating a sharp, technical aesthetic that mirrors the precision of the vehicles.
@@ -160,53 +301,7 @@ All buttons use barely-rounded rectangles (4px border-radius) — creating a sha
 - Contains: chat icon + "Ask a Question" label + placeholder text ("What's Dog Mode?") + send icon + "Schedule a Drive Today" secondary CTA
 - Schedule CTA has a teal/blue icon accent
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Common values**: 8px (0.5rem), 16px (1rem), 21.44px (1.34rem)
-- **Button padding**: 4px (minimal outer) with content centering via flexbox, 4px 16px for nav items
-- **Section padding**: Full-viewport sections with content centered vertically
-- **Card gap**: approximately 16px between category cards
-
-### Grid & Container
-- **Max width**: approximately 1383px (full viewport width used for most content)
-- **Hero**: Full-bleed, edge-to-edge, 100vh sections
-- **Navigation panel**: 3-column grid for vehicle cards with right-aligned text sidebar (~70/30 split)
-- **Category cards**: 2-up horizontal layout (large left card + smaller right card)
-
-### Whitespace Philosophy
-Tesla uses whitespace as a luxury signal. The generous vertical spacing between sections (each section is a full viewport height) means you can only see one "message" at a time — one car, one model name, one CTA pair. This creates a gallery-like browsing experience where each scroll is a deliberate transition, not a continuous feed. White space is not empty — it's the frame that elevates each vehicle to the status of art piece.
-
-### Border Radius Scale
-| Value | Context |
-|-------|---------|
-| 0px | Most elements — sharp edges are the default |
-| 4px | Buttons (primary, secondary, nav items) — barely perceptible rounding |
-| ~12px | Category cards — noticeable but restrained rounding on larger surfaces |
-| 50% | Carousel dot indicators — perfect circles |
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, no border | Default state for all elements — cards, panels, buttons at rest |
-| Level 1 (Frost) | `rgba(255,255,255,0.75)` backdrop | Navigation bar on scroll — frosted glass transparency |
-| Level 2 (Overlay) | `rgba(128,128,128,0.65)` | Modal overlays and region/cookie popups |
-| Level 3 (Subtle) | `rgba(0,0,0,0.05)` | Minimal shadow hints on rare hover states |
-
-### Shadow Philosophy
-Tesla's approach to elevation is essentially "none." The site avoids box-shadows entirely in its primary interface. Depth is communicated through three alternative strategies:
-1. **Z-index layering**: The sticky navigation sits above hero content through positioning, not shadow
-2. **Opacity-based transparency**: The frosted glass nav and overlay modals use background-color opacity rather than shadow to indicate layering
-3. **Photography-as-depth**: The full-bleed images create their own visual depth through perspective, lighting, and composition — making UI shadows redundant
-
-### Decorative Depth
-- No gradients, glows, or atmospheric effects on UI elements
-- The hero imagery itself provides all visual richness — sunset skies, reflected light on car surfaces, ground shadows from studio lighting
-- The carousel arrow buttons use a semi-transparent white background to float above the hero imagery without disrupting it
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Let photography dominate every screen — the product IS the design
@@ -232,7 +327,7 @@ Tesla's approach to elevation is essentially "none." The site avoids box-shadows
 - Add hover animations with scale/translate transforms — Tesla's interactions are color-only (background and border transitions)
 - Clutter the viewport with multiple CTAs — every screen should have at most two action buttons
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -261,7 +356,7 @@ Tesla's approach to elevation is essentially "none." The site avoids box-shadows
 - Transparent PNG vehicle images in the nav panel scale proportionally within their grid cells
 - Category card images maintain their landscape ratio and clip via `overflow: hidden` with border-radius
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: "Electric Blue (#3E6AE1)"

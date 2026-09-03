@@ -1,9 +1,110 @@
+---
+"version": "alpha"
+"name": "Warp"
+"description": "Bundled Open Design package for Warp, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#353534"
+  "primary-hover": "#454545"
+  "on-primary": "#afaeac"
+  "canvas": "#161412"
+  "surface": "#1f1d1b"
+  "surface-warm": "#1f1d1b"
+  "ink": "#faf9f6"
+  "body": "#afaeac"
+  "muted": "#868584"
+  "meta": "#666469"
+  "border": "rgba(226, 226, 226, 0.35)"
+  "border-soft": "rgba(226, 226, 226, 0.35)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Matter Regular\", \"Matter\", \"Inter\", ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.03em"
+  body:
+    "fontFamily": "\"Matter Regular\", \"Matter\", \"Inter\", ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.4"
+  mono:
+    "fontFamily": "\"Geist Mono\", \"Matter Mono Regular\", ui-monospace, \"SF Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "18px"
+  lg:
+    "fontSize": "24px"
+  xl:
+    "fontSize": "32px"
+  2xl:
+    "fontSize": "48px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "6px"
+  "md": "12px"
+  "lg": "14px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "120px"
+  "section-y-tablet": "80px"
+  "section-y-phone": "56px"
+  "container-max": "1500px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "padding": "{spacing.3}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.meta}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.4}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Warp
 
 > Category: Developer Tools
 > Modern terminal. Dark IDE-like interface, block-based command UI.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Warp's website feels like sitting at a campfire in a deep forest — warm, dark, and alive with quiet confidence. Unlike the cold, blue-tinted blacks favored by most developer tools, Warp wraps everything in a warm near-black that feels like charred wood or dark earth. The text isn't pure white either — it's Warm Parchment (`#faf9f6`), a barely-perceptible cream that softens every headline and makes the dark canvas feel inviting rather than austere.
 
@@ -20,7 +121,7 @@ The overall design philosophy is restraint through warmth. Minimal color (almost
 - Uppercase labels with wide letter-spacing (2.4px) for categorization — editorial signaling
 - Pill-shaped dark buttons (`#353534`, 50px radius) — restrained, muted CTAs
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Warm Parchment** (`#faf9f6`): Primary text color — a barely-cream off-white that softens every surface
@@ -53,7 +154,7 @@ The overall design philosophy is restraint through warmth. Minimal color (almost
 - No explicit gradients on the marketing site
 - Depth is created through layered semi-transparent surfaces and photography rather than color gradients
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display & Body**: `Matter Regular` — geometric sans-serif with soft character. Fallbacks: `Matter Regular Placeholder`, system sans-serif
@@ -93,7 +194,58 @@ The overall design philosophy is restraint through warmth. Minimal color (almost
 - **Warm legibility**: The combination of Matter's geometric softness + warm text colors (#faf9f6) + controlled negative tracking creates text that reads as effortlessly human on dark surfaces
 - **No bold display**: Zero use of bold (700+) weight anywhere — restraint is the philosophy
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 1px, 4px, 5px, 8px, 10px, 12px, 14px, 15px, 16px, 18px, 24px, 26px, 30px, 32px, 36px
+- **Section padding**: 80px–120px vertical between major sections
+- **Card padding**: 16px–32px internal spacing
+- **Component gaps**: 8px–16px between related elements
+
+### Grid & Container
+- **Max width**: ~1500px container (breakpoint at 1500px), centered
+- **Column patterns**: Full-width hero, 2-column feature sections with photography, single-column testimonials
+- **Cinematic layout**: Wide containers that let photography breathe
+
+### Whitespace Philosophy
+- **Vast and warm**: Generous spacing between sections — the dark background creates a warm void that feels contemplative rather than empty
+- **Photography as whitespace**: Nature images serve as visual breathing room between dense product information
+- **Editorial pacing**: The layout reads like a magazine — each section is a deliberate page-turn moment
+
+### Border Radius Scale
+- **4px**: Small interactive elements — buttons, tags
+- **5px–6px**: Standard components — links, small containers
+- **8px**: Images, video containers, standard cards
+- **10px**: Video elements, medium containers
+- **12px**: Feature cards, large images
+- **14px**: Large containers, prominent cards
+- **40px**: Large rounded sections
+- **50px**: Pill buttons — primary CTAs
+- **200px**: Progress bars — full pill shape
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, dark background | Page canvas, most surfaces |
+| Level 1 (Veil) | `rgba(255, 255, 255, 0.04)` overlay | Subtle surface differentiation |
+| Level 2 (Border) | `rgba(226, 226, 226, 0.35) 1px` border | Card containment, section separation |
+| Level 3 (Ambient) | `rgba(0, 0, 0, 0.2) 0px 5px 15px` (inferred from design) | Image containers, floating elements |
+
+### Shadow Philosophy
+Warp's elevation system is remarkably flat — almost zero shadow usage on the marketing site. Depth is communicated through:
+- **Semi-transparent borders** instead of shadows — borders at 35% opacity create a ghostly containment
+- **Photography layering** — images create natural depth without artificial shadows
+- **Surface opacity shifts** — `rgba(255, 255, 255, 0.04)` overlays create barely-perceptible layer differences
+- The effect is calm and grounded — nothing floats, everything rests
+
+### Decorative Depth
+- **Photography as depth**: Nature images create atmospheric depth that shadows cannot
+- **No glass or blur effects**: The design avoids trendy glassmorphism entirely
+- **Warm ambient**: Any glow comes from the photography's natural lighting, not artificial CSS
+
+## Components
 
 ### Buttons
 - **Dark Pill**: `#353534` background, Ash Gray (`#afaeac`) text, pill shape (50px radius), `10px` padding. The primary CTA — warm, muted, understated
@@ -130,58 +282,7 @@ The overall design philosophy is restraint through warmth. Minimal color (almost
 - Social proof area ("Don't take our word for it") with quotes
 - Muted styling consistent with overall restraint
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 1px, 4px, 5px, 8px, 10px, 12px, 14px, 15px, 16px, 18px, 24px, 26px, 30px, 32px, 36px
-- **Section padding**: 80px–120px vertical between major sections
-- **Card padding**: 16px–32px internal spacing
-- **Component gaps**: 8px–16px between related elements
-
-### Grid & Container
-- **Max width**: ~1500px container (breakpoint at 1500px), centered
-- **Column patterns**: Full-width hero, 2-column feature sections with photography, single-column testimonials
-- **Cinematic layout**: Wide containers that let photography breathe
-
-### Whitespace Philosophy
-- **Vast and warm**: Generous spacing between sections — the dark background creates a warm void that feels contemplative rather than empty
-- **Photography as whitespace**: Nature images serve as visual breathing room between dense product information
-- **Editorial pacing**: The layout reads like a magazine — each section is a deliberate page-turn moment
-
-### Border Radius Scale
-- **4px**: Small interactive elements — buttons, tags
-- **5px–6px**: Standard components — links, small containers
-- **8px**: Images, video containers, standard cards
-- **10px**: Video elements, medium containers
-- **12px**: Feature cards, large images
-- **14px**: Large containers, prominent cards
-- **40px**: Large rounded sections
-- **50px**: Pill buttons — primary CTAs
-- **200px**: Progress bars — full pill shape
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, dark background | Page canvas, most surfaces |
-| Level 1 (Veil) | `rgba(255, 255, 255, 0.04)` overlay | Subtle surface differentiation |
-| Level 2 (Border) | `rgba(226, 226, 226, 0.35) 1px` border | Card containment, section separation |
-| Level 3 (Ambient) | `rgba(0, 0, 0, 0.2) 0px 5px 15px` (inferred from design) | Image containers, floating elements |
-
-### Shadow Philosophy
-Warp's elevation system is remarkably flat — almost zero shadow usage on the marketing site. Depth is communicated through:
-- **Semi-transparent borders** instead of shadows — borders at 35% opacity create a ghostly containment
-- **Photography layering** — images create natural depth without artificial shadows
-- **Surface opacity shifts** — `rgba(255, 255, 255, 0.04)` overlays create barely-perceptible layer differences
-- The effect is calm and grounded — nothing floats, everything rests
-
-### Decorative Depth
-- **Photography as depth**: Nature images create atmospheric depth that shadows cannot
-- **No glass or blur effects**: The design avoids trendy glassmorphism entirely
-- **Warm ambient**: Any glow comes from the photography's natural lighting, not artificial CSS
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use warm off-white (`#faf9f6`) for text instead of pure white — the cream undertone is essential
@@ -203,7 +304,7 @@ Warp's elevation system is remarkably flat — almost zero shadow usage on the m
 - Use tight, compressed layouts — the editorial spacing is generous and contemplative
 - Mix in additional typefaces beyond the Matter family + Inter supplement
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -230,7 +331,7 @@ Warp's elevation system is remarkably flat — almost zero shadow usage on the m
 - Video elements scale with 10px radius maintained
 - No art direction changes — same compositions across breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: Warm Parchment (`#faf9f6`)

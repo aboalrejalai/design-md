@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Expo"
+"description": "Bundled Open Design package for Expo, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#000020"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f6f7f9"
+  "surface-warm": "#eef2ff"
+  "ink": "#0b0d12"
+  "body": "#353945"
+  "muted": "#6b7280"
+  "meta": "#4630eb"
+  "border": "#dfe3ea"
+  "border-soft": "#edf0f5"
+  "success": "#00a36c"
+  "warning": "#f59e0b"
+  "danger": "#e5484d"
+typography:
+  display:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.52"
+  mono:
+    "fontFamily": "\"Geist Mono\", \"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "68px"
+rounded:
+  "sm": "8px"
+  "md": "14px"
+  "lg": "22px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1160px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Expo
 
 > Category: Developer Tools
 > React Native platform. Dark theme, tight letter-spacing, code-centric.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Expo's interface is a luminous, confidence-radiating developer platform built on the premise that tools for building apps should feel as polished as the apps themselves. The entire experience lives on a bright, airy canvas — a cool-tinted off-white (`#f0f0f3`) that gives the page a subtle technological coolness without the starkness of pure white. This is a site that breathes: enormous vertical spacing between sections creates a gallery-like pace where each feature gets its own "room."
 
@@ -20,7 +113,7 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 - Whisper-soft shadows that barely lift elements from the surface
 - Product screenshots as the only source of color in the interface
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Expo Black** (`#000000`): The absolute anchor — used for primary headlines, CTA buttons, and the brand identity. Pure black on cool white creates maximum contrast without feeling aggressive.
@@ -57,7 +150,7 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 ### Gradient System
 - The design is notably **gradient-free** in the interface layer. Visual richness comes from product screenshots, the React universe illustration, and careful shadow layering rather than color gradients. This absence IS the design decision — gradients would undermine the clinical precision.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Inter`, with fallbacks: `-apple-system, system-ui`
@@ -85,7 +178,50 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 - **Weight as hierarchy**: 700–900 for display, 600 for headings, 500 for emphasis, 400 for body. The jumps are decisive — no ambiguous in-between weights.
 - **Consistent 1.40 body line-height**: Nearly all body and UI text shares 1.40 line-height, creating a rhythmic vertical consistency.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 8px, 12px, 16px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 144px
+- Button padding: 0px 12px (unusually compact — height driven by line-height)
+- Card internal padding: approximately 24–32px
+- Section vertical spacing: enormous (estimated 96–144px between major sections)
+- Component gap: 16–24px between sibling elements
+
+### Grid & Container
+- Max container width: approximately 1200–1400px, centered
+- Hero: centered single-column with massive breathing room
+- Feature sections: alternating layouts (image left/right, full-width showcases)
+- Card grids: 2–3 column for feature highlights
+- Full-width sections with contained inner content
+
+### Whitespace Philosophy
+- **Gallery-like pacing**: Each section feels like its own exhibit, surrounded by vast empty space. This creates a premium, unhurried browsing experience.
+- **Breathing room is the design**: The generous whitespace IS the primary design element — it communicates confidence, quality, and that each feature deserves individual attention.
+- **Content islands**: Sections float as isolated "islands" in the white space, connected by scrolling rather than visual continuation.
+
+### Border Radius Scale
+- Nearly squared (4px): Small inline elements, tags
+- Subtly rounded (6px): Buttons, form inputs, combo boxes — the functional interactive radius
+- Comfortably rounded (8px): Standard content cards, containers
+- Generously rounded (16px): Feature tabs, content panels
+- Very rounded (24px): Buttons, video/image containers, tabpanels — the signature softness
+- Highly rounded (32–36px): Hero CTAs, status badges, nav buttons
+- Pill-shaped (9999px): Primary action buttons, tags, avatars — maximum friendliness
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Cloud Gray page background, inline text |
+| Surface (Level 1) | White bg, no shadow | Standard white cards on Cloud Gray |
+| Whisper (Level 2) | `rgba(0,0,0,0.08) 0px 3px 6px` + `rgba(0,0,0,0.07) 0px 2px 4px` | Subtle card lift, hover states |
+| Elevated (Level 3) | `rgba(0,0,0,0.1) 0px 10px 20px` + `rgba(0,0,0,0.05) 0px 3px 6px` | Feature showcases, product screenshots |
+| Modal (Level 4) | Dark overlay (`--dialog-overlay-background-color`) + heavy shadow | Dialogs, overlays |
+
+**Shadow Philosophy**: Expo uses shadows as gentle whispers rather than architectural statements. The primary depth mechanism is **background color contrast** — white cards floating on Cloud Gray — rather than shadow casting. When shadows appear, they're soft, diffused, and directional (downward), creating the feeling of paper hovering millimeters above a desk.
+
+## Components
 
 ### Buttons
 
@@ -158,50 +294,7 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 - Green dot + text — compact trust signal
 - Pill-shaped (36px radius)
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 8px, 12px, 16px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 144px
-- Button padding: 0px 12px (unusually compact — height driven by line-height)
-- Card internal padding: approximately 24–32px
-- Section vertical spacing: enormous (estimated 96–144px between major sections)
-- Component gap: 16–24px between sibling elements
-
-### Grid & Container
-- Max container width: approximately 1200–1400px, centered
-- Hero: centered single-column with massive breathing room
-- Feature sections: alternating layouts (image left/right, full-width showcases)
-- Card grids: 2–3 column for feature highlights
-- Full-width sections with contained inner content
-
-### Whitespace Philosophy
-- **Gallery-like pacing**: Each section feels like its own exhibit, surrounded by vast empty space. This creates a premium, unhurried browsing experience.
-- **Breathing room is the design**: The generous whitespace IS the primary design element — it communicates confidence, quality, and that each feature deserves individual attention.
-- **Content islands**: Sections float as isolated "islands" in the white space, connected by scrolling rather than visual continuation.
-
-### Border Radius Scale
-- Nearly squared (4px): Small inline elements, tags
-- Subtly rounded (6px): Buttons, form inputs, combo boxes — the functional interactive radius
-- Comfortably rounded (8px): Standard content cards, containers
-- Generously rounded (16px): Feature tabs, content panels
-- Very rounded (24px): Buttons, video/image containers, tabpanels — the signature softness
-- Highly rounded (32–36px): Hero CTAs, status badges, nav buttons
-- Pill-shaped (9999px): Primary action buttons, tags, avatars — maximum friendliness
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Cloud Gray page background, inline text |
-| Surface (Level 1) | White bg, no shadow | Standard white cards on Cloud Gray |
-| Whisper (Level 2) | `rgba(0,0,0,0.08) 0px 3px 6px` + `rgba(0,0,0,0.07) 0px 2px 4px` | Subtle card lift, hover states |
-| Elevated (Level 3) | `rgba(0,0,0,0.1) 0px 10px 20px` + `rgba(0,0,0,0.05) 0px 3px 6px` | Feature showcases, product screenshots |
-| Modal (Level 4) | Dark overlay (`--dialog-overlay-background-color`) + heavy shadow | Dialogs, overlays |
-
-**Shadow Philosophy**: Expo uses shadows as gentle whispers rather than architectural statements. The primary depth mechanism is **background color contrast** — white cards floating on Cloud Gray — rather than shadow casting. When shadows appear, they're soft, diffused, and directional (downward), creating the feeling of paper hovering millimeters above a desk.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Cloud Gray (`#f0f0f3`) as the page background and Pure White (`#ffffff`) for elevated cards — the two-tone light system is essential
@@ -224,7 +317,7 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 - Don't add gradients to the interface — visual richness comes from content, not decoration
 - Don't use saturated colors outside of semantic contexts — the palette is strictly grayscale + functional blue
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -255,7 +348,7 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 - Rounded corners maintained at all sizes
 - Lazy loading for below-fold content
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA / Headlines: "Expo Black (#000000)"

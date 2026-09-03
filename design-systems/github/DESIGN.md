@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "GitHub"
+"description": "Bundled Open Design package for GitHub, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0969da"
+  "primary-hover": "#0550ae"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f6f8fa"
+  "surface-warm": "#f6f8fa"
+  "ink": "#1f2328"
+  "body": "#1f2328"
+  "muted": "#656d76"
+  "meta": "#656d76"
+  "border": "#d0d7de"
+  "border-soft": "#d8dee4"
+  "success": "#1a7f37"
+  "warning": "#9a6700"
+  "danger": "#cf222e"
+typography:
+  display:
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+    "lineHeight": "1.25"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "28px"
+  4xl:
+    "fontSize": "32px"
+rounded:
+  "sm": "6px"
+  "md": "6px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "64px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by GitHub
 
 > Category: Developer Tools
 > Code-forward platform. Functional density, blue-on-white precision, Primer foundations.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 GitHub's surface is engineered, not decorated. Every pixel announces a stance: this is a tool for people who care about diffs, builds, and pull requests. The page background is a clean `#ffffff` (light) or `#0d1117` (dark), with content arranged on dense rectangular panes separated by hairline borders rather than negative space. Information density is the brand — list rows, code lines, repository headers, and notification cards are all packed close together so a power user can scan a hundred items without scrolling.
 
@@ -20,7 +110,7 @@ Typography uses the **system-ui** stack across the entire product so text render
 - Octicon iconography at 16px / 24px — single-stroke, geometric, consistent
 - Pill-shaped status badges with strong color semantics
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Canvas Default** (`#ffffff`): Primary page background, light theme.
@@ -56,7 +146,7 @@ Typography uses the **system-ui** stack across the entire product so text render
 - **Dark Border** (`#30363d`): Standard dark-mode border.
 - **Dark Fg** (`#e6edf3`): Primary text on dark.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Body / UI**: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif`
@@ -81,7 +171,7 @@ Typography uses the **system-ui** stack across the entire product so text render
 - **Weight binary**: 400 for everything by default; 600 for headlines and emphasis. No 500, no 700.
 - **System fonts always**: never load a webfont for chrome — text must render instantly on slow connections.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -141,20 +231,20 @@ Typography uses the **system-ui** stack across the entire product so text render
 - Font: 12px / 500
 - Background and text are programmatic (label color → text computed for contrast).
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Spacing scale: 4, 8, 12, 16, 24, 32, 40, 48.
 - **Page max-width**: 1280px (`Container-xl`).
 - **Sidebar**: 296px on desktop, collapses below 1012px.
 - **Row padding**: 16px horizontal, 12px vertical (lists are dense by design).
 
-## 6. Motion
+## Motion
 
 - **Duration**: 80ms for hover; 200ms for menu/popover open.
 - **Easing**: `ease-out` for opens, `ease-in` for closes.
 - **Avoided**: page-load animation, parallax, persistent micro-interactions. Things appear; they do not perform.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Keep dense lists, bordered boxes, and system typography together; isolated green buttons are not enough to create a GitHub-like product surface.
 - Use green for constructive repository actions, blue for links and focus, and red/purple/gray only for issue, PR, and workflow states.

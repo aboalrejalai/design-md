@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "Trading Terminal Design System"
+"description": "Bundled Open Design package for Trading Terminal Design System, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#38bdf8"
+  "on-primary": "#03111a"
+  "canvas": "#070b12"
+  "surface": "#101826"
+  "surface-warm": "#162238"
+  "ink": "#f8fafc"
+  "body": "#cbd5e1"
+  "muted": "#8492a6"
+  "meta": "#38bdf8"
+  "border": "#263246"
+  "border-soft": "#1c2638"
+  "success": "#22c55e"
+  "warning": "#f59e0b"
+  "danger": "#ef4444"
+typography:
+  display:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.01em"
+  body:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.45"
+  mono:
+    "fontFamily": "\"Roboto Mono\", \"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "16px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "28px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "60px"
+  "section-y-phone": "42px"
+  "container-max": "1320px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Trading Terminal Design System
 
 > Category: Themed & Unique
 > Bloomberg-style financial trading terminal. Dark-only, data-dense, cyan/coral buy/sell signals. Everything readable at a glance from two meters away.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 A professional-grade financial data terminal. Dense, information-rich layouts designed for traders who need to monitor multiple markets simultaneously. Dark surfaces reduce eye strain during long sessions. Cyan accent (#00D4AA) signals positive/buy, coral (#FF4757) signals negative/sell. Everything readable at a glance from two meters away.
 
@@ -15,7 +105,7 @@ A professional-grade financial data terminal. Dense, information-rich layouts de
 
 Bloomberg Terminal, Refinitiv Eikon, FactSet, TradingView Pro. All share: dark-only surfaces, monospace data fonts, tabular layouts with no decorative spacing, and color-coded buy/sell signals.
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Surface Palette
 
@@ -61,7 +151,7 @@ Default and only mode. Trading terminals operate in dim environments for focus.
 }
 ```
 
-## 3. Typography Rules
+## Typography
 
 | Role | Size | Weight | Line Height | Font |
 |------|------|--------|-------------|------|
@@ -82,7 +172,15 @@ Micro: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consola
 Mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace
 ```
 
-## 4. Component Stylings
+## Layout
+
+Grid-based dense layout. Multiple data columns visible simultaneously. Panels share borders, not gaps. No rounded corners — sharp edges communicate precision. The layout is tabular: rows of data, columns of similar data.
+
+## Elevation & Depth
+
+Trading terminals use flat design with border-based separation — no shadows. Surface shifts (#141414 vs #0D0D0D) convey elevation. Thin borders (#2A2A2A) define panel boundaries without decorative elements.
+
+## Components
 
 ### Order Book Row
 
@@ -145,15 +243,7 @@ Horizontal scrolling single-line ticker for market overview.
 }
 ```
 
-## 5. Layout Principles
-
-Grid-based dense layout. Multiple data columns visible simultaneously. Panels share borders, not gaps. No rounded corners — sharp edges communicate precision. The layout is tabular: rows of data, columns of similar data.
-
-## 6. Depth & Elevation
-
-Trading terminals use flat design with border-based separation — no shadows. Surface shifts (#141414 vs #0D0D0D) convey elevation. Thin borders (#2A2A2A) define panel boundaries without decorative elements.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 - Do not use color alone to signal buy/sell — always pair with a directional icon or label
 - Do not animate data values decoratively — traders need instant, stable reads
@@ -162,11 +252,11 @@ Trading terminals use flat design with border-based separation — no shadows. S
 - Do not show more than 5 price points in a column — cognitive overload reduces decision speed
 - Do not use gradients — flat fills only
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 Terminal layouts target desktop-first (1280px+). On narrower viewports, columns collapse from rightmost to leftmost, prioritizing price and change data. Below 768px, single-column stack with horizontal scroll for overflow data. No breakpoints alter the dark-only constraint.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 When generating a trading terminal interface, prompt the model to:
 - Use JetBrains Mono for all numeric data; Inter for labels and headings

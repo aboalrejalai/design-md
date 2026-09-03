@@ -1,9 +1,110 @@
+---
+"version": "alpha"
+"name": "Ollama"
+"description": "Bundled Open Design package for Ollama, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#000000"
+  "primary-hover": "#262626"
+  "primary-active": "#404040"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#fafafa"
+  "surface-warm": "#fafafa"
+  "ink": "#000000"
+  "body": "#262626"
+  "muted": "#737373"
+  "meta": "#a3a3a3"
+  "border": "#e5e5e5"
+  "border-soft": "#e5e5e5"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"SF Pro Rounded\", system-ui, -apple-system, system-ui"
+    "lineHeight": "1"
+  body:
+    "fontFamily": "ui-sans-serif, system-ui, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "30px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "9999px"
+  "md": "12px"
+  "lg": "9999px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "112px"
+  "section-y-tablet": "88px"
+  "section-y-phone": "48px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.body}"
+  inputs:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.base}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.canvas}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.mono}"
+    "padding": "{spacing.3}"
+  links:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.base}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.base}"
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Ollama
 
 > Category: AI & LLM
 > Run LLMs locally. Terminal-first, monochrome simplicity.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Ollama's interface is radical minimalism taken to its logical conclusion — a pure-white void where content floats without decoration, shadow, or color. The design philosophy mirrors the product itself: strip away everything unnecessary until only the essential tool remains. This is the digital equivalent of a Dieter Rams object — every pixel earns its place, and the absence of design IS the design.
 
@@ -20,7 +121,7 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 - The Ollama llama as the sole illustration — black line art, no color
 - Extreme content restraint — the homepage is short, focused, and uncluttered
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure Black** (`#000000`): Primary headlines, primary links, and the darkest text. The only "color" that demands attention.
@@ -45,7 +146,7 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 ### Gradient System
 - **None.** Ollama uses absolutely no gradients. Visual separation comes from flat color blocks and single-pixel borders. This is a deliberate, almost philosophical design choice.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `SF Pro Rounded`, with fallbacks: `system-ui, -apple-system, system-ui`
@@ -76,7 +177,43 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 - **Tight display, comfortable body**: Headlines compress to 1.0 line-height, while body text relaxes to 1.43–1.56. The contrast creates clear hierarchy without needing weight contrast.
 - **Monospace for developer identity**: Code blocks and terminal commands appear throughout as primary content, using the system monospace stack.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 6px, 8px, 9px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 88px, 112px
+- Button padding: 10px 24px (consistent across all buttons)
+- Card internal padding: approximately 24–32px
+- Section vertical spacing: very generous (88px–112px)
+
+### Grid & Container
+- Max container width: approximately 1024–1280px, centered
+- Hero: centered single-column with llama illustration
+- Feature sections: 2-column layout (text left, code right)
+- Integration grid: responsive multi-column
+- Footer: clean single-row
+
+### Whitespace Philosophy
+- **Emptiness as luxury**: The page is remarkably short and sparse — no feature section overstays its welcome. Each concept gets minimal but sufficient space.
+- **Content density is low by design**: Where other AI companies pack feature after feature, Ollama presents three ideas (run models, use with apps, integrations) and stops.
+- **The white space IS the brand**: Pure white space with zero decoration communicates "this tool gets out of your way."
+
+### Border Radius Scale
+- Comfortably rounded (12px): The sole container radius — code blocks, cards, panels
+- Pill-shaped (9999px): Everything interactive — buttons, tabs, inputs, tags, badges
+
+*This binary system is extreme and distinctive. There is no 4px, no 8px, no gradient of roundness. Elements are either containers (12px) or interactive (pill).*
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, most content |
+| Bordered (Level 1) | `1px solid #e5e5e5` | Cards, code blocks, buttons |
+
+**Shadow Philosophy**: Ollama uses **zero shadows**. This is not an oversight — it's a deliberate design decision. Every other major AI product site uses at least subtle shadows. Ollama's flat, shadowless approach creates a paper-like experience where elements are distinguished purely by background color and single-pixel borders. Depth is communicated through **content hierarchy and typography weight**, not visual layering.
+
+## Components
 
 ### Buttons
 
@@ -153,43 +290,7 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 - Each in a bordered pill or card with icon + name
 - Tabbed by category (Coding, Documents & RAG, Automation, Chat)
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 8px, 9px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 88px, 112px
-- Button padding: 10px 24px (consistent across all buttons)
-- Card internal padding: approximately 24–32px
-- Section vertical spacing: very generous (88px–112px)
-
-### Grid & Container
-- Max container width: approximately 1024–1280px, centered
-- Hero: centered single-column with llama illustration
-- Feature sections: 2-column layout (text left, code right)
-- Integration grid: responsive multi-column
-- Footer: clean single-row
-
-### Whitespace Philosophy
-- **Emptiness as luxury**: The page is remarkably short and sparse — no feature section overstays its welcome. Each concept gets minimal but sufficient space.
-- **Content density is low by design**: Where other AI companies pack feature after feature, Ollama presents three ideas (run models, use with apps, integrations) and stops.
-- **The white space IS the brand**: Pure white space with zero decoration communicates "this tool gets out of your way."
-
-### Border Radius Scale
-- Comfortably rounded (12px): The sole container radius — code blocks, cards, panels
-- Pill-shaped (9999px): Everything interactive — buttons, tabs, inputs, tags, badges
-
-*This binary system is extreme and distinctive. There is no 4px, no 8px, no gradient of roundness. Elements are either containers (12px) or interactive (pill).*
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, most content |
-| Bordered (Level 1) | `1px solid #e5e5e5` | Cards, code blocks, buttons |
-
-**Shadow Philosophy**: Ollama uses **zero shadows**. This is not an oversight — it's a deliberate design decision. Every other major AI product site uses at least subtle shadows. Ollama's flat, shadowless approach creates a paper-like experience where elements are distinguished purely by background color and single-pixel borders. Depth is communicated through **content hierarchy and typography weight**, not visual layering.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use pure white (`#ffffff`) as the page background — never off-white or cream
@@ -213,7 +314,7 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 - Don't use borders heavier than 1px — containment is always the lightest possible touch
 - Don't add hover animations or transitions — interactions should feel instant and direct
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -242,7 +343,7 @@ What makes Ollama distinctive is the combination of SF Pro Rounded (Apple's roun
 - Integration icons reflow to fewer columns
 - No art direction changes
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: "Pure Black (#000000)"

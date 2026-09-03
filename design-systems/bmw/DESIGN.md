@@ -1,9 +1,95 @@
+---
+"version": "alpha"
+"name": "BMW"
+"description": "Bundled Open Design package for BMW, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1c69d4"
+  "primary-hover": "#0653b6"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f5f5f5"
+  "surface-warm": "#f5f5f5"
+  "ink": "#262626"
+  "body": "#262626"
+  "muted": "#757575"
+  "meta": "#bbbbbb"
+  "border": "#e0e0e0"
+  "border-soft": "#e0e0e0"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"BMWTypeNextLatin Light\", Helvetica, Arial, \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", Meiryo, sans-serif"
+    "lineHeight": "1.30"
+  body:
+    "fontFamily": "BMWTypeNextLatin, Helvetica, Arial, \"Hiragino Kaku Gothic ProN\", \"Hiragino Sans\", Meiryo, sans-serif"
+    "lineHeight": "1.15"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "44px"
+  4xl:
+    "fontSize": "60px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.xs}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.2}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by BMW
 
 > Category: Automotive
 > Luxury automotive. Dark premium surfaces, precise German engineering aesthetic.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 BMW's website is automotive engineering made visual — a design system that communicates precision, performance, and German industrial confidence. The page alternates between deep dark hero sections (featuring full-bleed automotive photography) and clean white content areas, creating a cinematic rhythm reminiscent of a luxury car showroom where vehicles are lit against darkness. The BMW CI2020 design language (their corporate identity refresh) defines every element.
 
@@ -21,7 +107,7 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 - Tight line-heights (1.15–1.30) throughout — compressed, efficient, German engineering
 - Full-bleed automotive photography as primary visual content
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Pure White** (`#ffffff`): `--site-context-theme-color`, primary surface, card backgrounds
@@ -40,7 +126,7 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 ### Shadows
 - Minimal shadow system — depth through photography and dark/light section contrast
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display Light**: `BMWTypeNextLatin Light`, fallbacks: `Helvetica, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo`
@@ -63,7 +149,35 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 - **Tight everything**: Line-heights from 1.15 to 1.30 across the entire system. Nothing breathes — every line is compressed, efficient, German-engineered.
 - **Single font family**: BMWTypeNextLatin handles everything from 60px display to 16px body — unity through one typeface at different weights.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 30px, 32px, 40px, 45px, 56px, 60px
+
+### Grid & Container
+- Full-width hero photography
+- Centered content sections
+- Footer: multi-column link grid
+
+### Whitespace Philosophy
+- **Showroom pacing**: Dark hero sections with generous padding create the feeling of walking through a showroom where each vehicle is spotlit in its own space.
+- **Compressed content**: Body text areas use tight line-heights and compact spacing — information-dense, no waste.
+
+### Border Radius Scale
+- **None detected.** BMW uses sharp corners exclusively — every element is a precise rectangle. This is the most angular design system analyzed.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Photography (Level 0) | Full-bleed dark imagery | Hero backgrounds |
+| Flat (Level 1) | White surface, no shadow | Content sections |
+| Focus (Accessibility) | BMW Focus Blue (`#0653b6`) | Focus states |
+
+**Shadow Philosophy**: BMW uses virtually no shadows. Depth is created entirely through the contrast between dark photographic sections and white content sections — the automotive lighting does the elevation work.
+
+## Components
 
 ### Buttons
 - Text: 16px BMWTypeNextLatin, weight 700 for primary, 400 for secondary
@@ -90,35 +204,7 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 - Edge-to-edge hero images
 - Car photography as primary visual content
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 30px, 32px, 40px, 45px, 56px, 60px
-
-### Grid & Container
-- Full-width hero photography
-- Centered content sections
-- Footer: multi-column link grid
-
-### Whitespace Philosophy
-- **Showroom pacing**: Dark hero sections with generous padding create the feeling of walking through a showroom where each vehicle is spotlit in its own space.
-- **Compressed content**: Body text areas use tight line-heights and compact spacing — information-dense, no waste.
-
-### Border Radius Scale
-- **None detected.** BMW uses sharp corners exclusively — every element is a precise rectangle. This is the most angular design system analyzed.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Photography (Level 0) | Full-bleed dark imagery | Hero backgrounds |
-| Flat (Level 1) | White surface, no shadow | Content sections |
-| Focus (Accessibility) | BMW Focus Blue (`#0653b6`) | Focus states |
-
-**Shadow Philosophy**: BMW uses virtually no shadows. Depth is created entirely through the contrast between dark photographic sections and white content sections — the automotive lighting does the elevation work.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use BMWTypeNextLatin Light (300) uppercase for all display headings
@@ -137,7 +223,7 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 - Don't use relaxed line-heights — BMW text is always compressed
 - Don't lighten the dark hero sections — the contrast with white IS the design
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -159,7 +245,7 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 - Content sections: stack vertically
 - Footer: multi-column → stacked
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Pure White (`#ffffff`)

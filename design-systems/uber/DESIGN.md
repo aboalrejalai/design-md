@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Uber"
+"description": "Bundled Open Design package for Uber, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#000000"
+  "primary-hover": "#e2e2e2"
+  "primary-active": "rgba(0, 0, 0, 0.08)"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#ffffff"
+  "surface-warm": "#f8f8f8"
+  "ink": "#000000"
+  "body": "#000000"
+  "muted": "#4b4b4b"
+  "meta": "#afafaf"
+  "border": "#000000"
+  "border-soft": "rgba(0, 0, 0, 0.1)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"UberMove\", \"UberMoveText\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.23"
+  body:
+    "fontFamily": "\"UberMoveText\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.50"
+  mono:
+    "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "52px"
+rounded:
+  "sm": "999px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1136px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.sm}"
+  cards:
+    "rounded": "{rounded.lg}"
+  badges:
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Uber
 
 > Category: Media & Consumer
 > Mobility platform. Bold black and white, tight type, urban energy.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Uber's design language is a masterclass in confident minimalism -- a black-and-white universe where every pixel serves a purpose and nothing decorates without earning its place. The entire experience is built on a stark duality: jet black (`#000000`) and pure white (`#ffffff`), with virtually no mid-tone grays diluting the message. This isn't the sterile minimalism of a startup that hasn't finished designing -- it's the deliberate restraint of a brand so established it can afford to whisper.
 
@@ -21,7 +114,7 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 - Bold photography integrated as full-bleed hero backgrounds
 - Black footer anchoring the page with a dark, high-contrast environment
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Uber Black** (`#000000`): The defining brand color -- used for primary buttons, headlines, navigation text, and the footer. Not "near-black" or "off-black," but true, uncompromising black.
@@ -52,7 +145,7 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 ### Gradient System
 - Uber's design is **entirely gradient-free**. The black/white duality and flat color blocks create all visual hierarchy. No gradients appear anywhere in the system -- every surface is a solid color, every transition is a hard edge or a shadow.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Headline / Display**: `UberMove`, with fallbacks: `UberMoveText, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif`
@@ -80,7 +173,48 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 - **Functional typography**: There is no decorative type treatment anywhere. No letter-spacing, no text-transform, no ornamental sizing. Every text element serves a direct communication purpose.
 - **Two fonts, strict roles**: UberMove is exclusively for headings. UberMoveText is exclusively for body, buttons, links, and UI. The boundary is never crossed.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 6px, 8px, 10px, 12px, 14px, 16px, 18px, 20px, 24px, 32px
+- Button padding: 10px 12px (compact) or 14px 16px (comfortable)
+- Card internal padding: approximately 24-32px
+- Section vertical spacing: generous but efficient -- approximately 64-96px between major sections
+
+### Grid & Container
+- Max container width: approximately 1136px, centered
+- Hero: split layout with text left, visual right
+- Feature sections: 2-column card grids or full-width single-column
+- Footer: multi-column link grid on black background
+- Full-width sections extending to viewport edges
+
+### Whitespace Philosophy
+- **Efficient, not airy**: Uber's whitespace is functional -- enough to separate, never enough to feel empty. This is transit-system spacing: compact, clear, purpose-driven.
+- **Content-dense cards**: Cards pack information tightly with minimal internal spacing, relying on shadow and radius to define boundaries.
+- **Section breathing room**: Major sections get generous vertical spacing, but within sections, elements are closely grouped.
+
+### Border Radius Scale
+- Sharp (0px): No square corners used in interactive elements
+- Standard (8px): Content cards, input fields, listboxes
+- Comfortable (12px): Featured cards, larger containers, link cards
+- Full Pill (999px): All buttons, chips, navigation items, pills
+- Circle (50%): Avatar images, icon containers, circular controls
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, solid background | Page background, inline content, text sections |
+| Subtle (Level 1) | `rgba(0,0,0,0.12) 0px 4px 16px` | Standard content cards, feature blocks |
+| Medium (Level 2) | `rgba(0,0,0,0.16) 0px 4px 16px` | Elevated cards, overlay elements |
+| Floating (Level 3) | `rgba(0,0,0,0.16) 0px 2px 8px` + translateY(2px) | Floating action buttons, map controls |
+| Pressed (Level 4) | `rgba(0,0,0,0.08) inset` (999px spread) | Active/pressed button states |
+| Focus Ring | `rgb(255,255,255) 0px 0px 0px 2px inset` | Keyboard focus indicators |
+
+**Shadow Philosophy**: Uber uses shadow purely as a structural tool, never decoratively. Shadows are always black at very low opacity (0.08-0.16), creating the bare minimum lift needed to separate content layers. The blur radii are moderate (8-16px) -- enough to feel natural but never dramatic. There are no colored shadows, no layered shadow stacks, and no ambient glow effects. Depth is communicated more through the black/white section contrast than through shadow elevation.
+
+## Components
 
 ### Buttons
 
@@ -168,48 +302,7 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 - Illustration-heavy with warm, human-centric imagery
 - Black CTA buttons with white text at bottom
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 8px, 10px, 12px, 14px, 16px, 18px, 20px, 24px, 32px
-- Button padding: 10px 12px (compact) or 14px 16px (comfortable)
-- Card internal padding: approximately 24-32px
-- Section vertical spacing: generous but efficient -- approximately 64-96px between major sections
-
-### Grid & Container
-- Max container width: approximately 1136px, centered
-- Hero: split layout with text left, visual right
-- Feature sections: 2-column card grids or full-width single-column
-- Footer: multi-column link grid on black background
-- Full-width sections extending to viewport edges
-
-### Whitespace Philosophy
-- **Efficient, not airy**: Uber's whitespace is functional -- enough to separate, never enough to feel empty. This is transit-system spacing: compact, clear, purpose-driven.
-- **Content-dense cards**: Cards pack information tightly with minimal internal spacing, relying on shadow and radius to define boundaries.
-- **Section breathing room**: Major sections get generous vertical spacing, but within sections, elements are closely grouped.
-
-### Border Radius Scale
-- Sharp (0px): No square corners used in interactive elements
-- Standard (8px): Content cards, input fields, listboxes
-- Comfortable (12px): Featured cards, larger containers, link cards
-- Full Pill (999px): All buttons, chips, navigation items, pills
-- Circle (50%): Avatar images, icon containers, circular controls
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, solid background | Page background, inline content, text sections |
-| Subtle (Level 1) | `rgba(0,0,0,0.12) 0px 4px 16px` | Standard content cards, feature blocks |
-| Medium (Level 2) | `rgba(0,0,0,0.16) 0px 4px 16px` | Elevated cards, overlay elements |
-| Floating (Level 3) | `rgba(0,0,0,0.16) 0px 2px 8px` + translateY(2px) | Floating action buttons, map controls |
-| Pressed (Level 4) | `rgba(0,0,0,0.08) inset` (999px spread) | Active/pressed button states |
-| Focus Ring | `rgb(255,255,255) 0px 0px 0px 2px inset` | Keyboard focus indicators |
-
-**Shadow Philosophy**: Uber uses shadow purely as a structural tool, never decoratively. Shadows are always black at very low opacity (0.08-0.16), creating the bare minimum lift needed to separate content layers. The blur radii are moderate (8-16px) -- enough to feel natural but never dramatic. There are no colored shadows, no layered shadow stacks, and no ambient glow effects. Depth is communicated more through the black/white section contrast than through shadow elevation.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use true black (`#000000`) and pure white (`#ffffff`) as the primary palette -- the stark contrast IS Uber
@@ -233,7 +326,7 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 - Don't use decorative borders -- borders are functional (inputs, dividers) or absent entirely
 - Don't soften the black/white contrast with off-whites or near-blacks -- the duality is deliberate
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -266,7 +359,7 @@ What makes Uber's design truly distinctive is its use of full-bleed photography 
 - QR code sections hide on mobile (app download shifts to direct store links)
 - Card imagery maintains 8-12px border radius at all sizes
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Button: "Uber Black (#000000)"

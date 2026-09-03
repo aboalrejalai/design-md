@@ -1,9 +1,101 @@
+---
+"version": "alpha"
+"name": "xAI"
+"description": "Bundled Open Design package for xAI, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ffffff"
+  "primary-hover": "rgba(255, 255, 255, 0.9)"
+  "primary-active": "rgba(255, 255, 255, 0.8)"
+  "on-primary": "#1f2228"
+  "canvas": "#1f2228"
+  "surface": "rgba(255, 255, 255, 0.03)"
+  "surface-warm": "rgba(255, 255, 255, 0.05)"
+  "ink": "#ffffff"
+  "body": "rgba(255, 255, 255, 0.7)"
+  "muted": "rgba(255, 255, 255, 0.5)"
+  "meta": "rgba(255, 255, 255, 0.3)"
+  "border": "rgba(255, 255, 255, 0.1)"
+  "border-soft": "rgba(255, 255, 255, 0.05)"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"GeistMono\", ui-monospace, \"SF Mono\", \"Roboto Mono\", Menlo, Monaco, \"Liberation Mono\", \"DejaVu Sans Mono\", \"Courier New\", monospace"
+    "lineHeight": "1.2"
+  body:
+    "fontFamily": "\"universalSans\", \"universalSans Fallback\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"GeistMono\", ui-monospace, \"SF Mono\", \"Roboto Mono\", Menlo, Monaco, \"Liberation Mono\", \"DejaVu Sans Mono\", \"Courier New\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "30px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "0px"
+  "md": "0px"
+  "lg": "4px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "textColor": "{colors.ink}"
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.body}"
+    "typography": "{typography.base}"
+  badges:
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by xAI
 
 > Category: AI & LLM
 > Elon Musk's AI lab. Stark monochrome, futuristic minimalism.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 xAI's website is a masterclass in dark-first, monospace-driven brutalist minimalism -- a design system that feels like it was built by engineers who understand that restraint is the ultimate form of sophistication. The entire experience is anchored to an almost-black background (`#1f2228`) with pure white text (`#ffffff`), creating a high-contrast, terminal-inspired aesthetic that signals deep technical credibility. There are no gradients, no decorative illustrations, no color accents competing for attention. This is a site that communicates through absence.
 
@@ -21,7 +113,7 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - Heroicons SVG icon system -- minimal, functional
 - Tailwind CSS with arbitrary values -- utility-first engineering approach
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Pure White** (`#ffffff`): The singular text color, link color, and all foreground elements. In xAI's system, white is not a background -- it is the voice.
@@ -45,7 +137,7 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - **Text Tertiary** (`rgba(255, 255, 255, 0.5)`): Muted labels, placeholder text, timestamps.
 - **Text Quaternary** (`rgba(255, 255, 255, 0.3)`): Disabled text, very subtle annotations.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display / Buttons**: `GeistMono`, with fallback: `ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New`
@@ -69,7 +161,47 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - **Sans-serif for reading**: universalSans at 16px/1.5 provides excellent readability for body content, creating a clean contrast against the monospace display elements.
 - **Two-font clarity**: The system uses exactly two typefaces with clear roles -- monospace for impact and interaction, sans-serif for information and reading. No overlap, no ambiguity.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 8px, 24px, 48px
+- The scale is deliberately sparse -- xAI avoids granular spacing distinctions, preferring large jumps that create clear visual hierarchy through whitespace alone
+
+### Grid & Container
+- Max content width: approximately 1200px
+- Hero: full-viewport height with massive centered monospace headline
+- Feature sections: simple vertical stacking with generous section padding (48px-96px)
+- Two-column layouts for feature descriptions at desktop
+- Full-width dark sections maintain the single dark background throughout
+
+### Whitespace Philosophy
+- **Extreme generosity**: xAI uses vast amounts of whitespace. The 320px headline with 48px+ surrounding padding creates a sense of emptiness that is itself a design statement -- the content is so important it needs room to breathe.
+- **Vertical rhythm over horizontal density**: Content stacks vertically with large gaps between sections rather than packing horizontally. This creates a scroll-driven experience that feels deliberate and cinematic.
+- **No visual noise**: The absence of decorative elements, borders between sections, and color variety means whitespace is the primary structural tool.
+
+### Breakpoints
+- 2000px, 1536px, 1280px, 1024px, 1000px, 768px, 640px
+- Tailwind responsive modifiers drive breakpoint behavior
+
+### Border Radius Scale
+- Sharp (0px): Primary treatment for buttons, cards, inputs -- the default
+- Subtle (4px): Occasional softening on secondary containers
+- The near-zero radius philosophy is core to the brand's brutalist identity
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, body content |
+| Surface (Level 1) | `rgba(255,255,255,0.03)` background | Subtle card surfaces |
+| Bordered (Level 2) | `1px solid rgba(255,255,255,0.1)` border | Cards, containers, dividers |
+| Active (Level 3) | `1px solid rgba(255,255,255,0.2)` border | Hover states, active elements |
+| Focus (Accessibility) | `ring` with `rgb(59,130,246)/0.5` | Keyboard focus indicator |
+
+**Elevation Philosophy**: xAI rejects the conventional shadow-based elevation system entirely. There are no box-shadows anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements "activating" rather than lifting; (2) extremely subtle background opacity shifts (`0.03` to `0.08`) that create barely-perceptible surface differentiation; and (3) the massive scale contrast between the 320px display type and 16px body text, which creates typographic depth. This is elevation through contrast and opacity, not through simulated light and shadow.
+
+## Components
 
 ### Buttons
 
@@ -132,47 +264,7 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - Placeholder: `rgba(255, 255, 255, 0.3)`
 - Label: `rgba(255, 255, 255, 0.7)`, universalSans 14px
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 8px, 24px, 48px
-- The scale is deliberately sparse -- xAI avoids granular spacing distinctions, preferring large jumps that create clear visual hierarchy through whitespace alone
-
-### Grid & Container
-- Max content width: approximately 1200px
-- Hero: full-viewport height with massive centered monospace headline
-- Feature sections: simple vertical stacking with generous section padding (48px-96px)
-- Two-column layouts for feature descriptions at desktop
-- Full-width dark sections maintain the single dark background throughout
-
-### Whitespace Philosophy
-- **Extreme generosity**: xAI uses vast amounts of whitespace. The 320px headline with 48px+ surrounding padding creates a sense of emptiness that is itself a design statement -- the content is so important it needs room to breathe.
-- **Vertical rhythm over horizontal density**: Content stacks vertically with large gaps between sections rather than packing horizontally. This creates a scroll-driven experience that feels deliberate and cinematic.
-- **No visual noise**: The absence of decorative elements, borders between sections, and color variety means whitespace is the primary structural tool.
-
-### Breakpoints
-- 2000px, 1536px, 1280px, 1024px, 1000px, 768px, 640px
-- Tailwind responsive modifiers drive breakpoint behavior
-
-### Border Radius Scale
-- Sharp (0px): Primary treatment for buttons, cards, inputs -- the default
-- Subtle (4px): Occasional softening on secondary containers
-- The near-zero radius philosophy is core to the brand's brutalist identity
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, body content |
-| Surface (Level 1) | `rgba(255,255,255,0.03)` background | Subtle card surfaces |
-| Bordered (Level 2) | `1px solid rgba(255,255,255,0.1)` border | Cards, containers, dividers |
-| Active (Level 3) | `1px solid rgba(255,255,255,0.2)` border | Hover states, active elements |
-| Focus (Accessibility) | `ring` with `rgb(59,130,246)/0.5` | Keyboard focus indicator |
-
-**Elevation Philosophy**: xAI rejects the conventional shadow-based elevation system entirely. There are no box-shadows anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements "activating" rather than lifting; (2) extremely subtle background opacity shifts (`0.03` to `0.08`) that create barely-perceptible surface differentiation; and (3) the massive scale contrast between the 320px display type and 16px body text, which creates typographic depth. This is elevation through contrast and opacity, not through simulated light and shadow.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use `#1f2228` as the universal background -- never pure black `#000000`
@@ -194,7 +286,7 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - Don't use proportional fonts for buttons -- GeistMono uppercase is mandatory
 - Don't use colored status indicators unless absolutely necessary -- keep everything in the white/dark spectrum
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -225,7 +317,7 @@ The spacing system operates on an 8px base grid with values concentrated at the 
 - Any product screenshots maintain sharp corners
 - Full-width media scales proportionally with viewport
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Dark (`#1f2228`)

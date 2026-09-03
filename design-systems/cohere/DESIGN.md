@@ -1,9 +1,104 @@
+---
+"version": "alpha"
+"name": "Cohere"
+"description": "Bundled Open Design package for Cohere, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1863dc"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#fafafa"
+  "surface-warm": "#fafafa"
+  "ink": "#000000"
+  "body": "#212121"
+  "muted": "#93939f"
+  "meta": "#93939f"
+  "border": "#d9d9dd"
+  "border-soft": "#f2f2f2"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#ef4444"
+typography:
+  display:
+    "fontFamily": "\"CohereText\", \"Space Grotesk\", Inter, ui-sans-serif, sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"Unica77 Cohere Web\", Inter, Arial, ui-sans-serif, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"CohereMono\", \"JetBrains Mono\", ui-monospace, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "60px"
+  4xl:
+    "fontSize": "72px"
+rounded:
+  "sm": "8px"
+  "md": "22px"
+  "lg": "22px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "60px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1440px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.body}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.sm}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.2}"
+  links:
+    "textColor": "{colors.ink}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Cohere
 
 > Category: AI & LLM
 > Enterprise AI platform. Vibrant gradients, data-rich dashboard aesthetic.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Cohere's interface is a polished enterprise command deck — confident, clean, and designed to make AI feel like serious infrastructure rather than a consumer toy. The experience lives on a bright white canvas where content is organized into generously rounded cards (22px radius) that create an organic, cloud-like containment language. This is a site that speaks to CTOs and enterprise architects: professional without being cold, sophisticated without being intimidating.
 
@@ -21,7 +116,7 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - Enterprise photography showing diverse real-world applications
 - CohereMono for code and technical labels with uppercase transforms
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Cohere Black** (`#000000`): Primary headline text and maximum-emphasis elements.
@@ -47,7 +142,7 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - **Purple-Violet Hero Band**: Deep purple gradient sections that create dramatic contrast against the white canvas. These appear as full-width bands housing product screenshots and key messaging.
 - **Dark Footer Gradient**: The page transitions through deep purple/charcoal to the black footer, creating a "dusk" effect.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display**: `CohereText`, with fallbacks: `Space Grotesk, Inter, ui-sans-serif, system-ui`
@@ -78,7 +173,46 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - **Single body weight**: Nearly all Unica77 usage is weight 400. Weight 500 appears only for small button emphasis. The system relies on size and spacing, not weight contrast.
 - **Uppercase code labels**: CohereMono uses uppercase with positive letter-spacing (0.16–0.28px) for technical tags and section markers.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 2px, 6px, 8px, 10px, 12px, 16px, 20px, 22px, 24px, 28px, 32px, 36px, 40px, 56px, 60px
+- Button padding varies by variant
+- Card internal padding: approximately 24–32px
+- Section vertical spacing: generous (56–60px between sections)
+
+### Grid & Container
+- Max container width: up to 2560px (very wide) with responsive scaling
+- Hero: centered with dramatic typography
+- Feature sections: multi-column card grids
+- Enterprise sections: full-width purple bands
+- 26 breakpoints detected — extremely granular responsive system
+
+### Whitespace Philosophy
+- **Enterprise clarity**: Each section presents one clear proposition with breathing room between.
+- **Photography as hero**: Large photographic sections provide visual interest without requiring decorative design elements.
+- **Card grouping**: Related content is grouped into 22px-rounded cards, creating natural information clusters.
+
+### Border Radius Scale
+- Sharp (4px): Navigation elements, small tags, pagination
+- Comfortable (8px): Dialog boxes, secondary containers, small cards
+- Generous (16px): Featured containers, medium cards
+- Large (20px): Large feature cards
+- Signature (22px): Primary cards, hero images, main containers — THE Cohere radius
+- Pill (9999px): Buttons, tags, status indicators
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Page background, text blocks |
+| Bordered (Level 1) | `1px solid #f2f2f2` or `#d9d9dd` | Standard cards, list separators |
+| Purple Band (Level 2) | Full-width dark purple background | Hero sections, feature showcases |
+
+**Shadow Philosophy**: Cohere is nearly shadow-free. Depth is communicated through **background color contrast** (white cards on purple bands, white surface on snow), **border containment** (cool gray borders), and the dramatic **light-to-dark section alternation**. When elements need elevation, they achieve it through being white-on-dark rather than through shadow casting.
+
+## Components
 
 ### Buttons
 
@@ -150,46 +284,7 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - Used as section markers and categorization labels
 - Creates a technical, structured information hierarchy
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 2px, 6px, 8px, 10px, 12px, 16px, 20px, 22px, 24px, 28px, 32px, 36px, 40px, 56px, 60px
-- Button padding varies by variant
-- Card internal padding: approximately 24–32px
-- Section vertical spacing: generous (56–60px between sections)
-
-### Grid & Container
-- Max container width: up to 2560px (very wide) with responsive scaling
-- Hero: centered with dramatic typography
-- Feature sections: multi-column card grids
-- Enterprise sections: full-width purple bands
-- 26 breakpoints detected — extremely granular responsive system
-
-### Whitespace Philosophy
-- **Enterprise clarity**: Each section presents one clear proposition with breathing room between.
-- **Photography as hero**: Large photographic sections provide visual interest without requiring decorative design elements.
-- **Card grouping**: Related content is grouped into 22px-rounded cards, creating natural information clusters.
-
-### Border Radius Scale
-- Sharp (4px): Navigation elements, small tags, pagination
-- Comfortable (8px): Dialog boxes, secondary containers, small cards
-- Generous (16px): Featured containers, medium cards
-- Large (20px): Large feature cards
-- Signature (22px): Primary cards, hero images, main containers — THE Cohere radius
-- Pill (9999px): Buttons, tags, status indicators
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Page background, text blocks |
-| Bordered (Level 1) | `1px solid #f2f2f2` or `#d9d9dd` | Standard cards, list separators |
-| Purple Band (Level 2) | Full-width dark purple background | Hero sections, feature showcases |
-
-**Shadow Philosophy**: Cohere is nearly shadow-free. Depth is communicated through **background color contrast** (white cards on purple bands, white surface on snow), **border containment** (cool gray borders), and the dramatic **light-to-dark section alternation**. When elements need elevation, they achieve it through being white-on-dark rather than through shadow casting.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use 22px border-radius on all primary cards and containers — it's the visual signature
@@ -211,7 +306,7 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - Don't reduce section spacing below 40px — enterprise layouts need breathing room
 - Don't use decoration on buttons by default — ghost/transparent is the base state
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -242,7 +337,7 @@ Color is used with extreme restraint — the interface is almost entirely black-
 - Product screenshots maintain aspect ratio
 - Purple sections scale background proportionally
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: "Cohere Black (#000000)"

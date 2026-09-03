@@ -1,9 +1,111 @@
+---
+"version": "alpha"
+"name": "ClickHouse"
+"description": "Bundled Open Design package for ClickHouse, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#faff69"
+  "primary-hover": "#1d1d1d"
+  "primary-active": "#f4f692"
+  "on-primary": "#151515"
+  "canvas": "#000000"
+  "surface": "#141414"
+  "surface-warm": "#141414"
+  "ink": "#ffffff"
+  "body": "#a0a0a0"
+  "muted": "#a0a0a0"
+  "meta": "#585858"
+  "border": "rgba(65, 65, 65, 0.8)"
+  "border-soft": "#343434"
+  "success": "#166534"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Inter\", \"Basier\", Arial, Helvetica, ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "1.0"
+  body:
+    "fontFamily": "\"Inter\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Inconsolata\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "72px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "64px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by ClickHouse
 
 > Category: Backend & Data
 > Fast analytics database. Yellow-accented, technical documentation style.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 ClickHouse's interface is a high-performance cockpit rendered in acid yellow-green on obsidian black — a design that screams "speed" before you read a single word. The entire experience lives in darkness: pure black backgrounds (`#000000`) with dark charcoal cards (`#414141` borders) creating a terminal-grade aesthetic where the only chromatic interruption is the signature neon yellow-green (`#faff69`) that slashes across CTAs, borders, and highlighted moments like a highlighter pen on a dark console.
 
@@ -22,7 +124,7 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 - All links hover to neon yellow-green — unified interactive signal
 - Inset shadows on select elements creating "pressed into the surface" depth
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Neon Volt** (`#faff69`): The signature brand color — a vivid acid yellow-green that's the sole chromatic accent on the black canvas. Used for primary CTAs, accent borders, link hovers, and highlighted moments.
@@ -50,7 +152,7 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 ### Gradient System
 - **None in the traditional sense.** ClickHouse uses flat color blocks and high-contrast borders. The "gradient" is the contrast itself — neon yellow-green against pure black creates a visual intensity that gradients would dilute.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Inter` (Next.js optimized variant `__Inter_d1b8ee`)
@@ -80,7 +182,45 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 - **Uppercase with maximum tracking**: Section overlines use 1.4px letter-spacing — wider than most systems — creating bold structural labels that stand out against the dense dark background.
 - **Dual sans-serif**: Inter handles display and body; Basier handles feature section headings at 600 weight. This creates a subtle personality shift between "data/performance" (Inter) and "product/feature" (Basier) contexts.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 2px, 6px, 7px, 8px, 10px, 12px, 16px, 20px, 24px, 25px, 32px, 40px, 44px, 48px, 64px
+- Button padding: 12px 16px (standard), 0px 16px (compact), 0px 32px (wide ghost)
+- Section vertical spacing: generous (48–64px)
+
+### Grid & Container
+- Max container width: up to 2200px (extra-wide) with responsive scaling
+- Hero: full-width dark with massive typography
+- Feature sections: multi-column card grids with dark borders
+- Stats: horizontal metric bar
+- Full-dark page — no light sections
+
+### Whitespace Philosophy
+- **Dark void as canvas**: The pure black background provides infinite depth — elements float in darkness.
+- **Dense information**: Feature cards and stats are packed with data, reflecting the database product's performance focus.
+- **Neon highlights as wayfinding**: Yellow-green accents guide the eye through the dark interface like runway lights.
+
+### Border Radius Scale
+- Sharp (4px): Buttons, badges, small elements, code blocks
+- Comfortable (8px): Cards, containers, dividers
+- Pill (9999px): Toggle buttons, status indicators
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Black background, text blocks |
+| Bordered (Level 1) | `1px solid rgba(65,65,65,0.8)` | Standard cards, containers |
+| Subtle (Level 2) | `0px 1px 3px rgba(0,0,0,0.1)` | Subtle card lift |
+| Elevated (Level 3) | `0px 10px 15px -3px rgba(0,0,0,0.1)` | Feature cards, hover states |
+| Pressed/Inset (Level 4) | `0px 4px 25px rgba(0,0,0,0.14) inset` | Active/pressed elements — "sunk into the surface" |
+| Neon Highlight (Level 5) | Neon Volt border (`#faff69`) | Featured/selected cards, maximum emphasis |
+
+**Shadow Philosophy**: ClickHouse uses shadows on a black canvas, where they're barely visible — they exist more for subtle dimensionality than obvious elevation. The most distinctive depth mechanism is the **inset shadow** (Level 4), which creates a "pressed into the surface" effect unique to ClickHouse. The neon border highlight (Level 5) is the primary attention-getting depth mechanism.
+
+## Components
 
 ### Buttons
 
@@ -167,45 +307,7 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 - Monochrome/white logo treatment
 - Horizontal layout
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 2px, 6px, 7px, 8px, 10px, 12px, 16px, 20px, 24px, 25px, 32px, 40px, 44px, 48px, 64px
-- Button padding: 12px 16px (standard), 0px 16px (compact), 0px 32px (wide ghost)
-- Section vertical spacing: generous (48–64px)
-
-### Grid & Container
-- Max container width: up to 2200px (extra-wide) with responsive scaling
-- Hero: full-width dark with massive typography
-- Feature sections: multi-column card grids with dark borders
-- Stats: horizontal metric bar
-- Full-dark page — no light sections
-
-### Whitespace Philosophy
-- **Dark void as canvas**: The pure black background provides infinite depth — elements float in darkness.
-- **Dense information**: Feature cards and stats are packed with data, reflecting the database product's performance focus.
-- **Neon highlights as wayfinding**: Yellow-green accents guide the eye through the dark interface like runway lights.
-
-### Border Radius Scale
-- Sharp (4px): Buttons, badges, small elements, code blocks
-- Comfortable (8px): Cards, containers, dividers
-- Pill (9999px): Toggle buttons, status indicators
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Black background, text blocks |
-| Bordered (Level 1) | `1px solid rgba(65,65,65,0.8)` | Standard cards, containers |
-| Subtle (Level 2) | `0px 1px 3px rgba(0,0,0,0.1)` | Subtle card lift |
-| Elevated (Level 3) | `0px 10px 15px -3px rgba(0,0,0,0.1)` | Feature cards, hover states |
-| Pressed/Inset (Level 4) | `0px 4px 25px rgba(0,0,0,0.14) inset` | Active/pressed elements — "sunk into the surface" |
-| Neon Highlight (Level 5) | Neon Volt border (`#faff69`) | Featured/selected cards, maximum emphasis |
-
-**Shadow Philosophy**: ClickHouse uses shadows on a black canvas, where they're barely visible — they exist more for subtle dimensionality than obvious elevation. The most distinctive depth mechanism is the **inset shadow** (Level 4), which creates a "pressed into the surface" effect unique to ClickHouse. The neon border highlight (Level 5) is the primary attention-getting depth mechanism.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Neon Volt (#faff69) as the sole chromatic accent — it must pop against pure black
@@ -228,7 +330,7 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 - Don't skip the inset shadow on active states — the "pressed" effect is distinctive
 - Don't use warm neutrals — all grays are perfectly neutral
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -256,7 +358,7 @@ What makes ClickHouse distinctive is the electrifying tension between the near-b
 - Code blocks use horizontal scroll on narrow screens
 - All images on dark backgrounds
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand Accent: "Neon Volt (#faff69)"

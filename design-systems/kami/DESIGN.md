@@ -1,9 +1,108 @@
+---
+"version": "alpha"
+"name": "kami (紙 / 纸)"
+"description": "Bundled Open Design package for kami (紙 / 纸), derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#1b365d"
+  "primary-hover": "#1b365d"
+  "primary-active": "#142a48"
+  "on-primary": "#faf9f5"
+  "canvas": "#f5f4ed"
+  "surface": "#faf9f5"
+  "surface-warm": "#e8e6dc"
+  "ink": "#141413"
+  "body": "#3d3d3a"
+  "muted": "#504e49"
+  "meta": "#6b6a64"
+  "border": "#e8e6dc"
+  "border-soft": "#e5e3d8"
+  "success": "#4a6b3a"
+  "warning": "#8a6b1f"
+  "danger": "#8a3a30"
+typography:
+  display:
+    "fontFamily": "Charter, Georgia, Palatino, \"Times New Roman\", serif"
+    "lineHeight": "1.25"
+    "letterSpacing": "-1.2px"
+  body:
+    "fontFamily": "Charter, Georgia, Palatino, \"Times New Roman\", serif"
+    "lineHeight": "1.55"
+  mono:
+    "fontFamily": "\"JetBrains Mono\", \"SF Mono\", \"Fira Code\", Consolas, Monaco, \"TsangerJinKai02\", \"Source Han Serif SC\", monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "12px"
+  base:
+    "fontSize": "14px"
+  lg:
+    "fontSize": "17px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "72px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1120px"
+  "container-gutter-desktop": "64px"
+  "container-gutter-tablet": "32px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.6}"
+  layout:
+    "backgroundColor": "{colors.primary}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by kami (紙 / 纸)
 
 > Category: Editorial & Print
 > Editorial paper system: warm parchment canvas, ink-blue accent, serif-led hierarchy. Built for resumes, one-pagers, white papers, portfolios, slide decks — anything that should feel like high-quality print rather than UI. Multilingual by design (EN · zh-CN · ja).
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 kami compresses into one sentence: **warm parchment canvas, ink-blue accent, serif carries hierarchy, no cool grays, no hard shadows.** It is not a UI framework — it is a constraint system for the page, designed to keep deliverables stable, clear, and unmistakably *printed*. The name reads as **kami / 紙 / 纸** — the same word for "paper" across Japanese and Chinese — and the system is co-designed across English, Simplified Chinese, and Japanese typesetting from the ground up, not retrofitted.
 
@@ -22,7 +121,7 @@ Hierarchy is carried almost entirely by **serif type at a single weight (500)**.
 - Tag fills are solid hex (e.g. `#E4ECF5`), never `rgba()` — print renderers double-paint alpha tags
 - Numbers sit in `font-variant-numeric: tabular-nums` so columns of metrics don't shimmy
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Brand
 - **Ink Blue** (`#1B365D`): The only chromatic color. CTAs, section numbers, link text on light surfaces, the left rule on a section title or quote, the active state of a switcher, the W500 metric value.
@@ -67,7 +166,7 @@ kami is **gradient-free** by default. The only sanctioned gradient is the soft t
 - Any cool-gray surface (`#f8f9fa`, `#f3f4f6`, `slate-*`)
 - Any second saturated color (no second accent — pick ink-blue or pick nothing)
 
-## 3. Typography Rules
+## Typography
 
 ### Font Stacks
 
@@ -166,7 +265,51 @@ Forbidden: 1.6+ (web rhythm, floats off the page) and 1.0–1.05 (lines collide 
 
 Do **not** apply tabular-nums to running prose where a single number appears mid-sentence — proportional digits read better there. The rule is "stacks and tables, yes; sentences, no."
 
-## 4. Component Stylings
+## Layout
+
+### Page geometry (print A4)
+
+| Document | Top | Right | Bottom | Left |
+|---|---|---|---|---|
+| Resume (dense) | 11mm | 13mm | 11mm | 13mm |
+| One-Pager | 15mm | 18mm | 15mm | 18mm |
+| Long Doc | 20mm | 22mm | 22mm | 22mm |
+| Letter | 25mm | 25mm | 25mm | 25mm |
+| Portfolio | 12mm | 15mm | 12mm | 15mm |
+
+Rule: **denser = smaller margins, more formal = larger margins.**
+
+### Web / screen pages
+- Max content width: `1120px`, centered, with `padding: 88px 64px 120px` on desktop.
+- Section gap: `72px` between top-level sections.
+- Card-grid columns: 2 by default at desktop; collapse to 1 below 768px.
+- Table columns sized in absolute px (not %), so kami tables don't reflow into spaghetti.
+
+### Slides (1920×1080)
+- Four-side padding baseline: `--slide-pad: 80px`.
+- Padding-top of a content slide: 72–80px (print is 96–120px; slides are more compact).
+- Sizing follows the surface ratios from §3 ("Hierarchy"): macro tokens × 1.6, micro tokens × 0.6 against the print pt baseline.
+- Cover and chapter slides may flip background to ink-blue (`#1B365D`) with ivory text; everything else stays on parchment.
+
+## Elevation & Depth
+
+Three sanctioned levels — that is the entire system:
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (0) | No shadow, no border | Body text, manifesto, paragraphs on parchment |
+| Ring (1) | `1px solid var(--border)` or `0 0 0 1px var(--brand)` | Cards, primary buttons, table edges |
+| Whisper (2) | `0 4px 24px rgba(0,0,0,0.05)` | Hovered cards, lifted hero containers, screenshots |
+
+Forbidden:
+- Hard drop shadows (`0 12px 40px rgba(0,0,0,0.25)` and the like) — the page is paper, not a UI panel
+- Neumorphism, glassmorphism, backdrop-filter blurs
+- Multi-layer composite shadows
+
+### Border radius scale
+`2px → 4px → 6px → 8px (default) → 12px → 16px`. Tags hover at 2–4px, buttons and cards at 8px, featured / hero containers at 12–16px. Anything above 16px is reserved for cover-slide visuals.
+
+## Components
 
 ### Cards / Containers
 ```css
@@ -288,51 +431,7 @@ Bullets are en-dashes in ink-blue, never filled discs.
 .code .c { color: var(--stone); }   /* comment */
 ```
 
-## 5. Layout Principles
-
-### Page geometry (print A4)
-
-| Document | Top | Right | Bottom | Left |
-|---|---|---|---|---|
-| Resume (dense) | 11mm | 13mm | 11mm | 13mm |
-| One-Pager | 15mm | 18mm | 15mm | 18mm |
-| Long Doc | 20mm | 22mm | 22mm | 22mm |
-| Letter | 25mm | 25mm | 25mm | 25mm |
-| Portfolio | 12mm | 15mm | 12mm | 15mm |
-
-Rule: **denser = smaller margins, more formal = larger margins.**
-
-### Web / screen pages
-- Max content width: `1120px`, centered, with `padding: 88px 64px 120px` on desktop.
-- Section gap: `72px` between top-level sections.
-- Card-grid columns: 2 by default at desktop; collapse to 1 below 768px.
-- Table columns sized in absolute px (not %), so kami tables don't reflow into spaghetti.
-
-### Slides (1920×1080)
-- Four-side padding baseline: `--slide-pad: 80px`.
-- Padding-top of a content slide: 72–80px (print is 96–120px; slides are more compact).
-- Sizing follows the surface ratios from §3 ("Hierarchy"): macro tokens × 1.6, micro tokens × 0.6 against the print pt baseline.
-- Cover and chapter slides may flip background to ink-blue (`#1B365D`) with ivory text; everything else stays on parchment.
-
-## 6. Depth & Elevation
-
-Three sanctioned levels — that is the entire system:
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (0) | No shadow, no border | Body text, manifesto, paragraphs on parchment |
-| Ring (1) | `1px solid var(--border)` or `0 0 0 1px var(--brand)` | Cards, primary buttons, table edges |
-| Whisper (2) | `0 4px 24px rgba(0,0,0,0.05)` | Hovered cards, lifted hero containers, screenshots |
-
-Forbidden:
-- Hard drop shadows (`0 12px 40px rgba(0,0,0,0.25)` and the like) — the page is paper, not a UI panel
-- Neumorphism, glassmorphism, backdrop-filter blurs
-- Multi-layer composite shadows
-
-### Border radius scale
-`2px → 4px → 6px → 8px (default) → 12px → 16px`. Tags hover at 2–4px, buttons and cards at 8px, featured / hero containers at 12–16px. Anything above 16px is reserved for cover-slide visuals.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use parchment (`#f5f4ed`) as the page background — the warm cream tone *is* the kami personality.
@@ -356,7 +455,7 @@ Forbidden:
 - Don't use round-disc bullets, drop shadows, or pill-shaped chips with heavy borders.
 - Don't apply `backdrop-filter`, `mix-blend-mode`, or any modern compositing trick — the system targets print fidelity.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -375,7 +474,7 @@ Forbidden:
 - Section, hero, family, comp, swatch, tint, quote, blockquote, pre, tr, anti-pattern blocks all use `break-inside: avoid` so kami pages don't snap mid-card.
 - `-webkit-print-color-adjust: exact` is required so the parchment background actually reaches paper.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Page Background: "Parchment (#f5f4ed)"

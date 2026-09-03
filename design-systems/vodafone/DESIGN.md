@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Vodafone"
+"description": "Bundled Open Design package for Vodafone, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#e60000"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f4f4f4"
+  "surface-warm": "#fff1f1"
+  "ink": "#1f1f1f"
+  "body": "#4a4d4e"
+  "muted": "#6f7375"
+  "meta": "#a61218"
+  "border": "#d8d8d8"
+  "border-soft": "#eeeeee"
+  "success": "#008a00"
+  "warning": "#f5b400"
+  "danger": "#bd0000"
+typography:
+  display:
+    "fontFamily": "\"Vodafone\", \"Vodafone Rg\", Arial, sans-serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.015em"
+  body:
+    "fontFamily": "\"Vodafone\", \"Vodafone Rg\", Arial, sans-serif"
+    "lineHeight": "1.48"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "68px"
+rounded:
+  "sm": "8px"
+  "md": "16px"
+  "lg": "24px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Vodafone
 
 > Category: Media & Consumer
 > Global telecom brand. Monumental uppercase display, Vodafone Red chapter bands.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Vodafone's corporate web system carries the confident, broadcast-scale presence of a global telecom brand — built around a single, fiercely-owned brand red and a restrained, editorial layout that lets imagery and type carry the emotional weight. Every page opens the same way: a cinematic dark hero image behind a towering, tight-tracked uppercase display headline ("EVERYONE. CONNECTED.", "INVESTORS", "OUR BUSINESS") followed by a deep red full-width band that acts as a chapter break, then a crisp white editorial grid or a near-black section reserved for institutional content (share ticker, global map, ESG data). The voice is institutional but human: warm documentary photography — cable-laying crews, coral reefs, pine forests, urban twilight — photographed with color-graded realism and set against clean neutral surfaces that never compete with the content.
 
@@ -20,7 +113,7 @@ Surface treatment is disciplined and predictable: a three-surface pass of white 
 - Near-absence of shadows and gradients — hierarchy comes from type weight, color blocks, and spacing rather than elevation
 - Deep charcoal surface (`#25282b`) is reused as the footer AND the institutional data panel (share ticker, world map) — a single material for anything formal and numeric
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 
@@ -56,7 +149,7 @@ Surface treatment is disciplined and predictable: a three-surface pass of white 
 
 Vodafone's design is intentionally gradient-free. The only tonal variation is a subtle photographic vignette on hero imagery (dim coral reefs, pine forests, cable-laying crews, urban twilight), where the image itself — not a CSS gradient — provides the tonal ramp. No linear gradients are used on buttons, cards, or surfaces.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 
@@ -106,7 +199,72 @@ Vodafone's design is intentionally gradient-free. The only tonal variation is a 
 
 The Vodafone corporate typeface is proprietary. When recreating the look in open systems, substitute with **Inter** at weights 400/600/800, or **Neue Haas Grotesk** if available. Inter needs its letter-spacing reduced by roughly 1-2% at display sizes (80px+) to approximate the Vodafone face's tight tracking; its line-height should be set to 0.85-0.95 for the uppercase display tier.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+
+Base unit: **8px**. The scale accommodates both tight UI (1px, 2px, 4px) and generous editorial rhythm (16px, 20px, 24px, 32px). Two values (`32px` and `38px`) appear across every page in the analysis, making them the template's universal rhythm constants.
+
+| Token | Value | Typical Use |
+|-------|-------|-------------|
+| 2xs | 2px | Hairline separators |
+| xs | 4px | Icon-to-text gap in tight controls |
+| sm | 8px | Base rhythm unit |
+| md | 12px | Card internal padding, eyebrow-to-title gap |
+| base | 16px | Paragraph rhythm, card padding, pill button padding |
+| lg | 20px | Section-internal spacing |
+| xl | 24px | Card-to-card spacing, column gutters |
+| 2xl | 32px | Section intro-to-content breaks — universal constant |
+| 3xl | 38px | Band-to-next-section vertical push — universal constant |
+| section | 64-96px | Vertical rhythm between major editorial modules |
+
+### Grid & Container
+
+- **Max content width**: approximately 1440px on very large screens; articles and hero modules typically sit at 1200px
+- **Column pattern on cards**: 3-up or 4-up card grid at desktop (1200-1440px), 2-up at tablet (768-1024px), stacked 1-up at mobile (<768px)
+- **Horizontal padding**: 32px at desktop edge, 20px at tablet, 16px at mobile
+- **Gutters between cards**: 24px desktop, 16px mobile
+- **Institutional panel (share ticker, world map, footer)**: always full-bleed edge-to-edge at every breakpoint
+
+### Whitespace Philosophy
+
+Vodafone's editorial canvas leans generous — whitespace is used as a visual palette cleanser between a monumental headline and the card grid or data panel that follows. Sections are separated by tall vertical rhythm (64-96px) plus the occasional red band that acts as both a separator and a brand signal. Within cards, spacing is tight and efficient (12-16px) so the photography can take the stage.
+
+### Border Radius Scale
+
+| Token | Value | Typical Use |
+|-------|-------|-------------|
+| hairline | 1px | Inline text wraps, small badges |
+| button-tight | 2px | Primary and secondary rectangle button corners — the brand's utility-form look |
+| card | 6px | News cards, images, input fields |
+| asymmetric | `0px 6px 0px 0px` | Featured cards (top-right corner only) |
+| glass-pill | 24px | Translucent white pills sitting on dark hero imagery |
+| badge-pill | 32px | Filled neutral pill badges |
+| cta-pill | 60px | Primary red content CTAs — the brand's editorial button look |
+| circle | 50% | Icon buttons, carousel arrows, close controls |
+| portrait | 100% | Circular portraits and ESG pictograms |
+
+## Elevation & Depth
+
+Vodafone's system is deliberately flat. There is almost no conventional box-shadow in the UI. Hierarchy is carried by color (red bands, charcoal institutional panels), typography weight (800 vs 400), and spacing.
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| 0 — Surface | No shadow, no border | Default card, default section |
+| 1 — Outline | 1px solid border at low-opacity | Ghost buttons, outlined pills |
+| 2 — Inset Highlight | `inset 0 0 0 1px` on focus | Pressed / focused controls |
+| 3 — Photographic depth | The photography itself carries the depth | Hero imagery |
+| 4 — Surface shift | Charcoal institutional panel below a white editorial canvas | Share ticker / world map / footer |
+
+Shadow philosophy: Vodafone treats drop shadows as a distraction from brand clarity. The few extracted shadow tokens are reserved for inset focus rings. The dominant "elevation" in the system is a **color surface shift** — switching from the white editorial canvas to the charcoal institutional panel — rather than a lift-off drop shadow.
+
+### Decorative Depth
+
+The only decorative depth cues are:
+- Atmospheric dark hero photography that carries its own cinematic tonal depth (no CSS overlay needed)
+- The rotated vertical "IMPACT" wordmark on the sustainability map, which creates the illusion of a fourth wall alongside the map panel
+
+## Components
 
 ### Buttons
 
@@ -261,72 +419,7 @@ A universal component across all page templates:
 - Column link type: 14px weight 400 white, stacked vertically with 12px row spacing
 - Divider hairlines: `rgba(255,255,255,0.25)` between column group and legal row
 
-## 5. Layout Principles
-
-### Spacing System
-
-Base unit: **8px**. The scale accommodates both tight UI (1px, 2px, 4px) and generous editorial rhythm (16px, 20px, 24px, 32px). Two values (`32px` and `38px`) appear across every page in the analysis, making them the template's universal rhythm constants.
-
-| Token | Value | Typical Use |
-|-------|-------|-------------|
-| 2xs | 2px | Hairline separators |
-| xs | 4px | Icon-to-text gap in tight controls |
-| sm | 8px | Base rhythm unit |
-| md | 12px | Card internal padding, eyebrow-to-title gap |
-| base | 16px | Paragraph rhythm, card padding, pill button padding |
-| lg | 20px | Section-internal spacing |
-| xl | 24px | Card-to-card spacing, column gutters |
-| 2xl | 32px | Section intro-to-content breaks — universal constant |
-| 3xl | 38px | Band-to-next-section vertical push — universal constant |
-| section | 64-96px | Vertical rhythm between major editorial modules |
-
-### Grid & Container
-
-- **Max content width**: approximately 1440px on very large screens; articles and hero modules typically sit at 1200px
-- **Column pattern on cards**: 3-up or 4-up card grid at desktop (1200-1440px), 2-up at tablet (768-1024px), stacked 1-up at mobile (<768px)
-- **Horizontal padding**: 32px at desktop edge, 20px at tablet, 16px at mobile
-- **Gutters between cards**: 24px desktop, 16px mobile
-- **Institutional panel (share ticker, world map, footer)**: always full-bleed edge-to-edge at every breakpoint
-
-### Whitespace Philosophy
-
-Vodafone's editorial canvas leans generous — whitespace is used as a visual palette cleanser between a monumental headline and the card grid or data panel that follows. Sections are separated by tall vertical rhythm (64-96px) plus the occasional red band that acts as both a separator and a brand signal. Within cards, spacing is tight and efficient (12-16px) so the photography can take the stage.
-
-### Border Radius Scale
-
-| Token | Value | Typical Use |
-|-------|-------|-------------|
-| hairline | 1px | Inline text wraps, small badges |
-| button-tight | 2px | Primary and secondary rectangle button corners — the brand's utility-form look |
-| card | 6px | News cards, images, input fields |
-| asymmetric | `0px 6px 0px 0px` | Featured cards (top-right corner only) |
-| glass-pill | 24px | Translucent white pills sitting on dark hero imagery |
-| badge-pill | 32px | Filled neutral pill badges |
-| cta-pill | 60px | Primary red content CTAs — the brand's editorial button look |
-| circle | 50% | Icon buttons, carousel arrows, close controls |
-| portrait | 100% | Circular portraits and ESG pictograms |
-
-## 6. Depth & Elevation
-
-Vodafone's system is deliberately flat. There is almost no conventional box-shadow in the UI. Hierarchy is carried by color (red bands, charcoal institutional panels), typography weight (800 vs 400), and spacing.
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| 0 — Surface | No shadow, no border | Default card, default section |
-| 1 — Outline | 1px solid border at low-opacity | Ghost buttons, outlined pills |
-| 2 — Inset Highlight | `inset 0 0 0 1px` on focus | Pressed / focused controls |
-| 3 — Photographic depth | The photography itself carries the depth | Hero imagery |
-| 4 — Surface shift | Charcoal institutional panel below a white editorial canvas | Share ticker / world map / footer |
-
-Shadow philosophy: Vodafone treats drop shadows as a distraction from brand clarity. The few extracted shadow tokens are reserved for inset focus rings. The dominant "elevation" in the system is a **color surface shift** — switching from the white editorial canvas to the charcoal institutional panel — rather than a lift-off drop shadow.
-
-### Decorative Depth
-
-The only decorative depth cues are:
-- Atmospheric dark hero photography that carries its own cinematic tonal depth (no CSS overlay needed)
-- The rotated vertical "IMPACT" wordmark on the sustainability map, which creates the illusion of a fourth wall alongside the map panel
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 
@@ -350,7 +443,7 @@ The only decorative depth cues are:
 - Don't decorate headlines with colored underlines or highlights — the type does the work
 - Don't use pure black (`#000000`) for text or surfaces — always use Charcoal Headline (`#25282b`)
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -386,7 +479,7 @@ All interactive controls meet a 44×44px minimum on mobile. Icon buttons use 40�
 - Circular portraits: fixed at 80-120px diameter on desktop, shrinking to 64-80px on mobile
 - Logo: fixed at 40×40px across breakpoints (consistent brand mark size)
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 

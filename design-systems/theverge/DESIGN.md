@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "The Verge"
+"description": "Bundled Open Design package for The Verge, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ff00a8"
+  "on-primary": "#ffffff"
+  "canvas": "#050505"
+  "surface": "#111111"
+  "surface-warm": "#211022"
+  "ink": "#ffffff"
+  "body": "#e5e7eb"
+  "muted": "#9ca3af"
+  "meta": "#ff00a8"
+  "border": "#2b2b2b"
+  "border-soft": "#1d1d1d"
+  "success": "#22c55e"
+  "warning": "#facc15"
+  "danger": "#ef4444"
+typography:
+  display:
+    "fontFamily": "\"PolySans\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "0.95"
+    "letterSpacing": "-0.035em"
+  body:
+    "fontFamily": "\"Inter\", \"Helvetica Neue\", Arial, sans-serif"
+    "lineHeight": "1.48"
+  mono:
+    "fontFamily": "\"IBM Plex Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "19px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "42px"
+  3xl:
+    "fontSize": "66px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "88px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "44px"
+  "container-max": "1240px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "28px"
+  "container-gutter-phone": "18px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by The Verge
 
 > Category: Media & Consumer
 > Tech editorial media. Acid-mint and ultraviolet accents, Manuka display, rave-flyer story tiles.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 The Verge's 2024 redesign feels like somebody wired a Condé Nast magazine to a chiptune soundboard. The canvas is almost-black (`#131313`), the headlines are built from a brutally heavy display face (Manuka) that runs up to 107px, and the whole page is peppered with acid-mint `#3cffd0` and ultraviolet `#5200ff` that behave less like brand colors and more like hazard tape. Story tiles are not quiet gray cards — they're saturated, full-bleed color blocks (yellow, pink, orange, blue, purple) that feel like pasted-up rave flyers arranged into a timeline. The mood is "developer console meets club night meets tech tabloid": serious enough to cover a congressional hearing, loud enough to review a synthesizer.
 
@@ -20,7 +113,7 @@ There is no "light mode" on the homepage — the dark canvas is the product, and
 - Timeline "StoryStream" feed with mono uppercase timestamps rather than a traditional magazine grid
 - Flat depth — 1px borders in white, mint, purple do the work that shadows would do elsewhere
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary (Brand Hazards)
 - **Jelly Mint** (`#3cffd0`): The Verge's signature acid-mint accent. Used as CTA button fill, link underlines, active tab borders, and high-attention story-tile backgrounds. Treat it as the visual equivalent of neon safety paint — applied sparingly to the most important element on screen.
@@ -53,7 +146,7 @@ There is no "light mode" on the homepage — the dark canvas is the product, and
 ### Gradient System
 The Verge uses **zero decorative gradients**. The only gradient-like treatment is the transition from a saturated accent story tile (mint/purple/yellow) back to the `#131313` canvas between rows. Color is applied in solid blocks, not as washes. This is a deliberate choice — the site's hazard-tape visual identity would dissolve if anything faded.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Manuka** (Klim Type Foundry) — fallback: Impact, Helvetica. The signature display face for The Verge wordmark and feature headlines. A heavy-weight (900) industrial sans-serif with a condensed, almost-athletic stance. Runs at 60–107px on the homepage, never smaller.
@@ -99,7 +192,58 @@ The Verge uses **zero decorative gradients**. The only gradient-like treatment i
 ### Note on Font Substitutes
 The 0.80 line-height on Manuka display (107px, 90px, 60px) assumes the **proprietary Manuka face from Klim Type Foundry**, which has aggressively tight vertical metrics designed for athletic stance at large sizes. If you substitute with wide-metric open-source condensed displays like **Anton**, **Oswald**, **Bebas Neue**, or **Archivo Black**, loosen display line-heights by approximately **+0.10 to +0.15** to prevent ascender/descender collisions (e.g., 0.80 → 0.95). PolySans substitutes (Space Grotesk, DM Sans, Hanken Grotesk) work at the token values without adjustment — their metrics are close enough. PolySans Mono substitutes (Space Mono, JetBrains Mono) and FK Roman substitutes (Newsreader, Literata) also work without adjustment.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px.
+- **Scale**: 1, 2, 4, 5, 6, 8, 9, 10, 12, 14, 15, 16, 20, 24, 25px.
+- **Section padding**: 32–64px vertical between major feed sections. StoryStream items themselves are tighter — 12–16px gaps.
+- **Card padding**: 20–32px interior. Feature cards expand to 40–48px.
+- **Inline spacing**: kickers sit ~6–10px above headlines; headlines sit ~10–14px above decks; timestamps sit ~6–8px below decks.
+- **Micro-scale**: The 2/4/5/6/9/10px values are used inside buttons, pills, and tight label clusters, not in the editorial grid.
+
+### Grid & Container
+- **Max width**: ~1280–1300px (dembrandt detected breakpoints at 1200/1280/1300).
+- **Column patterns**: a 12-column underlying grid that resolves into 3-column hero + 1-column StoryStream rail + feature panels. The homepage feels freeform because color-block tiles frequently span 2–3 columns on a whim.
+- **Container padding**: 24px mobile / 48px desktop on the outer edges.
+- **Gutters**: 16–24px between columns, tighter (8–12px) inside StoryStream items.
+
+### Whitespace Philosophy
+The Verge treats whitespace like a club DJ treats silence — as a dramatic reset between loud moments. The canvas is so dark and the accents are so saturated that even 32px of empty `#131313` between two tiles acts as a palette cleanser. The page is not airy like Apple or Stripe; it's **paced**, with loud hazard-color blocks interrupting stretches of near-black. Whitespace carries the rhythm, not the elegance.
+
+### Border Radius Scale
+- **2px** — inputs, small badges (feels like a typewriter tag)
+- **3px** — inline images (just enough to soften against the canvas)
+- **4px** — nested card images and small button variants
+- **20px** — standard pill cards and color-block tiles
+- **24px** — feature tile radius and primary button pill
+- **30px** — large promotional buttons
+- **40px** — outlined CTA pills (the loudest pill in the system)
+- **50%** — avatar circles, icon buttons, and certain round badges
+
+Eight discrete radius values — a **lot** for a single site. This is deliberate: the rhythm between 2px typewriter tags, 20px pill cards, and 40px outlined buttons creates a "nested scale" feel where every component announces its hierarchy through its corners.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|---|---|---|
+| 0 | No border, no shadow | Default `#131313` canvas text |
+| 1 | `rgba(0,0,0,0) 0px 0px 0px 0px inset` (placeholder) | Reset state for interactive elements |
+| 2 | `1px solid #ffffff` or `#313131` hairline | Image frames and quiet card outlines |
+| 3 | `1px solid #3cffd0` hairline | Active button outlines, focused story tiles |
+| 4 | `1px solid #5200ff` hairline | Promotional/alternate state outlines |
+| 5 | `rgba(0, 0, 0, 0.33) 0px 0px 0px 1px` | The single "atmospheric" ring — applied to layered cards |
+| 6 | `0px -1px 0px 0px inset` (mint/black/white) | Active tab underline — a signature Verge move |
+| 7 | Saturated accent fill (`#3cffd0`, `#5200ff`, white, yellow, pink) | Story-tile elevation via color, not shadow |
+
+The Verge's depth philosophy is **color-as-elevation**. When something needs to stand out, it doesn't get a shadow — it gets a mint fill or a 1px hazard-color border. There are 14 shadow entries in the extracted tokens, but all of them are either inset underlines (0px -1px inset) or near-transparent 1px rings — none of them are traditional elevation shadows. The `#131313` canvas stays perfectly flat throughout, and hierarchy is carried by color saturation.
+
+### Decorative Depth
+- **1px inset underline** on active tabs/nav links (mint, black, or white depending on context)
+- **Subtle `rgba(0, 0, 0, 0.33)` 1px ring** on stacked cards — the only effect that faintly resembles a shadow
+- **No gradients, no glows, no atmospheric blurs** anywhere. The hazard-tape aesthetic would break if anything faded softly.
+
+## Components
 
 ### Buttons
 
@@ -201,58 +345,7 @@ The 0.80 line-height on Manuka display (107px, 90px, 60px) assumes the **proprie
 - Stacked vertically with 12–16px gap, the rail continuing between them
 - Often interleaved with full-bleed accent tiles that "break" the timeline rhythm for emphasis
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px.
-- **Scale**: 1, 2, 4, 5, 6, 8, 9, 10, 12, 14, 15, 16, 20, 24, 25px.
-- **Section padding**: 32–64px vertical between major feed sections. StoryStream items themselves are tighter — 12–16px gaps.
-- **Card padding**: 20–32px interior. Feature cards expand to 40–48px.
-- **Inline spacing**: kickers sit ~6–10px above headlines; headlines sit ~10–14px above decks; timestamps sit ~6–8px below decks.
-- **Micro-scale**: The 2/4/5/6/9/10px values are used inside buttons, pills, and tight label clusters, not in the editorial grid.
-
-### Grid & Container
-- **Max width**: ~1280–1300px (dembrandt detected breakpoints at 1200/1280/1300).
-- **Column patterns**: a 12-column underlying grid that resolves into 3-column hero + 1-column StoryStream rail + feature panels. The homepage feels freeform because color-block tiles frequently span 2–3 columns on a whim.
-- **Container padding**: 24px mobile / 48px desktop on the outer edges.
-- **Gutters**: 16–24px between columns, tighter (8–12px) inside StoryStream items.
-
-### Whitespace Philosophy
-The Verge treats whitespace like a club DJ treats silence — as a dramatic reset between loud moments. The canvas is so dark and the accents are so saturated that even 32px of empty `#131313` between two tiles acts as a palette cleanser. The page is not airy like Apple or Stripe; it's **paced**, with loud hazard-color blocks interrupting stretches of near-black. Whitespace carries the rhythm, not the elegance.
-
-### Border Radius Scale
-- **2px** — inputs, small badges (feels like a typewriter tag)
-- **3px** — inline images (just enough to soften against the canvas)
-- **4px** — nested card images and small button variants
-- **20px** — standard pill cards and color-block tiles
-- **24px** — feature tile radius and primary button pill
-- **30px** — large promotional buttons
-- **40px** — outlined CTA pills (the loudest pill in the system)
-- **50%** — avatar circles, icon buttons, and certain round badges
-
-Eight discrete radius values — a **lot** for a single site. This is deliberate: the rhythm between 2px typewriter tags, 20px pill cards, and 40px outlined buttons creates a "nested scale" feel where every component announces its hierarchy through its corners.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|---|---|---|
-| 0 | No border, no shadow | Default `#131313` canvas text |
-| 1 | `rgba(0,0,0,0) 0px 0px 0px 0px inset` (placeholder) | Reset state for interactive elements |
-| 2 | `1px solid #ffffff` or `#313131` hairline | Image frames and quiet card outlines |
-| 3 | `1px solid #3cffd0` hairline | Active button outlines, focused story tiles |
-| 4 | `1px solid #5200ff` hairline | Promotional/alternate state outlines |
-| 5 | `rgba(0, 0, 0, 0.33) 0px 0px 0px 1px` | The single "atmospheric" ring — applied to layered cards |
-| 6 | `0px -1px 0px 0px inset` (mint/black/white) | Active tab underline — a signature Verge move |
-| 7 | Saturated accent fill (`#3cffd0`, `#5200ff`, white, yellow, pink) | Story-tile elevation via color, not shadow |
-
-The Verge's depth philosophy is **color-as-elevation**. When something needs to stand out, it doesn't get a shadow — it gets a mint fill or a 1px hazard-color border. There are 14 shadow entries in the extracted tokens, but all of them are either inset underlines (0px -1px inset) or near-transparent 1px rings — none of them are traditional elevation shadows. The `#131313` canvas stays perfectly flat throughout, and hierarchy is carried by color saturation.
-
-### Decorative Depth
-- **1px inset underline** on active tabs/nav links (mint, black, or white depending on context)
-- **Subtle `rgba(0, 0, 0, 0.33)` 1px ring** on stacked cards — the only effect that faintly resembles a shadow
-- **No gradients, no glows, no atmospheric blurs** anywhere. The hazard-tape aesthetic would break if anything faded softly.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - **Do** use `#131313` as the canvas for every view. There is no light mode.
@@ -278,7 +371,7 @@ The Verge's depth philosophy is **color-as-elevation**. When something needs to 
 - **Don't** pair Manuka with FK Roman Standard in the same headline cluster — Manuka is the only display shout, serif pulls are reserved for body moments.
 - **Don't** use `#3cffd0` text on a `#131313` background at under 16px — the contrast vibrates at small sizes.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 
@@ -312,7 +405,7 @@ The dembrandt sweep detected 26 intermediate breakpoints (1300 → 1280 → 1200
 - `loading="lazy"` on everything below the fold, `eager` on the masthead hero.
 - Images inside color-block tiles inherit the tile's inner radius (4px or 20px nested).
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - **Primary CTA**: "Jelly Mint (`#3cffd0`)"

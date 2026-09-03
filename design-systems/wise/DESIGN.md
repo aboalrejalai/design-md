@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Wise"
+"description": "Bundled Open Design package for Wise, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#9fe870"
+  "primary-hover": "#cdffad"
+  "on-primary": "#163300"
+  "canvas": "#ffffff"
+  "surface": "#e8ebe6"
+  "surface-warm": "#e8ebe6"
+  "ink": "#0e0f0c"
+  "body": "#0e0f0c"
+  "muted": "#868685"
+  "meta": "#868685"
+  "border": "rgba(14, 15, 12, 0.12)"
+  "border-soft": "rgba(14, 15, 12, 0.12)"
+  "success": "#054d28"
+  "warning": "#ffd11a"
+  "danger": "#d03238"
+typography:
+  display:
+    "fontFamily": "\"Wise Sans\", Inter, ui-sans-serif, system-ui, sans-serif"
+    "lineHeight": "0.85"
+  body:
+    "fontFamily": "Inter, Helvetica, Arial, ui-sans-serif, sans-serif"
+    "lineHeight": "1.44"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "18px"
+  lg:
+    "fontSize": "22px"
+  xl:
+    "fontSize": "26px"
+  2xl:
+    "fontSize": "40px"
+  3xl:
+    "fontSize": "64px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "16px"
+  "md": "30px"
+  "lg": "40px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.on-primary}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Wise
 
 > Category: Fintech & Crypto
 > Money transfer. Bright green accent, friendly and clear.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Wise's website is a bold, confident fintech platform that communicates "money without borders" through massive typography and a distinctive lime-green accent. The design operates on a warm off-white canvas with near-black text (`#0e0f0c`) and a signature Wise Green (`#9fe870`) — a fresh, lime-bright color that feels alive and optimistic, unlike the corporate blues of traditional banking.
 
@@ -21,7 +114,7 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 - Pill buttons (9999px) and large rounded cards (30px–40px)
 - Semantic color system with comprehensive state management
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Near Black** (`#0e0f0c`): Primary text, background for dark sections
@@ -42,7 +135,7 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 - **Gray** (`#868685`): Muted text, tertiary
 - **Light Surface** (`#e8ebe6`): Subtle green-tinted light surface
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Wise Sans`, fallback: `Inter` — OpenType `"calt"` on all text
@@ -71,7 +164,34 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 - **"calt" everywhere**: Contextual alternates enabled on ALL text — both Wise Sans and Inter.
 - **Weight 600 as body default**: Inter Semibold is the standard reading weight — confident, not light.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 3px, 4px, 5px, 8px, 10px, 11px, 12px, 16px, 18px, 19px, 20px, 22px, 24px
+
+### Border Radius Scale
+- Minimal (2px): Links, inputs
+- Standard (10px): Comboboxes, inputs
+- Card (16px): Small cards, buttons, radio
+- Medium (20px): Links, medium cards
+- Large (30px): Feature cards
+- Section (40px): Tables, large cards
+- Mega (1000px): Presentation elements
+- Pill (9999px): All buttons, images
+- Circle (50%): Icons, badges
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Default |
+| Ring (Level 1) | `rgba(14,15,12,0.12) 0px 0px 0px 1px` | Card borders |
+| Inset (Level 2) | `rgb(134,134,133) 0px 0px 0px 1px inset` | Input focus |
+
+**Shadow Philosophy**: Wise uses minimal shadows — ring shadows only. Depth comes from the bold green accent against the neutral canvas.
+
+## Components
 
 ### Buttons
 
@@ -101,34 +221,7 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 - Clean header with Wise wordmark
 - Pill CTAs right-aligned
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 3px, 4px, 5px, 8px, 10px, 11px, 12px, 16px, 18px, 19px, 20px, 22px, 24px
-
-### Border Radius Scale
-- Minimal (2px): Links, inputs
-- Standard (10px): Comboboxes, inputs
-- Card (16px): Small cards, buttons, radio
-- Medium (20px): Links, medium cards
-- Large (30px): Feature cards
-- Section (40px): Tables, large cards
-- Mega (1000px): Presentation elements
-- Pill (9999px): All buttons, images
-- Circle (50%): Icons, badges
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Default |
-| Ring (Level 1) | `rgba(14,15,12,0.12) 0px 0px 0px 1px` | Card borders |
-| Inset (Level 2) | `rgb(134,134,133) 0px 0px 0px 1px inset` | Input focus |
-
-**Shadow Philosophy**: Wise uses minimal shadows — ring shadows only. Depth comes from the bold green accent against the neutral canvas.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Wise Sans weight 900 for display — the extreme boldness IS the brand
@@ -145,7 +238,7 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 - Don't skip the scale animation on buttons
 - Don't use traditional shadows — ring shadows only
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -155,7 +248,7 @@ What distinguishes Wise is its green-on-white-on-black material palette. Lime Gr
 | Desktop | 992–1440px | Full layout |
 | Large | >1440px | Expanded |
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Text: Near Black (`#0e0f0c`)

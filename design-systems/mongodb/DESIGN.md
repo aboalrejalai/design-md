@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "MongoDB"
+"description": "Bundled Open Design package for MongoDB, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#00ed64"
+  "primary-hover": "#00684a"
+  "on-primary": "#001e2b"
+  "canvas": "#001e2b"
+  "surface": "#1c2d38"
+  "surface-warm": "#1c2d38"
+  "ink": "#ffffff"
+  "body": "#e8edeb"
+  "muted": "#b8c4c2"
+  "meta": "#5c6c75"
+  "border": "#3d4f58"
+  "border-soft": "#3d4f58"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"MongoDB Value Serif\", \"Times New Roman\", Times, ui-serif, Georgia, serif"
+    "lineHeight": "1.2"
+  body:
+    "fontFamily": "\"Euclid Circular A\", \"Akzidenz-Grotesk Std\", -apple-system, \"Segoe UI\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Source Code Pro\", ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "64px"
+  4xl:
+    "fontSize": "96px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by MongoDB
 
 > Category: Backend & Data
 > Document database. Green leaf branding, developer documentation focus.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 MongoDB's website is a deep-forest-meets-terminal experience — a design system rooted in the darkest teal-black (`#001e2b`) that evokes both the density of a database and the depth of a forest canopy. Against this near-black canvas, a striking neon green (`#00ed64`) pulses as the brand accent — bright enough to feel electric, organic enough to feel alive. This isn't the cold neon of cyberpunk; it's the bioluminescent green of something growing in the dark.
 
@@ -22,7 +115,7 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - Pill buttons (100px radius) with green borders (`#00684a`)
 - Link Blue (`#006cfa`) and hover transition to `#3860be`
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Brand
 - **Forest Black** (`#001e2b`): Primary dark background — the deepest teal-black
@@ -49,7 +142,7 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - **Standard Shadow** (`rgba(0, 0, 0, 0.15) 0px 3px 20px`): General elevation
 - **Subtle Shadow** (`rgba(0, 0, 0, 0.1) 0px 2px 4px`): Light card lift
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display Serif**: `MongoDB Value Serif` — editorial hero headlines
@@ -84,7 +177,49 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - **Wide-tracked monospace labels**: Source Code Pro uppercase at 1px–3px letter-spacing creates technical signposts that feel like database field labels — systematic, structured, classified.
 - **Four-weight range**: 300 (light body) → 400 (standard) → 500 (UI/nav) → 700 (bold CTA) — a wider range than most systems, enabling fine-grained hierarchy.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 4px, 7px, 8px, 10px, 12px, 14px, 15px, 16px, 18px, 20px, 24px, 32px
+
+### Grid & Container
+- Max content width centered
+- Dark hero section with contained content
+- Light content sections below
+- Card grids: 2–3 columns
+- Full-width dark footer
+
+### Whitespace Philosophy
+- **Dramatic mode transitions**: The shift from dark teal sections to white content creates built-in visual breathing through contrast, not just space.
+- **Generous dark sections**: Dark hero and feature areas use extra vertical padding (80px+) to let the forest-dark background breathe.
+- **Compact light sections**: White content areas are denser, with tighter card grids and less vertical spacing.
+
+### Border Radius Scale
+- Minimal (1px–2px): Small spans, badges
+- Subtle (4px): Inputs, small buttons
+- Standard (8px): Cards, links
+- Card (16px): Standard cards, containers
+- Toggle (20px): Switch elements
+- Large (24px): Large panels
+- Image (30px–32px): Image containers
+- Hero (48px): Hero cards
+- Pill (100px–999px): Buttons, navigation pills
+- Full (9999px): Maximum pill
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Default surfaces |
+| Subtle (Level 1) | `rgba(0,0,0,0.1) 0px 2px 4px` | Light card lift |
+| Standard (Level 2) | `rgba(0,0,0,0.15) 0px 3px 9px` | Standard cards |
+| Prominent (Level 3) | `rgba(0,0,0,0.15) 0px 3px 20px` | Elevated panels |
+| Forest (Level 4) | `rgba(0,30,43,0.12) 0px 26px 44px, rgba(0,0,0,0.13) 0px 7px 13px` | Hero cards — teal-tinted |
+
+**Shadow Philosophy**: MongoDB's shadow system is unique in that the primary elevation shadow uses `rgba(0, 30, 43, 0.12)` — a teal-tinted shadow that carries the forest-dark brand color into the depth system. This means even on white surfaces, shadows feel like they belong to the MongoDB color world rather than being generic neutral black.
+
+## Components
 
 ### Buttons
 
@@ -148,49 +283,7 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - Used as section category markers above headings
 - Creates a "database field label" aesthetic
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 4px, 7px, 8px, 10px, 12px, 14px, 15px, 16px, 18px, 20px, 24px, 32px
-
-### Grid & Container
-- Max content width centered
-- Dark hero section with contained content
-- Light content sections below
-- Card grids: 2–3 columns
-- Full-width dark footer
-
-### Whitespace Philosophy
-- **Dramatic mode transitions**: The shift from dark teal sections to white content creates built-in visual breathing through contrast, not just space.
-- **Generous dark sections**: Dark hero and feature areas use extra vertical padding (80px+) to let the forest-dark background breathe.
-- **Compact light sections**: White content areas are denser, with tighter card grids and less vertical spacing.
-
-### Border Radius Scale
-- Minimal (1px–2px): Small spans, badges
-- Subtle (4px): Inputs, small buttons
-- Standard (8px): Cards, links
-- Card (16px): Standard cards, containers
-- Toggle (20px): Switch elements
-- Large (24px): Large panels
-- Image (30px–32px): Image containers
-- Hero (48px): Hero cards
-- Pill (100px–999px): Buttons, navigation pills
-- Full (9999px): Maximum pill
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow | Default surfaces |
-| Subtle (Level 1) | `rgba(0,0,0,0.1) 0px 2px 4px` | Light card lift |
-| Standard (Level 2) | `rgba(0,0,0,0.15) 0px 3px 9px` | Standard cards |
-| Prominent (Level 3) | `rgba(0,0,0,0.15) 0px 3px 20px` | Elevated panels |
-| Forest (Level 4) | `rgba(0,30,43,0.12) 0px 26px 44px, rgba(0,0,0,0.13) 0px 7px 13px` | Hero cards — teal-tinted |
-
-**Shadow Philosophy**: MongoDB's shadow system is unique in that the primary elevation shadow uses `rgba(0, 30, 43, 0.12)` — a teal-tinted shadow that carries the forest-dark brand color into the depth system. This means even on white surfaces, shadows feel like they belong to the MongoDB color world rather than being generic neutral black.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use `#001e2b` (forest-black) for dark sections — not pure black
@@ -212,7 +305,7 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - Don't use warm colors — the palette is strictly cool (teal, green, blue)
 - Don't forget the green accent underlines — they're the signature decorative element
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -241,7 +334,7 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 - Dark section backgrounds maintained full-width
 - Image radius maintained across breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Dark background: Forest Black (`#001e2b`)

@@ -1,9 +1,109 @@
+---
+"version": "alpha"
+"name": "Runway"
+"description": "Bundled Open Design package for Runway, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#ffffff"
+  "primary-hover": "#e9ecf2"
+  "primary-active": "#c9ccd1"
+  "on-primary": "#000000"
+  "canvas": "#000000"
+  "surface": "#1a1a1a"
+  "surface-warm": "#030303"
+  "ink": "#ffffff"
+  "body": "#e9ecf2"
+  "muted": "#767d88"
+  "meta": "#7d848e"
+  "border": "#27272a"
+  "border-soft": "#1a1a1a"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"abcNormal\", \"abcNormal Fallback\", \"Inter\", \"DM Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    "lineHeight": "1.0"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"abcNormal\", \"abcNormal Fallback\", \"Inter\", \"DM Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif"
+    "lineHeight": "1.4"
+  mono:
+    "fontFamily": "ui-monospace, \"SF Mono\", \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "40px"
+  4xl:
+    "fontSize": "48px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "78px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1600px"
+  "container-gutter-desktop": "48px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.body}"
+  cards:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "typography": "{typography.xs}"
+    "padding": "{spacing.4}"
+  badges:
+    "rounded": "{rounded.pill}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Runway
 
 > Category: AI & LLM
 > AI video generation. Cinematic dark UI, media-rich layout.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Runway's interface is a cinematic reel brought to life as a website — a dark, editorial, film-production-grade design where full-bleed photography and video ARE the primary UI elements. This is not a typical tech product page; it's a visual manifesto for AI-powered creativity. Every section feels like a frame from a film: dramatic lighting, sweeping landscapes, and intimate human moments captured in high-quality imagery that dominates the viewport.
 
@@ -21,7 +121,7 @@ What makes Runway distinctive is its complete commitment to visual content as de
 - Weight 450 (unusual intermediate) for small uppercase text — precision craft
 - Editorial magazine layout with mixed-size image grids
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Runway Black** (`#000000`): The primary page background and maximum-emphasis text.
@@ -49,7 +149,7 @@ What makes Runway distinctive is its complete commitment to visual content as de
 ### Gradient System
 - **None in the interface.** Visual richness comes entirely from photographic content — AI-generated and enhanced imagery provides all the color and gradient the design needs. The interface itself is intentionally colorless.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Universal**: `abcNormal`, with fallback: `abcNormal Fallback`
@@ -77,7 +177,44 @@ What makes Runway distinctive is its complete commitment to visual content as de
 - **Negative tracking as default**: Even body text uses -0.16px to -0.26px letter-spacing, keeping everything slightly tighter than default.
 - **Uppercase as structure**: Labels at 14px and 11px use `text-transform: uppercase` with positive letter-spacing (0.35px) to create navigational signposts that contrast with the tight lowercase text.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 4px, 6px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 48px, 64px, 78px
+- Section vertical spacing: generous (48–78px)
+- Component gaps: 16–24px
+
+### Grid & Container
+- Max container width: up to 1600px (cinema-wide)
+- Hero: full-viewport, edge-to-edge
+- Content sections: centered with generous margins
+- Image grids: asymmetric, magazine-style mixed sizes
+- Footer: full-width dark section
+
+### Whitespace Philosophy
+- **Cinema-grade breathing**: Large vertical gaps between sections create a scrolling experience that feels like watching scenes change.
+- **Images replace whitespace**: Where other sites use empty space, Runway fills it with photography. The visual content IS the breathing room.
+- **Editorial grid asymmetry**: The image grid uses intentionally varied sizes — large hero images paired with smaller supporting images, creating visual rhythm.
+
+### Border Radius Scale
+- Sharp (4px): Buttons, small interactive elements
+- Subtle (6px): Links, small containers
+- Comfortable (8px): Standard containers, image cards
+- Generous (16px): Alert-style containers, featured elements
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Everything — the dominant state |
+| Bordered (Level 1) | `1px solid #27272a` | Alert containers only |
+| Dark Section (Level 2) | Dark bg (#000000 / #1a1a1a) with light text | Hero, features, footer |
+| Light Section (Level 3) | White/Cool Cloud bg with dark text | Content sections, research |
+
+**Shadow Philosophy**: Runway uses **zero shadows**. This is a film-production design decision — in cinema, depth comes from lighting, focus, and composition, not drop shadows. The interface mirrors this philosophy: depth is communicated through dark/light section alternation, photographic depth-of-field, and overlay transparency — never through CSS box-shadow.
+
+## Components
 
 ### Buttons
 - Text: weight 600 at 14px abcNormal
@@ -129,44 +266,7 @@ What makes Runway distinctive is its complete commitment to visual content as de
 - On a dark background with white text
 - The emotional close — artistic and philosophical
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 4px, 6px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 48px, 64px, 78px
-- Section vertical spacing: generous (48–78px)
-- Component gaps: 16–24px
-
-### Grid & Container
-- Max container width: up to 1600px (cinema-wide)
-- Hero: full-viewport, edge-to-edge
-- Content sections: centered with generous margins
-- Image grids: asymmetric, magazine-style mixed sizes
-- Footer: full-width dark section
-
-### Whitespace Philosophy
-- **Cinema-grade breathing**: Large vertical gaps between sections create a scrolling experience that feels like watching scenes change.
-- **Images replace whitespace**: Where other sites use empty space, Runway fills it with photography. The visual content IS the breathing room.
-- **Editorial grid asymmetry**: The image grid uses intentionally varied sizes — large hero images paired with smaller supporting images, creating visual rhythm.
-
-### Border Radius Scale
-- Sharp (4px): Buttons, small interactive elements
-- Subtle (6px): Links, small containers
-- Comfortable (8px): Standard containers, image cards
-- Generous (16px): Alert-style containers, featured elements
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Everything — the dominant state |
-| Bordered (Level 1) | `1px solid #27272a` | Alert containers only |
-| Dark Section (Level 2) | Dark bg (#000000 / #1a1a1a) with light text | Hero, features, footer |
-| Light Section (Level 3) | White/Cool Cloud bg with dark text | Content sections, research |
-
-**Shadow Philosophy**: Runway uses **zero shadows**. This is a film-production design decision — in cinema, depth comes from lighting, focus, and composition, not drop shadows. The interface mirrors this philosophy: depth is communicated through dark/light section alternation, photographic depth-of-field, and overlay transparency — never through CSS box-shadow.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use full-bleed cinematic photography as the primary visual element
@@ -190,7 +290,7 @@ What makes Runway distinctive is its complete commitment to visual content as de
 - Don't use body line-height above 1.50 — the tight, editorial feel is core
 - Don't reduce image quality — cinematic photography IS the design
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -219,7 +319,7 @@ What makes Runway distinctive is its complete commitment to visual content as de
 - Image grids reflow to fewer columns
 - Video content maintains aspect ratio
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background Dark: "Runway Black (#000000)"

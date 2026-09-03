@@ -1,9 +1,99 @@
+---
+"version": "alpha"
+"name": "Clay"
+"description": "Bundled Open Design package for Clay, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#b46a46"
+  "on-primary": "#ffffff"
+  "canvas": "#f7eee6"
+  "surface": "#fff8f1"
+  "surface-warm": "#ead6c7"
+  "ink": "#2b211c"
+  "body": "#5a4b43"
+  "muted": "#8a7a70"
+  "meta": "#b46a46"
+  "border": "#dac8b9"
+  "border-soft": "#eaded4"
+  "success": "#4d8f5a"
+  "warning": "#c88735"
+  "danger": "#b84c4c"
+typography:
+  display:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.06"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "Inter, system-ui, sans-serif"
+    "lineHeight": "1.52"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "36px"
+  3xl:
+    "fontSize": "54px"
+  4xl:
+    "fontSize": "76px"
+rounded:
+  "sm": "14px"
+  "md": "22px"
+  "lg": "34px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "68px"
+  "section-y-phone": "48px"
+  "container-max": "1180px"
+  "container-gutter-desktop": "36px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.lg}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Clay
 
 > Category: Design & Creative
 > Creative agency. Organic shapes, soft gradients, art-directed layout.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Clay's website is a warm, playful celebration of color that treats B2B data enrichment like a craft rather than an enterprise chore. The design language is built on a foundation of warm cream backgrounds (`#faf9f7`) and oat-toned borders (`#dad4c8`, `#eee9df`) that give every surface the tactile quality of handmade paper. Against this artisanal canvas, a vivid swatch palette explodes with personality — Matcha green, Slushie cyan, Lemon gold, Ube purple, Pomegranate pink, Blueberry navy, and Dragonfruit magenta — each named like flavors at a juice bar, not colors in an enterprise UI kit.
 
@@ -21,7 +111,7 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - Mixed border styles: solid + dashed in the same interface
 - Multi-layer shadow with inset highlight: `0px 1px 1px` + `-1px inset` + `-0.5px`
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Clay Black** (`#000000`): Text, headings, pricing card text, `--_theme--pricing-cards---text`
@@ -77,7 +167,7 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - **Clay Shadow** (`rgba(0,0,0,0.1) 0px 1px 1px, rgba(0,0,0,0.04) 0px -1px 1px inset, rgba(0,0,0,0.05) 0px -0.5px 1px`): Multi-layer with inset highlight — the signature
 - **Hard Offset** (`rgb(0,0,0) -7px 7px`): Hover state — playful hard shadow
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Primary**: `Roobert`, fallback: `Arial`
@@ -113,7 +203,50 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - **Weight 600 for headings, 500 for UI, 400 for body**: Clean three-tier system where each weight has a strict role.
 - **Uppercase labels with positive tracking**: 12px uppercase at 1.08px letter-spacing creates the systematic wayfinding pattern.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 6.4px, 8px, 12px, 12.8px, 16px, 18px, 20px, 24px
+
+### Grid & Container
+- Max content width centered
+- Feature sections alternate between white cards and colorful swatch backgrounds
+- Card grids: 2–3 columns on desktop
+- Full-width colorful sections break the grid
+- Footer with generous 40px radius container
+
+### Whitespace Philosophy
+- **Warm, generous breathing**: The cream background provides a warm rest between content blocks. Spacing is generous but not austere — it feels inviting, like a well-set table.
+- **Color as spatial rhythm**: The alternating swatch-colored sections create visual rhythm through hue rather than just whitespace. Each color section is its own "room."
+- **Craft-like density inside cards**: Within cards, content is compact and well-organized, contrasting with the generous outer spacing.
+
+### Border Radius Scale
+- Sharp (4px): Ghost buttons, inputs
+- Standard (8px): Small cards, images, links
+- Badge (11px): Tag badges
+- Card (12px): Standard cards, buttons
+- Feature (24px): Feature cards, images, panels
+- Section (40px): Large sections, footer, containers
+- Pill (1584px): CTAs, pill-shaped buttons
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, cream canvas | Page background |
+| Clay Shadow (Level 1) | `rgba(0,0,0,0.1) 0px 1px 1px, rgba(0,0,0,0.04) 0px -1px inset, rgba(0,0,0,0.05) 0px -0.5px` | Cards, buttons — multi-layer with inset highlight |
+| Hover Hard (Level 2) | `rgb(0,0,0) -7px 7px` | Hover state — playful hard offset shadow |
+| Focus (Level 3) | `rgb(20, 110, 245) solid 2px` | Keyboard focus ring |
+
+**Shadow Philosophy**: Clay's shadow system is uniquely three-layered: a downward cast (`0px 1px 1px`), an upward inset highlight (`0px -1px 1px inset`), and a subtle edge (`0px -0.5px 1px`). This creates a "pressed into clay" quality where elements feel both raised AND embedded — like a clay tablet where content is stamped into the surface. The hover hard shadow (`-7px 7px`) is deliberately retro-graphic, referencing print-era drop shadows and adding physical playfulness.
+
+### Decorative Depth
+- Full-width swatch-colored sections create dramatic depth through color contrast
+- Dashed borders add visual texture alongside solid borders
+- Product illustrations with warm, organic art style
+
+## Components
 
 ### Buttons
 
@@ -185,50 +318,7 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - Used for secondary containers and decorative elements
 - Adds a hand-drawn, craft-like quality
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 2px, 4px, 6.4px, 8px, 12px, 12.8px, 16px, 18px, 20px, 24px
-
-### Grid & Container
-- Max content width centered
-- Feature sections alternate between white cards and colorful swatch backgrounds
-- Card grids: 2–3 columns on desktop
-- Full-width colorful sections break the grid
-- Footer with generous 40px radius container
-
-### Whitespace Philosophy
-- **Warm, generous breathing**: The cream background provides a warm rest between content blocks. Spacing is generous but not austere — it feels inviting, like a well-set table.
-- **Color as spatial rhythm**: The alternating swatch-colored sections create visual rhythm through hue rather than just whitespace. Each color section is its own "room."
-- **Craft-like density inside cards**: Within cards, content is compact and well-organized, contrasting with the generous outer spacing.
-
-### Border Radius Scale
-- Sharp (4px): Ghost buttons, inputs
-- Standard (8px): Small cards, images, links
-- Badge (11px): Tag badges
-- Card (12px): Standard cards, buttons
-- Feature (24px): Feature cards, images, panels
-- Section (40px): Large sections, footer, containers
-- Pill (1584px): CTAs, pill-shaped buttons
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, cream canvas | Page background |
-| Clay Shadow (Level 1) | `rgba(0,0,0,0.1) 0px 1px 1px, rgba(0,0,0,0.04) 0px -1px inset, rgba(0,0,0,0.05) 0px -0.5px` | Cards, buttons — multi-layer with inset highlight |
-| Hover Hard (Level 2) | `rgb(0,0,0) -7px 7px` | Hover state — playful hard offset shadow |
-| Focus (Level 3) | `rgb(20, 110, 245) solid 2px` | Keyboard focus ring |
-
-**Shadow Philosophy**: Clay's shadow system is uniquely three-layered: a downward cast (`0px 1px 1px`), an upward inset highlight (`0px -1px 1px inset`), and a subtle edge (`0px -0.5px 1px`). This creates a "pressed into clay" quality where elements feel both raised AND embedded — like a clay tablet where content is stamped into the surface. The hover hard shadow (`-7px 7px`) is deliberately retro-graphic, referencing print-era drop shadows and adding physical playfulness.
-
-### Decorative Depth
-- Full-width swatch-colored sections create dramatic depth through color contrast
-- Dashed borders add visual texture alongside solid borders
-- Product illustrations with warm, organic art style
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use warm cream (`#faf9f7`) as the page background — the warmth is the identity
@@ -250,7 +340,7 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - Don't use standard shadows (blur-based) — Clay uses hard offset and multi-layer inset
 - Don't forget the uppercase labels with 1.08px tracking — they're the wayfinding system
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -277,7 +367,7 @@ What makes Clay truly distinctive is its hover micro-animations: buttons on hove
 - Colorful section illustrations adapt to viewport width
 - Rounded corners maintained across breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Background: Warm Cream (`#faf9f7`)

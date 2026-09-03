@@ -1,9 +1,107 @@
+---
+"version": "alpha"
+"name": "Apple"
+"description": "Bundled Open Design package for Apple, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#0071e3"
+  "primary-hover": "#0077ed"
+  "primary-active": "#0066cc"
+  "on-primary": "#ffffff"
+  "canvas": "#ffffff"
+  "surface": "#f5f5f7"
+  "surface-warm": "#fbfbfd"
+  "ink": "#1d1d1f"
+  "body": "#424245"
+  "muted": "#6e6e73"
+  "meta": "#86868b"
+  "border": "#d2d2d7"
+  "border-soft": "#e8e8ed"
+  "success": "#16a34a"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.05"
+    "letterSpacing": "-0.015em"
+  body:
+    "fontFamily": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.47"
+  mono:
+    "fontFamily": "\"SF Mono\", ui-monospace, \"JetBrains Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "17px"
+  lg:
+    "fontSize": "21px"
+  xl:
+    "fontSize": "28px"
+  2xl:
+    "fontSize": "40px"
+  3xl:
+    "fontSize": "56px"
+  4xl:
+    "fontSize": "80px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "18px"
+  "pill": "980px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "100px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "40px"
+  "container-max": "1024px"
+  "container-gutter-desktop": "22px"
+  "container-gutter-tablet": "18px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+  inputs:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  badges:
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.3}"
+  keyboard:
+    "backgroundColor": "{colors.canvas}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.mono}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.3}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Apple
 
 > Category: Media & Consumer
 > Consumer electronics. Premium white space, SF Pro, cinematic imagery.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Apple's web language is a precision editorial system that alternates between gallery-like calm and retail-density information blocks. The visual tone stays restrained: broad neutral canvases, quiet chrome, and product imagery given almost all of the expressive weight. The interface is engineered to disappear so hardware, materials, and finish options become the narrative foreground.
 
@@ -21,7 +119,7 @@ Typography is the stabilizer. SF Pro Display carries hero and merchandising hier
 - Depth used sparingly; contrast and surface separation do most of the layering work
 - Multi-page color-block rhythm: black hero chapters -> pale neutral merchandising fields -> utility white retail surfaces -> dark micro-surfaces for controls
 
-## 2. Color Palette & Roles
+## Colors
 
 > **Source Pages:** `https://www.apple.com/`, `https://www.apple.com/environment/`, `https://www.apple.com/store`, `https://www.apple.com/shop/buy-iphone/iphone-17-pro`, `https://www.apple.com/shop/accessories/all`
 
@@ -55,7 +153,7 @@ Typography is the stabilizer. SF Pro Display carries hero and merchandising hier
 ### Gradient System
 - The extracted pages are overwhelmingly solid-surface driven. Visual richness comes from photography and finish rendering rather than persistent UI gradients.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display Family:** `SF Pro Display`, fallbacks `SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif`
@@ -91,7 +189,48 @@ Typography is the stabilizer. SF Pro Display carries hero and merchandising hier
 - Closest freely available substitutes: `Inter` for text-heavy implementation and `SF Pro Display-like` metrics approximated with `Inter Tight` for headings.
 - When substituting, increase line-height slightly (+0.02 to +0.06) on body sizes and reduce negative tracking intensity to preserve readability.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit is effectively `8px`, but the system supports dense micro-steps for precision alignment.
+- Frequently reused spacing values across pages: `2`, `4`, `6`, `7`, `8`, `9`, `10`, `12`, `14`, `17`, `20` px.
+- Universal rhythm constants visible across both marketing and retail flows: `8px` unit scaffolding with `14-20px` utility intervals for component padding and list spacing.
+
+### Grid & Container
+- **Showcase pages:** large central columns with broad horizontal breathing room and full-width color chapters.
+- **Commerce pages:** tighter multi-column product and control grids with frequent modular stacking.
+- **Container behavior:** constrained readable core with generous outer margins at desktop widths.
+
+### Whitespace Philosophy
+- **Scene pacing:** major visual chapters use broad top/bottom breathing room.
+- **Information compaction where needed:** retail pages deliberately compress spacing to expose more actionable information per viewport.
+- **Contrast-led separation:** section transitions rely more on surface changes than decorative separators.
+
+### Border Radius Scale
+- **5px:** tiny utility links/tags and minor small shells.
+- **8px-12px:** standard controls and compact fields.
+- **16px-18px:** cards, module frames, and commerce panels.
+- **28px-36px:** larger module and spotlight containers.
+- **56px / 100px / 980px:** capsules, large pills, and signature elongated CTA forms.
+- **50%:** circular media and selection controls.
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|------|-----------|-----|
+| Level 0 | Flat neutral surfaces (`#ffffff`, `#f5f5f7`, `#000000`) | Main narrative and product stages |
+| Level 1 | Subtle border containment (`#d2d2d7`, `#86868b`) | Filters, input fields, utility cards |
+| Level 2 | Soft shadow (`rgba(0,0,0,0.08)` to `rgba(0,0,0,0.22)` where present) | Highlighted cards and elevated merchandise modules |
+| Level 3 | Dark-surface stepping (`#272729` -> `#2a2a2c`) | Overlays, media controls, dark utility clusters |
+| Accessibility | Blue focus signal (`#0071e3`) | Keyboard and selection emphasis |
+
+Depth is intentionally restrained. Apple favors tonal contrast, surface stepping, and compositional hierarchy over heavy shadow stacks.
+
+### Decorative Depth
+- Decorative depth is primarily created by photographic realism and material rendering, not synthetic UI effects.
+- Translucent overlays and glass-like utility bars provide mild atmospheric layering in navigation and controls.
+
+## Components
 
 ### Buttons
 - **Primary Fill Action:** `#0071e3` background, `#ffffff` text, 8px radius, compact horizontal padding (commonly 8px 15px). Used for decisive purchase/progression actions.
@@ -126,48 +265,7 @@ Typography is the stabilizer. SF Pro Display carries hero and merchandising hier
 - **Carousel Control Dots/Arrows:** circular control vocabulary in muted overlays for gallery progression.
 - **Environment Story Panels:** narrative chapters that blend editorial typography with cinematic product/environment visuals.
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit is effectively `8px`, but the system supports dense micro-steps for precision alignment.
-- Frequently reused spacing values across pages: `2`, `4`, `6`, `7`, `8`, `9`, `10`, `12`, `14`, `17`, `20` px.
-- Universal rhythm constants visible across both marketing and retail flows: `8px` unit scaffolding with `14-20px` utility intervals for component padding and list spacing.
-
-### Grid & Container
-- **Showcase pages:** large central columns with broad horizontal breathing room and full-width color chapters.
-- **Commerce pages:** tighter multi-column product and control grids with frequent modular stacking.
-- **Container behavior:** constrained readable core with generous outer margins at desktop widths.
-
-### Whitespace Philosophy
-- **Scene pacing:** major visual chapters use broad top/bottom breathing room.
-- **Information compaction where needed:** retail pages deliberately compress spacing to expose more actionable information per viewport.
-- **Contrast-led separation:** section transitions rely more on surface changes than decorative separators.
-
-### Border Radius Scale
-- **5px:** tiny utility links/tags and minor small shells.
-- **8px-12px:** standard controls and compact fields.
-- **16px-18px:** cards, module frames, and commerce panels.
-- **28px-36px:** larger module and spotlight containers.
-- **56px / 100px / 980px:** capsules, large pills, and signature elongated CTA forms.
-- **50%:** circular media and selection controls.
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|------|-----------|-----|
-| Level 0 | Flat neutral surfaces (`#ffffff`, `#f5f5f7`, `#000000`) | Main narrative and product stages |
-| Level 1 | Subtle border containment (`#d2d2d7`, `#86868b`) | Filters, input fields, utility cards |
-| Level 2 | Soft shadow (`rgba(0,0,0,0.08)` to `rgba(0,0,0,0.22)` where present) | Highlighted cards and elevated merchandise modules |
-| Level 3 | Dark-surface stepping (`#272729` -> `#2a2a2c`) | Overlays, media controls, dark utility clusters |
-| Accessibility | Blue focus signal (`#0071e3`) | Keyboard and selection emphasis |
-
-Depth is intentionally restrained. Apple favors tonal contrast, surface stepping, and compositional hierarchy over heavy shadow stacks.
-
-### Decorative Depth
-- Decorative depth is primarily created by photographic realism and material rendering, not synthetic UI effects.
-- Translucent overlays and glass-like utility bars provide mild atmospheric layering in navigation and controls.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use the neutral triad (`#000000`, `#f5f5f7`, `#ffffff`) as the structural foundation.
@@ -187,7 +285,7 @@ Depth is intentionally restrained. Apple favors tonal contrast, surface stepping
 - Don’t remove neutral contrast cadence between dark and light chapters.
 - Don’t treat marketing and purchase flows as separate design systems.
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -217,7 +315,7 @@ Depth is intentionally restrained. Apple favors tonal contrast, surface stepping
 - Retail thumbnails stay legible via tighter crop logic and denser card stacking.
 - Image-led modules continue to anchor the rhythm as layout density increases.
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary action blue: **Apple Action Blue** (`#0071e3`)

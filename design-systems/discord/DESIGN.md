@@ -1,9 +1,94 @@
+---
+"version": "alpha"
+"name": "Discord"
+"description": "Bundled Open Design package for Discord, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#5865f2"
+  "primary-hover": "#4752c4"
+  "on-primary": "#ffffff"
+  "canvas": "#313338"
+  "surface": "#2b2d31"
+  "surface-warm": "#1e1f22"
+  "ink": "#dbdee1"
+  "body": "#f2f3f5"
+  "muted": "#949ba4"
+  "meta": "#80848e"
+  "border": "rgba(255, 255, 255, 0.06)"
+  "border-soft": "#3f4147"
+  "success": "#23a55a"
+  "warning": "#f0b232"
+  "danger": "#f23f43"
+typography:
+  display:
+    "fontFamily": "\"gg sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.10"
+    "letterSpacing": "-0.02em"
+  body:
+    "fontFamily": "\"gg sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    "lineHeight": "1.375"
+  mono:
+    "fontFamily": "\"gg mono\", Consolas, \"Andale Mono\", \"Courier New\", Courier, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "20px"
+  2xl:
+    "fontSize": "24px"
+  3xl:
+    "fontSize": "32px"
+  4xl:
+    "fontSize": "56px"
+rounded:
+  "sm": "4px"
+  "md": "8px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "40px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "16px"
+components:
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.sm}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.6}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Discord
 
 > Category: Productivity & SaaS
 > Voice / chat platform. Deep blurple, dark-first surfaces, playful accent moments.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Discord's product is engineered for evenings, raids, and group voice — so the entire surface is dark-first. The default canvas is the deep `Background Primary` (`#313338` light theme, `#1e1f22` dark theme), with chat columns layered on slightly lighter or darker shades to denote channels, threads, and side panels. The signature **Blurple** (`#5865f2`) is reserved for the brand mark, primary CTAs, mentions, and the "you" affordance — used sparingly so it pops against the muted neutrals.
 
@@ -20,7 +105,7 @@ The shape language is rounded but not balloon-soft: 8px radii on cards, 4px on i
 - Status dots: green online, yellow idle, red dnd, gray offline
 - Pixel-snapped 1px dividers in subtle off-white at low alpha
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Blurple** (`#5865f2`): Brand primary, primary CTA, mention highlight.
@@ -60,7 +145,7 @@ The shape language is rounded but not balloon-soft: 8px radii on cards, 4px on i
 - **Background Modifier Accent** (`rgba(255, 255, 255, 0.06)`): Standard divider in dark.
 - **Border Subtle** (`#3f4147`): Solid divider for cards.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Body / UI / Headings**: `gg sans`, with fallback: `"Helvetica Neue", Helvetica, Arial, sans-serif`
@@ -88,7 +173,7 @@ The shape language is rounded but not balloon-soft: 8px radii on cards, 4px on i
 - **Weight contrast over color contrast**: hierarchy comes from 400→500→600→700→800 weight steps; the surface stays neutral.
 - **16px body**: chat messages do not shrink below 16px. Density comes from line-height (1.375), not font size.
 
-## 4. Component Stylings
+## Components
 
 ### Buttons
 
@@ -147,7 +232,7 @@ The shape language is rounded but not balloon-soft: 8px radii on cards, 4px on i
 - Padding: 0 2px
 - Radius: 3px
 
-## 5. Spacing & Layout
+## Spacing & Layout
 
 - **Base unit**: 4px. Scale: 4, 8, 12, 16, 20, 24, 32, 40.
 - **Server rail**: 72px wide, fixed.
@@ -155,13 +240,13 @@ The shape language is rounded but not balloon-soft: 8px radii on cards, 4px on i
 - **Member list**: 240px wide on desktop.
 - **Chat column**: fluid, min 380px.
 
-## 6. Motion
+## Motion
 
 - **Duration**: 200ms for hover; 350ms for the avatar circle-morph; 80ms for tooltip fade.
 - **Easing**: `cubic-bezier(0.215, 0.61, 0.355, 1)` for the avatar morph (snappy then settle).
 - **Notification pulse**: 1.4s ease-in-out infinite on unread mention indicator.
 
-## 7. Usage Guardrails
+## Usage Guardrails
 
 - Preserve the dark shell, compact density, and blurple action hierarchy together; using blurple on a light marketing-style layout breaks the Discord product feel.
 - Keep navigation-heavy surfaces structured around rails, sidebars, and chat columns rather than isolated decorative cards.

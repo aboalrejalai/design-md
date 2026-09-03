@@ -1,9 +1,113 @@
+---
+"version": "alpha"
+"name": "PostHog"
+"description": "Bundled Open Design package for PostHog, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#F54E00"
+  "on-primary": "#ffffff"
+  "canvas": "#fdfdf8"
+  "surface": "#eeefe9"
+  "surface-warm": "#e5e7e0"
+  "ink": "#4d4f46"
+  "body": "#23251d"
+  "muted": "#65675e"
+  "meta": "#9ea096"
+  "border": "#bfc1b7"
+  "success": "#16a34a"
+  "warning": "#F7A501"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"IBM Plex Sans Variable\", \"IBM Plex Sans\", -apple-system, system-ui, \"Avenir Next\", Avenir, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif"
+    "lineHeight": "1.2"
+    "letterSpacing": "-0.025em"
+  body:
+    "fontFamily": "\"IBM Plex Sans Variable\", \"IBM Plex Sans\", -apple-system, system-ui, \"Avenir Next\", Avenir, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Source Code Pro\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "30px"
+  3xl:
+    "fontSize": "36px"
+  4xl:
+    "fontSize": "44px"
+rounded:
+  "sm": "4px"
+  "md": "6px"
+  "lg": "8px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "48px"
+  "section-y-tablet": "32px"
+  "section-y-phone": "24px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.display}"
+  cards:
+    "backgroundColor": "{colors.primary}"
+    "rounded": "{rounded.md}"
+    "padding": "{spacing.3}"
+  badges:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+  links:
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+  keyboard:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+  typography:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.body}"
+    "typography": "{typography.display}"
+  layout:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.body}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by PostHog
 
 > Category: Backend & Data
 > Product analytics. Playful hedgehog branding, developer-friendly dark UI.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 PostHog's website feels like a startup's internal wiki that escaped into the wild — warm, irreverent, and deliberately anti-corporate. The background isn't the expected crisp white or dark void of developer tools; it's a warm, sage-tinted cream (`#fdfdf8`) that gives every surface a handmade, paper-like quality. Colors lean into earthy olive greens and muted sage rather than the conventional blues and purples of the SaaS world. It's as if someone designed a developer analytics platform inside a cozy garden shed.
 
@@ -21,7 +125,7 @@ The interaction design carries the same spirit: hover states flash PostHog Orang
 - Content-heavy editorial layout — the site reads like a magazine, not a typical landing page
 - Tailwind CSS + Radix UI + shadcn/ui component architecture
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Olive Ink** (`#4d4f46`): Primary text color — a distinctive olive-gray that gives all text a warm, earthy tone
@@ -57,7 +161,7 @@ The interaction design carries the same spirit: hover states flash PostHog Orang
 - No gradients on the marketing site — PostHog's visual language is deliberately flat and warm
 - Depth is achieved through layered surfaces and border containment, not color transitions
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Display & Body**: `IBM Plex Sans Variable` — variable font (100–700+ weight range). Fallbacks: `IBM Plex Sans, -apple-system, system-ui, Avenir Next, Avenir, Segoe UI, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Arial`
@@ -93,7 +197,52 @@ The interaction design carries the same spirit: hover states flash PostHog Orang
 - **Uppercase as category signal**: Bold uppercase labels (18px–20px weight 700) are used for product category headings — a magazine-editorial convention
 - **Selective negative tracking**: Letter-spacing tightens on display text (-0.75px at 30px) but relaxes to 0px on body — headlines compress, body breathes
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- **Base unit**: 8px
+- **Scale**: 2px, 4px, 6px, 8px, 10px, 12px, 16px, 18px, 24px, 32px, 34px
+- **Section padding**: 32px–48px vertical between sections (compact for a content-heavy site)
+- **Card padding**: 4px–12px internal (notably compact)
+- **Component gaps**: 4px–8px between related elements
+
+### Grid & Container
+- **Max width**: 1536px (largest breakpoint), with content containers likely 1200px–1280px
+- **Column patterns**: Varied — single column for text content, 2-3 column grids for feature cards, asymmetric layouts for product demos
+- **Breakpoints**: 13 defined — 1px, 425px, 482px, 640px, 768px, 767px, 800px, 900px, 1024px, 1076px, 1160px, 1280px, 1536px
+
+### Whitespace Philosophy
+- **Content-dense by design**: PostHog's site is information-rich — whitespace is measured, not lavish
+- **Editorial pacing**: Content sections flow like a magazine with varied layouts keeping the eye moving
+- **Illustrations as breathing room**: Hand-drawn hedgehog art breaks up dense content sections naturally
+
+### Border Radius Scale
+- **2px**: Small inline elements, tags (`span`)
+- **4px**: Primary UI components — buttons, inputs, dropdowns, menu items (`button`, `div`, `combobox`)
+- **6px**: Secondary containers — larger buttons, list items, card variants (`button`, `div`, `li`)
+- **9999px**: Pill shape — badges, status indicators, rounded tags (`span`, `div`)
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Level 0 (Flat) | No shadow, warm parchment background | Page canvas, most surfaces |
+| Level 1 (Border) | `1px solid #bfc1b7` (Sage Border) | Card containment, input borders, section dividers |
+| Level 2 (Compound Border) | Multiple 1px borders on different sides | Input groupings, toolbar elements |
+| Level 3 (Deep Shadow) | `0px 25px 50px -12px rgba(0, 0, 0, 0.25)` | Modals, floating elements, mega-menu dropdowns |
+
+### Shadow Philosophy
+PostHog's elevation system is remarkably minimal — only one shadow definition exists in the entire system. Depth is communicated through:
+- **Border containment**: Sage-tinted borders (`#bfc1b7`) at 1px create gentle warm separation
+- **Surface color shifts**: Moving from `#fdfdf8` to `#eeefe9` to `#e5e7e0` creates layered depth without shadows
+- **The single shadow**: The one defined shadow (`0 25px 50px -12px`) is reserved for floating elements — modals, dropdowns, popovers. It's a deep, dramatic shadow that creates clear separation when needed
+
+### Decorative Depth
+- **Illustration layering**: Hand-drawn hedgehog art creates visual depth naturally
+- **No gradients or glow**: The flat, warm surface system relies entirely on border and surface-color differentiation
+- **No glassmorphism**: Fully opaque surfaces throughout
+
+## Components
 
 ### Buttons
 - **Dark Primary**: `#1e1f23` background, white text, 6px radius, `10px 12px` padding. Hover: opacity 0.7 with Amber Gold text. Active: opacity 0.8 with slight scale transform. The main CTA — dark and confident
@@ -132,52 +281,7 @@ The interaction design carries the same spirit: hover states flash PostHog Orang
 ### AI Chat Widget
 - Floating PostHog AI assistant with speech bubble — an interactive product demo embedded in the marketing site
 
-## 5. Layout Principles
-
-### Spacing System
-- **Base unit**: 8px
-- **Scale**: 2px, 4px, 6px, 8px, 10px, 12px, 16px, 18px, 24px, 32px, 34px
-- **Section padding**: 32px–48px vertical between sections (compact for a content-heavy site)
-- **Card padding**: 4px–12px internal (notably compact)
-- **Component gaps**: 4px–8px between related elements
-
-### Grid & Container
-- **Max width**: 1536px (largest breakpoint), with content containers likely 1200px–1280px
-- **Column patterns**: Varied — single column for text content, 2-3 column grids for feature cards, asymmetric layouts for product demos
-- **Breakpoints**: 13 defined — 1px, 425px, 482px, 640px, 768px, 767px, 800px, 900px, 1024px, 1076px, 1160px, 1280px, 1536px
-
-### Whitespace Philosophy
-- **Content-dense by design**: PostHog's site is information-rich — whitespace is measured, not lavish
-- **Editorial pacing**: Content sections flow like a magazine with varied layouts keeping the eye moving
-- **Illustrations as breathing room**: Hand-drawn hedgehog art breaks up dense content sections naturally
-
-### Border Radius Scale
-- **2px**: Small inline elements, tags (`span`)
-- **4px**: Primary UI components — buttons, inputs, dropdowns, menu items (`button`, `div`, `combobox`)
-- **6px**: Secondary containers — larger buttons, list items, card variants (`button`, `div`, `li`)
-- **9999px**: Pill shape — badges, status indicators, rounded tags (`span`, `div`)
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Level 0 (Flat) | No shadow, warm parchment background | Page canvas, most surfaces |
-| Level 1 (Border) | `1px solid #bfc1b7` (Sage Border) | Card containment, input borders, section dividers |
-| Level 2 (Compound Border) | Multiple 1px borders on different sides | Input groupings, toolbar elements |
-| Level 3 (Deep Shadow) | `0px 25px 50px -12px rgba(0, 0, 0, 0.25)` | Modals, floating elements, mega-menu dropdowns |
-
-### Shadow Philosophy
-PostHog's elevation system is remarkably minimal — only one shadow definition exists in the entire system. Depth is communicated through:
-- **Border containment**: Sage-tinted borders (`#bfc1b7`) at 1px create gentle warm separation
-- **Surface color shifts**: Moving from `#fdfdf8` to `#eeefe9` to `#e5e7e0` creates layered depth without shadows
-- **The single shadow**: The one defined shadow (`0 25px 50px -12px`) is reserved for floating elements — modals, dropdowns, popovers. It's a deep, dramatic shadow that creates clear separation when needed
-
-### Decorative Depth
-- **Illustration layering**: Hand-drawn hedgehog art creates visual depth naturally
-- **No gradients or glow**: The flat, warm surface system relies entirely on border and surface-color differentiation
-- **No glassmorphism**: Fully opaque surfaces throughout
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use the olive/sage color family (#4d4f46, #23251d, #bfc1b7) for text and borders — the warm green undertone is essential to the brand
@@ -199,7 +303,7 @@ PostHog's elevation system is remarkably minimal — only one shadow definition 
 - Replace illustrations with stock photography — the hand-drawn hedgehog art is the brand
 - Use pure white (#ffffff) as page background — the warm sage-cream (#fdfdf8) tint is foundational
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -231,7 +335,7 @@ PostHog's elevation system is remarkably minimal — only one shadow definition 
 - Trust logos reflow into multi-row grids on mobile
 - AI chat widget may reposition or simplify on small screens
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary Text: Olive Ink (`#4d4f46`)

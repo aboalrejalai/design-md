@@ -1,9 +1,102 @@
+---
+"version": "alpha"
+"name": "Kraken"
+"description": "Bundled Open Design package for Kraken, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#7132f5"
+  "on-primary": "#ffffff"
+  "canvas": "#0b1020"
+  "surface": "#121a33"
+  "surface-warm": "#1b2450"
+  "ink": "#f8fafc"
+  "body": "#cbd5e1"
+  "muted": "#8b95aa"
+  "meta": "#7d5cff"
+  "border": "#26314f"
+  "border-soft": "#1b2740"
+  "success": "#00c853"
+  "warning": "#ffb020"
+  "danger": "#ff4d6d"
+typography:
+  display:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.08"
+    "letterSpacing": "-0.015em"
+  body:
+    "fontFamily": "\"Inter\", system-ui, sans-serif"
+    "lineHeight": "1.48"
+  mono:
+    "fontFamily": "\"Roboto Mono\", \"SF Mono\", ui-monospace, Menlo, monospace"
+  xs:
+    "fontSize": "11px"
+  sm:
+    "fontSize": "13px"
+  base:
+    "fontSize": "15px"
+  lg:
+    "fontSize": "17px"
+  xl:
+    "fontSize": "22px"
+  2xl:
+    "fontSize": "30px"
+  3xl:
+    "fontSize": "44px"
+  4xl:
+    "fontSize": "60px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "18px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "88px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "44px"
+  "container-max": "1280px"
+  "container-gutter-desktop": "32px"
+  "container-gutter-tablet": "24px"
+  "container-gutter-phone": "16px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.5}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.muted}"
+    "rounded": "{rounded.lg}"
+    "typography": "{typography.sm}"
+    "padding": "{spacing.3}"
+  typography:
+    "textColor": "{colors.body}"
+    "typography": "{typography.lg}"
+  layout-section:
+    "padding": "{spacing.section-y-desktop}"
+  layout-container:
+    "padding": "{spacing.container-gutter-tablet}"
+---
+
 # Design System Inspired by Kraken
 
 > Category: Fintech & Crypto
 > Crypto trading. Purple-accented dark UI, data-dense dashboards.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Kraken's website is a clean, trustworthy crypto exchange that uses purple as its commanding brand color. The design operates on white backgrounds with Kraken Purple (`#7132f5`, `#5741d8`, `#5b1ecf`) creating a distinctive, professional crypto identity. The proprietary Kraken-Brand font handles display headings with bold (700) weight and negative tracking, while Kraken-Product (with IBM Plex Sans fallback) serves as the UI workhorse.
 
@@ -15,7 +108,7 @@ Kraken's website is a clean, trustworthy crypto exchange that uses purple as its
 - Subtle shadows (`rgba(0,0,0,0.03) 0px 4px 24px`) — whisper-level
 - Green accent (`#149e61`) for positive/success states
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Kraken Purple** (`#7132f5`): Primary CTA, brand accent, links
@@ -34,7 +127,7 @@ Kraken's website is a clean, trustworthy crypto exchange that uses purple as its
 - **Green** (`#149e61`): Success/positive at 16% opacity for badges
 - **Green Dark** (`#026b3f`): Badge text
 
-## 3. Typography Rules
+## Typography
 
 ### Font Families
 - **Display**: `Kraken-Brand`, fallbacks: `IBM Plex Sans, Helvetica, Arial`
@@ -55,7 +148,17 @@ Kraken's website is a clean, trustworthy crypto exchange that uses purple as its
 | Small | Kraken-Product | 12px | 400–500 | 1.33 | normal |
 | Micro | Kraken-Product | 7px | 500 | 1.00 | uppercase |
 
-## 4. Component Stylings
+## Layout
+
+### Spacing: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 13px, 15px, 16px, 20px, 24px, 25px
+### Border Radius: 3px, 6px, 8px, 10px, 12px, 16px, 9999px, 50%
+
+## Elevation & Depth
+
+- Subtle: `rgba(0,0,0,0.03) 0px 4px 24px`
+- Micro: `rgba(16,24,40,0.04) 0px 1px 4px`
+
+## Components
 
 ### Buttons
 
@@ -92,16 +195,7 @@ Kraken's website is a clean, trustworthy crypto exchange that uses purple as its
 - Success: `rgba(20,158,97,0.16)` bg, `#026b3f` text, 6px radius
 - Neutral: `rgba(104,107,130,0.12)` bg, `#484b5e` text, 8px radius
 
-## 5. Layout Principles
-
-### Spacing: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 13px, 15px, 16px, 20px, 24px, 25px
-### Border Radius: 3px, 6px, 8px, 10px, 12px, 16px, 9999px, 50%
-
-## 6. Depth & Elevation
-- Subtle: `rgba(0,0,0,0.03) 0px 4px 24px`
-- Micro: `rgba(16,24,40,0.04) 0px 1px 4px`
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Kraken Purple (#7132f5) for CTAs and links
@@ -112,10 +206,11 @@ Kraken's website is a clean, trustworthy crypto exchange that uses purple as its
 - Don't use pill buttons — 12px is the max radius for buttons
 - Don't use other purples outside the defined scale
 
-## 8. Responsive Behavior
+## Responsive Behavior
+
 Breakpoints: 375px, 425px, 640px, 768px, 1024px, 1280px, 1536px
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand: Kraken Purple (`#7132f5`)

@@ -1,9 +1,101 @@
+---
+"version": "alpha"
+"name": "Linear"
+"description": "Bundled Open Design package for Linear, derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#5e6ad2"
+  "primary-hover": "#828fff"
+  "primary-active": "#4752c4"
+  "on-primary": "#ffffff"
+  "canvas": "#08090a"
+  "surface": "#191a1b"
+  "surface-warm": "#191a1b"
+  "ink": "#f7f8f8"
+  "body": "#d0d6e0"
+  "muted": "#8a8f98"
+  "meta": "#62666d"
+  "border": "rgba(255, 255, 255, 0.08)"
+  "border-soft": "rgba(255, 255, 255, 0.05)"
+  "success": "#27a644"
+  "warning": "#eab308"
+  "danger": "#dc2626"
+typography:
+  display:
+    "fontFamily": "\"Inter Variable\", \"Inter\", \"SF Pro Display\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.00"
+    "letterSpacing": "-0.022em"
+  body:
+    "fontFamily": "\"Inter Variable\", \"Inter\", \"SF Pro Display\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif"
+    "lineHeight": "1.5"
+  mono:
+    "fontFamily": "\"Berkeley Mono\", ui-monospace, \"SF Mono\", Menlo, Monaco, Consolas, monospace"
+  xs:
+    "fontSize": "12px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "18px"
+  xl:
+    "fontSize": "24px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "48px"
+  4xl:
+    "fontSize": "72px"
+rounded:
+  "sm": "6px"
+  "md": "8px"
+  "lg": "12px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "80px"
+  "section-y-tablet": "48px"
+  "section-y-phone": "32px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.primary}"
+    "textColor": "{colors.on-primary}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.display}"
+    "padding": "{spacing.2}"
+  inputs:
+    "textColor": "{colors.body}"
+    "typography": "{typography.sm}"
+  badges:
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.pill}"
+    "typography": "{typography.xs}"
+  typography:
+    "textColor": "{colors.ink}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Linear
 
 > Category: Productivity & SaaS
 > Project management. Ultra-minimal, precise, purple accent.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Linear's website is a masterclass in dark-mode-first product design — a near-black canvas (`#08090a`) where content emerges from darkness like starlight. The overall impression is one of extreme precision engineering: every element exists in a carefully calibrated hierarchy of luminance, from barely-visible borders (`rgba(255,255,255,0.05)`) to soft, luminous text (`#f7f8f8`). This is not a dark theme applied to a light design — it is darkness as the native medium, where information density is managed through subtle gradations of white opacity rather than color variation.
 
@@ -23,7 +115,7 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 - Radix UI primitives as the component foundation (6 detected primitives)
 - Success green (`#27a644`, `#10b981`) used only for status indicators
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Background Surfaces
 - **Marketing Black** (`#010102` / `#08090a`): The deepest background — the canvas for hero sections and marketing pages. Near-pure black with an imperceptible blue-cool undertone.
@@ -66,7 +158,7 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 ### Overlay
 - **Overlay Primary** (`rgba(0,0,0,0.85)`): Modal/dialog backdrop — extremely dark for focus isolation.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Primary**: `Inter Variable`, with fallbacks: `SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue`
@@ -111,7 +203,52 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 - **OpenType as identity**: `"cv01", "ss03"` aren't decorative — they transform Inter into Linear's distinctive typeface, giving it a more geometric, purposeful character.
 - **Three-tier weight system**: 400 (reading), 510 (emphasis/UI), 590 (strong emphasis). The 300 weight appears only in deliberately de-emphasized contexts.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 4px, 7px, 8px, 11px, 12px, 16px, 19px, 20px, 22px, 24px, 28px, 32px, 35px
+- The 7px and 11px values suggest micro-adjustments for optical alignment
+- Primary rhythm: 8px, 16px, 24px, 32px (standard 8px grid)
+
+### Grid & Container
+- Max content width: approximately 1200px
+- Hero: centered single-column with generous vertical padding
+- Feature sections: 2–3 column grids for feature cards
+- Full-width dark sections with internal max-width constraints
+- Changelog: single-column timeline layout
+
+### Whitespace Philosophy
+- **Darkness as space**: On Linear's dark canvas, empty space isn't white — it's absence. The near-black background IS the whitespace, and content emerges from it.
+- **Compressed headlines, expanded surroundings**: Display text at 72px with -1.584px tracking is dense and compressed, but sits within vast dark padding. The contrast between typographic density and spatial generosity creates tension.
+- **Section isolation**: Each feature section is separated by generous vertical padding (80px+) with no visible dividers — the dark background provides natural separation.
+
+### Border Radius Scale
+- Micro (2px): Inline badges, toolbar buttons, subtle tags
+- Standard (4px): Small containers, list items
+- Comfortable (6px): Buttons, inputs, functional elements
+- Card (8px): Cards, dropdowns, popovers
+- Panel (12px): Panels, featured cards, section containers
+- Large (22px): Large panel elements
+- Full Pill (9999px): Chips, filter pills, status tags
+- Circle (50%): Icon buttons, avatars, status dots
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, `#010102` bg | Page background, deepest canvas |
+| Subtle (Level 1) | `rgba(0,0,0,0.03) 0px 1.2px 0px` | Toolbar buttons, micro-elevation |
+| Surface (Level 2) | `rgba(255,255,255,0.05)` bg + `1px solid rgba(255,255,255,0.08)` border | Cards, input fields, containers |
+| Inset (Level 2b) | `rgba(0,0,0,0.2) 0px 0px 12px 0px inset` | Recessed panels, inner shadows |
+| Ring (Level 3) | `rgba(0,0,0,0.2) 0px 0px 0px 1px` | Border-as-shadow technique |
+| Elevated (Level 4) | `rgba(0,0,0,0.4) 0px 2px 4px` | Floating elements, dropdowns |
+| Dialog (Level 5) | Multi-layer stack: `rgba(0,0,0,0) 0px 8px 2px, rgba(0,0,0,0.01) 0px 5px 2px, rgba(0,0,0,0.04) 0px 3px 2px, rgba(0,0,0,0.07) 0px 1px 1px, rgba(0,0,0,0.08) 0px 0px 1px` | Popovers, command palette, modals |
+| Focus | `rgba(0,0,0,0.1) 0px 4px 12px` + additional layers | Keyboard focus on interactive elements |
+
+**Shadow Philosophy**: On dark surfaces, traditional shadows (dark on dark) are nearly invisible. Linear solves this by using semi-transparent white borders as the primary depth indicator. Elevation isn't communicated through shadow darkness but through background luminance steps — each level slightly increases the white opacity of the surface background (`0.02` → `0.04` → `0.05`), creating a subtle stacking effect. The inset shadow technique (`rgba(0,0,0,0.2) 0px 0px 12px 0px inset`) creates a unique "sunken" effect for recessed panels, adding dimensional depth that traditional dark themes lack.
+
+## Components
 
 ### Buttons
 
@@ -233,52 +370,7 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 - Dashboard/issue previews dominate feature sections
 - Subtle shadow beneath screenshots: `rgba(0,0,0,0.4) 0px 2px 4px`
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 1px, 4px, 7px, 8px, 11px, 12px, 16px, 19px, 20px, 22px, 24px, 28px, 32px, 35px
-- The 7px and 11px values suggest micro-adjustments for optical alignment
-- Primary rhythm: 8px, 16px, 24px, 32px (standard 8px grid)
-
-### Grid & Container
-- Max content width: approximately 1200px
-- Hero: centered single-column with generous vertical padding
-- Feature sections: 2–3 column grids for feature cards
-- Full-width dark sections with internal max-width constraints
-- Changelog: single-column timeline layout
-
-### Whitespace Philosophy
-- **Darkness as space**: On Linear's dark canvas, empty space isn't white — it's absence. The near-black background IS the whitespace, and content emerges from it.
-- **Compressed headlines, expanded surroundings**: Display text at 72px with -1.584px tracking is dense and compressed, but sits within vast dark padding. The contrast between typographic density and spatial generosity creates tension.
-- **Section isolation**: Each feature section is separated by generous vertical padding (80px+) with no visible dividers — the dark background provides natural separation.
-
-### Border Radius Scale
-- Micro (2px): Inline badges, toolbar buttons, subtle tags
-- Standard (4px): Small containers, list items
-- Comfortable (6px): Buttons, inputs, functional elements
-- Card (8px): Cards, dropdowns, popovers
-- Panel (12px): Panels, featured cards, section containers
-- Large (22px): Large panel elements
-- Full Pill (9999px): Chips, filter pills, status tags
-- Circle (50%): Icon buttons, avatars, status dots
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, `#010102` bg | Page background, deepest canvas |
-| Subtle (Level 1) | `rgba(0,0,0,0.03) 0px 1.2px 0px` | Toolbar buttons, micro-elevation |
-| Surface (Level 2) | `rgba(255,255,255,0.05)` bg + `1px solid rgba(255,255,255,0.08)` border | Cards, input fields, containers |
-| Inset (Level 2b) | `rgba(0,0,0,0.2) 0px 0px 12px 0px inset` | Recessed panels, inner shadows |
-| Ring (Level 3) | `rgba(0,0,0,0.2) 0px 0px 0px 1px` | Border-as-shadow technique |
-| Elevated (Level 4) | `rgba(0,0,0,0.4) 0px 2px 4px` | Floating elements, dropdowns |
-| Dialog (Level 5) | Multi-layer stack: `rgba(0,0,0,0) 0px 8px 2px, rgba(0,0,0,0.01) 0px 5px 2px, rgba(0,0,0,0.04) 0px 3px 2px, rgba(0,0,0,0.07) 0px 1px 1px, rgba(0,0,0,0.08) 0px 0px 1px` | Popovers, command palette, modals |
-| Focus | `rgba(0,0,0,0.1) 0px 4px 12px` + additional layers | Keyboard focus on interactive elements |
-
-**Shadow Philosophy**: On dark surfaces, traditional shadows (dark on dark) are nearly invisible. Linear solves this by using semi-transparent white borders as the primary depth indicator. Elevation isn't communicated through shadow darkness but through background luminance steps — each level slightly increases the white opacity of the surface background (`0.02` → `0.04` → `0.05`), creating a subtle stacking effect. The inset shadow technique (`rgba(0,0,0,0.2) 0px 0px 12px 0px inset`) creates a unique "sunken" effect for recessed panels, adding dimensional depth that traditional dark themes lack.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Inter Variable with `"cv01", "ss03"` on ALL text — these features are fundamental to Linear's typeface identity
@@ -302,7 +394,7 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 - Don't introduce warm colors into the UI chrome — the palette is cool gray with blue-violet accent only
 - Don't use drop shadows for elevation on dark surfaces — use background luminance stepping instead
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -336,7 +428,7 @@ The color system is almost entirely achromatic — dark backgrounds with white/g
 - Product screenshots use responsive sizing with consistent radius
 - Dark background ensures screenshots blend naturally at any viewport
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Primary CTA: Brand Indigo (`#5e6ad2`)

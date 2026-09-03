@@ -1,9 +1,104 @@
+---
+"version": "alpha"
+"name": "Claude (Anthropic)"
+"description": "Bundled Open Design package for Claude (Anthropic), derived from curated DESIGN.md, tokens.css, and components.html fixtures."
+colors:
+  "primary": "#c96442"
+  "on-primary": "#faf9f5"
+  "canvas": "#f5f4ed"
+  "surface": "#faf9f5"
+  "surface-warm": "#e8e6dc"
+  "ink": "#141413"
+  "body": "#3d3d3a"
+  "muted": "#5e5d59"
+  "meta": "#87867f"
+  "border": "#f0eee6"
+  "border-soft": "#e8e6dc"
+  "success": "#17a34a"
+  "warning": "#eab308"
+  "danger": "#b53333"
+typography:
+  display:
+    "fontFamily": "\"Anthropic Serif\", Georgia, \"Times New Roman\", serif"
+    "lineHeight": "1.1"
+    "letterSpacing": "0em"
+  body:
+    "fontFamily": "\"Anthropic Sans\", \"Arial\", system-ui, -apple-system, sans-serif"
+    "lineHeight": "1.6"
+  mono:
+    "fontFamily": "\"Anthropic Mono\", ui-monospace, \"JetBrains Mono\", Menlo, monospace"
+  xs:
+    "fontSize": "10px"
+  sm:
+    "fontSize": "14px"
+  base:
+    "fontSize": "16px"
+  lg:
+    "fontSize": "20px"
+  xl:
+    "fontSize": "25px"
+  2xl:
+    "fontSize": "32px"
+  3xl:
+    "fontSize": "52px"
+  4xl:
+    "fontSize": "64px"
+rounded:
+  "sm": "8px"
+  "md": "12px"
+  "lg": "16px"
+  "pill": "9999px"
+spacing:
+  "1": "4px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "12": "48px"
+  "section-y-desktop": "96px"
+  "section-y-tablet": "64px"
+  "section-y-phone": "48px"
+  "container-max": "1200px"
+  "container-gutter-desktop": "24px"
+  "container-gutter-tablet": "16px"
+  "container-gutter-phone": "12px"
+components:
+  buttons:
+    "backgroundColor": "{colors.surface-warm}"
+    "textColor": "{colors.body}"
+    "rounded": "{rounded.sm}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  inputs:
+    "backgroundColor": "{colors.surface}"
+    "textColor": "{colors.ink}"
+    "rounded": "{rounded.md}"
+    "typography": "{typography.body}"
+    "padding": "{spacing.2}"
+  cards:
+    "backgroundColor": "{colors.surface}"
+    "rounded": "{rounded.sm}"
+    "padding": "{spacing.3}"
+  links:
+    "backgroundColor": "{colors.primary}"
+  typography:
+    "textColor": "{colors.muted}"
+    "typography": "{typography.display}"
+  layout:
+    "padding": "{spacing.4}"
+  layout-container:
+    "width": "{spacing.container-max}"
+    "padding": "{spacing.container-gutter-desktop}"
+---
+
 # Design System Inspired by Claude (Anthropic)
 
 > Category: AI & LLM
 > Anthropic's AI assistant. Warm terracotta accent, clean editorial layout.
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 Claude's interface is a literary salon reimagined as a product page — warm, unhurried, and quietly intellectual. The entire experience is built on a parchment-toned canvas (`#f5f4ed`) that deliberately evokes the feeling of high-quality paper rather than a digital surface. Where most AI product pages lean into cold, futuristic aesthetics, Claude's design radiates human warmth, as if the AI itself has good taste in interior design.
 
@@ -20,7 +115,7 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 - Ring-based shadow system (`0px 0px 0px 1px`) creating border-like depth without visible borders
 - Magazine-like pacing with generous section spacing and serif-driven hierarchy
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary
 - **Anthropic Near Black** (`#141413`): The primary text color and dark-theme surface — not pure black but a warm, almost olive-tinted dark that's gentler on the eyes. The warmest "black" in any major tech brand.
@@ -57,7 +152,7 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 ### Gradient System
 - Claude's design is **gradient-free** in the traditional sense. Depth and visual richness come from the interplay of warm surface tones, organic illustrations, and light/dark section alternation. The warm palette itself creates a "gradient" effect as the eye moves through cream → sand → stone → charcoal → black sections.
 
-## 3. Typography Rules
+## Typography
 
 ### Font Family
 - **Headline**: `Anthropic Serif`, with fallback: `Georgia`
@@ -94,7 +189,53 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 - **Tight-but-not-compressed headings**: Line-heights of 1.10–1.30 for headings are tight but never claustrophobic. The serif letterforms need breathing room that sans-serif fonts don't.
 - **Micro letter-spacing on labels**: Small sans text (12px and below) uses deliberate letter-spacing (0.12px–0.5px) to maintain readability at tiny sizes.
 
-## 4. Component Stylings
+## Layout
+
+### Spacing System
+- Base unit: 8px
+- Scale: 3px, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 30px
+- Button padding: asymmetric (0px 12px 0px 8px) or balanced (8px 16px)
+- Card internal padding: approximately 24–32px
+- Section vertical spacing: generous (estimated 80–120px between major sections)
+
+### Grid & Container
+- Max container width: approximately 1200px, centered
+- Hero: centered with editorial layout
+- Feature sections: single-column or 2–3 column card grids
+- Model comparison: clean 3-column grid
+- Full-width dark sections breaking the container for emphasis
+
+### Whitespace Philosophy
+- **Editorial pacing**: Each section breathes like a magazine spread — generous top/bottom margins create natural reading pauses.
+- **Serif-driven rhythm**: The serif headings establish a literary cadence that demands more whitespace than sans-serif designs.
+- **Content island approach**: Sections alternate between light and dark environments, creating distinct "rooms" for each message.
+
+### Border Radius Scale
+- Sharp (4px): Minimal inline elements
+- Subtly rounded (6–7.5px): Small buttons, secondary interactive elements
+- Comfortably rounded (8–8.5px): Standard buttons, cards, containers
+- Generously rounded (12px): Primary buttons, input fields, nav elements
+- Very rounded (16px): Featured containers, video players, tab lists
+- Highly rounded (24px): Tag-like elements, highlighted containers
+- Maximum rounded (32px): Hero containers, embedded media, large cards
+
+## Elevation & Depth
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow, no border | Parchment background, inline text |
+| Contained (Level 1) | `1px solid #f0eee6` (light) or `1px solid #30302e` (dark) | Standard cards, sections |
+| Ring (Level 2) | `0px 0px 0px 1px` ring shadows using warm grays | Interactive cards, buttons, hover states |
+| Whisper (Level 3) | `rgba(0,0,0,0.05) 0px 4px 24px` | Elevated feature cards, product screenshots |
+| Inset (Level 4) | `inset 0px 0px 0px 1px` at 15% opacity | Active/pressed button states |
+
+**Shadow Philosophy**: Claude communicates depth through **warm-toned ring shadows** rather than traditional drop shadows. The signature `0px 0px 0px 1px` pattern creates a border-like halo that's softer than an actual border — it's a shadow pretending to be a border, or a border that's technically a shadow. When drop shadows do appear, they're extremely soft (0.05 opacity, 24px blur) — barely visible lifts that suggest floating rather than casting.
+
+### Decorative Depth
+- **Light/Dark alternation**: The most dramatic depth effect comes from alternating between Parchment (`#f5f4ed`) and Near Black (`#141413`) sections — entire sections shift elevation by changing the ambient light level.
+- **Warm ring halos**: Button and card interactions use ring shadows that match the warm palette — never cool-toned or generic gray.
+
+## Components
 
 ### Buttons
 
@@ -184,53 +325,7 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 - Creates a reading rhythm like chapters in a book
 - Each section feels like a distinct environment
 
-## 5. Layout Principles
-
-### Spacing System
-- Base unit: 8px
-- Scale: 3px, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 30px
-- Button padding: asymmetric (0px 12px 0px 8px) or balanced (8px 16px)
-- Card internal padding: approximately 24–32px
-- Section vertical spacing: generous (estimated 80–120px between major sections)
-
-### Grid & Container
-- Max container width: approximately 1200px, centered
-- Hero: centered with editorial layout
-- Feature sections: single-column or 2–3 column card grids
-- Model comparison: clean 3-column grid
-- Full-width dark sections breaking the container for emphasis
-
-### Whitespace Philosophy
-- **Editorial pacing**: Each section breathes like a magazine spread — generous top/bottom margins create natural reading pauses.
-- **Serif-driven rhythm**: The serif headings establish a literary cadence that demands more whitespace than sans-serif designs.
-- **Content island approach**: Sections alternate between light and dark environments, creating distinct "rooms" for each message.
-
-### Border Radius Scale
-- Sharp (4px): Minimal inline elements
-- Subtly rounded (6–7.5px): Small buttons, secondary interactive elements
-- Comfortably rounded (8–8.5px): Standard buttons, cards, containers
-- Generously rounded (12px): Primary buttons, input fields, nav elements
-- Very rounded (16px): Featured containers, video players, tab lists
-- Highly rounded (24px): Tag-like elements, highlighted containers
-- Maximum rounded (32px): Hero containers, embedded media, large cards
-
-## 6. Depth & Elevation
-
-| Level | Treatment | Use |
-|-------|-----------|-----|
-| Flat (Level 0) | No shadow, no border | Parchment background, inline text |
-| Contained (Level 1) | `1px solid #f0eee6` (light) or `1px solid #30302e` (dark) | Standard cards, sections |
-| Ring (Level 2) | `0px 0px 0px 1px` ring shadows using warm grays | Interactive cards, buttons, hover states |
-| Whisper (Level 3) | `rgba(0,0,0,0.05) 0px 4px 24px` | Elevated feature cards, product screenshots |
-| Inset (Level 4) | `inset 0px 0px 0px 1px` at 15% opacity | Active/pressed button states |
-
-**Shadow Philosophy**: Claude communicates depth through **warm-toned ring shadows** rather than traditional drop shadows. The signature `0px 0px 0px 1px` pattern creates a border-like halo that's softer than an actual border — it's a shadow pretending to be a border, or a border that's technically a shadow. When drop shadows do appear, they're extremely soft (0.05 opacity, 24px blur) — barely visible lifts that suggest floating rather than casting.
-
-### Decorative Depth
-- **Light/Dark alternation**: The most dramatic depth effect comes from alternating between Parchment (`#f5f4ed`) and Near Black (`#141413`) sections — entire sections shift elevation by changing the ambient light level.
-- **Warm ring halos**: Button and card interactions use ring shadows that match the warm palette — never cool-toned or generic gray.
-
-## 7. Do's and Don'ts
+## Do's and Don'ts
 
 ### Do
 - Use Parchment (`#f5f4ed`) as the primary light background — the warm cream tone IS the Claude personality
@@ -255,7 +350,7 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 - Don't use monospace fonts for non-code content — Anthropic Mono is strictly for code
 - Don't mix in sans-serif for headlines — the serif/sans split is the typographic identity
 
-## 8. Responsive Behavior
+## Responsive Behavior
 
 ### Breakpoints
 | Name | Width | Key Changes |
@@ -286,7 +381,7 @@ What makes Claude's design truly distinctive is its warm neutral palette. Every 
 - Video embeds maintain 16:9 aspect ratio with rounded corners
 - No art direction changes between breakpoints
 
-## 9. Agent Prompt Guide
+## Agent Prompt Guide
 
 ### Quick Color Reference
 - Brand CTA: "Terracotta Brand (#c96442)"
