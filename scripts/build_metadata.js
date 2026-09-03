@@ -13,7 +13,7 @@ const DESIGN_SYSTEMS_DIR = path.join(ROOT, 'design-systems');
 const OUTPUT_FILE = path.join(ROOT, 'brands_metadata.js');
 
 // Directories to skip (not real design systems)
-const SKIP_DIRS = new Set(['_schema', 'apple-test', 'example-test']);
+const SKIP_DIRS = new Set(['_schema']);
 
 // Curated live websites & design portals for all 150 design systems
 const BRAND_WEBSITES = {

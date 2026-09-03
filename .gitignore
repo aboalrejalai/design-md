@@ -34,3 +34,8 @@ tmp/
 .env.local
 .env.production
 .env.development
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
