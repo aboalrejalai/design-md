@@ -1,23 +1,18 @@
 /* ==========================================================================
-   Design System Tokens (Anthropic Brand Theme)
+   Design System Tokens (Saudi Soft shell)
    ========================================================================== */
 :root {
-    /* Color Palette */
-    --anthropic-dark: #141413;
-    --anthropic-light: #faf9f5;
-    --anthropic-mid-gray: #b0aea5;
-    --anthropic-light-gray: #e8e6dc;
-    
-    /* Accents */
-    --accent-orange: #d97757;
-    --accent-blue: #6a9bcc;
-    --accent-green: #788c5d;
-    --accent-orange-hover: #c86343;
+    /* Accents — names stay so existing rules pick up the Saudi green */
+    --accent-orange: #1B8354;
+    --accent-orange-hover: #166A45;
+    --accent-orange-active: #14573A;
+    --accent-blue: #1570EF;
+    --accent-green: #079455;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px rgba(20, 20, 19, 0.05);
-    --shadow-md: 0 4px 12px rgba(20, 20, 19, 0.06);
-    --shadow-lg: 0 16px 32px rgba(20, 20, 19, 0.12);
+    --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05);
+    --shadow-md: 0 4px 12px rgb(16 24 40 / 0.06);
+    --shadow-lg: 0 16px 32px rgb(16 24 40 / 0.12);
     
     /* Transitions */
     --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -29,34 +24,42 @@
     --font-mono: 'JetBrains Mono', monospace;
     
     /* Light Mode Variables (Default) */
-    --bg-primary: var(--anthropic-light);
-    --bg-secondary: #ffffff;
-    --bg-tertiary: var(--anthropic-light-gray);
-    --text-primary: var(--anthropic-dark);
-    --text-secondary: #575754;
-    --text-muted: #8c8a82;
-    --border-color: var(--anthropic-light-gray);
-    --border-hover: var(--anthropic-mid-gray);
-    --header-bg: rgba(250, 249, 245, 0.85);
+    --bg-primary: #FCFCFD;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F3FCF6;
+    --text-primary: #0D121C;
+    --text-secondary: #384250;
+    --text-muted: #4D5761;
+    --border-color: #E5E7EB;
+    --border-hover: #D2D6DB;
+    --header-bg: rgb(252 252 253 / 0.85);
     --card-shadow: var(--shadow-sm);
     --card-shadow-hover: var(--shadow-md);
-    --code-bg: #f5f4ef;
+    --code-bg: #F3F4F6;
+    --gradient: linear-gradient(120deg, #14573A 0%, #1B8354 100%);
+    --toast-bg: #0D121C;
+    --toast-fg: #FCFCFD;
 }
 
 body.dark-mode {
     /* Dark Mode Overrides */
-    --bg-primary: var(--anthropic-dark);
-    --bg-secondary: #1d1d1c;
-    --bg-tertiary: #2e2e2c;
-    --text-primary: var(--anthropic-light);
-    --text-secondary: #dcdbd5;
-    --text-muted: #a1a097;
-    --border-color: #2e2e2c;
-    --border-hover: #4a4a47;
-    --header-bg: rgba(20, 20, 19, 0.85);
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    --card-shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.4);
-    --code-bg: #282827;
+    --bg-primary: #0f1724;
+    --bg-secondary: #0b1220;
+    --bg-tertiary: #141c2b;
+    --text-primary: #ffffff;
+    --text-secondary: #d0d5dd;
+    --text-muted: #b0b8c4;
+    --border-color: #2a3447;
+    --border-hover: #3d4a63;
+    --header-bg: rgb(15 23 36 / 0.85);
+    --card-shadow: 0 4px 6px rgb(0 0 0 / 0.2);
+    --card-shadow-hover: 0 12px 24px rgb(0 0 0 / 0.4);
+    --code-bg: #141c2b;
+    --accent-orange: #3daf6e;
+    --accent-orange-hover: #3dba78;
+    --accent-orange-active: #166A45;
+    --toast-bg: #FCFCFD;
+    --toast-fg: #0D121C;
 }
 
 /* ==========================================================================
@@ -126,10 +129,11 @@ a:hover {
 .btn-primary:hover {
     background-color: var(--accent-orange-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(217, 119, 87, 0.3);
+    box-shadow: 0 4px 12px rgb(27 131 84 / 0.3);
 }
 
 .btn-primary:active {
+    background-color: var(--accent-orange-active);
     transform: translateY(0);
 }
 
@@ -271,7 +275,7 @@ a:hover {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--accent-orange);
-    background-color: rgba(217, 119, 87, 0.1);
+    background-color: rgb(27 131 84 / 0.1);
     padding: 6px 14px;
     border-radius: 30px;
     margin-bottom: 20px;
@@ -293,7 +297,7 @@ a:hover {
 }
 
 .hero-section .highlight {
-    background: linear-gradient(120deg, var(--accent-orange) 0%, var(--accent-blue) 100%);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -342,7 +346,7 @@ a:hover {
 #search-input:focus {
     outline: none;
     border-color: var(--accent-orange);
-    box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.15), var(--shadow-md);
+    box-shadow: 0 0 0 4px rgb(27 131 84 / 0.15), var(--shadow-md);
 }
 
 .clear-btn {
@@ -479,8 +483,8 @@ a:hover {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-6px);
-    background-color: var(--anthropic-dark);
-    color: #ffffff;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
     font-size: 0.65rem;
     font-family: var(--font-mono);
     padding: 2px 6px;
@@ -639,7 +643,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(20, 20, 19, 0.4);
+    background-color: rgb(13 18 28 / 0.4);
     backdrop-filter: blur(4px);
 }
 
@@ -716,7 +720,7 @@ a:hover {
 .btn-visit-site:hover {
     border-color: var(--accent-orange);
     color: var(--accent-orange);
-    background-color: rgba(217, 119, 87, 0.08);
+    background-color: rgb(27 131 84 / 0.08);
     transform: translateY(-1px);
 }
 
@@ -1159,7 +1163,7 @@ body.dark-mode .package-badge {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(20, 20, 19, 0.5);
+    background-color: rgb(13 18 28 / 0.5);
     backdrop-filter: blur(4px);
     z-index: 1200;
     display: flex;
@@ -1214,7 +1218,7 @@ body.dark-mode .package-badge {
     width: 100%;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     min-height: 400px;
 }
 
@@ -1317,8 +1321,8 @@ body.dark-mode .package-badge {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background-color: var(--anthropic-dark);
-    color: #ffffff;
+    background-color: var(--toast-bg);
+    color: var(--toast-fg);
     padding: 12px 24px;
     border-radius: 30px;
     box-shadow: var(--shadow-lg);
@@ -1339,11 +1343,6 @@ body.dark-mode .package-badge {
     opacity: 1;
 }
 
-body.dark-mode .toast {
-    background-color: var(--anthropic-light);
-    color: var(--anthropic-dark);
-}
-
 /* ==========================================================================
    Animations
    ========================================================================== */
@@ -1360,13 +1359,13 @@ body.dark-mode .toast {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(217, 119, 87, 0.4);
+        box-shadow: 0 0 0 0 rgb(27 131 84 / 0.4);
     }
     70% {
-        box-shadow: 0 0 0 8px rgba(217, 119, 87, 0);
+        box-shadow: 0 0 0 8px rgb(27 131 84 / 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(217, 119, 87, 0);
+        box-shadow: 0 0 0 0 rgb(27 131 84 / 0);
     }
 }
 
