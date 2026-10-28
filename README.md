@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/assets/cover.png" alt="design-md" width="100%"></p>
+
 # 🎨 Design MD Catalog
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
